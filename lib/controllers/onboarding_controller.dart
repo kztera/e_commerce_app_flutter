@@ -1,7 +1,6 @@
 import 'package:e_commerce_app_flutter_app/utils/helpers/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 
 class OnboardingController extends GetxController {
   static OnboardingController get instance => Get.find();
