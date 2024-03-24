@@ -1,11 +1,4 @@
 {
-  "hello": "Chào $name",
-  "save": "Lưu",
-  "login": {
-    "success": "Đăng nhập thành công",
-    "fail": "Đăng nhập thất bại"
-  },
-  
   "skip": "Bỏ qua",
 
   "onBoardingTitle1": "Chào mừng bạn!",
@@ -14,5 +7,8 @@
 
   "onBoardingSubtitle1": "Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!",
   "onBoardingSubtitle2": "Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi!",
-  "onBoardingSubtitle3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng"
+  "onBoardingSubtitle3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng",
+
+  "loginTitle": "Đăng nhập",
+  "loginSubtitle": "Mở ra cơ hội mua sắm không giới hạn!"
 }
