@@ -4,5 +4,15 @@
   "login": {
     "success": "Logged in successfully",
     "fail": "Logged in failed"
-  }
+  },
+
+  "skip": "Skip",
+
+  "onBoardingTitle1": "Choose from a wide range of products",
+  "onBoardingTitle2": "Accept any payment method",
+  "onBoardingTitle3": "Delivery at your doorstep",
+
+  "onBoardingSubtitle1": "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!",
+  "onBoardingSubtitle2": "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!",
+  "onBoardingSubtitle3": "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!"
 }

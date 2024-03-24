@@ -4,5 +4,15 @@
   "login": {
     "success": "Đăng nhập thành công",
     "fail": "Đăng nhập thất bại"
-  }
+  },
+  
+  "skip": "Bỏ qua",
+
+  "onBoardingTitle1": "Chào mừng bạn!",
+  "onBoardingTitle2": "Chấp nhận mọi phương thức thanh toán!",
+  "onBoardingTitle3": "Nhận hàng tận nơi!",
+
+  "onBoardingSubtitle1": "Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!",
+  "onBoardingSubtitle2": "Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi!",
+  "onBoardingSubtitle3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng"
 }
