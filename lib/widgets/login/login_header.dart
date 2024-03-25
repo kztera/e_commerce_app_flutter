@@ -16,7 +16,7 @@ class LoginHeader extends StatelessWidget {
     final dark = HelperFunc.isDarkMode(context);
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
             child: SvgPicture.asset(
