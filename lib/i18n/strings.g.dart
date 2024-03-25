@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 36 (18 per locale)
+/// Strings: 50 (25 per locale)
 ///
-/// Built on 2024-03-25 at 02:34 UTC
+/// Built on 2024-03-25 at 03:13 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -190,6 +190,8 @@ class _StringsLoginEn {
 	String get subtitle => 'Discover Limitless Choices and Unmatched Convenience.';
 	late final _StringsLoginFormEn form = _StringsLoginFormEn._(_root);
 	late final _StringsLoginPlaceholderEn placeholder = _StringsLoginPlaceholderEn._(_root);
+	late final _StringsLoginButtonEn button = _StringsLoginButtonEn._(_root);
+	late final _StringsLoginCommonEn common = _StringsLoginCommonEn._(_root);
 }
 
 // Path: onboarding.title
@@ -236,6 +238,31 @@ class _StringsLoginPlaceholderEn {
 	// Translations
 	String get email => 'Enter your email';
 	String get password => 'Enter your password';
+}
+
+// Path: login.button
+class _StringsLoginButtonEn {
+	_StringsLoginButtonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get signIn => 'Sign In';
+	String get createAccount => 'Create Account';
+}
+
+// Path: login.common
+class _StringsLoginCommonEn {
+	_StringsLoginCommonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get orSignInWith => 'or sign in with';
+	String get privacyPolicy => 'Privacy Policy';
+	String get termsOfUse => 'Terms of use';
+	String get rememberMe => 'Remember me';
+	String get forgotPassword => 'Forgot password';
 }
 
 // Path: <root>
@@ -304,6 +331,8 @@ class _StringsLoginVi implements _StringsLoginEn {
 	@override String get subtitle => 'Đăng nhập và mở ra cơ hội mua sớm không giới hạn!';
 	@override late final _StringsLoginFormVi form = _StringsLoginFormVi._(_root);
 	@override late final _StringsLoginPlaceholderVi placeholder = _StringsLoginPlaceholderVi._(_root);
+	@override late final _StringsLoginButtonVi button = _StringsLoginButtonVi._(_root);
+	@override late final _StringsLoginCommonVi common = _StringsLoginCommonVi._(_root);
 }
 
 // Path: onboarding.title
@@ -352,6 +381,31 @@ class _StringsLoginPlaceholderVi implements _StringsLoginPlaceholderEn {
 	@override String get password => 'Nhập mật khẩu';
 }
 
+// Path: login.button
+class _StringsLoginButtonVi implements _StringsLoginButtonEn {
+	_StringsLoginButtonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get signIn => 'Đăng nhập';
+	@override String get createAccount => 'Tạo tài khoản';
+}
+
+// Path: login.common
+class _StringsLoginCommonVi implements _StringsLoginCommonEn {
+	_StringsLoginCommonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get orSignInWith => 'hoặc đăng nhập với';
+	@override String get privacyPolicy => 'Chính sách bảo mật';
+	@override String get termsOfUse => 'Điều khoản dịch vụ';
+	@override String get rememberMe => 'Ghi nhớ đăng nhập';
+	@override String get forgotPassword => 'Quên mật khẩu';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -376,6 +430,13 @@ extension on Translations {
 			case 'login.form.password': return 'Password';
 			case 'login.placeholder.email': return 'Enter your email';
 			case 'login.placeholder.password': return 'Enter your password';
+			case 'login.button.signIn': return 'Sign In';
+			case 'login.button.createAccount': return 'Create Account';
+			case 'login.common.orSignInWith': return 'or sign in with';
+			case 'login.common.privacyPolicy': return 'Privacy Policy';
+			case 'login.common.termsOfUse': return 'Terms of use';
+			case 'login.common.rememberMe': return 'Remember me';
+			case 'login.common.forgotPassword': return 'Forgot password';
 			default: return null;
 		}
 	}
@@ -402,6 +463,13 @@ extension on _StringsVi {
 			case 'login.form.password': return 'Mật khẩu';
 			case 'login.placeholder.email': return 'Nhập email tài khoản';
 			case 'login.placeholder.password': return 'Nhập mật khẩu';
+			case 'login.button.signIn': return 'Đăng nhập';
+			case 'login.button.createAccount': return 'Tạo tài khoản';
+			case 'login.common.orSignInWith': return 'hoặc đăng nhập với';
+			case 'login.common.privacyPolicy': return 'Chính sách bảo mật';
+			case 'login.common.termsOfUse': return 'Điều khoản dịch vụ';
+			case 'login.common.rememberMe': return 'Ghi nhớ đăng nhập';
+			case 'login.common.forgotPassword': return 'Quên mật khẩu';
 			default: return null;
 		}
 	}

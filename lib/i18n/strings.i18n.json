@@ -32,10 +32,16 @@
       "email": "Enter your email",
       "password": "Enter your password"
     },
+    "button": {
+      "signIn": "Sign In",
+      "createAccount": "Create Account"
+    },
     "common": {
       "orSignInWith": "or sign in with",
       "privacyPolicy": "Privacy Policy",
-      "termsOfUse": "Terms of use"
+      "termsOfUse": "Terms of use",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password"
     }
   }
 }

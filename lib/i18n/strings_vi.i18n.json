@@ -32,10 +32,16 @@
       "email": "Nhập email tài khoản",
       "password": "Nhập mật khẩu"
     },
+    "button": {
+      "signIn": "Đăng nhập",
+      "createAccount": "Tạo tài khoản"
+    },
     "common": {
       "orSignInWith": "hoặc đăng nhập với",
       "privacyPolicy": "Chính sách bảo mật",
-      "termsOfUse": "Điều khoản dịch vụ"
+      "termsOfUse": "Điều khoản dịch vụ",
+      "rememberMe": "Ghi nhớ đăng nhập",
+      "forgotPassword": "Quên mật khẩu"
     }
   }
 }
