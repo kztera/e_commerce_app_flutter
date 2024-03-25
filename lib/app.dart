@@ -1,6 +1,5 @@
 import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
-import 'package:e_commerce_app_flutter_app/screens/login.dart';
-import 'package:e_commerce_app_flutter_app/screens/onboarding.dart';
+import 'package:e_commerce_app_flutter_app/routes/routes.dart';
 import 'package:e_commerce_app_flutter_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,13 +15,17 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.fadeIn,
       locale: TranslationProvider.of(context).flutterLocale, // use provider
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const OnboardingScreen(),
+      getPages: Routes.pages,
+      initialRoute: Routes.initial,
+      debugShowCheckedModeBanner: false,
+      fallbackLocale: const Locale('en', 'US'),
     );
   }
 }
