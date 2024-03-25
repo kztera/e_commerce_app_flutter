@@ -1,4 +1,5 @@
-import 'package:e_commerce_app_flutter_app/utils/helpers/logger.dart';
+import 'package:e_commerce_app_flutter_app/screens/login.dart';
+import 'package:e_commerce_app_flutter_app/utils/constants/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,18 +13,22 @@ class OnboardingController extends GetxController {
 
   void onNavigationPress(index) {
     currentPageIndex.value = index;
-    pageController.animateToPage(index, duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+    pageController.animateToPage(index,
+        duration: const Duration(milliseconds: AnimationTimes.durationShort), curve: Curves.easeIn);
   }
 
   void nextPage(indexOfLastPage) {
     if (currentPageIndex.value < indexOfLastPage) {
-      pageController.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+      pageController.nextPage(
+          duration: const Duration(milliseconds: AnimationTimes.durationShort), curve: Curves.easeIn);
     } else {
-      LoggerHelper.debug('Last page reached');
+      Get.offAll(const LoginScreen(),
+          duration: const Duration(milliseconds: AnimationTimes.durationMedium), curve: Curves.easeIn);
     }
   }
 
   void onSkip(indexOfLastPage) {
-    pageController.animateToPage(indexOfLastPage, duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+    Get.offAll(const LoginScreen(),
+        duration: const Duration(milliseconds: AnimationTimes.durationMedium), curve: Curves.easeIn);
   }
 }
