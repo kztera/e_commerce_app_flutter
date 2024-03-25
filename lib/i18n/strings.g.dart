@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 50 (25 per locale)
 ///
-/// Built on 2024-03-25 at 03:13 UTC
+/// Built on 2024-03-25 at 11:20 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -201,9 +201,9 @@ class _StringsOnboardingTitleEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get t1 => 'Choose from a wide range of products';
+	String get t1 => 'Choose from a wide range of e-books';
 	String get t2 => 'Accept any payment method';
-	String get t3 => 'Delivery at your doorstep';
+	String get t3 => 'No wastage of time';
 }
 
 // Path: onboarding.subtitle
@@ -215,7 +215,7 @@ class _StringsOnboardingSubtitleEn {
 	// Translations
 	String get st1 => 'Welcome to a World of Limitless Choices - Your Perfect Product Awaits!';
 	String get st2 => 'For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!';
-	String get st3 => 'From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!';
+	String get st3 => 'Receive your e-books as soon as you complete payment - No Waiting, No Hassle!';
 }
 
 // Path: login.form
@@ -328,7 +328,7 @@ class _StringsLoginVi implements _StringsLoginEn {
 
 	// Translations
 	@override String get title => 'Chào mừng trở lại';
-	@override String get subtitle => 'Đăng nhập và mở ra cơ hội mua sớm không giới hạn!';
+	@override String get subtitle => 'Đăng nhập và mở ra thế giới sách không giới hạn!';
 	@override late final _StringsLoginFormVi form = _StringsLoginFormVi._(_root);
 	@override late final _StringsLoginPlaceholderVi placeholder = _StringsLoginPlaceholderVi._(_root);
 	@override late final _StringsLoginButtonVi button = _StringsLoginButtonVi._(_root);
@@ -344,7 +344,7 @@ class _StringsOnboardingTitleVi implements _StringsOnboardingTitleEn {
 	// Translations
 	@override String get t1 => 'Vô hạn lựa chọn';
 	@override String get t2 => 'Chấp nhận mọi phương thức thanh toán';
-	@override String get t3 => 'Giao hàng tận nơi';
+	@override String get t3 => 'Không cần chờ đợi';
 }
 
 // Path: onboarding.subtitle
@@ -354,9 +354,9 @@ class _StringsOnboardingSubtitleVi implements _StringsOnboardingSubtitleEn {
 	@override final _StringsVi _root; // ignore: unused_field
 
 	// Translations
-	@override String get st1 => 'Chào mừng bạn tới với 3Z - Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!';
+	@override String get st1 => 'Chào mừng bạn tới với 3Z - Nơi những cuốn sách hay nhất đang đợi bạn cho vào giỏ hàng!';
 	@override String get st2 => 'Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi';
-	@override String get st3 => 'Nhanh chóng, bảo mật, tiện lợi và chất lượng';
+	@override String get st3 => 'Nhận được sách ngay lập tức sau khi thanh toán!';
 }
 
 // Path: login.form
@@ -418,12 +418,12 @@ extension on Translations {
 			case 'button.submit': return 'Submit';
 			case 'button.appName': return '3Z Store';
 			case 'button.btcontinue': return 'Continue';
-			case 'onboarding.title.t1': return 'Choose from a wide range of products';
+			case 'onboarding.title.t1': return 'Choose from a wide range of e-books';
 			case 'onboarding.title.t2': return 'Accept any payment method';
-			case 'onboarding.title.t3': return 'Delivery at your doorstep';
+			case 'onboarding.title.t3': return 'No wastage of time';
 			case 'onboarding.subtitle.st1': return 'Welcome to a World of Limitless Choices - Your Perfect Product Awaits!';
 			case 'onboarding.subtitle.st2': return 'For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!';
-			case 'onboarding.subtitle.st3': return 'From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!';
+			case 'onboarding.subtitle.st3': return 'Receive your e-books as soon as you complete payment - No Waiting, No Hassle!';
 			case 'login.title': return 'Welcome Back!';
 			case 'login.subtitle': return 'Discover Limitless Choices and Unmatched Convenience.';
 			case 'login.form.email': return 'Email';
@@ -453,12 +453,12 @@ extension on _StringsVi {
 			case 'button.btcontinue': return 'Tiếp tục';
 			case 'onboarding.title.t1': return 'Vô hạn lựa chọn';
 			case 'onboarding.title.t2': return 'Chấp nhận mọi phương thức thanh toán';
-			case 'onboarding.title.t3': return 'Giao hàng tận nơi';
-			case 'onboarding.subtitle.st1': return 'Chào mừng bạn tới với 3Z - Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!';
+			case 'onboarding.title.t3': return 'Không cần chờ đợi';
+			case 'onboarding.subtitle.st1': return 'Chào mừng bạn tới với 3Z - Nơi những cuốn sách hay nhất đang đợi bạn cho vào giỏ hàng!';
 			case 'onboarding.subtitle.st2': return 'Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi';
-			case 'onboarding.subtitle.st3': return 'Nhanh chóng, bảo mật, tiện lợi và chất lượng';
+			case 'onboarding.subtitle.st3': return 'Nhận được sách ngay lập tức sau khi thanh toán!';
 			case 'login.title': return 'Chào mừng trở lại';
-			case 'login.subtitle': return 'Đăng nhập và mở ra cơ hội mua sớm không giới hạn!';
+			case 'login.subtitle': return 'Đăng nhập và mở ra thế giới sách không giới hạn!';
 			case 'login.form.email': return 'Email';
 			case 'login.form.password': return 'Mật khẩu';
 			case 'login.placeholder.email': return 'Nhập email tài khoản';

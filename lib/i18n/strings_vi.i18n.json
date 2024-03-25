@@ -12,18 +12,18 @@
     "title": {
       "t1": "Vô hạn lựa chọn",
       "t2": "Chấp nhận mọi phương thức thanh toán",
-      "t3": "Giao hàng tận nơi"
+      "t3": "Không cần chờ đợi"
     },
     "subtitle": {
-      "st1": "Chào mừng bạn tới với 3Z - Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!",
+      "st1": "Chào mừng bạn tới với 3Z - Nơi những cuốn sách hay nhất đang đợi bạn cho vào giỏ hàng!",
       "st2": "Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi",
-      "st3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng"
+      "st3": "Nhận được sách ngay lập tức sau khi thanh toán!"
     }
   },
 
   "login": {
     "title": "Chào mừng trở lại",
-    "subtitle": "Đăng nhập và mở ra cơ hội mua sớm không giới hạn!",
+    "subtitle": "Đăng nhập và mở ra thế giới sách không giới hạn!",
     "form": {
       "email": "Email",
       "password": "Mật khẩu"
