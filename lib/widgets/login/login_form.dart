@@ -1,6 +1,7 @@
 import "package:e_commerce_app_flutter_app/i18n/strings.g.dart";
 import "package:e_commerce_app_flutter_app/utils/constants/sizes.dart";
 import "package:flutter/material.dart";
+import "package:get/get.dart";
 import "package:iconsax/iconsax.dart";
 
 class LoginForm extends StatelessWidget {
@@ -37,10 +38,15 @@ class LoginForm extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Checkbox(
-                    value: true,
-                    onChanged: (value) {},
+                  SizedBox(
+                    height: CustomSizes.lg,
+                    width: CustomSizes.lg,
+                    child: Checkbox(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
                   ),
+                  const SizedBox(width: CustomSizes.xs),
                   Text(t.login.common.rememberMe)
                 ],
               ),
@@ -59,7 +65,10 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: CustomSizes.spaceBtwItems),
           SizedBox(
               width: double.infinity,
-              child: OutlinedButton(onPressed: () {}, child: Text(t.login.button.createAccount))),
+              child: OutlinedButton(
+                onPressed: () => Get.toNamed('/register'),
+                child: Text(t.login.button.createAccount),
+              )),
           const SizedBox(height: CustomSizes.spaceBtwSections),
         ],
       ),
