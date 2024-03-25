@@ -17,7 +17,10 @@ class LoginForm extends StatelessWidget {
         children: [
           // email input
           TextFormField(
-            decoration: InputDecoration(prefix: const Icon(Icons.email_outlined), labelText: t.login.form.email),
+            decoration: InputDecoration(
+              prefixIcon: const Icon(Icons.email_outlined),
+              labelText: t.login.form.email,
+            ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
@@ -47,7 +50,12 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: CustomSizes.spaceBtwSections),
 
           // Sign in button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: Text(t.login.button.signIn))),
+          SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(t.login.button.signIn),
+              )),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           SizedBox(
               width: double.infinity,
