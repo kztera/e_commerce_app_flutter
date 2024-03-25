@@ -43,5 +43,39 @@
       "rememberMe": "Remember me",
       "forgotPassword": "Forgot password"
     }
+  },
+
+  "register": {
+    "title": "Register",
+    "subtitle": "Let’s create your account",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "username": "Username",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "phoneNo": "Phone Number"
+    },
+    "placeholder": {
+      "fullName": "Enter your full name",
+      "username": "Enter your username",
+      "email": "Enter your email",
+      "password": "Enter your password",
+      "confirmPassword": "Confirm your password",
+      "phoneNo": "Enter your phone number"
+    },
+    "button": {
+      "createAccount": "Create Account"
+    },
+    "common": {
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of use",
+      "orSignUpWith": "or sign up with",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "iAgreeTo": "I agree to the ",
+      "minChar": "Minimum 8 characters",
+      "atLeastOne": "At least one special character and one letter"
+    }
   }
 }

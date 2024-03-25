@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 50 (25 per locale)
+/// Strings: 96 (48 per locale)
 ///
-/// Built on 2024-03-25 at 11:20 UTC
+/// Built on 2024-03-25 at 16:05 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -151,6 +151,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final _StringsButtonEn button = _StringsButtonEn._(_root);
 	late final _StringsOnboardingEn onboarding = _StringsOnboardingEn._(_root);
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
+	late final _StringsRegisterEn register = _StringsRegisterEn._(_root);
 }
 
 // Path: button
@@ -192,6 +193,21 @@ class _StringsLoginEn {
 	late final _StringsLoginPlaceholderEn placeholder = _StringsLoginPlaceholderEn._(_root);
 	late final _StringsLoginButtonEn button = _StringsLoginButtonEn._(_root);
 	late final _StringsLoginCommonEn common = _StringsLoginCommonEn._(_root);
+}
+
+// Path: register
+class _StringsRegisterEn {
+	_StringsRegisterEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Register';
+	String get subtitle => 'Let’s create your account';
+	late final _StringsRegisterFormEn form = _StringsRegisterFormEn._(_root);
+	late final _StringsRegisterPlaceholderEn placeholder = _StringsRegisterPlaceholderEn._(_root);
+	late final _StringsRegisterButtonEn button = _StringsRegisterButtonEn._(_root);
+	late final _StringsRegisterCommonEn common = _StringsRegisterCommonEn._(_root);
 }
 
 // Path: onboarding.title
@@ -265,6 +281,63 @@ class _StringsLoginCommonEn {
 	String get forgotPassword => 'Forgot password';
 }
 
+// Path: register.form
+class _StringsRegisterFormEn {
+	_StringsRegisterFormEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get fullName => 'Full Name';
+	String get email => 'Email';
+	String get username => 'Username';
+	String get password => 'Password';
+	String get confirmPassword => 'Confirm Password';
+	String get phoneNo => 'Phone Number';
+}
+
+// Path: register.placeholder
+class _StringsRegisterPlaceholderEn {
+	_StringsRegisterPlaceholderEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get fullName => 'Enter your full name';
+	String get username => 'Enter your username';
+	String get email => 'Enter your email';
+	String get password => 'Enter your password';
+	String get confirmPassword => 'Confirm your password';
+	String get phoneNo => 'Enter your phone number';
+}
+
+// Path: register.button
+class _StringsRegisterButtonEn {
+	_StringsRegisterButtonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get createAccount => 'Create Account';
+}
+
+// Path: register.common
+class _StringsRegisterCommonEn {
+	_StringsRegisterCommonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get privacyPolicy => 'Privacy Policy';
+	String get termsOfUse => 'Terms of use';
+	String get orSignUpWith => 'or sign up with';
+	String get alreadyHaveAccount => 'Already have an account?';
+	String get signIn => 'Sign In';
+	String get iAgreeTo => 'I agree to the ';
+	String get minChar => 'Minimum 8 characters';
+	String get atLeastOne => 'At least one special character and one letter';
+}
+
 // Path: <root>
 class _StringsVi implements Translations {
 	/// You can call this constructor and build your own translation instance of this locale.
@@ -292,6 +365,7 @@ class _StringsVi implements Translations {
 	@override late final _StringsButtonVi button = _StringsButtonVi._(_root);
 	@override late final _StringsOnboardingVi onboarding = _StringsOnboardingVi._(_root);
 	@override late final _StringsLoginVi login = _StringsLoginVi._(_root);
+	@override late final _StringsRegisterVi register = _StringsRegisterVi._(_root);
 }
 
 // Path: button
@@ -333,6 +407,21 @@ class _StringsLoginVi implements _StringsLoginEn {
 	@override late final _StringsLoginPlaceholderVi placeholder = _StringsLoginPlaceholderVi._(_root);
 	@override late final _StringsLoginButtonVi button = _StringsLoginButtonVi._(_root);
 	@override late final _StringsLoginCommonVi common = _StringsLoginCommonVi._(_root);
+}
+
+// Path: register
+class _StringsRegisterVi implements _StringsRegisterEn {
+	_StringsRegisterVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Đăng ký';
+	@override String get subtitle => 'Tạo tài khoản của bạn để có thể bắt đầu mua sắm!';
+	@override late final _StringsRegisterFormVi form = _StringsRegisterFormVi._(_root);
+	@override late final _StringsRegisterPlaceholderVi placeholder = _StringsRegisterPlaceholderVi._(_root);
+	@override late final _StringsRegisterButtonVi button = _StringsRegisterButtonVi._(_root);
+	@override late final _StringsRegisterCommonVi common = _StringsRegisterCommonVi._(_root);
 }
 
 // Path: onboarding.title
@@ -406,6 +495,63 @@ class _StringsLoginCommonVi implements _StringsLoginCommonEn {
 	@override String get forgotPassword => 'Quên mật khẩu';
 }
 
+// Path: register.form
+class _StringsRegisterFormVi implements _StringsRegisterFormEn {
+	_StringsRegisterFormVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get fullName => 'Họ và tên';
+	@override String get username => 'Tên tài khoản';
+	@override String get email => 'Email';
+	@override String get password => 'Mật khẩu';
+	@override String get confirmPassword => 'Xác nhận mật khẩu';
+	@override String get phoneNo => 'Số điện thoại';
+}
+
+// Path: register.placeholder
+class _StringsRegisterPlaceholderVi implements _StringsRegisterPlaceholderEn {
+	_StringsRegisterPlaceholderVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get fullName => 'Nhập họ và tên của bạn';
+	@override String get username => 'Nhập tên tài khoản của bạn';
+	@override String get email => 'Nhập email của bạn';
+	@override String get password => 'Nhập mật khẩu của bạn';
+	@override String get confirmPassword => 'Xác nhận mật khẩu của bạn';
+	@override String get phoneNo => 'Nhập số điện thoại của bạn';
+}
+
+// Path: register.button
+class _StringsRegisterButtonVi implements _StringsRegisterButtonEn {
+	_StringsRegisterButtonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get createAccount => 'Tạo tài khoản';
+}
+
+// Path: register.common
+class _StringsRegisterCommonVi implements _StringsRegisterCommonEn {
+	_StringsRegisterCommonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get privacyPolicy => 'Chính sách bảo mật';
+	@override String get termsOfUse => 'Điều khoản dịch vụ';
+	@override String get orSignUpWith => 'hoặc đăng ký với';
+	@override String get alreadyHaveAccount => 'Đã có tài khoản?';
+	@override String get signIn => 'Đăng nhập';
+	@override String get iAgreeTo => 'Tôi đã đọc và đồng ý với ';
+	@override String get minChar => 'Có ít nhất 8 ký tự';
+	@override String get atLeastOne => 'Có ít nhất 1 chữ cái và 1 kí tự đặc biệt';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -437,6 +583,29 @@ extension on Translations {
 			case 'login.common.termsOfUse': return 'Terms of use';
 			case 'login.common.rememberMe': return 'Remember me';
 			case 'login.common.forgotPassword': return 'Forgot password';
+			case 'register.title': return 'Register';
+			case 'register.subtitle': return 'Let’s create your account';
+			case 'register.form.fullName': return 'Full Name';
+			case 'register.form.email': return 'Email';
+			case 'register.form.username': return 'Username';
+			case 'register.form.password': return 'Password';
+			case 'register.form.confirmPassword': return 'Confirm Password';
+			case 'register.form.phoneNo': return 'Phone Number';
+			case 'register.placeholder.fullName': return 'Enter your full name';
+			case 'register.placeholder.username': return 'Enter your username';
+			case 'register.placeholder.email': return 'Enter your email';
+			case 'register.placeholder.password': return 'Enter your password';
+			case 'register.placeholder.confirmPassword': return 'Confirm your password';
+			case 'register.placeholder.phoneNo': return 'Enter your phone number';
+			case 'register.button.createAccount': return 'Create Account';
+			case 'register.common.privacyPolicy': return 'Privacy Policy';
+			case 'register.common.termsOfUse': return 'Terms of use';
+			case 'register.common.orSignUpWith': return 'or sign up with';
+			case 'register.common.alreadyHaveAccount': return 'Already have an account?';
+			case 'register.common.signIn': return 'Sign In';
+			case 'register.common.iAgreeTo': return 'I agree to the ';
+			case 'register.common.minChar': return 'Minimum 8 characters';
+			case 'register.common.atLeastOne': return 'At least one special character and one letter';
 			default: return null;
 		}
 	}
@@ -470,6 +639,29 @@ extension on _StringsVi {
 			case 'login.common.termsOfUse': return 'Điều khoản dịch vụ';
 			case 'login.common.rememberMe': return 'Ghi nhớ đăng nhập';
 			case 'login.common.forgotPassword': return 'Quên mật khẩu';
+			case 'register.title': return 'Đăng ký';
+			case 'register.subtitle': return 'Tạo tài khoản của bạn để có thể bắt đầu mua sắm!';
+			case 'register.form.fullName': return 'Họ và tên';
+			case 'register.form.username': return 'Tên tài khoản';
+			case 'register.form.email': return 'Email';
+			case 'register.form.password': return 'Mật khẩu';
+			case 'register.form.confirmPassword': return 'Xác nhận mật khẩu';
+			case 'register.form.phoneNo': return 'Số điện thoại';
+			case 'register.placeholder.fullName': return 'Nhập họ và tên của bạn';
+			case 'register.placeholder.username': return 'Nhập tên tài khoản của bạn';
+			case 'register.placeholder.email': return 'Nhập email của bạn';
+			case 'register.placeholder.password': return 'Nhập mật khẩu của bạn';
+			case 'register.placeholder.confirmPassword': return 'Xác nhận mật khẩu của bạn';
+			case 'register.placeholder.phoneNo': return 'Nhập số điện thoại của bạn';
+			case 'register.button.createAccount': return 'Tạo tài khoản';
+			case 'register.common.privacyPolicy': return 'Chính sách bảo mật';
+			case 'register.common.termsOfUse': return 'Điều khoản dịch vụ';
+			case 'register.common.orSignUpWith': return 'hoặc đăng ký với';
+			case 'register.common.alreadyHaveAccount': return 'Đã có tài khoản?';
+			case 'register.common.signIn': return 'Đăng nhập';
+			case 'register.common.iAgreeTo': return 'Tôi đã đọc và đồng ý với ';
+			case 'register.common.minChar': return 'Có ít nhất 8 ký tự';
+			case 'register.common.atLeastOne': return 'Có ít nhất 1 chữ cái và 1 kí tự đặc biệt';
 			default: return null;
 		}
 	}

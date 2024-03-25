@@ -43,5 +43,39 @@
       "rememberMe": "Ghi nhớ đăng nhập",
       "forgotPassword": "Quên mật khẩu"
     }
+  },
+
+  "register": {
+    "title": "Đăng ký",
+    "subtitle": "Tạo tài khoản của bạn để có thể bắt đầu mua sắm!",
+    "form": {
+      "fullName": "Họ và tên",
+      "username": "Tên tài khoản",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "phoneNo": "Số điện thoại"
+    },
+    "placeholder": {
+      "fullName": "Nhập họ và tên của bạn",
+      "username": "Nhập tên tài khoản của bạn",
+      "email": "Nhập email của bạn",
+      "password": "Nhập mật khẩu của bạn",
+      "confirmPassword": "Xác nhận mật khẩu của bạn",
+      "phoneNo": "Nhập số điện thoại của bạn"
+    },
+    "button": {
+      "createAccount": "Tạo tài khoản"
+    },
+    "common": {
+      "privacyPolicy": "Chính sách bảo mật",
+      "termsOfUse": "Điều khoản dịch vụ",
+      "orSignUpWith": "hoặc đăng ký với",
+      "alreadyHaveAccount": "Đã có tài khoản?",
+      "signIn": "Đăng nhập",
+      "iAgreeTo": "Tôi đã đọc và đồng ý với ",
+      "minChar": "Có ít nhất 8 ký tự",
+      "atLeastOne": "Có ít nhất 1 chữ cái và 1 kí tự đặc biệt"
+    }
   }
 }
