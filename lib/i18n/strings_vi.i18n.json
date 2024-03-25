@@ -1,14 +1,41 @@
 {
-  "skip": "Bỏ qua",
+  "button": {
+    "skip": "Bỏ qua",
+    "and": "và",
+    "done": "Xong",
+    "submit": "Xác nhận",
+    "appName": "3Z Store",
+    "btcontinue": "Tiếp tục"
+  },
 
-  "onBoardingTitle1": "Chào mừng bạn!",
-  "onBoardingTitle2": "Chấp nhận mọi phương thức thanh toán!",
-  "onBoardingTitle3": "Nhận hàng tận nơi!",
+  "onboarding": {
+    "title": {
+      "t1": "Vô hạn lựa chọn",
+      "t2": "Chấp nhận mọi phương thức thanh toán",
+      "t3": "Giao hàng tận nơi"
+    },
+    "subtitle": {
+      "st1": "Chào mừng bạn tới với 3Z - Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!",
+      "st2": "Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi",
+      "st3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng"
+    }
+  },
 
-  "onBoardingSubtitle1": "Nơi những sản phẩm công nghệ mới nhất đang đợi bạn cho vào giỏ hàng!",
-  "onBoardingSubtitle2": "Từ tiền mặt đến thẻ tín dụng, sự thuận tiện của bạn là ưu tiên hàng đầu của chúng tôi!",
-  "onBoardingSubtitle3": "Nhanh chóng, bảo mật, tiện lợi và chất lượng",
-
-  "loginTitle": "Đăng nhập",
-  "loginSubtitle": "Mở ra cơ hội mua sắm không giới hạn!"
+  "login": {
+    "title": "Chào mừng trở lại",
+    "subtitle": "Đăng nhập và mở ra cơ hội mua sớm không giới hạn!",
+    "form": {
+      "email": "Email",
+      "password": "Mật khẩu"
+    },
+    "placeholder": {
+      "email": "Nhập email tài khoản",
+      "password": "Nhập mật khẩu"
+    },
+    "common": {
+      "orSignInWith": "hoặc đăng nhập với",
+      "privacyPolicy": "Chính sách bảo mật",
+      "termsOfUse": "Điều khoản dịch vụ"
+    }
+  }
 }
