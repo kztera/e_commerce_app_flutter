@@ -82,5 +82,24 @@
       "successVerifyEmail": "Your account verified successfully!",
       "successVerifyEmailText": "Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!"
     }
+  },
+
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Don't worry! We got your back. Enter your email address to reset your password.",
+    "form": {
+      "email": "Email"
+    },
+    "placeholder": {
+      "email": "Enter your email"
+    },
+    "button": {
+      "resetPassword": "Reset Password"
+    },
+    "common": {
+      "backToLogin": "Back to login",
+      "success": "Reset Password Success",
+      "successText": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password."
+    }
   }
 }

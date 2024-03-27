@@ -26,9 +26,10 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.password_outlined),
-                labelText: t.login.form.password,
-                suffixIcon: const Icon(Iconsax.eye_slash)),
+              prefixIcon: const Icon(Icons.password_outlined),
+              labelText: t.login.form.password,
+              suffixIcon: const Icon(Iconsax.eye_slash),
+            ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields / 2),
 
@@ -50,7 +51,10 @@ class LoginForm extends StatelessWidget {
                   Text(t.login.common.rememberMe)
                 ],
               ),
-              TextButton(onPressed: () {}, child: Text(t.login.common.forgotPassword))
+              TextButton(
+                onPressed: () => {Get.toNamed('/forgot-password')},
+                child: Text(t.login.common.forgotPassword),
+              )
             ],
           ),
           const SizedBox(height: CustomSizes.spaceBtwSections),
