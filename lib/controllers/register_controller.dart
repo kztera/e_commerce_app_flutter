@@ -7,8 +7,7 @@ class RegisterController extends GetxController {
   RxBool isAtLeastOneValid = false.obs;
 
   void onChangePassword(value) {
-    isMinCharValid.value = value.value.length >= 8;
-    isAtLeastOneValid.value =
-        value.value.contains(RegExp(r'[a-zA-Z]')) && value.value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+    isMinCharValid.value = value.length >= 8;
+    isAtLeastOneValid.value = value.contains(RegExp(r'[a-zA-Z]')) && value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
   }
 }

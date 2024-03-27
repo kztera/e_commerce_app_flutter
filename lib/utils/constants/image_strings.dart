@@ -11,4 +11,8 @@ class Images {
   // -- App Logo
   static const String appLogo = "assets/logos/app-logo.svg";
   static const String appLogoDark = "assets/logos/app-logo-dark.svg";
+
+  // -- Register Screen
+  static const String success = "assets/images/register/success.png";
+  static const String emailSent = "assets/images/register/email-send.png";
 }

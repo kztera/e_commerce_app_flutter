@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 96 (48 per locale)
+/// Strings: 106 (53 per locale)
 ///
-/// Built on 2024-03-25 at 16:05 UTC
+/// Built on 2024-03-27 at 14:35 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -167,6 +167,7 @@ class _StringsButtonEn {
 	String get submit => 'Submit';
 	String get appName => '3Z Store';
 	String get btcontinue => 'Continue';
+	String get resend => 'Resend';
 }
 
 // Path: onboarding
@@ -336,6 +337,10 @@ class _StringsRegisterCommonEn {
 	String get iAgreeTo => 'I agree to the ';
 	String get minChar => 'Minimum 8 characters';
 	String get atLeastOne => 'At least one special character and one letter';
+	String get verifyEmail => 'Verify your email address!';
+	String get verifyEmailText => 'We have sent a verification email to your email address. Please verify your email address to continue.';
+	String get successVerifyEmail => 'Your account verified successfully!';
+	String get successVerifyEmailText => 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
 }
 
 // Path: <root>
@@ -381,6 +386,7 @@ class _StringsButtonVi implements _StringsButtonEn {
 	@override String get submit => 'Xác nhận';
 	@override String get appName => '3Z Store';
 	@override String get btcontinue => 'Tiếp tục';
+	@override String get resend => 'Gửi lại';
 }
 
 // Path: onboarding
@@ -550,6 +556,10 @@ class _StringsRegisterCommonVi implements _StringsRegisterCommonEn {
 	@override String get iAgreeTo => 'Tôi đã đọc và đồng ý với ';
 	@override String get minChar => 'Có ít nhất 8 ký tự';
 	@override String get atLeastOne => 'Có ít nhất 1 chữ cái và 1 kí tự đặc biệt';
+	@override String get verifyEmail => 'Xác thực email';
+	@override String get verifyEmailText => 'Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.';
+	@override String get successVerifyEmail => 'Xác thực email thành công';
+	@override String get successVerifyEmailText => 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
 }
 
 /// Flat map(s) containing all translations.
@@ -564,6 +574,7 @@ extension on Translations {
 			case 'button.submit': return 'Submit';
 			case 'button.appName': return '3Z Store';
 			case 'button.btcontinue': return 'Continue';
+			case 'button.resend': return 'Resend';
 			case 'onboarding.title.t1': return 'Choose from a wide range of e-books';
 			case 'onboarding.title.t2': return 'Accept any payment method';
 			case 'onboarding.title.t3': return 'No wastage of time';
@@ -606,6 +617,10 @@ extension on Translations {
 			case 'register.common.iAgreeTo': return 'I agree to the ';
 			case 'register.common.minChar': return 'Minimum 8 characters';
 			case 'register.common.atLeastOne': return 'At least one special character and one letter';
+			case 'register.common.verifyEmail': return 'Verify your email address!';
+			case 'register.common.verifyEmailText': return 'We have sent a verification email to your email address. Please verify your email address to continue.';
+			case 'register.common.successVerifyEmail': return 'Your account verified successfully!';
+			case 'register.common.successVerifyEmailText': return 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
 			default: return null;
 		}
 	}
@@ -620,6 +635,7 @@ extension on _StringsVi {
 			case 'button.submit': return 'Xác nhận';
 			case 'button.appName': return '3Z Store';
 			case 'button.btcontinue': return 'Tiếp tục';
+			case 'button.resend': return 'Gửi lại';
 			case 'onboarding.title.t1': return 'Vô hạn lựa chọn';
 			case 'onboarding.title.t2': return 'Chấp nhận mọi phương thức thanh toán';
 			case 'onboarding.title.t3': return 'Không cần chờ đợi';
@@ -662,6 +678,10 @@ extension on _StringsVi {
 			case 'register.common.iAgreeTo': return 'Tôi đã đọc và đồng ý với ';
 			case 'register.common.minChar': return 'Có ít nhất 8 ký tự';
 			case 'register.common.atLeastOne': return 'Có ít nhất 1 chữ cái và 1 kí tự đặc biệt';
+			case 'register.common.verifyEmail': return 'Xác thực email';
+			case 'register.common.verifyEmailText': return 'Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.';
+			case 'register.common.successVerifyEmail': return 'Xác thực email thành công';
+			case 'register.common.successVerifyEmailText': return 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
 			default: return null;
 		}
 	}

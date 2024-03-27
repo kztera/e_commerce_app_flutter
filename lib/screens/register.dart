@@ -5,6 +5,7 @@ import 'package:e_commerce_app_flutter_app/widgets/register/register_header.dart
 import 'package:e_commerce_app_flutter_app/widgets/shared/form_divider.dart';
 import 'package:e_commerce_app_flutter_app/widgets/shared/social_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -26,7 +27,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed('/register/verify-email'),
                   child: Text(t.login.button.createAccount),
                 ),
               ),

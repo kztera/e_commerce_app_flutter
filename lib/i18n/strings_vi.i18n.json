@@ -5,7 +5,8 @@
     "done": "Xong",
     "submit": "Xác nhận",
     "appName": "3Z Store",
-    "btcontinue": "Tiếp tục"
+    "btcontinue": "Tiếp tục",
+    "resend": "Gửi lại"
   },
 
   "onboarding": {
@@ -75,7 +76,11 @@
       "signIn": "Đăng nhập",
       "iAgreeTo": "Tôi đã đọc và đồng ý với ",
       "minChar": "Có ít nhất 8 ký tự",
-      "atLeastOne": "Có ít nhất 1 chữ cái và 1 kí tự đặc biệt"
+      "atLeastOne": "Có ít nhất 1 chữ cái và 1 kí tự đặc biệt",
+      "verifyEmail": "Xác thực email",
+      "verifyEmailText": "Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.",
+      "successVerifyEmail": "Xác thực email thành công",
+      "successVerifyEmailText": "Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!"
     }
   }
 }

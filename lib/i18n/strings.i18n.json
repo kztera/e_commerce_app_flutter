@@ -5,7 +5,8 @@
     "done": "Done",
     "submit": "Submit",
     "appName": "3Z Store",
-    "btcontinue": "Continue"
+    "btcontinue": "Continue",
+    "resend": "Resend"
   },
 
   "onboarding": {
@@ -75,7 +76,11 @@
       "signIn": "Sign In",
       "iAgreeTo": "I agree to the ",
       "minChar": "Minimum 8 characters",
-      "atLeastOne": "At least one special character and one letter"
+      "atLeastOne": "At least one special character and one letter",
+      "verifyEmail": "Verify your email address!",
+      "verifyEmailText": "We have sent a verification email to your email address. Please verify your email address to continue.",
+      "successVerifyEmail": "Your account verified successfully!",
+      "successVerifyEmailText": "Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!"
     }
   }
 }
