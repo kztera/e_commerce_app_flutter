@@ -82,5 +82,24 @@
       "successVerifyEmail": "Xác thực email thành công",
       "successVerifyEmailText": "Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!"
     }
+  },
+
+  "forgotPassword": {
+    "title": "Quên mật khẩu",
+    "subtitle": "Đừng lo lắng, ai cũng có thể quên mật khẩu! Nhập email và chúng tôi sẽ gửi cho bạn mã xác nhận để đặt lại mật khẩu của bạn.",
+    "form": {
+      "email": "Email"
+    },
+    "placeholder": {
+      "email": "Nhập email của bạn"
+    },
+    "button": {
+      "resetPassword": "Đặt lại mật khẩu"
+    },
+    "common": {
+      "backToLogin": "Quay lại đăng nhập",
+      "success": "Đặt lại mật khẩu thành công",
+      "successText": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
+    }
   }
 }

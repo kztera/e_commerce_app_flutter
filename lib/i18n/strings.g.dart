@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 106 (53 per locale)
+/// Strings: 122 (61 per locale)
 ///
-/// Built on 2024-03-27 at 14:35 UTC
+/// Built on 2024-03-27 at 17:07 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -152,6 +152,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final _StringsOnboardingEn onboarding = _StringsOnboardingEn._(_root);
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
 	late final _StringsRegisterEn register = _StringsRegisterEn._(_root);
+	late final _StringsForgotPasswordEn forgotPassword = _StringsForgotPasswordEn._(_root);
 }
 
 // Path: button
@@ -209,6 +210,21 @@ class _StringsRegisterEn {
 	late final _StringsRegisterPlaceholderEn placeholder = _StringsRegisterPlaceholderEn._(_root);
 	late final _StringsRegisterButtonEn button = _StringsRegisterButtonEn._(_root);
 	late final _StringsRegisterCommonEn common = _StringsRegisterCommonEn._(_root);
+}
+
+// Path: forgotPassword
+class _StringsForgotPasswordEn {
+	_StringsForgotPasswordEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Forgot Password';
+	String get subtitle => 'Don\'t worry! We got your back. Enter your email address to reset your password.';
+	late final _StringsForgotPasswordFormEn form = _StringsForgotPasswordFormEn._(_root);
+	late final _StringsForgotPasswordPlaceholderEn placeholder = _StringsForgotPasswordPlaceholderEn._(_root);
+	late final _StringsForgotPasswordButtonEn button = _StringsForgotPasswordButtonEn._(_root);
+	late final _StringsForgotPasswordCommonEn common = _StringsForgotPasswordCommonEn._(_root);
 }
 
 // Path: onboarding.title
@@ -343,6 +359,48 @@ class _StringsRegisterCommonEn {
 	String get successVerifyEmailText => 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
 }
 
+// Path: forgotPassword.form
+class _StringsForgotPasswordFormEn {
+	_StringsForgotPasswordFormEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get email => 'Email';
+}
+
+// Path: forgotPassword.placeholder
+class _StringsForgotPasswordPlaceholderEn {
+	_StringsForgotPasswordPlaceholderEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get email => 'Enter your email';
+}
+
+// Path: forgotPassword.button
+class _StringsForgotPasswordButtonEn {
+	_StringsForgotPasswordButtonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get resetPassword => 'Reset Password';
+}
+
+// Path: forgotPassword.common
+class _StringsForgotPasswordCommonEn {
+	_StringsForgotPasswordCommonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get backToLogin => 'Back to login';
+	String get success => 'Reset Password Success';
+	String get successText => 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+}
+
 // Path: <root>
 class _StringsVi implements Translations {
 	/// You can call this constructor and build your own translation instance of this locale.
@@ -371,6 +429,7 @@ class _StringsVi implements Translations {
 	@override late final _StringsOnboardingVi onboarding = _StringsOnboardingVi._(_root);
 	@override late final _StringsLoginVi login = _StringsLoginVi._(_root);
 	@override late final _StringsRegisterVi register = _StringsRegisterVi._(_root);
+	@override late final _StringsForgotPasswordVi forgotPassword = _StringsForgotPasswordVi._(_root);
 }
 
 // Path: button
@@ -428,6 +487,21 @@ class _StringsRegisterVi implements _StringsRegisterEn {
 	@override late final _StringsRegisterPlaceholderVi placeholder = _StringsRegisterPlaceholderVi._(_root);
 	@override late final _StringsRegisterButtonVi button = _StringsRegisterButtonVi._(_root);
 	@override late final _StringsRegisterCommonVi common = _StringsRegisterCommonVi._(_root);
+}
+
+// Path: forgotPassword
+class _StringsForgotPasswordVi implements _StringsForgotPasswordEn {
+	_StringsForgotPasswordVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Quên mật khẩu';
+	@override String get subtitle => 'Đừng lo lắng, ai cũng có thể quên mật khẩu! Nhập email và chúng tôi sẽ gửi cho bạn mã xác nhận để đặt lại mật khẩu của bạn.';
+	@override late final _StringsForgotPasswordFormVi form = _StringsForgotPasswordFormVi._(_root);
+	@override late final _StringsForgotPasswordPlaceholderVi placeholder = _StringsForgotPasswordPlaceholderVi._(_root);
+	@override late final _StringsForgotPasswordButtonVi button = _StringsForgotPasswordButtonVi._(_root);
+	@override late final _StringsForgotPasswordCommonVi common = _StringsForgotPasswordCommonVi._(_root);
 }
 
 // Path: onboarding.title
@@ -562,6 +636,48 @@ class _StringsRegisterCommonVi implements _StringsRegisterCommonEn {
 	@override String get successVerifyEmailText => 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
 }
 
+// Path: forgotPassword.form
+class _StringsForgotPasswordFormVi implements _StringsForgotPasswordFormEn {
+	_StringsForgotPasswordFormVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get email => 'Email';
+}
+
+// Path: forgotPassword.placeholder
+class _StringsForgotPasswordPlaceholderVi implements _StringsForgotPasswordPlaceholderEn {
+	_StringsForgotPasswordPlaceholderVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get email => 'Nhập email của bạn';
+}
+
+// Path: forgotPassword.button
+class _StringsForgotPasswordButtonVi implements _StringsForgotPasswordButtonEn {
+	_StringsForgotPasswordButtonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get resetPassword => 'Đặt lại mật khẩu';
+}
+
+// Path: forgotPassword.common
+class _StringsForgotPasswordCommonVi implements _StringsForgotPasswordCommonEn {
+	_StringsForgotPasswordCommonVi._(this._root);
+
+	@override final _StringsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get backToLogin => 'Quay lại đăng nhập';
+	@override String get success => 'Đặt lại mật khẩu thành công';
+	@override String get successText => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -621,6 +737,14 @@ extension on Translations {
 			case 'register.common.verifyEmailText': return 'We have sent a verification email to your email address. Please verify your email address to continue.';
 			case 'register.common.successVerifyEmail': return 'Your account verified successfully!';
 			case 'register.common.successVerifyEmailText': return 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
+			case 'forgotPassword.title': return 'Forgot Password';
+			case 'forgotPassword.subtitle': return 'Don\'t worry! We got your back. Enter your email address to reset your password.';
+			case 'forgotPassword.form.email': return 'Email';
+			case 'forgotPassword.placeholder.email': return 'Enter your email';
+			case 'forgotPassword.button.resetPassword': return 'Reset Password';
+			case 'forgotPassword.common.backToLogin': return 'Back to login';
+			case 'forgotPassword.common.success': return 'Reset Password Success';
+			case 'forgotPassword.common.successText': return 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
 			default: return null;
 		}
 	}
@@ -682,6 +806,14 @@ extension on _StringsVi {
 			case 'register.common.verifyEmailText': return 'Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.';
 			case 'register.common.successVerifyEmail': return 'Xác thực email thành công';
 			case 'register.common.successVerifyEmailText': return 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
+			case 'forgotPassword.title': return 'Quên mật khẩu';
+			case 'forgotPassword.subtitle': return 'Đừng lo lắng, ai cũng có thể quên mật khẩu! Nhập email và chúng tôi sẽ gửi cho bạn mã xác nhận để đặt lại mật khẩu của bạn.';
+			case 'forgotPassword.form.email': return 'Email';
+			case 'forgotPassword.placeholder.email': return 'Nhập email của bạn';
+			case 'forgotPassword.button.resetPassword': return 'Đặt lại mật khẩu';
+			case 'forgotPassword.common.backToLogin': return 'Quay lại đăng nhập';
+			case 'forgotPassword.common.success': return 'Đặt lại mật khẩu thành công';
+			case 'forgotPassword.common.successText': return 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
 			default: return null;
 		}
 	}

@@ -2,7 +2,6 @@ import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
