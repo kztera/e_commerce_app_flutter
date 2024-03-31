@@ -1,11 +1,11 @@
 import 'package:e_commerce_app_flutter_app/bindings/register_binding.dart';
-import 'package:e_commerce_app_flutter_app/screens/forgot_password.dart';
-import 'package:e_commerce_app_flutter_app/screens/login.dart';
-import 'package:e_commerce_app_flutter_app/screens/onboarding.dart';
-import 'package:e_commerce_app_flutter_app/screens/register.dart';
-import 'package:e_commerce_app_flutter_app/screens/success.dart';
-import 'package:e_commerce_app_flutter_app/screens/verify_email.dart';
-import 'package:e_commerce_app_flutter_app/screens/verify_otp.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/forgot_password.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/login.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/onboarding.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/register.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/success.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/verify_email.dart';
+import 'package:e_commerce_app_flutter_app/screens/auth/verify_otp.dart';
 import 'package:get/route_manager.dart';
 
 class Routes {

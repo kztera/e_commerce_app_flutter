@@ -1,4 +1,4 @@
-import "package:e_commerce_app_flutter_app/i18n/strings.g.dart";
+import "package:e_commerce_app_flutter_app/i18n/translations.g.dart";
 import "package:e_commerce_app_flutter_app/utils/constants/sizes.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
@@ -20,14 +20,14 @@ class LoginForm extends StatelessWidget {
           TextFormField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.email_outlined),
-              labelText: t.login.form.email,
+              labelText: t.widgets.login.form.email,
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.password_outlined),
-              labelText: t.login.form.password,
+              labelText: t.widgets.login.form.password,
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
           ),
@@ -48,12 +48,12 @@ class LoginForm extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: CustomSizes.xs),
-                  Text(t.login.common.rememberMe)
+                  Text(t.widgets.login.common.rememberMe)
                 ],
               ),
               TextButton(
                 onPressed: () => {Get.toNamed('/forgot-password')},
-                child: Text(t.login.common.forgotPassword),
+                child: Text(t.widgets.login.common.forgotPassword),
               )
             ],
           ),
@@ -64,14 +64,14 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text(t.login.button.signIn),
+                child: Text(t.widgets.login.button.signIn),
               )),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => Get.toNamed('/register'),
-                child: Text(t.login.button.createAccount),
+                child: Text(t.widgets.login.button.createAccount),
               )),
           const SizedBox(height: CustomSizes.spaceBtwSections),
         ],

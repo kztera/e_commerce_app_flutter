@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ThemeColors {
   // App theme colors
-  static const Color primary = Color.fromRGBO(75, 104, 255, 1);
-  static const Color secondary = Color.fromRGBO(255, 226, 75, 1);
+  static const Color primary = Color.fromRGBO(75, 129, 255, 1);
+  static const Color secondary = Color.fromRGBO(255, 168, 75, 1);
   static const Color accent = Color.fromRGBO(176, 199, 255, 1);
 
   // Text colors

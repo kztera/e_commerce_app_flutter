@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app_flutter_app/widgets/register/register_form.dart';
 import 'package:e_commerce_app_flutter_app/widgets/register/register_header.dart';
@@ -29,12 +29,12 @@ class RegisterScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Get.toNamed('/register/verify-email'),
-                    child: Text(t.login.button.createAccount),
+                    child: Text(t.widgets.register.button.createAccount),
                   ),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwItems),
                 const SizedBox(height: CustomSizes.spaceBtwSections),
-                FormDivider(text: t.register.common.orSignUpWith),
+                FormDivider(text: t.widgets.register.common.orSignUpWith),
                 const SizedBox(height: CustomSizes.spaceBtwSections),
                 const SocialButton()
               ],

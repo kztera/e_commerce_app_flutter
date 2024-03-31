@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/routes/routes.dart';
 import 'package:e_commerce_app_flutter_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';

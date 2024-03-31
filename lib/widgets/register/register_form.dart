@@ -1,5 +1,5 @@
 import "package:e_commerce_app_flutter_app/controllers/register_controller.dart";
-import "package:e_commerce_app_flutter_app/i18n/strings.g.dart";
+import "package:e_commerce_app_flutter_app/i18n/translations.g.dart";
 import "package:e_commerce_app_flutter_app/utils/constants/colors.dart";
 import "package:e_commerce_app_flutter_app/utils/constants/sizes.dart";
 import "package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart";
@@ -22,35 +22,35 @@ class RegisterForm extends GetView<RegisterController> {
         children: [
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.fullName,
+              labelText: t.widgets.register.form.fullName,
               prefixIcon: const Icon(Iconsax.user),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.username,
+              labelText: t.widgets.register.form.username,
               prefixIcon: const Icon(Iconsax.user_edit),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.email,
+              labelText: t.widgets.register.form.email,
               prefixIcon: const Icon(Icons.email_outlined),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.phoneNo,
+              labelText: t.widgets.register.form.phoneNo,
               prefixIcon: const Icon(Iconsax.call),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.password,
+              labelText: t.widgets.register.form.password,
               prefixIcon: const Icon(Icons.password_outlined),
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
@@ -61,7 +61,7 @@ class RegisterForm extends GetView<RegisterController> {
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.register.form.confirmPassword,
+              labelText: t.widgets.register.form.confirmPassword,
               prefixIcon: const Icon(Icons.password_outlined),
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
@@ -83,21 +83,21 @@ class RegisterForm extends GetView<RegisterController> {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: t.register.common.iAgreeTo,
+                        text: t.widgets.register.common.iAgreeTo,
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       TextSpan(
-                        text: t.register.common.privacyPolicy,
+                        text: t.widgets.register.common.privacyPolicy,
                         style: Theme.of(context).textTheme.bodyMedium!.apply(
                             color: dark ? ThemeColors.white : ThemeColors.primary,
                             decoration: TextDecoration.underline),
                       ),
                       TextSpan(
-                        text: ' ${t.button.and} ',
+                        text: ' ${t.widgets.button.and} ',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       TextSpan(
-                        text: t.register.common.termsOfUse,
+                        text: t.widgets.register.common.termsOfUse,
                         style: Theme.of(context).textTheme.bodyMedium!.apply(
                             color: dark ? ThemeColors.white : ThemeColors.primary,
                             decoration: TextDecoration.underline),

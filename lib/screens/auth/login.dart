@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/styles/spacing_styles.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app_flutter_app/widgets/shared/social_buttons.dart';
@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               const LoginHeader(),
               const LoginForm(),
-              FormDivider(text: t.login.common.orSignInWith),
+              FormDivider(text: t.widgets.login.common.orSignInWith),
               const SizedBox(height: CustomSizes.spaceBtwSections),
               const SocialButton()
             ],

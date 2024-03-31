@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
@@ -28,7 +28,7 @@ class SuccessScreen extends StatelessWidget {
                 const SizedBox(height: CustomSizes.spaceBtwSections),
                 // Title and subtitle
                 Text(
-                  t.register.common.successVerifyEmail,
+                  t.widgets.register.common.successVerifyEmail,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -36,7 +36,7 @@ class SuccessScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
                   child: Text(
-                    t.register.common.successVerifyEmailText,
+                    t.widgets.register.common.successVerifyEmailText,
                     style: Theme.of(context).textTheme.labelMedium,
                     textAlign: TextAlign.center,
                   ),
@@ -45,8 +45,8 @@ class SuccessScreen extends StatelessWidget {
                 // Buttons
                 SizedBox(
                   width: double.infinity,
-                  child:
-                      ElevatedButton(child: Text(t.login.button.signIn), onPressed: () => Get.offAndToNamed('/login')),
+                  child: ElevatedButton(
+                      child: Text(t.widgets.login.button.signIn), onPressed: () => Get.offAndToNamed('/login')),
                 ),
               ],
             ),

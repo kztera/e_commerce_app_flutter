@@ -4,7 +4,7 @@ import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_dot_nav
 import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_next_button.dart';
 import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_page.dart';
 import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_skip_button.dart';
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +16,18 @@ class OnboardingScreen extends StatelessWidget {
     final controller = Get.put(OnboardingController());
 
     final List<Widget> pages = [
-      OnBoardingPage(image: Images.onBoardingImage1, title: t.onboarding.title.t1, subtitle: t.onboarding.subtitle.st1),
-      OnBoardingPage(image: Images.onBoardingImage2, title: t.onboarding.title.t2, subtitle: t.onboarding.subtitle.st2),
-      OnBoardingPage(image: Images.onBoardingImage3, title: t.onboarding.title.t3, subtitle: t.onboarding.subtitle.st3),
+      OnBoardingPage(
+          image: Images.onBoardingImage1,
+          title: t.widgets.onboarding.title.t1,
+          subtitle: t.widgets.onboarding.subtitle.st1),
+      OnBoardingPage(
+          image: Images.onBoardingImage2,
+          title: t.widgets.onboarding.title.t2,
+          subtitle: t.widgets.onboarding.subtitle.st2),
+      OnBoardingPage(
+          image: Images.onBoardingImage3,
+          title: t.widgets.onboarding.title.t3,
+          subtitle: t.widgets.onboarding.subtitle.st3),
     ];
 
     return SafeArea(

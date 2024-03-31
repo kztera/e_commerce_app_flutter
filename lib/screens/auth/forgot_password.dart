@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,14 +20,14 @@ class ForgotPasswordScreen extends StatelessWidget {
             children: [
               // Header
               Text(
-                t.forgotPassword.title,
+                t.widgets.forgotPassword.title,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(
                 height: CustomSizes.spaceBtwItems,
               ),
               Text(
-                t.forgotPassword.subtitle,
+                t.widgets.forgotPassword.subtitle,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               const SizedBox(
@@ -36,7 +36,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               // email input
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: t.forgotPassword.form.email,
+                  labelText: t.widgets.forgotPassword.form.email,
                   prefixIcon: const Icon(Icons.email),
                 ),
               ),
@@ -50,7 +50,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   onPressed: () => {
                     Get.toNamed('/verify-otp'),
                   },
-                  child: Text(t.forgotPassword.button.resetPassword),
+                  child: Text(t.widgets.forgotPassword.button.resetPassword),
                 ),
               ),
             ],

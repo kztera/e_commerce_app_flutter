@@ -1,5 +1,5 @@
 import 'package:e_commerce_app_flutter_app/controllers/register_controller.dart';
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +16,12 @@ class CheckPassword extends GetView<RegisterController> {
       () => Column(
         children: [
           PasswordCondition(
-            text: t.register.common.minChar,
+            text: t.widgets.register.common.minChar,
             isValid: controller.isMinCharValid.value,
           ),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           PasswordCondition(
-            text: t.register.common.atLeastOne,
+            text: t.widgets.register.common.atLeastOne,
             isValid: controller.isAtLeastOneValid.value,
           ),
         ],

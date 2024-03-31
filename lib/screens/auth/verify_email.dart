@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/i18n/strings.g.dart';
+import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
@@ -27,7 +27,7 @@ class VerifyScreen extends StatelessWidget {
               const SizedBox(height: CustomSizes.spaceBtwSections),
               // Title and subtitle
               Text(
-                t.register.common.verifyEmail,
+                t.widgets.register.common.verifyEmail,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +41,7 @@ class VerifyScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
                 child: Text(
-                  t.register.common.verifyEmailText,
+                  t.widgets.register.common.verifyEmailText,
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -51,7 +51,7 @@ class VerifyScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: Text(t.button.btcontinue),
+                  child: Text(t.widgets.button.btcontinue),
                   onPressed: () => Get.toNamed('/register/success'),
                 ),
               ),
@@ -62,7 +62,7 @@ class VerifyScreen extends StatelessWidget {
                   onPressed: () {},
                   style: TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
                   child: Text(
-                    t.button.resend,
+                    t.widgets.button.resend,
                   ),
                 ),
               )
