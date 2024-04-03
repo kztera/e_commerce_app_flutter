@@ -58,6 +58,7 @@ class _TranslationsWidgetsVi extends _TranslationsWidgetsEn {
 	@override late final _TranslationsWidgetsLoginVi login = _TranslationsWidgetsLoginVi._(_root);
 	@override late final _TranslationsWidgetsRegisterVi register = _TranslationsWidgetsRegisterVi._(_root);
 	@override late final _TranslationsWidgetsForgotPasswordVi forgotPassword = _TranslationsWidgetsForgotPasswordVi._(_root);
+	@override late final _TranslationsWidgetsNavigationVi navigation = _TranslationsWidgetsNavigationVi._(_root);
 }
 
 // Path: errors.products
@@ -67,7 +68,7 @@ class _TranslationsErrorsProductsVi extends _TranslationsErrorsProductsEn {
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsErrorsProductsE1000Vi e1000 = _TranslationsErrorsProductsE1000Vi._(_root);
+	@override String get e1000 => 'Không tìm thấy sản phẩm nào';
 }
 
 // Path: widgets.button
@@ -142,15 +143,18 @@ class _TranslationsWidgetsForgotPasswordVi extends _TranslationsWidgetsForgotPas
 	@override late final _TranslationsWidgetsForgotPasswordCommonVi common = _TranslationsWidgetsForgotPasswordCommonVi._(_root);
 }
 
-// Path: errors.products.e1000
-class _TranslationsErrorsProductsE1000Vi extends _TranslationsErrorsProductsE1000En {
-	_TranslationsErrorsProductsE1000Vi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: widgets.navigation
+class _TranslationsWidgetsNavigationVi extends _TranslationsWidgetsNavigationEn {
+	_TranslationsWidgetsNavigationVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Lỗi đếm sản phẩm';
-	@override String get description => 'Không tìm thấy sản phẩm';
+	@override String get home => 'Trang chủ';
+	@override String get explore => 'Khám phá';
+	@override String get wishlist => 'Yêu thích';
+	@override String get cart => 'Giỏ hàng';
+	@override String get profile => 'Tài khoản';
 }
 
 // Path: widgets.onboarding.title

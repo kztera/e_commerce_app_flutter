@@ -12,8 +12,7 @@ part of 'translations.g.dart';
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'errors.products.e1000.title': return 'Product couting error';
-			case 'errors.products.e1000.description': return 'No product found';
+			case 'errors.products.e1000': return 'No product found';
 			case 'widgets.button.skip': return 'Skip';
 			case 'widgets.button.and': return 'and';
 			case 'widgets.button.done': return 'Done';
@@ -75,6 +74,11 @@ extension on Translations {
 			case 'widgets.forgotPassword.common.backToLogin': return 'Back to login';
 			case 'widgets.forgotPassword.common.success': return 'Reset Password Success';
 			case 'widgets.forgotPassword.common.successText': return 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+			case 'widgets.navigation.home': return 'Home';
+			case 'widgets.navigation.explore': return 'Explore';
+			case 'widgets.navigation.wishlist': return 'Wishlist';
+			case 'widgets.navigation.cart': return 'Cart';
+			case 'widgets.navigation.profile': return 'Profile';
 			default: return null;
 		}
 	}
@@ -83,8 +87,7 @@ extension on Translations {
 extension on _TranslationsVi {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'errors.products.e1000.title': return 'Lỗi đếm sản phẩm';
-			case 'errors.products.e1000.description': return 'Không tìm thấy sản phẩm';
+			case 'errors.products.e1000': return 'Không tìm thấy sản phẩm nào';
 			case 'widgets.button.skip': return 'Bỏ qua';
 			case 'widgets.button.and': return 'và';
 			case 'widgets.button.done': return 'Xong';
@@ -146,6 +149,11 @@ extension on _TranslationsVi {
 			case 'widgets.forgotPassword.common.backToLogin': return 'Quay lại đăng nhập';
 			case 'widgets.forgotPassword.common.success': return 'Đặt lại mật khẩu thành công';
 			case 'widgets.forgotPassword.common.successText': return 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+			case 'widgets.navigation.home': return 'Trang chủ';
+			case 'widgets.navigation.explore': return 'Khám phá';
+			case 'widgets.navigation.wishlist': return 'Yêu thích';
+			case 'widgets.navigation.cart': return 'Giỏ hàng';
+			case 'widgets.navigation.profile': return 'Tài khoản';
 			default: return null;
 		}
 	}

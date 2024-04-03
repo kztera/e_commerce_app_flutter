@@ -62,6 +62,7 @@ class _TranslationsWidgetsEn {
 	late final _TranslationsWidgetsLoginEn login = _TranslationsWidgetsLoginEn._(_root);
 	late final _TranslationsWidgetsRegisterEn register = _TranslationsWidgetsRegisterEn._(_root);
 	late final _TranslationsWidgetsForgotPasswordEn forgotPassword = _TranslationsWidgetsForgotPasswordEn._(_root);
+	late final _TranslationsWidgetsNavigationEn navigation = _TranslationsWidgetsNavigationEn._(_root);
 }
 
 // Path: errors.products
@@ -71,7 +72,7 @@ class _TranslationsErrorsProductsEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _TranslationsErrorsProductsE1000En e1000 = _TranslationsErrorsProductsE1000En._(_root);
+	String get e1000 => 'No product found';
 }
 
 // Path: widgets.button
@@ -146,15 +147,18 @@ class _TranslationsWidgetsForgotPasswordEn {
 	late final _TranslationsWidgetsForgotPasswordCommonEn common = _TranslationsWidgetsForgotPasswordCommonEn._(_root);
 }
 
-// Path: errors.products.e1000
-class _TranslationsErrorsProductsE1000En {
-	_TranslationsErrorsProductsE1000En._(this._root);
+// Path: widgets.navigation
+class _TranslationsWidgetsNavigationEn {
+	_TranslationsWidgetsNavigationEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'Product couting error';
-	String get description => 'No product found';
+	String get home => 'Home';
+	String get explore => 'Explore';
+	String get wishlist => 'Wishlist';
+	String get cart => 'Cart';
+	String get profile => 'Profile';
 }
 
 // Path: widgets.onboarding.title

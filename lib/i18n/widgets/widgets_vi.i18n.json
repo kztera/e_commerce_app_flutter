@@ -101,5 +101,13 @@
       "success": "Đặt lại mật khẩu thành công",
       "successText": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
     }
+  },
+
+  "navigation": {
+    "home": "Trang chủ",
+    "explore": "Khám phá",
+    "wishlist": "Yêu thích",
+    "cart": "Giỏ hàng",
+    "profile": "Tài khoản"
   }
 }

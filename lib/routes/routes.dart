@@ -1,4 +1,6 @@
+import 'package:e_commerce_app_flutter_app/bindings/navigation_binding.dart';
 import 'package:e_commerce_app_flutter_app/bindings/register_binding.dart';
+import 'package:e_commerce_app_flutter_app/bottom_navigation.dart';
 import 'package:e_commerce_app_flutter_app/screens/auth/forgot_password.dart';
 import 'package:e_commerce_app_flutter_app/screens/auth/login.dart';
 import 'package:e_commerce_app_flutter_app/screens/auth/onboarding.dart';
@@ -19,5 +21,6 @@ class Routes {
     GetPage(name: '/register/success', page: () => const SuccessScreen()),
     GetPage(name: '/forgot-password', page: () => const ForgotPasswordScreen()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
+    GetPage(name: '/main', page: () => const BottomNavigation(), binding: NavigationBinding()),
   ];
 }

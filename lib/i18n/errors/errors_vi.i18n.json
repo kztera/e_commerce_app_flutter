@@ -1,8 +1,5 @@
 {
   "products": {
-    "e1000": {
-      "title": "Lỗi đếm sản phẩm",
-      "description": "Không tìm thấy sản phẩm"
-    }
+    "e1000": "Không tìm thấy sản phẩm nào"
   }
 }

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
-  static RegisterController get instance => Get.find<RegisterController>();
+  static RegisterController get instance => Get.find();
 
   RxBool isMinCharValid = false.obs;
   RxBool isAtLeastOneValid = false.obs;

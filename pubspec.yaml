@@ -32,6 +32,9 @@ dependencies:
   slang_flutter: ^3.30.0
   flutter_svg: ^2.0.10+1
 
+  # UI
+  awesome_bottom_bar: ^1.2.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

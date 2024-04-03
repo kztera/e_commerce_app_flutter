@@ -1,8 +1,5 @@
 {
   "products": {
-    "e1000": {
-      "title": "Product couting error",
-      "description": "No product found"
-    }
+    "e1000": "No product found"
   }
 }

@@ -63,7 +63,7 @@ class LoginForm extends StatelessWidget {
           SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.offAndToNamed('/main'),
                 child: Text(t.widgets.login.button.signIn),
               )),
           const SizedBox(height: CustomSizes.spaceBtwItems),
