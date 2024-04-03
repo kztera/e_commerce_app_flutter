@@ -1,0 +1,14 @@
+{
+  "title": "Settings",
+  "account": {
+    "title": "Account",
+    "edit": "Update information"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "language": "Language",
+    "help": "Help",
+    "logout": "Logout"
+  }
+}

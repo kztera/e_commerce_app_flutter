@@ -1,0 +1,14 @@
+{
+  "title": "Cài đặt",
+  "account": {
+    "title": "Tài khoản",
+    "edit": "Chỉnh sửa thông tin"
+  },
+  "settings": {
+    "title": "Chung",
+    "appearance": "Giao diện",
+    "language": "Ngôn ngữ",
+    "help": "Hỗ trợ",
+    "logout": "Đăng xuất"
+  }
+}

@@ -20,14 +20,14 @@ class ForgotPasswordScreen extends StatelessWidget {
             children: [
               // Header
               Text(
-                t.widgets.forgotPassword.title,
+                t.screens.forgotPassword.title,
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(
                 height: CustomSizes.spaceBtwItems,
               ),
               Text(
-                t.widgets.forgotPassword.subtitle,
+                t.screens.forgotPassword.subtitle,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               const SizedBox(
@@ -36,7 +36,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               // email input
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: t.widgets.forgotPassword.form.email,
+                  labelText: t.screens.forgotPassword.form.email,
                   prefixIcon: const Icon(Icons.email),
                 ),
               ),
@@ -50,7 +50,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   onPressed: () => {
                     Get.toNamed('/verify-otp'),
                   },
-                  child: Text(t.widgets.forgotPassword.button.resetPassword),
+                  child: Text(t.screens.forgotPassword.button.resetPassword),
                 ),
               ),
             ],

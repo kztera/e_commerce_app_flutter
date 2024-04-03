@@ -20,14 +20,14 @@ class LoginForm extends StatelessWidget {
           TextFormField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.email_outlined),
-              labelText: t.widgets.login.form.email,
+              labelText: t.screens.login.form.email,
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.password_outlined),
-              labelText: t.widgets.login.form.password,
+              labelText: t.screens.login.form.password,
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
           ),
@@ -48,12 +48,12 @@ class LoginForm extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: CustomSizes.xs),
-                  Text(t.widgets.login.common.rememberMe)
+                  Text(t.screens.login.text.rememberMe)
                 ],
               ),
               TextButton(
                 onPressed: () => {Get.toNamed('/forgot-password')},
-                child: Text(t.widgets.login.common.forgotPassword),
+                child: Text(t.screens.login.text.forgotPassword),
               )
             ],
           ),
@@ -64,14 +64,14 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.offAndToNamed('/main'),
-                child: Text(t.widgets.login.button.signIn),
+                child: Text(t.screens.login.button.signIn),
               )),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => Get.toNamed('/register'),
-                child: Text(t.widgets.login.button.createAccount),
+                child: Text(t.screens.login.button.createAccount),
               )),
           const SizedBox(height: CustomSizes.spaceBtwSections),
         ],

@@ -16,12 +16,12 @@ class CheckPassword extends GetView<RegisterController> {
       () => Column(
         children: [
           PasswordCondition(
-            text: t.widgets.register.common.minChar,
+            text: t.screens.register.text.minChar,
             isValid: controller.isMinCharValid.value,
           ),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           PasswordCondition(
-            text: t.widgets.register.common.atLeastOne,
+            text: t.screens.register.text.atLeastOne,
             isValid: controller.isAtLeastOneValid.value,
           ),
         ],

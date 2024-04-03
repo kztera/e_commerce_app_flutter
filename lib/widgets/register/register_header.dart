@@ -13,12 +13,12 @@ class RegisterHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          t.widgets.register.title,
+          t.screens.register.title,
           style: Theme.of(context).textTheme.headlineLarge,
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems),
         Text(
-          t.widgets.register.subtitle,
+          t.screens.register.subtitle,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

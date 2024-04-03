@@ -28,7 +28,7 @@ class SuccessScreen extends StatelessWidget {
                 const SizedBox(height: CustomSizes.spaceBtwSections),
                 // Title and subtitle
                 Text(
-                  t.widgets.register.common.successVerifyEmail,
+                  t.screens.register.text.successVerifyEmail,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -36,7 +36,7 @@ class SuccessScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
                   child: Text(
-                    t.widgets.register.common.successVerifyEmailText,
+                    t.screens.register.text.successVerifyEmailSubtitle,
                     style: Theme.of(context).textTheme.labelMedium,
                     textAlign: TextAlign.center,
                   ),
@@ -46,7 +46,7 @@ class SuccessScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      child: Text(t.widgets.login.button.signIn), onPressed: () => Get.offAndToNamed('/login')),
+                      child: Text(t.screens.login.button.signIn), onPressed: () => Get.offAndToNamed('/login')),
                 ),
               ],
             ),

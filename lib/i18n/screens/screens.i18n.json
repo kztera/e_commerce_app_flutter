@@ -1,14 +1,4 @@
 {
-  "button": {
-    "skip": "Skip",
-    "and": "and",
-    "done": "Done",
-    "submit": "Submit",
-    "appName": "3Z Store",
-    "btcontinue": "Continue",
-    "resend": "Resend"
-  },
-
   "onboarding": {
     "title": {
       "t1": "Choose from a wide range of e-books",
@@ -37,7 +27,7 @@
       "signIn": "Sign In",
       "createAccount": "Create Account"
     },
-    "common": {
+    "text": {
       "orSignInWith": "or sign in with",
       "privacyPolicy": "Privacy Policy",
       "termsOfUse": "Terms of use",
@@ -48,7 +38,7 @@
 
   "register": {
     "title": "Register",
-    "subtitle": "Let’s create your account",
+    "subtitle": "Let's create your account",
     "form": {
       "fullName": "Full Name",
       "email": "Email",
@@ -68,7 +58,7 @@
     "button": {
       "createAccount": "Create Account"
     },
-    "common": {
+    "text": {
       "privacyPolicy": "Privacy Policy",
       "termsOfUse": "Terms of use",
       "orSignUpWith": "or sign up with",
@@ -80,7 +70,7 @@
       "verifyEmail": "Verify your email address!",
       "verifyEmailText": "We have sent a verification email to your email address. Please verify your email address to continue.",
       "successVerifyEmail": "Your account verified successfully!",
-      "successVerifyEmailText": "Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!"
+      "successVerifyEmailSubtitle": "Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!"
     }
   },
 
@@ -96,18 +86,10 @@
     "button": {
       "resetPassword": "Reset Password"
     },
-    "common": {
+    "text": {
       "backToLogin": "Back to login",
       "success": "Reset Password Success",
-      "successText": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password."
+      "successSubtile": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password."
     }
-  },
-
-  "navigation": {
-    "home": "Home",
-    "explore": "Explore",
-    "wishlist": "Wishlist",
-    "cart": "Cart",
-    "profile": "Profile"
   }
 }

@@ -23,9 +23,9 @@ class LoginHeader extends StatelessWidget {
           dark ? Images.appLogoDark : Images.appLogo,
           height: DeviceUtils.getScreenHeight() * 0.15,
         )),
-        Text(t.widgets.login.title, style: Theme.of(context).textTheme.headlineMedium),
+        Text(t.screens.login.title, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: CustomSizes.sm),
-        Text(t.widgets.login.subtitle, style: Theme.of(context).textTheme.bodyMedium)
+        Text(t.screens.login.subtitle, style: Theme.of(context).textTheme.bodyMedium)
       ],
     );
   }

@@ -22,35 +22,35 @@ class RegisterForm extends GetView<RegisterController> {
         children: [
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.fullName,
+              labelText: t.screens.register.form.fullName,
               prefixIcon: const Icon(Iconsax.user),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.username,
+              labelText: t.screens.register.form.username,
               prefixIcon: const Icon(Iconsax.user_edit),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.email,
+              labelText: t.screens.register.form.email,
               prefixIcon: const Icon(Icons.email_outlined),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.phoneNo,
+              labelText: t.screens.register.form.phoneNo,
               prefixIcon: const Icon(Iconsax.call),
             ),
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.password,
+              labelText: t.screens.register.form.password,
               prefixIcon: const Icon(Icons.password_outlined),
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
@@ -61,7 +61,7 @@ class RegisterForm extends GetView<RegisterController> {
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             decoration: InputDecoration(
-              labelText: t.widgets.register.form.confirmPassword,
+              labelText: t.screens.register.form.confirmPassword,
               prefixIcon: const Icon(Icons.password_outlined),
               suffixIcon: const Icon(Iconsax.eye_slash),
             ),
@@ -83,21 +83,21 @@ class RegisterForm extends GetView<RegisterController> {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: t.widgets.register.common.iAgreeTo,
+                        text: t.screens.register.text.iAgreeTo,
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       TextSpan(
-                        text: t.widgets.register.common.privacyPolicy,
+                        text: t.screens.register.text.privacyPolicy,
                         style: Theme.of(context).textTheme.bodyMedium!.apply(
                             color: dark ? ThemeColors.white : ThemeColors.primary,
                             decoration: TextDecoration.underline),
                       ),
                       TextSpan(
-                        text: ' ${t.widgets.button.and} ',
+                        text: ' ${t.buttons.and} ',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       TextSpan(
-                        text: t.widgets.register.common.termsOfUse,
+                        text: t.screens.register.text.termsOfUse,
                         style: Theme.of(context).textTheme.bodyMedium!.apply(
                             color: dark ? ThemeColors.white : ThemeColors.primary,
                             decoration: TextDecoration.underline),

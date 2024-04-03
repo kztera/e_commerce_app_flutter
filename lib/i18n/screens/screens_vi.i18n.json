@@ -1,14 +1,4 @@
 {
-  "button": {
-    "skip": "Bỏ qua",
-    "and": "và",
-    "done": "Xong",
-    "submit": "Xác nhận",
-    "appName": "3Z Store",
-    "btcontinue": "Tiếp tục",
-    "resend": "Gửi lại"
-  },
-
   "onboarding": {
     "title": {
       "t1": "Vô hạn lựa chọn",
@@ -37,7 +27,7 @@
       "signIn": "Đăng nhập",
       "createAccount": "Tạo tài khoản"
     },
-    "common": {
+    "text": {
       "orSignInWith": "hoặc đăng nhập với",
       "privacyPolicy": "Chính sách bảo mật",
       "termsOfUse": "Điều khoản dịch vụ",
@@ -68,7 +58,7 @@
     "button": {
       "createAccount": "Tạo tài khoản"
     },
-    "common": {
+    "text": {
       "privacyPolicy": "Chính sách bảo mật",
       "termsOfUse": "Điều khoản dịch vụ",
       "orSignUpWith": "hoặc đăng ký với",
@@ -80,7 +70,7 @@
       "verifyEmail": "Xác thực email",
       "verifyEmailText": "Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.",
       "successVerifyEmail": "Xác thực email thành công",
-      "successVerifyEmailText": "Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!"
+      "successVerifyEmailSubtitle": "Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!"
     }
   },
 
@@ -96,18 +86,10 @@
     "button": {
       "resetPassword": "Đặt lại mật khẩu"
     },
-    "common": {
+    "text": {
       "backToLogin": "Quay lại đăng nhập",
       "success": "Đặt lại mật khẩu thành công",
-      "successText": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
+      "successSubtitle": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
     }
-  },
-
-  "navigation": {
-    "home": "Trang chủ",
-    "explore": "Khám phá",
-    "wishlist": "Yêu thích",
-    "cart": "Giỏ hàng",
-    "profile": "Tài khoản"
   }
 }

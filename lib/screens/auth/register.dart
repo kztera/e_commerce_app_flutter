@@ -29,12 +29,12 @@ class RegisterScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Get.toNamed('/register/verify-email'),
-                    child: Text(t.widgets.register.button.createAccount),
+                    child: Text(t.screens.register.button.createAccount),
                   ),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwItems),
                 const SizedBox(height: CustomSizes.spaceBtwSections),
-                FormDivider(text: t.widgets.register.common.orSignUpWith),
+                FormDivider(text: t.screens.register.text.orSignUpWith),
                 const SizedBox(height: CustomSizes.spaceBtwSections),
                 const SocialButton()
               ],

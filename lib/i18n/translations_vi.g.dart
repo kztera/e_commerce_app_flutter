@@ -32,8 +32,46 @@ class _TranslationsVi extends Translations {
 	@override late final _TranslationsVi _root = this; // ignore: unused_field
 
 	// Translations
+	@override late final _TranslationsButtonsVi buttons = _TranslationsButtonsVi._(_root);
+	@override late final _TranslationsCommonVi common = _TranslationsCommonVi._(_root);
 	@override late final _TranslationsErrorsVi errors = _TranslationsErrorsVi._(_root);
-	@override late final _TranslationsWidgetsVi widgets = _TranslationsWidgetsVi._(_root);
+	@override late final _TranslationsMessagesVi messages = _TranslationsMessagesVi._(_root);
+	@override late final _TranslationsNavigationVi navigation = _TranslationsNavigationVi._(_root);
+	@override late final _TranslationsScreensVi screens = _TranslationsScreensVi._(_root);
+	@override late final _TranslationsSettingVi setting = _TranslationsSettingVi._(_root);
+}
+
+// Path: buttons
+class _TranslationsButtonsVi extends _TranslationsButtonsEn {
+	_TranslationsButtonsVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get skip => 'Bỏ qua';
+	@override String get and => 'và';
+	@override String get done => 'Xong';
+	@override String get submit => 'Xác nhận';
+	@override String get appName => '3Z Store';
+	@override String get btcontinue => 'Tiếp tục';
+	@override String get resend => 'Gửi lại';
+	@override String get cancel => 'Hủy';
+	@override String get create => 'Tạo';
+	@override String get update => 'Cập nhật';
+	@override String get edit => 'Chỉnh sửa';
+	@override String get delete => 'Xóa';
+	@override String get detail => 'Chi tiết';
+}
+
+// Path: common
+class _TranslationsCommonVi extends _TranslationsCommonEn {
+	_TranslationsCommonVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get copyright => '© {year} - Bản quyển thuộc về Khoa Nguyễn. Mọi quyền được bảo lưu. Phiên bản {version}';
+	@override String get filter => 'Filter';
 }
 
 // Path: errors
@@ -46,19 +84,53 @@ class _TranslationsErrorsVi extends _TranslationsErrorsEn {
 	@override late final _TranslationsErrorsProductsVi products = _TranslationsErrorsProductsVi._(_root);
 }
 
-// Path: widgets
-class _TranslationsWidgetsVi extends _TranslationsWidgetsEn {
-	_TranslationsWidgetsVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: messages
+class _TranslationsMessagesVi extends _TranslationsMessagesEn {
+	_TranslationsMessagesVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWidgetsButtonVi button = _TranslationsWidgetsButtonVi._(_root);
-	@override late final _TranslationsWidgetsOnboardingVi onboarding = _TranslationsWidgetsOnboardingVi._(_root);
-	@override late final _TranslationsWidgetsLoginVi login = _TranslationsWidgetsLoginVi._(_root);
-	@override late final _TranslationsWidgetsRegisterVi register = _TranslationsWidgetsRegisterVi._(_root);
-	@override late final _TranslationsWidgetsForgotPasswordVi forgotPassword = _TranslationsWidgetsForgotPasswordVi._(_root);
-	@override late final _TranslationsWidgetsNavigationVi navigation = _TranslationsWidgetsNavigationVi._(_root);
+	@override late final _TranslationsMessagesSnackbarVi snackbar = _TranslationsMessagesSnackbarVi._(_root);
+}
+
+// Path: navigation
+class _TranslationsNavigationVi extends _TranslationsNavigationEn {
+	_TranslationsNavigationVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get home => 'Trang chủ';
+	@override String get explore => 'Khám phá';
+	@override String get wishlist => 'Yêu thích';
+	@override String get cart => 'Giỏ hàng';
+	@override String get profile => 'Tài khoản';
+}
+
+// Path: screens
+class _TranslationsScreensVi extends _TranslationsScreensEn {
+	_TranslationsScreensVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensOnboardingVi onboarding = _TranslationsScreensOnboardingVi._(_root);
+	@override late final _TranslationsScreensLoginVi login = _TranslationsScreensLoginVi._(_root);
+	@override late final _TranslationsScreensRegisterVi register = _TranslationsScreensRegisterVi._(_root);
+	@override late final _TranslationsScreensForgotPasswordVi forgotPassword = _TranslationsScreensForgotPasswordVi._(_root);
+}
+
+// Path: setting
+class _TranslationsSettingVi extends _TranslationsSettingEn {
+	_TranslationsSettingVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Cài đặt';
+	@override late final _TranslationsSettingAccountVi account = _TranslationsSettingAccountVi._(_root);
+	@override late final _TranslationsSettingSettingsVi settings = _TranslationsSettingSettingsVi._(_root);
 }
 
 // Path: errors.products
@@ -71,95 +143,100 @@ class _TranslationsErrorsProductsVi extends _TranslationsErrorsProductsEn {
 	@override String get e1000 => 'Không tìm thấy sản phẩm nào';
 }
 
-// Path: widgets.button
-class _TranslationsWidgetsButtonVi extends _TranslationsWidgetsButtonEn {
-	_TranslationsWidgetsButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: messages.snackbar
+class _TranslationsMessagesSnackbarVi extends _TranslationsMessagesSnackbarEn {
+	_TranslationsMessagesSnackbarVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override String get skip => 'Bỏ qua';
-	@override String get and => 'và';
-	@override String get done => 'Xong';
-	@override String get submit => 'Xác nhận';
-	@override String get appName => '3Z Store';
-	@override String get btcontinue => 'Tiếp tục';
-	@override String get resend => 'Gửi lại';
+	@override String get loginSuccess => 'Đăng nhập thành công';
 }
 
-// Path: widgets.onboarding
-class _TranslationsWidgetsOnboardingVi extends _TranslationsWidgetsOnboardingEn {
-	_TranslationsWidgetsOnboardingVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.onboarding
+class _TranslationsScreensOnboardingVi extends _TranslationsScreensOnboardingEn {
+	_TranslationsScreensOnboardingVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWidgetsOnboardingTitleVi title = _TranslationsWidgetsOnboardingTitleVi._(_root);
-	@override late final _TranslationsWidgetsOnboardingSubtitleVi subtitle = _TranslationsWidgetsOnboardingSubtitleVi._(_root);
+	@override late final _TranslationsScreensOnboardingTitleVi title = _TranslationsScreensOnboardingTitleVi._(_root);
+	@override late final _TranslationsScreensOnboardingSubtitleVi subtitle = _TranslationsScreensOnboardingSubtitleVi._(_root);
 }
 
-// Path: widgets.login
-class _TranslationsWidgetsLoginVi extends _TranslationsWidgetsLoginEn {
-	_TranslationsWidgetsLoginVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.login
+class _TranslationsScreensLoginVi extends _TranslationsScreensLoginEn {
+	_TranslationsScreensLoginVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Chào mừng trở lại';
 	@override String get subtitle => 'Đăng nhập và mở ra thế giới sách không giới hạn!';
-	@override late final _TranslationsWidgetsLoginFormVi form = _TranslationsWidgetsLoginFormVi._(_root);
-	@override late final _TranslationsWidgetsLoginPlaceholderVi placeholder = _TranslationsWidgetsLoginPlaceholderVi._(_root);
-	@override late final _TranslationsWidgetsLoginButtonVi button = _TranslationsWidgetsLoginButtonVi._(_root);
-	@override late final _TranslationsWidgetsLoginCommonVi common = _TranslationsWidgetsLoginCommonVi._(_root);
+	@override late final _TranslationsScreensLoginFormVi form = _TranslationsScreensLoginFormVi._(_root);
+	@override late final _TranslationsScreensLoginPlaceholderVi placeholder = _TranslationsScreensLoginPlaceholderVi._(_root);
+	@override late final _TranslationsScreensLoginButtonVi button = _TranslationsScreensLoginButtonVi._(_root);
+	@override late final _TranslationsScreensLoginTextVi text = _TranslationsScreensLoginTextVi._(_root);
 }
 
-// Path: widgets.register
-class _TranslationsWidgetsRegisterVi extends _TranslationsWidgetsRegisterEn {
-	_TranslationsWidgetsRegisterVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.register
+class _TranslationsScreensRegisterVi extends _TranslationsScreensRegisterEn {
+	_TranslationsScreensRegisterVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Đăng ký';
 	@override String get subtitle => 'Tạo tài khoản của bạn để có thể bắt đầu mua sắm!';
-	@override late final _TranslationsWidgetsRegisterFormVi form = _TranslationsWidgetsRegisterFormVi._(_root);
-	@override late final _TranslationsWidgetsRegisterPlaceholderVi placeholder = _TranslationsWidgetsRegisterPlaceholderVi._(_root);
-	@override late final _TranslationsWidgetsRegisterButtonVi button = _TranslationsWidgetsRegisterButtonVi._(_root);
-	@override late final _TranslationsWidgetsRegisterCommonVi common = _TranslationsWidgetsRegisterCommonVi._(_root);
+	@override late final _TranslationsScreensRegisterFormVi form = _TranslationsScreensRegisterFormVi._(_root);
+	@override late final _TranslationsScreensRegisterPlaceholderVi placeholder = _TranslationsScreensRegisterPlaceholderVi._(_root);
+	@override late final _TranslationsScreensRegisterButtonVi button = _TranslationsScreensRegisterButtonVi._(_root);
+	@override late final _TranslationsScreensRegisterTextVi text = _TranslationsScreensRegisterTextVi._(_root);
 }
 
-// Path: widgets.forgotPassword
-class _TranslationsWidgetsForgotPasswordVi extends _TranslationsWidgetsForgotPasswordEn {
-	_TranslationsWidgetsForgotPasswordVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.forgotPassword
+class _TranslationsScreensForgotPasswordVi extends _TranslationsScreensForgotPasswordEn {
+	_TranslationsScreensForgotPasswordVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Quên mật khẩu';
 	@override String get subtitle => 'Đừng lo lắng, ai cũng có thể quên mật khẩu! Nhập email và chúng tôi sẽ gửi cho bạn mã xác nhận để đặt lại mật khẩu của bạn.';
-	@override late final _TranslationsWidgetsForgotPasswordFormVi form = _TranslationsWidgetsForgotPasswordFormVi._(_root);
-	@override late final _TranslationsWidgetsForgotPasswordPlaceholderVi placeholder = _TranslationsWidgetsForgotPasswordPlaceholderVi._(_root);
-	@override late final _TranslationsWidgetsForgotPasswordButtonVi button = _TranslationsWidgetsForgotPasswordButtonVi._(_root);
-	@override late final _TranslationsWidgetsForgotPasswordCommonVi common = _TranslationsWidgetsForgotPasswordCommonVi._(_root);
+	@override late final _TranslationsScreensForgotPasswordFormVi form = _TranslationsScreensForgotPasswordFormVi._(_root);
+	@override late final _TranslationsScreensForgotPasswordPlaceholderVi placeholder = _TranslationsScreensForgotPasswordPlaceholderVi._(_root);
+	@override late final _TranslationsScreensForgotPasswordButtonVi button = _TranslationsScreensForgotPasswordButtonVi._(_root);
+	@override late final _TranslationsScreensForgotPasswordTextVi text = _TranslationsScreensForgotPasswordTextVi._(_root);
 }
 
-// Path: widgets.navigation
-class _TranslationsWidgetsNavigationVi extends _TranslationsWidgetsNavigationEn {
-	_TranslationsWidgetsNavigationVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: setting.account
+class _TranslationsSettingAccountVi extends _TranslationsSettingAccountEn {
+	_TranslationsSettingAccountVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
-	@override String get home => 'Trang chủ';
-	@override String get explore => 'Khám phá';
-	@override String get wishlist => 'Yêu thích';
-	@override String get cart => 'Giỏ hàng';
-	@override String get profile => 'Tài khoản';
+	@override String get title => 'Tài khoản';
+	@override String get edit => 'Chỉnh sửa thông tin';
 }
 
-// Path: widgets.onboarding.title
-class _TranslationsWidgetsOnboardingTitleVi extends _TranslationsWidgetsOnboardingTitleEn {
-	_TranslationsWidgetsOnboardingTitleVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: setting.settings
+class _TranslationsSettingSettingsVi extends _TranslationsSettingSettingsEn {
+	_TranslationsSettingSettingsVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Chung';
+	@override String get appearance => 'Giao diện';
+	@override String get language => 'Ngôn ngữ';
+	@override String get help => 'Hỗ trợ';
+	@override String get logout => 'Đăng xuất';
+}
+
+// Path: screens.onboarding.title
+class _TranslationsScreensOnboardingTitleVi extends _TranslationsScreensOnboardingTitleEn {
+	_TranslationsScreensOnboardingTitleVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -169,9 +246,9 @@ class _TranslationsWidgetsOnboardingTitleVi extends _TranslationsWidgetsOnboardi
 	@override String get t3 => 'Không cần chờ đợi';
 }
 
-// Path: widgets.onboarding.subtitle
-class _TranslationsWidgetsOnboardingSubtitleVi extends _TranslationsWidgetsOnboardingSubtitleEn {
-	_TranslationsWidgetsOnboardingSubtitleVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.onboarding.subtitle
+class _TranslationsScreensOnboardingSubtitleVi extends _TranslationsScreensOnboardingSubtitleEn {
+	_TranslationsScreensOnboardingSubtitleVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -181,9 +258,9 @@ class _TranslationsWidgetsOnboardingSubtitleVi extends _TranslationsWidgetsOnboa
 	@override String get st3 => 'Nhận được sách ngay lập tức sau khi thanh toán!';
 }
 
-// Path: widgets.login.form
-class _TranslationsWidgetsLoginFormVi extends _TranslationsWidgetsLoginFormEn {
-	_TranslationsWidgetsLoginFormVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.login.form
+class _TranslationsScreensLoginFormVi extends _TranslationsScreensLoginFormEn {
+	_TranslationsScreensLoginFormVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -192,9 +269,9 @@ class _TranslationsWidgetsLoginFormVi extends _TranslationsWidgetsLoginFormEn {
 	@override String get password => 'Mật khẩu';
 }
 
-// Path: widgets.login.placeholder
-class _TranslationsWidgetsLoginPlaceholderVi extends _TranslationsWidgetsLoginPlaceholderEn {
-	_TranslationsWidgetsLoginPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.login.placeholder
+class _TranslationsScreensLoginPlaceholderVi extends _TranslationsScreensLoginPlaceholderEn {
+	_TranslationsScreensLoginPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -203,9 +280,9 @@ class _TranslationsWidgetsLoginPlaceholderVi extends _TranslationsWidgetsLoginPl
 	@override String get password => 'Nhập mật khẩu';
 }
 
-// Path: widgets.login.button
-class _TranslationsWidgetsLoginButtonVi extends _TranslationsWidgetsLoginButtonEn {
-	_TranslationsWidgetsLoginButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.login.button
+class _TranslationsScreensLoginButtonVi extends _TranslationsScreensLoginButtonEn {
+	_TranslationsScreensLoginButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -214,9 +291,9 @@ class _TranslationsWidgetsLoginButtonVi extends _TranslationsWidgetsLoginButtonE
 	@override String get createAccount => 'Tạo tài khoản';
 }
 
-// Path: widgets.login.common
-class _TranslationsWidgetsLoginCommonVi extends _TranslationsWidgetsLoginCommonEn {
-	_TranslationsWidgetsLoginCommonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.login.text
+class _TranslationsScreensLoginTextVi extends _TranslationsScreensLoginTextEn {
+	_TranslationsScreensLoginTextVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -228,9 +305,9 @@ class _TranslationsWidgetsLoginCommonVi extends _TranslationsWidgetsLoginCommonE
 	@override String get forgotPassword => 'Quên mật khẩu';
 }
 
-// Path: widgets.register.form
-class _TranslationsWidgetsRegisterFormVi extends _TranslationsWidgetsRegisterFormEn {
-	_TranslationsWidgetsRegisterFormVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.register.form
+class _TranslationsScreensRegisterFormVi extends _TranslationsScreensRegisterFormEn {
+	_TranslationsScreensRegisterFormVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -243,9 +320,9 @@ class _TranslationsWidgetsRegisterFormVi extends _TranslationsWidgetsRegisterFor
 	@override String get phoneNo => 'Số điện thoại';
 }
 
-// Path: widgets.register.placeholder
-class _TranslationsWidgetsRegisterPlaceholderVi extends _TranslationsWidgetsRegisterPlaceholderEn {
-	_TranslationsWidgetsRegisterPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.register.placeholder
+class _TranslationsScreensRegisterPlaceholderVi extends _TranslationsScreensRegisterPlaceholderEn {
+	_TranslationsScreensRegisterPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -258,9 +335,9 @@ class _TranslationsWidgetsRegisterPlaceholderVi extends _TranslationsWidgetsRegi
 	@override String get phoneNo => 'Nhập số điện thoại của bạn';
 }
 
-// Path: widgets.register.button
-class _TranslationsWidgetsRegisterButtonVi extends _TranslationsWidgetsRegisterButtonEn {
-	_TranslationsWidgetsRegisterButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.register.button
+class _TranslationsScreensRegisterButtonVi extends _TranslationsScreensRegisterButtonEn {
+	_TranslationsScreensRegisterButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -268,9 +345,9 @@ class _TranslationsWidgetsRegisterButtonVi extends _TranslationsWidgetsRegisterB
 	@override String get createAccount => 'Tạo tài khoản';
 }
 
-// Path: widgets.register.common
-class _TranslationsWidgetsRegisterCommonVi extends _TranslationsWidgetsRegisterCommonEn {
-	_TranslationsWidgetsRegisterCommonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.register.text
+class _TranslationsScreensRegisterTextVi extends _TranslationsScreensRegisterTextEn {
+	_TranslationsScreensRegisterTextVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -286,12 +363,12 @@ class _TranslationsWidgetsRegisterCommonVi extends _TranslationsWidgetsRegisterC
 	@override String get verifyEmail => 'Xác thực email';
 	@override String get verifyEmailText => 'Chúng tôi đã gửi một email đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến và lấy mã xác thực để hoàn tất quá trình đăng ký.';
 	@override String get successVerifyEmail => 'Xác thực email thành công';
-	@override String get successVerifyEmailText => 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
+	@override String get successVerifyEmailSubtitle => 'Tài khoản của bạn đã được xác thực. Trải nghiệm mua sách tuyệt vời tại 3Z ngay bây giờ!';
 }
 
-// Path: widgets.forgotPassword.form
-class _TranslationsWidgetsForgotPasswordFormVi extends _TranslationsWidgetsForgotPasswordFormEn {
-	_TranslationsWidgetsForgotPasswordFormVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.forgotPassword.form
+class _TranslationsScreensForgotPasswordFormVi extends _TranslationsScreensForgotPasswordFormEn {
+	_TranslationsScreensForgotPasswordFormVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -299,9 +376,9 @@ class _TranslationsWidgetsForgotPasswordFormVi extends _TranslationsWidgetsForgo
 	@override String get email => 'Email';
 }
 
-// Path: widgets.forgotPassword.placeholder
-class _TranslationsWidgetsForgotPasswordPlaceholderVi extends _TranslationsWidgetsForgotPasswordPlaceholderEn {
-	_TranslationsWidgetsForgotPasswordPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.forgotPassword.placeholder
+class _TranslationsScreensForgotPasswordPlaceholderVi extends _TranslationsScreensForgotPasswordPlaceholderEn {
+	_TranslationsScreensForgotPasswordPlaceholderVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -309,9 +386,9 @@ class _TranslationsWidgetsForgotPasswordPlaceholderVi extends _TranslationsWidge
 	@override String get email => 'Nhập email của bạn';
 }
 
-// Path: widgets.forgotPassword.button
-class _TranslationsWidgetsForgotPasswordButtonVi extends _TranslationsWidgetsForgotPasswordButtonEn {
-	_TranslationsWidgetsForgotPasswordButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.forgotPassword.button
+class _TranslationsScreensForgotPasswordButtonVi extends _TranslationsScreensForgotPasswordButtonEn {
+	_TranslationsScreensForgotPasswordButtonVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
@@ -319,14 +396,14 @@ class _TranslationsWidgetsForgotPasswordButtonVi extends _TranslationsWidgetsFor
 	@override String get resetPassword => 'Đặt lại mật khẩu';
 }
 
-// Path: widgets.forgotPassword.common
-class _TranslationsWidgetsForgotPasswordCommonVi extends _TranslationsWidgetsForgotPasswordCommonEn {
-	_TranslationsWidgetsForgotPasswordCommonVi._(_TranslationsVi root) : this._root = root, super._(root);
+// Path: screens.forgotPassword.text
+class _TranslationsScreensForgotPasswordTextVi extends _TranslationsScreensForgotPasswordTextEn {
+	_TranslationsScreensForgotPasswordTextVi._(_TranslationsVi root) : this._root = root, super._(root);
 
 	@override final _TranslationsVi _root; // ignore: unused_field
 
 	// Translations
 	@override String get backToLogin => 'Quay lại đăng nhập';
 	@override String get success => 'Đặt lại mật khẩu thành công';
-	@override String get successText => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+	@override String get successSubtitle => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
 }

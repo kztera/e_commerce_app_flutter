@@ -19,7 +19,7 @@ class OnboardingSkipButton extends StatelessWidget {
         right: CustomSizes.defaultSpace,
         child: TextButton(
           onPressed: () => OnboardingController.instance.onSkip(indexOfLastPage),
-          child: Text(t.widgets.button.skip, style: Theme.of(context).textTheme.labelLarge),
+          child: Text(t.buttons.skip, style: Theme.of(context).textTheme.labelLarge),
         ));
   }
 }

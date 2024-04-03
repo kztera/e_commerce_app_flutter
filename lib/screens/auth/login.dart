@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               const LoginHeader(),
               const LoginForm(),
-              FormDivider(text: t.widgets.login.common.orSignInWith),
+              FormDivider(text: t.screens.login.text.orSignInWith),
               const SizedBox(height: CustomSizes.spaceBtwSections),
               const SocialButton()
             ],

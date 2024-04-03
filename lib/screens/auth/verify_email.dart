@@ -27,7 +27,7 @@ class VerifyScreen extends StatelessWidget {
               const SizedBox(height: CustomSizes.spaceBtwSections),
               // Title and subtitle
               Text(
-                t.widgets.register.common.verifyEmail,
+                t.screens.register.text.verifyEmail,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +41,7 @@ class VerifyScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
                 child: Text(
-                  t.widgets.register.common.verifyEmailText,
+                  t.screens.register.text.verifyEmailText,
                   style: Theme.of(context).textTheme.labelMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -51,7 +51,7 @@ class VerifyScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: Text(t.widgets.button.btcontinue),
+                  child: Text(t.buttons.btcontinue),
                   onPressed: () => Get.toNamed('/register/success'),
                 ),
               ),
@@ -62,7 +62,7 @@ class VerifyScreen extends StatelessWidget {
                   onPressed: () {},
                   style: TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
                   child: Text(
-                    t.widgets.button.resend,
+                    t.buttons.resend,
                   ),
                 ),
               )

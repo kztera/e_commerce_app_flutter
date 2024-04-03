@@ -18,16 +18,16 @@ class OnboardingScreen extends StatelessWidget {
     final List<Widget> pages = [
       OnBoardingPage(
           image: Images.onBoardingImage1,
-          title: t.widgets.onboarding.title.t1,
-          subtitle: t.widgets.onboarding.subtitle.st1),
+          title: t.screens.onboarding.title.t1,
+          subtitle: t.screens.onboarding.subtitle.st1),
       OnBoardingPage(
           image: Images.onBoardingImage2,
-          title: t.widgets.onboarding.title.t2,
-          subtitle: t.widgets.onboarding.subtitle.st2),
+          title: t.screens.onboarding.title.t2,
+          subtitle: t.screens.onboarding.subtitle.st2),
       OnBoardingPage(
           image: Images.onBoardingImage3,
-          title: t.widgets.onboarding.title.t3,
-          subtitle: t.widgets.onboarding.subtitle.st3),
+          title: t.screens.onboarding.title.t3,
+          subtitle: t.screens.onboarding.subtitle.st3),
     ];
 
     return SafeArea(

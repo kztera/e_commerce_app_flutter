@@ -36,8 +36,46 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
+	late final _TranslationsButtonsEn buttons = _TranslationsButtonsEn._(_root);
+	late final _TranslationsCommonEn common = _TranslationsCommonEn._(_root);
 	late final _TranslationsErrorsEn errors = _TranslationsErrorsEn._(_root);
-	late final _TranslationsWidgetsEn widgets = _TranslationsWidgetsEn._(_root);
+	late final _TranslationsMessagesEn messages = _TranslationsMessagesEn._(_root);
+	late final _TranslationsNavigationEn navigation = _TranslationsNavigationEn._(_root);
+	late final _TranslationsScreensEn screens = _TranslationsScreensEn._(_root);
+	late final _TranslationsSettingEn setting = _TranslationsSettingEn._(_root);
+}
+
+// Path: buttons
+class _TranslationsButtonsEn {
+	_TranslationsButtonsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get skip => 'Skip';
+	String get and => 'and';
+	String get done => 'Done';
+	String get submit => 'Submit';
+	String get appName => '3Z Store';
+	String get btcontinue => 'Continue';
+	String get resend => 'Resend';
+	String get cancel => 'Cancel';
+	String get create => 'Create';
+	String get update => 'Update';
+	String get edit => 'Edit';
+	String get delete => 'Delete';
+	String get detail => 'Detail';
+}
+
+// Path: common
+class _TranslationsCommonEn {
+	_TranslationsCommonEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get copyright => '© Copyright {year} - Nguyen Khoa. All Rights Reserved. Version {version}';
+	String get filter => 'Filter';
 }
 
 // Path: errors
@@ -50,19 +88,53 @@ class _TranslationsErrorsEn {
 	late final _TranslationsErrorsProductsEn products = _TranslationsErrorsProductsEn._(_root);
 }
 
-// Path: widgets
-class _TranslationsWidgetsEn {
-	_TranslationsWidgetsEn._(this._root);
+// Path: messages
+class _TranslationsMessagesEn {
+	_TranslationsMessagesEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _TranslationsWidgetsButtonEn button = _TranslationsWidgetsButtonEn._(_root);
-	late final _TranslationsWidgetsOnboardingEn onboarding = _TranslationsWidgetsOnboardingEn._(_root);
-	late final _TranslationsWidgetsLoginEn login = _TranslationsWidgetsLoginEn._(_root);
-	late final _TranslationsWidgetsRegisterEn register = _TranslationsWidgetsRegisterEn._(_root);
-	late final _TranslationsWidgetsForgotPasswordEn forgotPassword = _TranslationsWidgetsForgotPasswordEn._(_root);
-	late final _TranslationsWidgetsNavigationEn navigation = _TranslationsWidgetsNavigationEn._(_root);
+	late final _TranslationsMessagesSnackbarEn snackbar = _TranslationsMessagesSnackbarEn._(_root);
+}
+
+// Path: navigation
+class _TranslationsNavigationEn {
+	_TranslationsNavigationEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get home => 'Home';
+	String get explore => 'Explore';
+	String get wishlist => 'Wishlist';
+	String get cart => 'Cart';
+	String get profile => 'Profile';
+}
+
+// Path: screens
+class _TranslationsScreensEn {
+	_TranslationsScreensEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensOnboardingEn onboarding = _TranslationsScreensOnboardingEn._(_root);
+	late final _TranslationsScreensLoginEn login = _TranslationsScreensLoginEn._(_root);
+	late final _TranslationsScreensRegisterEn register = _TranslationsScreensRegisterEn._(_root);
+	late final _TranslationsScreensForgotPasswordEn forgotPassword = _TranslationsScreensForgotPasswordEn._(_root);
+}
+
+// Path: setting
+class _TranslationsSettingEn {
+	_TranslationsSettingEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Settings';
+	late final _TranslationsSettingAccountEn account = _TranslationsSettingAccountEn._(_root);
+	late final _TranslationsSettingSettingsEn settings = _TranslationsSettingSettingsEn._(_root);
 }
 
 // Path: errors.products
@@ -75,95 +147,100 @@ class _TranslationsErrorsProductsEn {
 	String get e1000 => 'No product found';
 }
 
-// Path: widgets.button
-class _TranslationsWidgetsButtonEn {
-	_TranslationsWidgetsButtonEn._(this._root);
+// Path: messages.snackbar
+class _TranslationsMessagesSnackbarEn {
+	_TranslationsMessagesSnackbarEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get skip => 'Skip';
-	String get and => 'and';
-	String get done => 'Done';
-	String get submit => 'Submit';
-	String get appName => '3Z Store';
-	String get btcontinue => 'Continue';
-	String get resend => 'Resend';
+	String get loginSuccess => 'Login successful';
 }
 
-// Path: widgets.onboarding
-class _TranslationsWidgetsOnboardingEn {
-	_TranslationsWidgetsOnboardingEn._(this._root);
+// Path: screens.onboarding
+class _TranslationsScreensOnboardingEn {
+	_TranslationsScreensOnboardingEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _TranslationsWidgetsOnboardingTitleEn title = _TranslationsWidgetsOnboardingTitleEn._(_root);
-	late final _TranslationsWidgetsOnboardingSubtitleEn subtitle = _TranslationsWidgetsOnboardingSubtitleEn._(_root);
+	late final _TranslationsScreensOnboardingTitleEn title = _TranslationsScreensOnboardingTitleEn._(_root);
+	late final _TranslationsScreensOnboardingSubtitleEn subtitle = _TranslationsScreensOnboardingSubtitleEn._(_root);
 }
 
-// Path: widgets.login
-class _TranslationsWidgetsLoginEn {
-	_TranslationsWidgetsLoginEn._(this._root);
+// Path: screens.login
+class _TranslationsScreensLoginEn {
+	_TranslationsScreensLoginEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 	String get title => 'Welcome Back!';
 	String get subtitle => 'Discover Limitless Choices and Unmatched Convenience.';
-	late final _TranslationsWidgetsLoginFormEn form = _TranslationsWidgetsLoginFormEn._(_root);
-	late final _TranslationsWidgetsLoginPlaceholderEn placeholder = _TranslationsWidgetsLoginPlaceholderEn._(_root);
-	late final _TranslationsWidgetsLoginButtonEn button = _TranslationsWidgetsLoginButtonEn._(_root);
-	late final _TranslationsWidgetsLoginCommonEn common = _TranslationsWidgetsLoginCommonEn._(_root);
+	late final _TranslationsScreensLoginFormEn form = _TranslationsScreensLoginFormEn._(_root);
+	late final _TranslationsScreensLoginPlaceholderEn placeholder = _TranslationsScreensLoginPlaceholderEn._(_root);
+	late final _TranslationsScreensLoginButtonEn button = _TranslationsScreensLoginButtonEn._(_root);
+	late final _TranslationsScreensLoginTextEn text = _TranslationsScreensLoginTextEn._(_root);
 }
 
-// Path: widgets.register
-class _TranslationsWidgetsRegisterEn {
-	_TranslationsWidgetsRegisterEn._(this._root);
+// Path: screens.register
+class _TranslationsScreensRegisterEn {
+	_TranslationsScreensRegisterEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 	String get title => 'Register';
-	String get subtitle => 'Let’s create your account';
-	late final _TranslationsWidgetsRegisterFormEn form = _TranslationsWidgetsRegisterFormEn._(_root);
-	late final _TranslationsWidgetsRegisterPlaceholderEn placeholder = _TranslationsWidgetsRegisterPlaceholderEn._(_root);
-	late final _TranslationsWidgetsRegisterButtonEn button = _TranslationsWidgetsRegisterButtonEn._(_root);
-	late final _TranslationsWidgetsRegisterCommonEn common = _TranslationsWidgetsRegisterCommonEn._(_root);
+	String get subtitle => 'Let\'s create your account';
+	late final _TranslationsScreensRegisterFormEn form = _TranslationsScreensRegisterFormEn._(_root);
+	late final _TranslationsScreensRegisterPlaceholderEn placeholder = _TranslationsScreensRegisterPlaceholderEn._(_root);
+	late final _TranslationsScreensRegisterButtonEn button = _TranslationsScreensRegisterButtonEn._(_root);
+	late final _TranslationsScreensRegisterTextEn text = _TranslationsScreensRegisterTextEn._(_root);
 }
 
-// Path: widgets.forgotPassword
-class _TranslationsWidgetsForgotPasswordEn {
-	_TranslationsWidgetsForgotPasswordEn._(this._root);
+// Path: screens.forgotPassword
+class _TranslationsScreensForgotPasswordEn {
+	_TranslationsScreensForgotPasswordEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 	String get title => 'Forgot Password';
 	String get subtitle => 'Don\'t worry! We got your back. Enter your email address to reset your password.';
-	late final _TranslationsWidgetsForgotPasswordFormEn form = _TranslationsWidgetsForgotPasswordFormEn._(_root);
-	late final _TranslationsWidgetsForgotPasswordPlaceholderEn placeholder = _TranslationsWidgetsForgotPasswordPlaceholderEn._(_root);
-	late final _TranslationsWidgetsForgotPasswordButtonEn button = _TranslationsWidgetsForgotPasswordButtonEn._(_root);
-	late final _TranslationsWidgetsForgotPasswordCommonEn common = _TranslationsWidgetsForgotPasswordCommonEn._(_root);
+	late final _TranslationsScreensForgotPasswordFormEn form = _TranslationsScreensForgotPasswordFormEn._(_root);
+	late final _TranslationsScreensForgotPasswordPlaceholderEn placeholder = _TranslationsScreensForgotPasswordPlaceholderEn._(_root);
+	late final _TranslationsScreensForgotPasswordButtonEn button = _TranslationsScreensForgotPasswordButtonEn._(_root);
+	late final _TranslationsScreensForgotPasswordTextEn text = _TranslationsScreensForgotPasswordTextEn._(_root);
 }
 
-// Path: widgets.navigation
-class _TranslationsWidgetsNavigationEn {
-	_TranslationsWidgetsNavigationEn._(this._root);
+// Path: setting.account
+class _TranslationsSettingAccountEn {
+	_TranslationsSettingAccountEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get home => 'Home';
-	String get explore => 'Explore';
-	String get wishlist => 'Wishlist';
-	String get cart => 'Cart';
-	String get profile => 'Profile';
+	String get title => 'Account';
+	String get edit => 'Update information';
 }
 
-// Path: widgets.onboarding.title
-class _TranslationsWidgetsOnboardingTitleEn {
-	_TranslationsWidgetsOnboardingTitleEn._(this._root);
+// Path: setting.settings
+class _TranslationsSettingSettingsEn {
+	_TranslationsSettingSettingsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Settings';
+	String get appearance => 'Appearance';
+	String get language => 'Language';
+	String get help => 'Help';
+	String get logout => 'Logout';
+}
+
+// Path: screens.onboarding.title
+class _TranslationsScreensOnboardingTitleEn {
+	_TranslationsScreensOnboardingTitleEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -173,9 +250,9 @@ class _TranslationsWidgetsOnboardingTitleEn {
 	String get t3 => 'No wastage of time';
 }
 
-// Path: widgets.onboarding.subtitle
-class _TranslationsWidgetsOnboardingSubtitleEn {
-	_TranslationsWidgetsOnboardingSubtitleEn._(this._root);
+// Path: screens.onboarding.subtitle
+class _TranslationsScreensOnboardingSubtitleEn {
+	_TranslationsScreensOnboardingSubtitleEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -185,9 +262,9 @@ class _TranslationsWidgetsOnboardingSubtitleEn {
 	String get st3 => 'Receive your e-books as soon as you complete payment - No Waiting, No Hassle!';
 }
 
-// Path: widgets.login.form
-class _TranslationsWidgetsLoginFormEn {
-	_TranslationsWidgetsLoginFormEn._(this._root);
+// Path: screens.login.form
+class _TranslationsScreensLoginFormEn {
+	_TranslationsScreensLoginFormEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -196,9 +273,9 @@ class _TranslationsWidgetsLoginFormEn {
 	String get password => 'Password';
 }
 
-// Path: widgets.login.placeholder
-class _TranslationsWidgetsLoginPlaceholderEn {
-	_TranslationsWidgetsLoginPlaceholderEn._(this._root);
+// Path: screens.login.placeholder
+class _TranslationsScreensLoginPlaceholderEn {
+	_TranslationsScreensLoginPlaceholderEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -207,9 +284,9 @@ class _TranslationsWidgetsLoginPlaceholderEn {
 	String get password => 'Enter your password';
 }
 
-// Path: widgets.login.button
-class _TranslationsWidgetsLoginButtonEn {
-	_TranslationsWidgetsLoginButtonEn._(this._root);
+// Path: screens.login.button
+class _TranslationsScreensLoginButtonEn {
+	_TranslationsScreensLoginButtonEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -218,9 +295,9 @@ class _TranslationsWidgetsLoginButtonEn {
 	String get createAccount => 'Create Account';
 }
 
-// Path: widgets.login.common
-class _TranslationsWidgetsLoginCommonEn {
-	_TranslationsWidgetsLoginCommonEn._(this._root);
+// Path: screens.login.text
+class _TranslationsScreensLoginTextEn {
+	_TranslationsScreensLoginTextEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -232,9 +309,9 @@ class _TranslationsWidgetsLoginCommonEn {
 	String get forgotPassword => 'Forgot password';
 }
 
-// Path: widgets.register.form
-class _TranslationsWidgetsRegisterFormEn {
-	_TranslationsWidgetsRegisterFormEn._(this._root);
+// Path: screens.register.form
+class _TranslationsScreensRegisterFormEn {
+	_TranslationsScreensRegisterFormEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -247,9 +324,9 @@ class _TranslationsWidgetsRegisterFormEn {
 	String get phoneNo => 'Phone Number';
 }
 
-// Path: widgets.register.placeholder
-class _TranslationsWidgetsRegisterPlaceholderEn {
-	_TranslationsWidgetsRegisterPlaceholderEn._(this._root);
+// Path: screens.register.placeholder
+class _TranslationsScreensRegisterPlaceholderEn {
+	_TranslationsScreensRegisterPlaceholderEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -262,9 +339,9 @@ class _TranslationsWidgetsRegisterPlaceholderEn {
 	String get phoneNo => 'Enter your phone number';
 }
 
-// Path: widgets.register.button
-class _TranslationsWidgetsRegisterButtonEn {
-	_TranslationsWidgetsRegisterButtonEn._(this._root);
+// Path: screens.register.button
+class _TranslationsScreensRegisterButtonEn {
+	_TranslationsScreensRegisterButtonEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -272,9 +349,9 @@ class _TranslationsWidgetsRegisterButtonEn {
 	String get createAccount => 'Create Account';
 }
 
-// Path: widgets.register.common
-class _TranslationsWidgetsRegisterCommonEn {
-	_TranslationsWidgetsRegisterCommonEn._(this._root);
+// Path: screens.register.text
+class _TranslationsScreensRegisterTextEn {
+	_TranslationsScreensRegisterTextEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -290,12 +367,12 @@ class _TranslationsWidgetsRegisterCommonEn {
 	String get verifyEmail => 'Verify your email address!';
 	String get verifyEmailText => 'We have sent a verification email to your email address. Please verify your email address to continue.';
 	String get successVerifyEmail => 'Your account verified successfully!';
-	String get successVerifyEmailText => 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
+	String get successVerifyEmailSubtitle => 'Welcome to Your Ultimate Ebook Destination! Your account is created. Unlease the power of limitless choices and unmatched convenience!';
 }
 
-// Path: widgets.forgotPassword.form
-class _TranslationsWidgetsForgotPasswordFormEn {
-	_TranslationsWidgetsForgotPasswordFormEn._(this._root);
+// Path: screens.forgotPassword.form
+class _TranslationsScreensForgotPasswordFormEn {
+	_TranslationsScreensForgotPasswordFormEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -303,9 +380,9 @@ class _TranslationsWidgetsForgotPasswordFormEn {
 	String get email => 'Email';
 }
 
-// Path: widgets.forgotPassword.placeholder
-class _TranslationsWidgetsForgotPasswordPlaceholderEn {
-	_TranslationsWidgetsForgotPasswordPlaceholderEn._(this._root);
+// Path: screens.forgotPassword.placeholder
+class _TranslationsScreensForgotPasswordPlaceholderEn {
+	_TranslationsScreensForgotPasswordPlaceholderEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -313,9 +390,9 @@ class _TranslationsWidgetsForgotPasswordPlaceholderEn {
 	String get email => 'Enter your email';
 }
 
-// Path: widgets.forgotPassword.button
-class _TranslationsWidgetsForgotPasswordButtonEn {
-	_TranslationsWidgetsForgotPasswordButtonEn._(this._root);
+// Path: screens.forgotPassword.button
+class _TranslationsScreensForgotPasswordButtonEn {
+	_TranslationsScreensForgotPasswordButtonEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -323,14 +400,14 @@ class _TranslationsWidgetsForgotPasswordButtonEn {
 	String get resetPassword => 'Reset Password';
 }
 
-// Path: widgets.forgotPassword.common
-class _TranslationsWidgetsForgotPasswordCommonEn {
-	_TranslationsWidgetsForgotPasswordCommonEn._(this._root);
+// Path: screens.forgotPassword.text
+class _TranslationsScreensForgotPasswordTextEn {
+	_TranslationsScreensForgotPasswordTextEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 	String get backToLogin => 'Back to login';
 	String get success => 'Reset Password Success';
-	String get successText => 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+	String get successSubtile => 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
 }
