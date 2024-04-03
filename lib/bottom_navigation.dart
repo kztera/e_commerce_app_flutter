@@ -17,22 +17,23 @@ class BottomNavigation extends StatelessWidget {
     final darkMode = HelperFunc.isDarkMode(context);
 
     return Scaffold(
-      bottomNavigationBar: Obx(
-        () => BottomBarSalomon(
-          items: bottomNavigationItems,
-          color: darkMode ? ThemeColors.white : ThemeColors.black,
-          colorSelected: ThemeColors.white,
-          backgroundColor: darkMode ? ThemeColors.black : ThemeColors.white,
-          backgroundSelected: ThemeColors.primary,
-          borderRadius: BorderRadius.circular(0),
-          indexSelected: controller.selectedIndex.value,
-          onTap: (index) => controller.selectedIndex.value = index,
-          animated: true,
-          bottom: CustomSizes.md,
-          duration: const Duration(milliseconds: AnimationTimes.durationVeryShort),
+        bottomNavigationBar: Obx(
+          () => BottomBarSalomon(
+            items: bottomNavigationItems,
+            color: darkMode ? ThemeColors.white : ThemeColors.black,
+            colorSelected: ThemeColors.white,
+            backgroundColor: darkMode ? ThemeColors.black : ThemeColors.white,
+            backgroundSelected: ThemeColors.primary,
+            borderRadius: BorderRadius.circular(0),
+            indexSelected: controller.selectedIndex.value,
+            onTap: (index) => controller.selectedIndex.value = index,
+            animated: true,
+            bottom: CustomSizes.md,
+            duration: const Duration(milliseconds: AnimationTimes.durationVeryShort),
+          ),
         ),
-      ),
-      body: Container(),
-    );
+        body: Obx(
+          () => controller.screens[controller.selectedIndex.value],
+        ));
   }
 }
