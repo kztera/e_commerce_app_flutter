@@ -12,33 +12,31 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const RegisterHeader(),
-                const SizedBox(height: CustomSizes.spaceBtwSections),
-                const RegisterForm(),
-                const SizedBox(height: CustomSizes.spaceBtwSections),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () => Get.toNamed('/register/verify-email'),
-                    child: Text(t.screens.register.button.createAccount),
-                  ),
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const RegisterHeader(),
+              const SizedBox(height: CustomSizes.spaceBtwSections),
+              const RegisterForm(),
+              const SizedBox(height: CustomSizes.spaceBtwSections),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => Get.toNamed('/register/verify-email'),
+                  child: Text(t.screens.register.button.createAccount),
                 ),
-                const SizedBox(height: CustomSizes.spaceBtwItems),
-                const SizedBox(height: CustomSizes.spaceBtwSections),
-                FormDivider(text: t.screens.register.text.orSignUpWith),
-                const SizedBox(height: CustomSizes.spaceBtwSections),
-                const SocialButton()
-              ],
-            ),
+              ),
+              const SizedBox(height: CustomSizes.spaceBtwItems),
+              const SizedBox(height: CustomSizes.spaceBtwSections),
+              FormDivider(text: t.screens.register.text.orSignUpWith),
+              const SizedBox(height: CustomSizes.spaceBtwSections),
+              const SocialButton()
+            ],
           ),
         ),
       ),

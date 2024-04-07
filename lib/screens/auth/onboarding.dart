@@ -30,20 +30,18 @@ class OnboardingScreen extends StatelessWidget {
           subtitle: t.screens.onboarding.subtitle.st3),
     ];
 
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            PageView(
-              controller: controller.pageController,
-              onPageChanged: controller.updatePageIndex,
-              children: pages,
-            ),
-            OnboardingSkipButton(indexOfLastPage: pages.length - 1),
-            const OnboardingDotNavigation(),
-            OnboardingNextButton(indexOfLastPage: pages.length - 1)
-          ],
-        ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndex,
+            children: pages,
+          ),
+          OnboardingSkipButton(indexOfLastPage: pages.length - 1),
+          const OnboardingDotNavigation(),
+          OnboardingNextButton(indexOfLastPage: pages.length - 1)
+        ],
       ),
     );
   }

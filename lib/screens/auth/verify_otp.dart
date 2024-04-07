@@ -9,103 +9,101 @@ class VerifyOTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
-            centerTitle: true,
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(CustomSizes.defaultSpace * 2),
-                  child: Text(
-                    'Một mã gồm 4 chữ số đã được gửi về email example@gmail.com của bạn',
-                    style: Theme.of(context).textTheme.labelLarge,
-                    textAlign: TextAlign.center,
-                  ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
+          centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(CustomSizes.defaultSpace * 2),
+                child: Text(
+                  'Một mã gồm 4 chữ số đã được gửi về email example@gmail.com của bạn',
+                  style: Theme.of(context).textTheme.labelLarge,
+                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                  height: CustomSizes.spaceBtwSections * 2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: CustomSizes.iconLg * 2,
-                        width: CustomSizes.iconLg * 2,
-                        child: TextFormField(
-                          onChanged: (value) {},
-                          style: Theme.of(context).textTheme.headlineSmall,
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        height: CustomSizes.iconLg * 2,
-                        width: CustomSizes.iconLg * 2,
-                        child: TextFormField(
-                          onChanged: (value) {},
-                          style: Theme.of(context).textTheme.headlineSmall,
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        height: CustomSizes.iconLg * 2,
-                        width: CustomSizes.iconLg * 2,
-                        child: TextFormField(
-                          onChanged: (value) {},
-                          style: Theme.of(context).textTheme.headlineSmall,
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        height: CustomSizes.iconLg * 2,
-                        width: CustomSizes.iconLg * 2,
-                        child: TextFormField(
-                          onChanged: (value) {},
-                          style: Theme.of(context).textTheme.headlineSmall,
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: CustomSizes.spaceBtwSections * 4,
-                ),
-                Column(
+              ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwSections * 2,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _countDownTimer(),
-                    const SizedBox(height: CustomSizes.defaultSpace * 2),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Không nhận được mã OTP?',
-                            style: Theme.of(context).textTheme.labelMedium,
-                          ),
-                          TextSpan(
-                            text: ' Gửi lại',
-                            style: Theme.of(context).textTheme.labelMedium,
-                            recognizer: TapGestureRecognizer()..onTap = () {},
-                          ),
-                        ],
+                    SizedBox(
+                      height: CustomSizes.iconLg * 2,
+                      width: CustomSizes.iconLg * 2,
+                      child: TextFormField(
+                        onChanged: (value) {},
+                        style: Theme.of(context).textTheme.headlineSmall,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: CustomSizes.iconLg * 2,
+                      width: CustomSizes.iconLg * 2,
+                      child: TextFormField(
+                        onChanged: (value) {},
+                        style: Theme.of(context).textTheme.headlineSmall,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: CustomSizes.iconLg * 2,
+                      width: CustomSizes.iconLg * 2,
+                      child: TextFormField(
+                        onChanged: (value) {},
+                        style: Theme.of(context).textTheme.headlineSmall,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: CustomSizes.iconLg * 2,
+                      width: CustomSizes.iconLg * 2,
+                      child: TextFormField(
+                        onChanged: (value) {},
+                        style: Theme.of(context).textTheme.headlineSmall,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],
-                )
-              ],
-            ),
-          )),
-    );
+                ),
+              ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwSections * 4,
+              ),
+              Column(
+                children: [
+                  _countDownTimer(),
+                  const SizedBox(height: CustomSizes.defaultSpace * 2),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Không nhận được mã OTP?',
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        TextSpan(
+                          text: ' Gửi lại',
+                          style: Theme.of(context).textTheme.labelMedium,
+                          recognizer: TapGestureRecognizer()..onTap = () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ));
   }
 
   TweenAnimationBuilder<num> _countDownTimer() {
