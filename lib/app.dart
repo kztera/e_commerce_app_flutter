@@ -1,6 +1,6 @@
-import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
-import 'package:e_commerce_app_flutter_app/routes/routes.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/theme.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/routes/routes.dart';
+import 'package:zzz_book_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';

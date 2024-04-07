@@ -1,7 +1,7 @@
-import 'package:e_commerce_app_flutter_app/controllers/onboarding_controller.dart';
-import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app_flutter_app/utils/devices/device_utility.dart';
+import 'package:zzz_book_store/controllers/onboarding_controller.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingSkipButton extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/controllers/register_controller.dart';
+import 'package:zzz_book_store/controllers/register_controller.dart';
 import 'package:get/get.dart';
 
 class RegisterBinding implements Bindings {

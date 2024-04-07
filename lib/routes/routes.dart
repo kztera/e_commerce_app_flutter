@@ -1,17 +1,17 @@
-import 'package:e_commerce_app_flutter_app/bindings/navigation_binding.dart';
-import 'package:e_commerce_app_flutter_app/bindings/register_binding.dart';
-import 'package:e_commerce_app_flutter_app/bottom_navigation.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/forgot_password.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/login.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/onboarding.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/register.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/success.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/verify_email.dart';
-import 'package:e_commerce_app_flutter_app/screens/auth/verify_otp.dart';
+import 'package:zzz_book_store/bindings/navigation_binding.dart';
+import 'package:zzz_book_store/bindings/register_binding.dart';
+import 'package:zzz_book_store/bottom_navigation.dart';
+import 'package:zzz_book_store/screens/auth/forgot_password.dart';
+import 'package:zzz_book_store/screens/auth/login.dart';
+import 'package:zzz_book_store/screens/auth/onboarding.dart';
+import 'package:zzz_book_store/screens/auth/register.dart';
+import 'package:zzz_book_store/screens/auth/success.dart';
+import 'package:zzz_book_store/screens/auth/verify_email.dart';
+import 'package:zzz_book_store/screens/auth/verify_otp.dart';
 import 'package:get/route_manager.dart';
 
 class Routes {
-  static const initial = '/onboarding';
+  static const initial = '/main';
 
   static final pages = [
     GetPage(name: '/onboarding', page: () => const OnboardingScreen()),

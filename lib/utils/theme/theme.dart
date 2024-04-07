@@ -1,12 +1,12 @@
-import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/appbar_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/bottom_sheet_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/checkbox_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/chip_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/elvated_button_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/outlined_button_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/text_custom_theme.dart';
-import 'package:e_commerce_app_flutter_app/utils/theme/widgets/text_field_custom_theme.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/theme/widgets/appbar_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/bottom_sheet_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/checkbox_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/chip_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/elvated_button_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/outlined_button_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/text_custom_theme.dart';
+import 'package:zzz_book_store/utils/theme/widgets/text_field_custom_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {

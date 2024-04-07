@@ -1,4 +1,4 @@
-import "package:e_commerce_app_flutter_app/utils/constants/colors.dart";
+import "package:zzz_book_store/utils/constants/colors.dart";
 import "package:flutter/material.dart";
 
 class CircleDecoration extends StatelessWidget {

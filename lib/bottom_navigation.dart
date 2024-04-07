@@ -1,9 +1,9 @@
-import "package:e_commerce_app_flutter_app/controllers/navigation_controller.dart";
-import "package:e_commerce_app_flutter_app/utils/config/bottom_navigation_bar_config.dart";
-import "package:e_commerce_app_flutter_app/utils/constants/animations.dart";
-import "package:e_commerce_app_flutter_app/utils/constants/colors.dart";
-import "package:e_commerce_app_flutter_app/utils/constants/sizes.dart";
-import "package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart";
+import "package:zzz_book_store/controllers/navigation_controller.dart";
+import "package:zzz_book_store/utils/config/bottom_navigation_bar_config.dart";
+import "package:zzz_book_store/utils/constants/animations.dart";
+import "package:zzz_book_store/utils/constants/colors.dart";
+import "package:zzz_book_store/utils/constants/sizes.dart";
+import "package:zzz_book_store/utils/helpers/helper_function.dart";
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import "package:flutter/material.dart";
 import "package:get/get.dart";

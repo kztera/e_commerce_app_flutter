@@ -1,10 +1,10 @@
-import 'package:e_commerce_app_flutter_app/controllers/onboarding_controller.dart';
-import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
+import 'package:zzz_book_store/controllers/onboarding_controller.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app_flutter_app/utils/devices/device_utility.dart';
+import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
 
 class OnboardingDotNavigation extends StatelessWidget {
   const OnboardingDotNavigation({

@@ -91,5 +91,12 @@
       "success": "Reset Password Success",
       "successSubtile": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password."
     }
+  },
+
+  "home": {
+    "appbar": {
+      "title": "Hi, $name",
+      "quote": "Good day for shopping!"
+    }
   }
 }

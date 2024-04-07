@@ -1,9 +1,9 @@
-import "package:e_commerce_app_flutter_app/controllers/register_controller.dart";
-import "package:e_commerce_app_flutter_app/i18n/translations.g.dart";
-import "package:e_commerce_app_flutter_app/utils/constants/colors.dart";
-import "package:e_commerce_app_flutter_app/utils/constants/sizes.dart";
-import "package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart";
-import "package:e_commerce_app_flutter_app/widgets/register/check_password.dart";
+import "package:zzz_book_store/controllers/register_controller.dart";
+import "package:zzz_book_store/i18n/translations.g.dart";
+import "package:zzz_book_store/utils/constants/colors.dart";
+import "package:zzz_book_store/utils/constants/sizes.dart";
+import "package:zzz_book_store/utils/helpers/helper_function.dart";
+import "package:zzz_book_store/widgets/register/check_password.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:iconsax/iconsax.dart";

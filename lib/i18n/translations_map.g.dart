@@ -88,6 +88,8 @@ extension on Translations {
 			case 'screens.forgotPassword.text.backToLogin': return 'Back to login';
 			case 'screens.forgotPassword.text.success': return 'Reset Password Success';
 			case 'screens.forgotPassword.text.successSubtile': return 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+			case 'screens.home.appbar.title': return ({required Object name}) => 'Hi, ${name}';
+			case 'screens.home.appbar.quote': return 'Good day for shopping!';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -179,7 +181,9 @@ extension on _TranslationsVi {
 			case 'screens.forgotPassword.button.resetPassword': return 'Đặt lại mật khẩu';
 			case 'screens.forgotPassword.text.backToLogin': return 'Quay lại đăng nhập';
 			case 'screens.forgotPassword.text.success': return 'Đặt lại mật khẩu thành công';
-			case 'screens.forgotPassword.text.successSubtitle': return 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+			case 'screens.forgotPassword.text.successSubtile': return 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+			case 'screens.home.appbar.title': return ({required Object name}) => 'Chào bạn, ${name}';
+			case 'screens.home.appbar.quote': return 'Vạn đầu sách hay, chẳng bằng tay sách mở';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';

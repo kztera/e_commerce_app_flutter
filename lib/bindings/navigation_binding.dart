@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/controllers/navigation_controller.dart';
+import 'package:zzz_book_store/controllers/navigation_controller.dart';
 import 'package:get/get.dart';
 
 class NavigationBinding implements Bindings {

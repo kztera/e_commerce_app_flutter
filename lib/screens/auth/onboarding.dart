@@ -1,10 +1,10 @@
-import 'package:e_commerce_app_flutter_app/controllers/onboarding_controller.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_dot_navigation.dart';
-import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_next_button.dart';
-import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_page.dart';
-import 'package:e_commerce_app_flutter_app/widgets/onboarding/onboarding_skip_button.dart';
-import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
+import 'package:zzz_book_store/controllers/onboarding_controller.dart';
+import 'package:zzz_book_store/utils/constants/image_strings.dart';
+import 'package:zzz_book_store/widgets/onboarding/onboarding_dot_navigation.dart';
+import 'package:zzz_book_store/widgets/onboarding/onboarding_next_button.dart';
+import 'package:zzz_book_store/widgets/onboarding/onboarding_page.dart';
+import 'package:zzz_book_store/widgets/onboarding/onboarding_skip_button.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

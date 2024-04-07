@@ -1,7 +1,7 @@
-import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/utils/constants/image_strings.dart';
+import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

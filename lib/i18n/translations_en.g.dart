@@ -123,6 +123,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensLoginEn login = _TranslationsScreensLoginEn._(_root);
 	late final _TranslationsScreensRegisterEn register = _TranslationsScreensRegisterEn._(_root);
 	late final _TranslationsScreensForgotPasswordEn forgotPassword = _TranslationsScreensForgotPasswordEn._(_root);
+	late final _TranslationsScreensHomeEn home = _TranslationsScreensHomeEn._(_root);
 }
 
 // Path: setting
@@ -211,6 +212,16 @@ class _TranslationsScreensForgotPasswordEn {
 	late final _TranslationsScreensForgotPasswordPlaceholderEn placeholder = _TranslationsScreensForgotPasswordPlaceholderEn._(_root);
 	late final _TranslationsScreensForgotPasswordButtonEn button = _TranslationsScreensForgotPasswordButtonEn._(_root);
 	late final _TranslationsScreensForgotPasswordTextEn text = _TranslationsScreensForgotPasswordTextEn._(_root);
+}
+
+// Path: screens.home
+class _TranslationsScreensHomeEn {
+	_TranslationsScreensHomeEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensHomeAppbarEn appbar = _TranslationsScreensHomeAppbarEn._(_root);
 }
 
 // Path: setting.account
@@ -410,4 +421,15 @@ class _TranslationsScreensForgotPasswordTextEn {
 	String get backToLogin => 'Back to login';
 	String get success => 'Reset Password Success';
 	String get successSubtile => 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+}
+
+// Path: screens.home.appbar
+class _TranslationsScreensHomeAppbarEn {
+	_TranslationsScreensHomeAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String title({required Object name}) => 'Hi, ${name}';
+	String get quote => 'Good day for shopping!';
 }

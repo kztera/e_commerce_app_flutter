@@ -89,7 +89,14 @@
     "text": {
       "backToLogin": "Quay lại đăng nhập",
       "success": "Đặt lại mật khẩu thành công",
-      "successSubtitle": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
+      "successSubtile": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
+    }
+  },
+
+  "home": {
+    "appbar": {
+      "title": "Chào bạn, $name",
+      "quote": "Vạn đầu sách hay, chẳng bằng tay sách mở"
     }
   }
 }

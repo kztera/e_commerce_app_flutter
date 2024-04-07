@@ -1,7 +1,7 @@
-import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
-import 'package:e_commerce_app_flutter_app/utils/helpers/helper_function.dart';
-import 'package:e_commerce_app_flutter_app/widgets/main/home/circle_decoration.dart';
-import 'package:e_commerce_app_flutter_app/widgets/main/home/curved_edge_widget.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
+import 'package:zzz_book_store/widgets/main/home/circle_decoration.dart';
+import 'package:zzz_book_store/widgets/main/home/curved_edge_widget.dart';
 import 'package:flutter/material.dart';
 
 class HeaderHome extends StatelessWidget {

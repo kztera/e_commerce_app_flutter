@@ -119,6 +119,7 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensLoginVi login = _TranslationsScreensLoginVi._(_root);
 	@override late final _TranslationsScreensRegisterVi register = _TranslationsScreensRegisterVi._(_root);
 	@override late final _TranslationsScreensForgotPasswordVi forgotPassword = _TranslationsScreensForgotPasswordVi._(_root);
+	@override late final _TranslationsScreensHomeVi home = _TranslationsScreensHomeVi._(_root);
 }
 
 // Path: setting
@@ -207,6 +208,16 @@ class _TranslationsScreensForgotPasswordVi extends _TranslationsScreensForgotPas
 	@override late final _TranslationsScreensForgotPasswordPlaceholderVi placeholder = _TranslationsScreensForgotPasswordPlaceholderVi._(_root);
 	@override late final _TranslationsScreensForgotPasswordButtonVi button = _TranslationsScreensForgotPasswordButtonVi._(_root);
 	@override late final _TranslationsScreensForgotPasswordTextVi text = _TranslationsScreensForgotPasswordTextVi._(_root);
+}
+
+// Path: screens.home
+class _TranslationsScreensHomeVi extends _TranslationsScreensHomeEn {
+	_TranslationsScreensHomeVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensHomeAppbarVi appbar = _TranslationsScreensHomeAppbarVi._(_root);
 }
 
 // Path: setting.account
@@ -405,5 +416,16 @@ class _TranslationsScreensForgotPasswordTextVi extends _TranslationsScreensForgo
 	// Translations
 	@override String get backToLogin => 'Quay lại đăng nhập';
 	@override String get success => 'Đặt lại mật khẩu thành công';
-	@override String get successSubtitle => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+	@override String get successSubtile => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+}
+
+// Path: screens.home.appbar
+class _TranslationsScreensHomeAppbarVi extends _TranslationsScreensHomeAppbarEn {
+	_TranslationsScreensHomeAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String title({required Object name}) => 'Chào bạn, ${name}';
+	@override String get quote => 'Vạn đầu sách hay, chẳng bằng tay sách mở';
 }

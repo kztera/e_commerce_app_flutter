@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/utils/constants/animations.dart';
+import 'package:zzz_book_store/utils/constants/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

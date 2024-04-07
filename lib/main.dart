@@ -1,5 +1,5 @@
-import 'package:e_commerce_app_flutter_app/app.dart';
-import 'package:e_commerce_app_flutter_app/i18n/translations.g.dart';
+import 'package:zzz_book_store/app.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 

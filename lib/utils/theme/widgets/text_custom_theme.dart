@@ -1,4 +1,4 @@
-import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextCustomTheme {
@@ -13,9 +13,11 @@ class TextCustomTheme {
     titleSmall: const TextStyle().copyWith(fontSize: 16.0, fontWeight: FontWeight.w400, color: ThemeColors.dark),
     bodyLarge: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.dark),
     bodyMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal, color: ThemeColors.dark),
-    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.dark.withOpacity(0.5)),
+    bodySmall: const TextStyle()
+        .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.dark.withOpacity(0.5)),
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.dark),
-    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.dark.withOpacity(0.5)),
+    labelMedium: const TextStyle()
+        .copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.dark.withOpacity(0.5)),
   );
 
   static TextTheme darkTextTheme = TextTheme(
@@ -27,8 +29,10 @@ class TextCustomTheme {
     titleSmall: const TextStyle().copyWith(fontSize: 16.0, fontWeight: FontWeight.w400, color: ThemeColors.light),
     bodyLarge: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.light),
     bodyMedium: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.normal, color: ThemeColors.light),
-    bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.light.withOpacity(0.5)),
+    bodySmall: const TextStyle()
+        .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: ThemeColors.light.withOpacity(0.5)),
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.light),
-    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.light.withOpacity(0.5)),
+    labelMedium: const TextStyle()
+        .copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: ThemeColors.light.withOpacity(0.5)),
   );
 }

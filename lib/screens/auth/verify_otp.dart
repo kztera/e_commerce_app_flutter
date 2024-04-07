@@ -1,6 +1,6 @@
-import 'package:e_commerce_app_flutter_app/utils/constants/colors.dart';
-import 'package:e_commerce_app_flutter_app/utils/constants/sizes.dart';
-import 'package:e_commerce_app_flutter_app/utils/devices/device_utility.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
