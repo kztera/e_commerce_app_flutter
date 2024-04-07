@@ -27,6 +27,9 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonCustomTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: OutlinedButtonCustomTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TextFieldCustomTheme.lightInputDecorationTheme,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -43,5 +46,8 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonCustomTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: OutlinedButtonCustomTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TextFieldCustomTheme.darkInputDecorationTheme,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
   );
 }
