@@ -11,5 +11,6 @@
   "update": "Update",
   "edit": "Edit",
   "delete": "Delete",
-  "detail": "Detail"
+  "detail": "Detail",
+  "viewAll": "View all"
 }

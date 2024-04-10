@@ -96,7 +96,9 @@
   "home": {
     "appbar": {
       "title": "Chào bạn, $name",
-      "quote": "Vạn đầu sách hay, chẳng bằng tay sách mở"
-    }
+      "quote": "Vạn đầu sách hay đang chờ bạn khám phá"
+    },
+    "search": "Tìm kiếm tên sách, tác giả, thể loại...",
+    "category": "Thể loại nổi bật"
   }
 }

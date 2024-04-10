@@ -9,12 +9,14 @@ class CircleDecoration extends StatelessWidget {
     this.height = 400,
     this.radius = 200,
     this.padding = 0,
+    this.margin,
     this.bgColor = ThemeColors.white,
   });
 
   final double? width;
   final double? height;
   final double radius;
+  final EdgeInsets? margin;
   final double padding;
   final Widget? child;
   final Color bgColor;
@@ -23,11 +25,12 @@ class CircleDecoration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: width,
+      height: height,
+      margin: margin,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
-        color: ThemeColors.white.withOpacity(0.1),
+        color: bgColor,
       ),
     );
   }

@@ -61,6 +61,7 @@ class _TranslationsButtonsVi extends _TranslationsButtonsEn {
 	@override String get edit => 'Chỉnh sửa';
 	@override String get delete => 'Xóa';
 	@override String get detail => 'Chi tiết';
+	@override String get viewAll => 'Xem thêm';
 }
 
 // Path: common
@@ -218,6 +219,8 @@ class _TranslationsScreensHomeVi extends _TranslationsScreensHomeEn {
 
 	// Translations
 	@override late final _TranslationsScreensHomeAppbarVi appbar = _TranslationsScreensHomeAppbarVi._(_root);
+	@override String get search => 'Tìm kiếm tên sách, tác giả, thể loại...';
+	@override String get category => 'Thể loại nổi bật';
 }
 
 // Path: setting.account
@@ -427,5 +430,5 @@ class _TranslationsScreensHomeAppbarVi extends _TranslationsScreensHomeAppbarEn 
 
 	// Translations
 	@override String title({required Object name}) => 'Chào bạn, ${name}';
-	@override String get quote => 'Vạn đầu sách hay, chẳng bằng tay sách mở';
+	@override String get quote => 'Vạn đầu sách hay đang chờ bạn khám phá';
 }

@@ -97,6 +97,8 @@
     "appbar": {
       "title": "Hi, $name",
       "quote": "Good day for shopping!"
-    }
+    },
+    "search": "Search for name, author, genre, etc.",
+    "category": "Popular Categories"
   }
 }

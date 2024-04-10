@@ -25,6 +25,7 @@ extension on Translations {
 			case 'buttons.edit': return 'Edit';
 			case 'buttons.delete': return 'Delete';
 			case 'buttons.detail': return 'Detail';
+			case 'buttons.viewAll': return 'View all';
 			case 'common.copyright': return '© Copyright {year} - Nguyen Khoa. All Rights Reserved. Version {version}';
 			case 'common.filter': return 'Filter';
 			case 'errors.products.e1000': return 'No product found';
@@ -90,6 +91,8 @@ extension on Translations {
 			case 'screens.forgotPassword.text.successSubtile': return 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
 			case 'screens.home.appbar.title': return ({required Object name}) => 'Hi, ${name}';
 			case 'screens.home.appbar.quote': return 'Good day for shopping!';
+			case 'screens.home.search': return 'Search for name, author, genre, etc.';
+			case 'screens.home.category': return 'Popular Categories';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -119,6 +122,7 @@ extension on _TranslationsVi {
 			case 'buttons.edit': return 'Chỉnh sửa';
 			case 'buttons.delete': return 'Xóa';
 			case 'buttons.detail': return 'Chi tiết';
+			case 'buttons.viewAll': return 'Xem thêm';
 			case 'common.copyright': return '© {year} - Bản quyển thuộc về Khoa Nguyễn. Mọi quyền được bảo lưu. Phiên bản {version}';
 			case 'common.filter': return 'Filter';
 			case 'errors.products.e1000': return 'Không tìm thấy sản phẩm nào';
@@ -183,7 +187,9 @@ extension on _TranslationsVi {
 			case 'screens.forgotPassword.text.success': return 'Đặt lại mật khẩu thành công';
 			case 'screens.forgotPassword.text.successSubtile': return 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
 			case 'screens.home.appbar.title': return ({required Object name}) => 'Chào bạn, ${name}';
-			case 'screens.home.appbar.quote': return 'Vạn đầu sách hay, chẳng bằng tay sách mở';
+			case 'screens.home.appbar.quote': return 'Vạn đầu sách hay đang chờ bạn khám phá';
+			case 'screens.home.search': return 'Tìm kiếm tên sách, tác giả, thể loại...';
+			case 'screens.home.category': return 'Thể loại nổi bật';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';

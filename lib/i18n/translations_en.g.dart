@@ -65,6 +65,7 @@ class _TranslationsButtonsEn {
 	String get edit => 'Edit';
 	String get delete => 'Delete';
 	String get detail => 'Detail';
+	String get viewAll => 'View all';
 }
 
 // Path: common
@@ -222,6 +223,8 @@ class _TranslationsScreensHomeEn {
 
 	// Translations
 	late final _TranslationsScreensHomeAppbarEn appbar = _TranslationsScreensHomeAppbarEn._(_root);
+	String get search => 'Search for name, author, genre, etc.';
+	String get category => 'Popular Categories';
 }
 
 // Path: setting.account

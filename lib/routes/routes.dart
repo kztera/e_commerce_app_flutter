@@ -1,4 +1,4 @@
-import 'package:zzz_book_store/bindings/navigation_binding.dart';
+import 'package:zzz_book_store/bindings/main_binding.dart';
 import 'package:zzz_book_store/bindings/register_binding.dart';
 import 'package:zzz_book_store/bottom_navigation.dart';
 import 'package:zzz_book_store/screens/auth/forgot_password.dart';
@@ -21,6 +21,6 @@ class Routes {
     GetPage(name: '/register/success', page: () => const SuccessScreen()),
     GetPage(name: '/forgot-password', page: () => const ForgotPasswordScreen()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
-    GetPage(name: '/main', page: () => const BottomNavigation(), binding: NavigationBinding()),
+    GetPage(name: '/main', page: () => const BottomNavigation(), binding: MainBinding()),
   ];
 }

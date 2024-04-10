@@ -15,4 +15,9 @@ class Images {
   // -- Register Screen
   static const String success = "assets/images/register/success.png";
   static const String emailSent = "assets/images/register/email-send.png";
+
+  // -- Home Screen
+  static const String bn1 = "assets/images/banner/banner1.jpg";
+  static const String bn2 = "assets/images/banner/banner2.jpg";
+  static const String bn3 = "assets/images/banner/banner3.jpg";
 }
