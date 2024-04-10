@@ -1,4 +1,4 @@
-import "package:zzz_book_store/controllers/navigation_controller.dart";
+import "package:zzz_book_store/controllers/main_controller.dart";
 import "package:zzz_book_store/utils/config/bottom_navigation_bar_config.dart";
 import "package:zzz_book_store/utils/constants/animations.dart";
 import "package:zzz_book_store/utils/constants/colors.dart";
@@ -13,7 +13,7 @@ class BottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NavigationController());
+    final controller = Get.put(MainController());
     final darkMode = HelperFunc.isDarkMode(context);
 
     return Scaffold(
