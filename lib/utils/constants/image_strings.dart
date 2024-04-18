@@ -20,4 +20,9 @@ class Images {
   static const String bn1 = "assets/images/banner/banner1.jpg";
   static const String bn2 = "assets/images/banner/banner2.jpg";
   static const String bn3 = "assets/images/banner/banner3.jpg";
+
+  // -- Product
+  static const String book1 = "assets/images/product/p1.png";
+  static const String book2 = "assets/images/product/p2.png";
+  static const String book3 = "assets/images/product/p3.png";
 }

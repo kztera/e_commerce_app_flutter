@@ -1,6 +1,6 @@
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/widgets/cart/cart_count.dart';
+import 'package:zzz_book_store/widgets/carts/cart_count.dart';
 import 'package:iconsax/iconsax.dart';
 
 List<TabItem> bottomNavigationItems = [
