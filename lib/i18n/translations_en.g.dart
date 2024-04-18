@@ -225,6 +225,7 @@ class _TranslationsScreensHomeEn {
 	late final _TranslationsScreensHomeAppbarEn appbar = _TranslationsScreensHomeAppbarEn._(_root);
 	String get search => 'Search for name, author, genre, etc.';
 	String get category => 'Popular Categories';
+	String get popularProduct => 'Popular books';
 }
 
 // Path: setting.account

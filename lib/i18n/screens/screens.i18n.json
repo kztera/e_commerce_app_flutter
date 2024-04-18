@@ -99,6 +99,7 @@
       "quote": "Good day for shopping!"
     },
     "search": "Search for name, author, genre, etc.",
-    "category": "Popular Categories"
+    "category": "Popular Categories",
+    "popularProduct": "Popular books"
   }
 }

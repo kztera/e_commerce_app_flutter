@@ -221,6 +221,7 @@ class _TranslationsScreensHomeVi extends _TranslationsScreensHomeEn {
 	@override late final _TranslationsScreensHomeAppbarVi appbar = _TranslationsScreensHomeAppbarVi._(_root);
 	@override String get search => 'Tìm kiếm tên sách, tác giả, thể loại...';
 	@override String get category => 'Thể loại nổi bật';
+	@override String get popularProduct => 'Sách phổ biến';
 }
 
 // Path: setting.account

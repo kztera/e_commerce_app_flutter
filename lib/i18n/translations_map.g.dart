@@ -93,6 +93,7 @@ extension on Translations {
 			case 'screens.home.appbar.quote': return 'Good day for shopping!';
 			case 'screens.home.search': return 'Search for name, author, genre, etc.';
 			case 'screens.home.category': return 'Popular Categories';
+			case 'screens.home.popularProduct': return 'Popular books';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -190,6 +191,7 @@ extension on _TranslationsVi {
 			case 'screens.home.appbar.quote': return 'Vạn đầu sách hay đang chờ bạn khám phá';
 			case 'screens.home.search': return 'Tìm kiếm tên sách, tác giả, thể loại...';
 			case 'screens.home.category': return 'Thể loại nổi bật';
+			case 'screens.home.popularProduct': return 'Sách phổ biến';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';
