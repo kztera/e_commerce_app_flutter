@@ -7,7 +7,7 @@ import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:zzz_book_store/widgets/main/home/circle_decoration.dart';
-import 'package:zzz_book_store/widgets/shared/rounded_image.dart';
+import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
 
 class ImageSlider extends StatelessWidget {
   const ImageSlider({

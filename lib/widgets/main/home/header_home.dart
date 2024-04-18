@@ -19,7 +19,7 @@ class HeaderHome extends StatelessWidget {
         color: ThemeColors.primary,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
-          height: HelperFunc.screenHeight() * 0.4,
+          height: HelperFunc.screenHeight() * 0.35,
           child: Stack(
             children: [
               Positioned(

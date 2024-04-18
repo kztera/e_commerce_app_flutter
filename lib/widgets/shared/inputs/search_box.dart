@@ -41,11 +41,12 @@ class SearchBox extends StatelessWidget {
             Icon(
               icon,
               color: isDarkMode ? ThemeColors.lightGrey : ThemeColors.darkerGrey,
+              size: CustomSizes.iconXs,
             ),
             const SizedBox(width: CustomSizes.spaceBtwItems),
             Text(
               text,
-              style: Theme.of(context).textTheme.bodySmall!.apply(
+              style: Theme.of(context).textTheme.labelSmall!.apply(
                     color: isDarkMode ? ThemeColors.light : ThemeColors.darkerGrey,
                   ),
             ),

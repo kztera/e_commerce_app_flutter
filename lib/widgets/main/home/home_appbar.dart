@@ -1,6 +1,6 @@
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
-import 'package:zzz_book_store/widgets/shared/custom_appbar.dart';
+import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppbar extends StatelessWidget {

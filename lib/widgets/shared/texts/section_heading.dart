@@ -22,7 +22,7 @@ class SectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: CustomSizes.defaultSpace, right: CustomSizes.defaultSpace),
+      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
