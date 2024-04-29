@@ -31,10 +31,13 @@ class HomeScreen extends GetView<MainController> {
                   text: t.screens.home.search,
                 ),
                 const SizedBox(height: CustomSizes.defaultSpace),
-                SectionHeading(
-                  title: t.screens.home.category,
-                  showButtonAction: false,
-                  textColor: ThemeColors.white,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
+                  child: SectionHeading(
+                    title: t.screens.home.category,
+                    showButtonAction: false,
+                    textColor: ThemeColors.white,
+                  ),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwItems),
                 const CategoryListView(),
@@ -46,7 +49,10 @@ class HomeScreen extends GetView<MainController> {
             child: Column(
               children: [
                 const ImageSlider(),
-                const SizedBox(height: CustomSizes.spaceBtwSections),
+                SectionHeading(
+                  title: t.screens.home.popularProduct,
+                  onPressed: () {},
+                ),
                 GridLayout(
                   itemCount: 2,
                   itemBuilder: (_, index) => const ProductCardVertical(),

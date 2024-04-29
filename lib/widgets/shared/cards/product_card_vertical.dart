@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:zzz_book_store/styles/shadows.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
-import 'package:zzz_book_store/widgets/shared/buttons/circle_icon.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
@@ -28,7 +25,7 @@ class ProductCardVertical extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductCard],
           borderRadius: BorderRadius.circular(CustomSizes.productImageRadius),
-          color: isDarkMode ? ThemeColors.darkGrey : ThemeColors.white,
+          color: isDarkMode ? ThemeColors.darkerGrey : ThemeColors.white,
         ),
         child: Column(
           children: [
@@ -56,16 +53,6 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // const Positioned(
-                  //   top: 0,
-                  //   right: 0,
-                  //   child: CircleIcon(
-                  //     height: CustomSizes.iconLg,
-                  //     width: CustomSizes.iconLg,
-                  //     icon: Iconsax.heart,
-                  //     color: Colors.red,
-                  //   ),
-                  // )
                 ],
               ),
             ),
@@ -75,7 +62,7 @@ class ProductCardVertical extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(title: "Tam thể 1"),
+                  const ProductTitleText(title: "Tam thể 1 2"),
                   const SizedBox(height: CustomSizes.spaceBtwItems / 2),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,35 +77,40 @@ class ProductCardVertical extends StatelessWidget {
                       const Icon(Iconsax.verify5, size: CustomSizes.iconXs, color: ThemeColors.primary)
                     ],
                   ),
-                  // const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const ProductPriceText(
-                        price: '112.000',
-                        isLarge: true,
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: ThemeColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(CustomSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(CustomSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: CustomSizes.iconLg * 1.2,
-                          height: CustomSizes.iconLg * 1.2,
-                          child: Icon(
-                            Iconsax.add,
-                            color: ThemeColors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: CustomSizes.sm),
+                  child: ProductPriceText(
+                    price: '112.000',
+                    isLarge: true,
+                    lineThrough: true,
+                  ),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: ThemeColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(CustomSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(CustomSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: CustomSizes.iconLg * 1.2,
+                    height: CustomSizes.iconLg * 1.2,
+                    child: Icon(
+                      Iconsax.add,
+                      color: ThemeColors.white,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
