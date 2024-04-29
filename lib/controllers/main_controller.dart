@@ -16,11 +16,20 @@ class MainController extends GetxController {
     const CartScreen(),
     const ProfileScreen()
   ];
+  final RxInt cartCount = 0.obs;
 
   final RxInt carouselCurrentIndex = 0.obs;
 
   void changeCarouselIndex(index) {
     carouselCurrentIndex.value = index;
+  }
+
+  void onAddToCart() {
+    cartCount.value++;
+  }
+
+  void onRemoveFromCart() {
+    cartCount.value--;
   }
 
   final categories = [

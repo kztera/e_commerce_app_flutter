@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/styles/shadows.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
@@ -16,6 +18,7 @@ class ProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunc.isDarkMode(context);
+    final controller = Get.put(MainController());
 
     return GestureDetector(
       onTap: () {},
@@ -93,20 +96,28 @@ class ProductCardVertical extends StatelessWidget {
                     lineThrough: true,
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: ThemeColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(CustomSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(CustomSizes.productImageRadius),
+                GestureDetector(
+                  onTap: () => {
+                    controller.onAddToCart(),
+                  },
+                  onDoubleTap: () => {
+                    controller.onRemoveFromCart(),
+                  },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: ThemeColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(CustomSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(CustomSizes.productImageRadius),
+                      ),
                     ),
-                  ),
-                  child: const SizedBox(
-                    width: CustomSizes.iconLg * 1.2,
-                    height: CustomSizes.iconLg * 1.2,
-                    child: Icon(
-                      Iconsax.add,
-                      color: ThemeColors.white,
+                    child: const SizedBox(
+                      width: CustomSizes.iconLg * 1.2,
+                      height: CustomSizes.iconLg * 1.2,
+                      child: Icon(
+                        Iconsax.add,
+                        color: ThemeColors.white,
+                      ),
                     ),
                   ),
                 )

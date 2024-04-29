@@ -1,5 +1,8 @@
+import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import "package:get/get.dart";
+import 'package:zzz_book_store/utils/constants/sizes.dart';
 
 class CartCount extends StatelessWidget {
   const CartCount({
@@ -8,24 +11,30 @@ class CartCount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(2),
-      decoration: BoxDecoration(
-        color: ThemeColors.error,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      constraints: const BoxConstraints(
-        minWidth: 16,
-        minHeight: 16,
-      ),
-      child: const Text(
-        '2',
-        style: TextStyle(
-          color: ThemeColors.white,
-          fontSize: 10,
-        ),
-        textAlign: TextAlign.center,
-      ),
+    final controller = Get.put(MainController());
+
+    return Obx(
+      () => controller.cartCount.value == 0
+          ? const SizedBox()
+          : Container(
+              padding: const EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                color: ThemeColors.error,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              constraints: const BoxConstraints(
+                minWidth: CustomSizes.md,
+                minHeight: CustomSizes.md,
+              ),
+              child: Text(
+                controller.cartCount.value.toString(),
+                style: const TextStyle(
+                  color: ThemeColors.white,
+                  fontSize: 10,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
     );
   }
 }
