@@ -58,6 +58,7 @@ flutter:
     - assets/images/register/
     - assets/images/banner/
     - assets/images/product/
+    - assets/images/author/
 
   fonts:
     - family: LexendDeca

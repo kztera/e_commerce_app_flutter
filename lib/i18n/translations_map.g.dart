@@ -94,6 +94,10 @@ extension on Translations {
 			case 'screens.home.search': return 'Search for name, author, genre, etc.';
 			case 'screens.home.category': return 'Popular Categories';
 			case 'screens.home.popularProduct': return 'Popular books';
+			case 'screens.explore.appbar.title': return 'Explore';
+			case 'screens.explore.search': return 'Search for name, author, genre, etc.';
+			case 'screens.explore.authors.title': return 'Featured Authors';
+			case 'screens.explore.authors.numberOfBooks': return ({required Object number}) => '${number} books';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -192,6 +196,10 @@ extension on _TranslationsVi {
 			case 'screens.home.search': return 'Tìm kiếm tên sách, tác giả, thể loại...';
 			case 'screens.home.category': return 'Thể loại nổi bật';
 			case 'screens.home.popularProduct': return 'Sách phổ biến';
+			case 'screens.explore.appbar.title': return 'Khám phá';
+			case 'screens.explore.search': return 'Tìm kiếm tên sách, tác giả, thể loại...';
+			case 'screens.explore.authors.title': return 'Tác giả nổi bật';
+			case 'screens.explore.authors.numberOfBooks': return ({required Object number}) => '${number} tác phẩm';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';

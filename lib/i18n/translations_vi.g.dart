@@ -121,6 +121,7 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensRegisterVi register = _TranslationsScreensRegisterVi._(_root);
 	@override late final _TranslationsScreensForgotPasswordVi forgotPassword = _TranslationsScreensForgotPasswordVi._(_root);
 	@override late final _TranslationsScreensHomeVi home = _TranslationsScreensHomeVi._(_root);
+	@override late final _TranslationsScreensExploreVi explore = _TranslationsScreensExploreVi._(_root);
 }
 
 // Path: setting
@@ -222,6 +223,18 @@ class _TranslationsScreensHomeVi extends _TranslationsScreensHomeEn {
 	@override String get search => 'Tìm kiếm tên sách, tác giả, thể loại...';
 	@override String get category => 'Thể loại nổi bật';
 	@override String get popularProduct => 'Sách phổ biến';
+}
+
+// Path: screens.explore
+class _TranslationsScreensExploreVi extends _TranslationsScreensExploreEn {
+	_TranslationsScreensExploreVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensExploreAppbarVi appbar = _TranslationsScreensExploreAppbarVi._(_root);
+	@override String get search => 'Tìm kiếm tên sách, tác giả, thể loại...';
+	@override late final _TranslationsScreensExploreAuthorsVi authors = _TranslationsScreensExploreAuthorsVi._(_root);
 }
 
 // Path: setting.account
@@ -432,4 +445,25 @@ class _TranslationsScreensHomeAppbarVi extends _TranslationsScreensHomeAppbarEn 
 	// Translations
 	@override String title({required Object name}) => 'Chào bạn, ${name}';
 	@override String get quote => 'Vạn đầu sách hay đang chờ bạn khám phá';
+}
+
+// Path: screens.explore.appbar
+class _TranslationsScreensExploreAppbarVi extends _TranslationsScreensExploreAppbarEn {
+	_TranslationsScreensExploreAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Khám phá';
+}
+
+// Path: screens.explore.authors
+class _TranslationsScreensExploreAuthorsVi extends _TranslationsScreensExploreAuthorsEn {
+	_TranslationsScreensExploreAuthorsVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Tác giả nổi bật';
+	@override String numberOfBooks({required Object number}) => '${number} tác phẩm';
 }

@@ -9,6 +9,7 @@ import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
+import 'package:zzz_book_store/widgets/shared/texts/author_title_with_verify_icon.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 
@@ -31,6 +32,7 @@ class ProductCardVertical extends StatelessWidget {
           color: isDarkMode ? ThemeColors.darkerGrey : ThemeColors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RoundedContainer(
               padding: const EdgeInsets.all(CustomSizes.sm),
@@ -60,26 +62,13 @@ class ProductCardVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: CustomSizes.spaceBtwItems / 2),
-            Padding(
-              padding: const EdgeInsets.only(left: CustomSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: CustomSizes.sm),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(title: "Tam thể 1 2"),
-                  const SizedBox(height: CustomSizes.spaceBtwItems / 2),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Lưu Từ Hân",
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: CustomSizes.xs),
-                      const Icon(Iconsax.verify5, size: CustomSizes.iconXs, color: ThemeColors.primary)
-                    ],
-                  ),
+                  ProductTitleText(title: "Tam thể 1 2"),
+                  SizedBox(height: CustomSizes.spaceBtwItems / 2),
+                  AuthorTitleWithVerifyIcon(title: "Lưu Từ Hân")
                 ],
               ),
             ),

@@ -25,4 +25,7 @@ class Images {
   static const String book1 = "assets/images/product/p1.png";
   static const String book2 = "assets/images/product/p2.png";
   static const String book3 = "assets/images/product/p3.png";
+
+  // -- Author
+  static const String author1 = "assets/images/author/luutuhan.jpg";
 }

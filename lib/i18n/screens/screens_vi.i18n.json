@@ -101,5 +101,16 @@
     "search": "Tìm kiếm tên sách, tác giả, thể loại...",
     "category": "Thể loại nổi bật",
     "popularProduct": "Sách phổ biến"
+  },
+
+  "explore": {
+    "appbar": {
+      "title": "Khám phá"
+    },
+    "search": "Tìm kiếm tên sách, tác giả, thể loại...",
+    "authors": {
+      "title": "Tác giả nổi bật",
+      "numberOfBooks": "$number tác phẩm"
+    }
   }
 }

@@ -125,6 +125,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensRegisterEn register = _TranslationsScreensRegisterEn._(_root);
 	late final _TranslationsScreensForgotPasswordEn forgotPassword = _TranslationsScreensForgotPasswordEn._(_root);
 	late final _TranslationsScreensHomeEn home = _TranslationsScreensHomeEn._(_root);
+	late final _TranslationsScreensExploreEn explore = _TranslationsScreensExploreEn._(_root);
 }
 
 // Path: setting
@@ -226,6 +227,18 @@ class _TranslationsScreensHomeEn {
 	String get search => 'Search for name, author, genre, etc.';
 	String get category => 'Popular Categories';
 	String get popularProduct => 'Popular books';
+}
+
+// Path: screens.explore
+class _TranslationsScreensExploreEn {
+	_TranslationsScreensExploreEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensExploreAppbarEn appbar = _TranslationsScreensExploreAppbarEn._(_root);
+	String get search => 'Search for name, author, genre, etc.';
+	late final _TranslationsScreensExploreAuthorsEn authors = _TranslationsScreensExploreAuthorsEn._(_root);
 }
 
 // Path: setting.account
@@ -436,4 +449,25 @@ class _TranslationsScreensHomeAppbarEn {
 	// Translations
 	String title({required Object name}) => 'Hi, ${name}';
 	String get quote => 'Good day for shopping!';
+}
+
+// Path: screens.explore.appbar
+class _TranslationsScreensExploreAppbarEn {
+	_TranslationsScreensExploreAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Explore';
+}
+
+// Path: screens.explore.authors
+class _TranslationsScreensExploreAuthorsEn {
+	_TranslationsScreensExploreAuthorsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Featured Authors';
+	String numberOfBooks({required Object number}) => '${number} books';
 }

@@ -12,18 +12,20 @@ class SearchBox extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.showBg = true,
     this.showBorder = true,
+    this.padding = const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
   });
 
   final String text;
   final IconData? icon;
   final bool showBg, showBorder;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final bool isDarkMode = HelperFunc.isDarkMode(context);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
+      padding: padding,
       child: Container(
         width: DeviceUtils.getScreenWidth(context),
         padding: const EdgeInsets.all(CustomSizes.md),
@@ -32,7 +34,7 @@ class SearchBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(CustomSizes.cardRadiusLg),
           border: showBorder
               ? Border.all(
-                  color: isDarkMode ? ThemeColors.darkGrey : ThemeColors.lightGrey,
+                  color: isDarkMode ? ThemeColors.darkGrey : ThemeColors.darkerGrey,
                 )
               : null,
         ),

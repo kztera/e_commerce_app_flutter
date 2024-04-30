@@ -101,5 +101,16 @@
     "search": "Search for name, author, genre, etc.",
     "category": "Popular Categories",
     "popularProduct": "Popular books"
+  },
+
+  "explore": {
+    "appbar": {
+      "title": "Explore"
+    },
+    "search": "Search for name, author, genre, etc.",
+    "authors": {
+      "title": "Featured Authors",
+      "numberOfBooks": "$number books"
+    }
   }
 }
