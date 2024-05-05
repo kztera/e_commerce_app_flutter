@@ -111,6 +111,9 @@
     "authors": {
       "title": "Tác giả nổi bật",
       "numberOfBooks": "$number tác phẩm"
+    },
+    "categoryTab": {
+      "title": "Có thể bạn quan tâm"
     }
   }
 }

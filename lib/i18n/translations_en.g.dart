@@ -239,6 +239,7 @@ class _TranslationsScreensExploreEn {
 	late final _TranslationsScreensExploreAppbarEn appbar = _TranslationsScreensExploreAppbarEn._(_root);
 	String get search => 'Search for name, author, genre, etc.';
 	late final _TranslationsScreensExploreAuthorsEn authors = _TranslationsScreensExploreAuthorsEn._(_root);
+	late final _TranslationsScreensExploreCategoryTabEn categoryTab = _TranslationsScreensExploreCategoryTabEn._(_root);
 }
 
 // Path: setting.account
@@ -470,4 +471,14 @@ class _TranslationsScreensExploreAuthorsEn {
 	// Translations
 	String get title => 'Featured Authors';
 	String numberOfBooks({required Object number}) => '${number} books';
+}
+
+// Path: screens.explore.categoryTab
+class _TranslationsScreensExploreCategoryTabEn {
+	_TranslationsScreensExploreCategoryTabEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'You might like';
 }

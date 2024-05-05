@@ -235,6 +235,7 @@ class _TranslationsScreensExploreVi extends _TranslationsScreensExploreEn {
 	@override late final _TranslationsScreensExploreAppbarVi appbar = _TranslationsScreensExploreAppbarVi._(_root);
 	@override String get search => 'Tìm kiếm tên sách, tác giả, thể loại...';
 	@override late final _TranslationsScreensExploreAuthorsVi authors = _TranslationsScreensExploreAuthorsVi._(_root);
+	@override late final _TranslationsScreensExploreCategoryTabVi categoryTab = _TranslationsScreensExploreCategoryTabVi._(_root);
 }
 
 // Path: setting.account
@@ -466,4 +467,14 @@ class _TranslationsScreensExploreAuthorsVi extends _TranslationsScreensExploreAu
 	// Translations
 	@override String get title => 'Tác giả nổi bật';
 	@override String numberOfBooks({required Object number}) => '${number} tác phẩm';
+}
+
+// Path: screens.explore.categoryTab
+class _TranslationsScreensExploreCategoryTabVi extends _TranslationsScreensExploreCategoryTabEn {
+	_TranslationsScreensExploreCategoryTabVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Có thể bạn quan tâm';
 }
