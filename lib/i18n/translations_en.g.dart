@@ -126,6 +126,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensForgotPasswordEn forgotPassword = _TranslationsScreensForgotPasswordEn._(_root);
 	late final _TranslationsScreensHomeEn home = _TranslationsScreensHomeEn._(_root);
 	late final _TranslationsScreensExploreEn explore = _TranslationsScreensExploreEn._(_root);
+	late final _TranslationsScreensWishlistEn wishlist = _TranslationsScreensWishlistEn._(_root);
 }
 
 // Path: setting
@@ -240,6 +241,17 @@ class _TranslationsScreensExploreEn {
 	String get search => 'Search for name, author, genre, etc.';
 	late final _TranslationsScreensExploreAuthorsEn authors = _TranslationsScreensExploreAuthorsEn._(_root);
 	late final _TranslationsScreensExploreCategoryTabEn categoryTab = _TranslationsScreensExploreCategoryTabEn._(_root);
+}
+
+// Path: screens.wishlist
+class _TranslationsScreensWishlistEn {
+	_TranslationsScreensWishlistEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensWishlistAppbarEn appbar = _TranslationsScreensWishlistAppbarEn._(_root);
+	late final _TranslationsScreensWishlistEmptyEn empty = _TranslationsScreensWishlistEmptyEn._(_root);
 }
 
 // Path: setting.account
@@ -481,4 +493,25 @@ class _TranslationsScreensExploreCategoryTabEn {
 
 	// Translations
 	String get title => 'You might like';
+}
+
+// Path: screens.wishlist.appbar
+class _TranslationsScreensWishlistAppbarEn {
+	_TranslationsScreensWishlistAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Wishlist';
+}
+
+// Path: screens.wishlist.empty
+class _TranslationsScreensWishlistEmptyEn {
+	_TranslationsScreensWishlistEmptyEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Your wishlist is empty';
+	String get subtitle => 'Explore more and add your favorite books to the wishlist';
 }

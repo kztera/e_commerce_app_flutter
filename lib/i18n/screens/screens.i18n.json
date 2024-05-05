@@ -115,5 +115,15 @@
     "categoryTab": {
       "title": "You might like"
     }
+  },
+
+  "wishlist": {
+    "appbar": {
+      "title": "Wishlist"
+    },
+    "empty": {
+      "title": "Your wishlist is empty",
+      "subtitle": "Explore more and add your favorite books to the wishlist"
+    }
   }
 }

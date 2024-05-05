@@ -1,3 +1,11 @@
 enum TextSizes { small, medium, large }
 
-enum OrderStatus { processing, shipped, delivered }
+enum OrderStatus { processing, done, cancelled }
+
+enum Screen {
+  home,
+  explore,
+  wishlist,
+  cart,
+  profile,
+}

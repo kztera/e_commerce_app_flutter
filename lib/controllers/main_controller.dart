@@ -4,6 +4,7 @@ import 'package:zzz_book_store/screens/main/home.dart';
 import 'package:zzz_book_store/screens/main/profile.dart';
 import 'package:zzz_book_store/screens/main/wishlist.dart';
 import 'package:get/get.dart';
+import 'package:zzz_book_store/utils/constants/enums.dart';
 
 class MainController extends GetxController {
   static MainController get instance => Get.find();
@@ -16,9 +17,22 @@ class MainController extends GetxController {
     const CartScreen(),
     const ProfileScreen()
   ];
+
   final RxInt cartCount = 0.obs;
 
   final RxInt carouselCurrentIndex = 0.obs;
+
+  final Map<Screen, int> screenIndexMap = {
+    Screen.home: 0,
+    Screen.explore: 1,
+    Screen.wishlist: 2,
+    Screen.cart: 3,
+    Screen.profile: 4,
+  };
+
+  void goToScreen(Screen screen) {
+    selectedIndex.value = screenIndexMap[screen]!;
+  }
 
   void changeCarouselIndex(index) {
     carouselCurrentIndex.value = index;

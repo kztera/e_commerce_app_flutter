@@ -115,5 +115,15 @@
     "categoryTab": {
       "title": "Có thể bạn quan tâm"
     }
+  },
+
+  "wishlist": {
+    "appbar": {
+      "title": "Yêu thích"
+    },
+    "empty": {
+      "title": "Danh sách yêu thích trống",
+      "subtitle": "Hãy thêm sách vào danh sách yêu thích của bạn để dễ dàng theo dõi và mua sắm sau này."
+    }
   }
 }

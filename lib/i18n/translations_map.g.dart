@@ -99,6 +99,9 @@ extension on Translations {
 			case 'screens.explore.authors.title': return 'Featured Authors';
 			case 'screens.explore.authors.numberOfBooks': return ({required Object number}) => '${number} books';
 			case 'screens.explore.categoryTab.title': return 'You might like';
+			case 'screens.wishlist.appbar.title': return 'Wishlist';
+			case 'screens.wishlist.empty.title': return 'Your wishlist is empty';
+			case 'screens.wishlist.empty.subtitle': return 'Explore more and add your favorite books to the wishlist';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -202,6 +205,9 @@ extension on _TranslationsVi {
 			case 'screens.explore.authors.title': return 'Tác giả nổi bật';
 			case 'screens.explore.authors.numberOfBooks': return ({required Object number}) => '${number} tác phẩm';
 			case 'screens.explore.categoryTab.title': return 'Có thể bạn quan tâm';
+			case 'screens.wishlist.appbar.title': return 'Yêu thích';
+			case 'screens.wishlist.empty.title': return 'Danh sách yêu thích trống';
+			case 'screens.wishlist.empty.subtitle': return 'Hãy thêm sách vào danh sách yêu thích của bạn để dễ dàng theo dõi và mua sắm sau này.';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';
