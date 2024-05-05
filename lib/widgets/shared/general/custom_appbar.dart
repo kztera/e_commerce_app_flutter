@@ -12,6 +12,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIcon,
     this.actions,
     this.onLeadingPressed,
+    this.bgColor,
   });
 
   final Widget? title;
@@ -19,6 +20,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? onLeadingPressed;
+  final Color? bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         horizontal: CustomSizes.xs * 3,
       ),
       child: AppBar(
+        backgroundColor: bgColor ?? Colors.white,
         title: title,
         actions: actions,
         automaticallyImplyLeading: false,

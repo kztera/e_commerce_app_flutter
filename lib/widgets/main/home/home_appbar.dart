@@ -11,6 +11,7 @@ class HomeAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppbar(
+      bgColor: Colors.transparent,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
