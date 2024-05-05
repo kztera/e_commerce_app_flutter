@@ -1,3 +1,4 @@
+import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/routes/routes.dart';
 import 'package:zzz_book_store/utils/theme/theme.dart';
@@ -14,12 +15,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemesController themeController = Get.put(ThemesController());
+
     return GetMaterialApp(
       defaultTransition: Transition.fadeIn,
       locale: TranslationProvider.of(context).flutterLocale, // use provider
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      themeMode: ThemeMode.system,
+      themeMode: getThemeMode(themeController.theme),
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       getPages: Routes.pages,
@@ -27,5 +30,22 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       fallbackLocale: const Locale('en', 'US'),
     );
+  }
+
+  ThemeMode getThemeMode(String type) {
+    ThemeMode themeMode = ThemeMode.system;
+    switch (type) {
+      case "system":
+        themeMode = ThemeMode.system;
+        break;
+      case "dark":
+        themeMode = ThemeMode.dark;
+        break;
+      default:
+        themeMode = ThemeMode.light;
+        break;
+    }
+
+    return themeMode;
   }
 }
