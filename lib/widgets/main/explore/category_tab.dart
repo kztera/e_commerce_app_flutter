@@ -25,6 +25,7 @@ class CategoryTab extends StatelessWidget {
           child: Column(
             children: [
               const AuthorShowcase(images: [Images.book1, Images.book2, Images.book3]),
+              const AuthorShowcase(images: [Images.book1, Images.book2, Images.book3]),
               SectionHeading(
                 title: t.screens.explore.categoryTab.title,
                 showButtonAction: true,
