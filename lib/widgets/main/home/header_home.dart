@@ -18,27 +18,24 @@ class HeaderHome extends StatelessWidget {
       child: Container(
         color: ThemeColors.primary,
         padding: const EdgeInsets.all(0),
-        child: SizedBox(
-          height: HelperFunc.screenHeight() * 0.35,
-          child: Stack(
-            children: [
-              Positioned(
-                top: HelperFunc.screenHeight() * 0.2,
-                left: -HelperFunc.screenWidth() * 0.5,
-                child: CircleDecoration(
-                  bgColor: ThemeColors.white.withOpacity(0.1),
-                ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: HelperFunc.screenHeight() * 0.2,
+              left: -HelperFunc.screenWidth() * 0.5,
+              child: CircleDecoration(
+                bgColor: ThemeColors.white.withOpacity(0.1),
               ),
-              Positioned(
-                top: -HelperFunc.screenHeight() * 0.2,
-                right: -HelperFunc.screenWidth() * 0.5,
-                child: CircleDecoration(
-                  bgColor: ThemeColors.white.withOpacity(0.1),
-                ),
+            ),
+            Positioned(
+              top: -HelperFunc.screenHeight() * 0.2,
+              right: -HelperFunc.screenWidth() * 0.5,
+              child: CircleDecoration(
+                bgColor: ThemeColors.white.withOpacity(0.1),
               ),
-              child
-            ],
-          ),
+            ),
+            child
+          ],
         ),
       ),
     );

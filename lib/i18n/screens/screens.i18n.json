@@ -125,5 +125,30 @@
       "title": "Your wishlist is empty",
       "subtitle": "Explore more and add your favorite books to the wishlist"
     }
+  },
+
+  "settings": {
+    "appbar": {
+      "title": "Settings"
+    },
+    "purchase": {
+      "title": "My Purchase",
+      "purchaseHistory": {
+        "title": "Purchase History",
+        "subtitle": "List of completed orders"
+      },
+      "pending": {
+        "title": "Pending",
+        "subtitle": "List of orders being proccessed"
+      }
+    },
+    "app": {
+      "title": "Application",
+      "appearance": "Appearance",
+      "language": "Languge",
+      "noti": "Notifications",
+      "help": "Help",
+      "logout": "Logout"
+    }
   }
 }

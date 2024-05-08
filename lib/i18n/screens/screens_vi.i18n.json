@@ -125,5 +125,30 @@
       "title": "Danh sách yêu thích trống",
       "subtitle": "Hãy thêm sách vào danh sách yêu thích của bạn để dễ dàng theo dõi và mua sắm sau này."
     }
+  },
+
+  "settings": {
+    "appbar": {
+      "title": "Cài đặt"
+    },
+    "purchase": {
+      "title": "Đơn mua",
+      "purchaseHistory": {
+        "title": "Lịch sử mua hàng",
+        "subtitle": "Danh sách đơn hàng hoàn thành"
+      },
+      "pending": {
+        "title": "Đang xử lý",
+        "subtitle": "Danh sách đơn hàng đang xử lý"
+      }
+    },
+    "app": {
+      "title": "Ứng dụng",
+      "appearance": "Giao diện",
+      "language": "Ngôn ngữ",
+      "noti": "Thông báo",
+      "help": "Hỗ trợ",
+      "logout": "Đăng xuất"
+    }
   }
 }

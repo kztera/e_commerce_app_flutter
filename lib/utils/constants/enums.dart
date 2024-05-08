@@ -7,5 +7,5 @@ enum Screen {
   explore,
   wishlist,
   cart,
-  profile,
+  setting,
 }

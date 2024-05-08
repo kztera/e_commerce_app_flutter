@@ -1,7 +1,7 @@
 import 'package:zzz_book_store/screens/main/cart.dart';
 import 'package:zzz_book_store/screens/main/explore.dart';
 import 'package:zzz_book_store/screens/main/home.dart';
-import 'package:zzz_book_store/screens/main/profile.dart';
+import 'package:zzz_book_store/screens/main/setting.dart';
 import 'package:zzz_book_store/screens/main/wishlist.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
@@ -15,7 +15,7 @@ class MainController extends GetxController {
     const ExploreScreen(),
     const WishlistScreen(),
     const CartScreen(),
-    const ProfileScreen()
+    SettingScreen()
   ];
 
   final RxInt cartCount = 0.obs;
@@ -27,7 +27,7 @@ class MainController extends GetxController {
     Screen.explore: 1,
     Screen.wishlist: 2,
     Screen.cart: 3,
-    Screen.profile: 4,
+    Screen.setting: 4,
   };
 
   void goToScreen(Screen screen) {
@@ -49,47 +49,47 @@ class MainController extends GetxController {
   final categories = [
     {
       'id': 1,
-      'name': 'Electronics',
+      'name': 'Fantasy',
     },
     {
       'id': 2,
-      'name': 'Fashion',
+      'name': 'Science',
     },
     {
       'id': 3,
-      'name': 'Sports',
+      'name': 'Fiction',
     },
     {
       'id': 4,
-      'name': 'Toys',
+      'name': 'Adventure',
     },
     {
       'id': 5,
-      'name': 'Health & Beauty',
+      'name': 'Mystery',
     },
     {
       'id': 6,
-      'name': 'Books',
+      'name': 'Horror',
     },
     {
       'id': 7,
-      'name': 'Kids',
+      'name': 'Thriller',
     },
     {
       'id': 8,
-      'name': 'Furniture',
+      'name': 'Self-help',
     },
     {
       'id': 9,
-      'name': 'Shoes',
+      'name': 'Romance',
     },
     {
       'id': 10,
-      'name': 'Jewelry',
+      'name': 'Light Novel',
     },
     {
       'id': 11,
-      'name': 'Watches',
+      'name': 'Biography',
     },
   ];
 }

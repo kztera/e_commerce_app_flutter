@@ -123,6 +123,7 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensHomeVi home = _TranslationsScreensHomeVi._(_root);
 	@override late final _TranslationsScreensExploreVi explore = _TranslationsScreensExploreVi._(_root);
 	@override late final _TranslationsScreensWishlistVi wishlist = _TranslationsScreensWishlistVi._(_root);
+	@override late final _TranslationsScreensSettingsVi settings = _TranslationsScreensSettingsVi._(_root);
 }
 
 // Path: setting
@@ -248,6 +249,18 @@ class _TranslationsScreensWishlistVi extends _TranslationsScreensWishlistEn {
 	// Translations
 	@override late final _TranslationsScreensWishlistAppbarVi appbar = _TranslationsScreensWishlistAppbarVi._(_root);
 	@override late final _TranslationsScreensWishlistEmptyVi empty = _TranslationsScreensWishlistEmptyVi._(_root);
+}
+
+// Path: screens.settings
+class _TranslationsScreensSettingsVi extends _TranslationsScreensSettingsEn {
+	_TranslationsScreensSettingsVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensSettingsAppbarVi appbar = _TranslationsScreensSettingsAppbarVi._(_root);
+	@override late final _TranslationsScreensSettingsPurchaseVi purchase = _TranslationsScreensSettingsPurchaseVi._(_root);
+	@override late final _TranslationsScreensSettingsAppVi app = _TranslationsScreensSettingsAppVi._(_root);
 }
 
 // Path: setting.account
@@ -510,4 +523,63 @@ class _TranslationsScreensWishlistEmptyVi extends _TranslationsScreensWishlistEm
 	// Translations
 	@override String get title => 'Danh sách yêu thích trống';
 	@override String get subtitle => 'Hãy thêm sách vào danh sách yêu thích của bạn để dễ dàng theo dõi và mua sắm sau này.';
+}
+
+// Path: screens.settings.appbar
+class _TranslationsScreensSettingsAppbarVi extends _TranslationsScreensSettingsAppbarEn {
+	_TranslationsScreensSettingsAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Cài đặt';
+}
+
+// Path: screens.settings.purchase
+class _TranslationsScreensSettingsPurchaseVi extends _TranslationsScreensSettingsPurchaseEn {
+	_TranslationsScreensSettingsPurchaseVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Đơn mua';
+	@override late final _TranslationsScreensSettingsPurchasePurchaseHistoryVi purchaseHistory = _TranslationsScreensSettingsPurchasePurchaseHistoryVi._(_root);
+	@override late final _TranslationsScreensSettingsPurchasePendingVi pending = _TranslationsScreensSettingsPurchasePendingVi._(_root);
+}
+
+// Path: screens.settings.app
+class _TranslationsScreensSettingsAppVi extends _TranslationsScreensSettingsAppEn {
+	_TranslationsScreensSettingsAppVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Ứng dụng';
+	@override String get appearance => 'Giao diện';
+	@override String get language => 'Ngôn ngữ';
+	@override String get noti => 'Thông báo';
+	@override String get help => 'Hỗ trợ';
+	@override String get logout => 'Đăng xuất';
+}
+
+// Path: screens.settings.purchase.purchaseHistory
+class _TranslationsScreensSettingsPurchasePurchaseHistoryVi extends _TranslationsScreensSettingsPurchasePurchaseHistoryEn {
+	_TranslationsScreensSettingsPurchasePurchaseHistoryVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Lịch sử mua hàng';
+	@override String get subtitle => 'Danh sách đơn hàng hoàn thành';
+}
+
+// Path: screens.settings.purchase.pending
+class _TranslationsScreensSettingsPurchasePendingVi extends _TranslationsScreensSettingsPurchasePendingEn {
+	_TranslationsScreensSettingsPurchasePendingVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Đang xử lý';
+	@override String get subtitle => 'Danh sách đơn hàng đang xử lý';
 }

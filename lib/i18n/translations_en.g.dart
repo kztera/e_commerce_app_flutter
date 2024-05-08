@@ -127,6 +127,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensHomeEn home = _TranslationsScreensHomeEn._(_root);
 	late final _TranslationsScreensExploreEn explore = _TranslationsScreensExploreEn._(_root);
 	late final _TranslationsScreensWishlistEn wishlist = _TranslationsScreensWishlistEn._(_root);
+	late final _TranslationsScreensSettingsEn settings = _TranslationsScreensSettingsEn._(_root);
 }
 
 // Path: setting
@@ -252,6 +253,18 @@ class _TranslationsScreensWishlistEn {
 	// Translations
 	late final _TranslationsScreensWishlistAppbarEn appbar = _TranslationsScreensWishlistAppbarEn._(_root);
 	late final _TranslationsScreensWishlistEmptyEn empty = _TranslationsScreensWishlistEmptyEn._(_root);
+}
+
+// Path: screens.settings
+class _TranslationsScreensSettingsEn {
+	_TranslationsScreensSettingsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensSettingsAppbarEn appbar = _TranslationsScreensSettingsAppbarEn._(_root);
+	late final _TranslationsScreensSettingsPurchaseEn purchase = _TranslationsScreensSettingsPurchaseEn._(_root);
+	late final _TranslationsScreensSettingsAppEn app = _TranslationsScreensSettingsAppEn._(_root);
 }
 
 // Path: setting.account
@@ -514,4 +527,63 @@ class _TranslationsScreensWishlistEmptyEn {
 	// Translations
 	String get title => 'Your wishlist is empty';
 	String get subtitle => 'Explore more and add your favorite books to the wishlist';
+}
+
+// Path: screens.settings.appbar
+class _TranslationsScreensSettingsAppbarEn {
+	_TranslationsScreensSettingsAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Settings';
+}
+
+// Path: screens.settings.purchase
+class _TranslationsScreensSettingsPurchaseEn {
+	_TranslationsScreensSettingsPurchaseEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'My Purchase';
+	late final _TranslationsScreensSettingsPurchasePurchaseHistoryEn purchaseHistory = _TranslationsScreensSettingsPurchasePurchaseHistoryEn._(_root);
+	late final _TranslationsScreensSettingsPurchasePendingEn pending = _TranslationsScreensSettingsPurchasePendingEn._(_root);
+}
+
+// Path: screens.settings.app
+class _TranslationsScreensSettingsAppEn {
+	_TranslationsScreensSettingsAppEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Application';
+	String get appearance => 'Appearance';
+	String get language => 'Languge';
+	String get noti => 'Notifications';
+	String get help => 'Help';
+	String get logout => 'Logout';
+}
+
+// Path: screens.settings.purchase.purchaseHistory
+class _TranslationsScreensSettingsPurchasePurchaseHistoryEn {
+	_TranslationsScreensSettingsPurchasePurchaseHistoryEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Purchase History';
+	String get subtitle => 'List of completed orders';
+}
+
+// Path: screens.settings.purchase.pending
+class _TranslationsScreensSettingsPurchasePendingEn {
+	_TranslationsScreensSettingsPurchasePendingEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Pending';
+	String get subtitle => 'List of orders being proccessed';
 }

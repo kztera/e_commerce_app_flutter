@@ -41,6 +41,7 @@ class HomeScreen extends GetView<MainController> {
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwItems),
                 const CategoryListView(),
+                const SizedBox(height: CustomSizes.defaultSpace * 2),
               ],
             ),
           ),
