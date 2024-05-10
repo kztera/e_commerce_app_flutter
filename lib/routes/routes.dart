@@ -9,6 +9,7 @@ import 'package:zzz_book_store/screens/auth/success.dart';
 import 'package:zzz_book_store/screens/auth/verify_email.dart';
 import 'package:zzz_book_store/screens/auth/verify_otp.dart';
 import 'package:get/route_manager.dart';
+import 'package:zzz_book_store/screens/main/profile.dart';
 
 class Routes {
   static const initial = '/main';
@@ -22,5 +23,6 @@ class Routes {
     GetPage(name: '/forgot-password', page: () => const ForgotPasswordScreen()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
     GetPage(name: '/main', page: () => const BottomNavigation(), binding: MainBinding()),
+    GetPage(name: '/profile', page: () => const ProfileScreen()),
   ];
 }

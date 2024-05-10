@@ -34,9 +34,11 @@ class SettingScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium!.apply(color: ThemeColors.white),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: CustomSizes.sm),
-                  child: UserProjectTile(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: CustomSizes.sm),
+                  child: UserProjectTile(
+                    onPressed: () => Get.toNamed('/profile'),
+                  ),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwSections),
               ],

@@ -7,7 +7,10 @@ import "package:zzz_book_store/widgets/shared/images/circular_image.dart";
 class UserProjectTile extends StatelessWidget {
   const UserProjectTile({
     super.key,
+    required this.onPressed,
   });
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class UserProjectTile extends StatelessWidget {
       trailing: IconButton(
         icon: const Icon(Iconsax.edit),
         color: ThemeColors.white,
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }

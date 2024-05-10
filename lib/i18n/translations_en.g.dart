@@ -265,6 +265,7 @@ class _TranslationsScreensSettingsEn {
 	late final _TranslationsScreensSettingsAppbarEn appbar = _TranslationsScreensSettingsAppbarEn._(_root);
 	late final _TranslationsScreensSettingsPurchaseEn purchase = _TranslationsScreensSettingsPurchaseEn._(_root);
 	late final _TranslationsScreensSettingsAppEn app = _TranslationsScreensSettingsAppEn._(_root);
+	late final _TranslationsScreensSettingsProfileEn profile = _TranslationsScreensSettingsProfileEn._(_root);
 }
 
 // Path: setting.account
@@ -564,6 +565,24 @@ class _TranslationsScreensSettingsAppEn {
 	String get noti => 'Notifications';
 	String get help => 'Help';
 	String get logout => 'Logout';
+}
+
+// Path: screens.settings.profile
+class _TranslationsScreensSettingsProfileEn {
+	_TranslationsScreensSettingsProfileEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get changePicture => 'Change picture';
+	String get profileInfo => 'Profile Information';
+	String get accountInfo => 'Account Information';
+	String get name => 'Name';
+	String get username => 'Username';
+	String get email => 'E-mail';
+	String get gender => 'Gender';
+	String get birth => 'Date of birth';
+	String get closeAccount => 'Close Account';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

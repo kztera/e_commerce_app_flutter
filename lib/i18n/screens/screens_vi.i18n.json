@@ -149,6 +149,17 @@
       "noti": "Thông báo",
       "help": "Hỗ trợ",
       "logout": "Đăng xuất"
+    },
+    "profile": {
+      "changePicture": "Thay đổi ảnh đại diện",
+      "profileInfo": "Thông tin cá nhân",
+      "accountInfo": "Thông tin tài khoản",
+      "name": "Họ tên",
+      "username": "Tên đăng nhập",
+      "email": "E-mail",
+      "gender": "Giới tính",
+      "birth": "Ngày sinh",
+      "closeAccount": "Đóng tài khoản"
     }
   }
 }

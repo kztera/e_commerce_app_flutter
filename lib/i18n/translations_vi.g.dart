@@ -261,6 +261,7 @@ class _TranslationsScreensSettingsVi extends _TranslationsScreensSettingsEn {
 	@override late final _TranslationsScreensSettingsAppbarVi appbar = _TranslationsScreensSettingsAppbarVi._(_root);
 	@override late final _TranslationsScreensSettingsPurchaseVi purchase = _TranslationsScreensSettingsPurchaseVi._(_root);
 	@override late final _TranslationsScreensSettingsAppVi app = _TranslationsScreensSettingsAppVi._(_root);
+	@override late final _TranslationsScreensSettingsProfileVi profile = _TranslationsScreensSettingsProfileVi._(_root);
 }
 
 // Path: setting.account
@@ -560,6 +561,24 @@ class _TranslationsScreensSettingsAppVi extends _TranslationsScreensSettingsAppE
 	@override String get noti => 'Thông báo';
 	@override String get help => 'Hỗ trợ';
 	@override String get logout => 'Đăng xuất';
+}
+
+// Path: screens.settings.profile
+class _TranslationsScreensSettingsProfileVi extends _TranslationsScreensSettingsProfileEn {
+	_TranslationsScreensSettingsProfileVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get changePicture => 'Thay đổi ảnh đại diện';
+	@override String get profileInfo => 'Thông tin cá nhân';
+	@override String get accountInfo => 'Thông tin tài khoản';
+	@override String get name => 'Họ tên';
+	@override String get username => 'Tên đăng nhập';
+	@override String get email => 'E-mail';
+	@override String get gender => 'Giới tính';
+	@override String get birth => 'Ngày sinh';
+	@override String get closeAccount => 'Đóng tài khoản';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

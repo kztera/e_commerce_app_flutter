@@ -149,6 +149,17 @@
       "noti": "Notifications",
       "help": "Help",
       "logout": "Logout"
+    },
+    "profile": {
+      "changePicture": "Change picture",
+      "profileInfo": "Profile Information",
+      "accountInfo": "Account Information",
+      "name": "Name",
+      "username": "Username",
+      "email": "E-mail",
+      "gender": "Gender",
+      "birth": "Date of birth",
+      "closeAccount": "Close Account"
     }
   }
 }
