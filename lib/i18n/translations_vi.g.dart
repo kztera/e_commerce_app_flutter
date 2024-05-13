@@ -128,6 +128,7 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensSettingsVi settings = _TranslationsScreensSettingsVi._(_root);
 	@override late final _TranslationsScreensProductDetailsVi productDetails = _TranslationsScreensProductDetailsVi._(_root);
 	@override late final _TranslationsScreensProductReviewVi productReview = _TranslationsScreensProductReviewVi._(_root);
+	@override late final _TranslationsScreensCartVi cart = _TranslationsScreensCartVi._(_root);
 }
 
 // Path: setting
@@ -307,6 +308,20 @@ class _TranslationsScreensProductReviewVi extends _TranslationsScreensProductRev
 	// Translations
 	@override late final _TranslationsScreensProductReviewAppbarVi appbar = _TranslationsScreensProductReviewAppbarVi._(_root);
 	@override String get subtitle => 'Đánh giá được đăng bởi tất cả mọi người dùng đã mua sản phẩm này';
+}
+
+// Path: screens.cart
+class _TranslationsScreensCartVi extends _TranslationsScreensCartEn {
+	_TranslationsScreensCartVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensCartAppbarVi appbar = _TranslationsScreensCartAppbarVi._(_root);
+	@override late final _TranslationsScreensCartEmptyVi empty = _TranslationsScreensCartEmptyVi._(_root);
+	@override String get total => 'Tổng cộng';
+	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
+	@override String get remove => 'Xóa';
 }
 
 // Path: setting.account
@@ -634,6 +649,27 @@ class _TranslationsScreensProductReviewAppbarVi extends _TranslationsScreensProd
 
 	// Translations
 	@override String get title => 'Đánh giá';
+}
+
+// Path: screens.cart.appbar
+class _TranslationsScreensCartAppbarVi extends _TranslationsScreensCartAppbarEn {
+	_TranslationsScreensCartAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Giỏ hàng';
+}
+
+// Path: screens.cart.empty
+class _TranslationsScreensCartEmptyVi extends _TranslationsScreensCartEmptyEn {
+	_TranslationsScreensCartEmptyVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Giỏ hàng trống';
+	@override String get subtitle => 'Hãy thêm sách vào giỏ hàng của bạn ngay bây giờ!';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

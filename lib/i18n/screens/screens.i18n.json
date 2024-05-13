@@ -192,5 +192,18 @@
       "title": "Reviews"
     },
     "subtitle": "Rating and reviews are posting by any customer who has purchased this product."
+  },
+
+  "cart": {
+    "appbar": {
+      "title": "Cart"
+    },
+    "empty": {
+      "title": "Your cart is empty",
+      "subtitle": "Add books to your cart and proceed to checkout"
+    },
+    "total": "Total",
+    "checkout": "Checkout $totalPrice đ",
+    "remove": "Remove"
   }
 }

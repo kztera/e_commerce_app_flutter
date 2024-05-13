@@ -148,6 +148,12 @@ extension on Translations {
 			case 'screens.productDetails.successSubtitle': return 'Thank you for your review. Your review will be published after moderation.';
 			case 'screens.productReview.appbar.title': return 'Reviews';
 			case 'screens.productReview.subtitle': return 'Rating and reviews are posting by any customer who has purchased this product.';
+			case 'screens.cart.appbar.title': return 'Cart';
+			case 'screens.cart.empty.title': return 'Your cart is empty';
+			case 'screens.cart.empty.subtitle': return 'Add books to your cart and proceed to checkout';
+			case 'screens.cart.total': return 'Total';
+			case 'screens.cart.checkout': return ({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
+			case 'screens.cart.remove': return 'Remove';
 			case 'setting.title': return 'Settings';
 			case 'setting.account.title': return 'Account';
 			case 'setting.account.edit': return 'Update information';
@@ -300,6 +306,12 @@ extension on _TranslationsVi {
 			case 'screens.productDetails.successSubtitle': return 'Cảm ơn bạn đã chia sẻ cảm nhận của mình với cộng đồng 3Z!';
 			case 'screens.productReview.appbar.title': return 'Đánh giá';
 			case 'screens.productReview.subtitle': return 'Đánh giá được đăng bởi tất cả mọi người dùng đã mua sản phẩm này';
+			case 'screens.cart.appbar.title': return 'Giỏ hàng';
+			case 'screens.cart.empty.title': return 'Giỏ hàng trống';
+			case 'screens.cart.empty.subtitle': return 'Hãy thêm sách vào giỏ hàng của bạn ngay bây giờ!';
+			case 'screens.cart.total': return 'Tổng cộng';
+			case 'screens.cart.checkout': return ({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
+			case 'screens.cart.remove': return 'Xóa';
 			case 'setting.title': return 'Cài đặt';
 			case 'setting.account.title': return 'Tài khoản';
 			case 'setting.account.edit': return 'Chỉnh sửa thông tin';

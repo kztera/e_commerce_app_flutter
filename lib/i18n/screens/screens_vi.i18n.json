@@ -192,5 +192,18 @@
       "title": "Đánh giá"
     },
     "subtitle": "Đánh giá được đăng bởi tất cả mọi người dùng đã mua sản phẩm này"
+  },
+
+  "cart": {
+    "appbar": {
+      "title": "Giỏ hàng"
+    },
+    "empty": {
+      "title": "Giỏ hàng trống",
+      "subtitle": "Hãy thêm sách vào giỏ hàng của bạn ngay bây giờ!"
+    },
+    "total": "Tổng cộng",
+    "checkout": "Thanh toán $totalPrice đ",
+    "remove": "Xóa"
   }
 }

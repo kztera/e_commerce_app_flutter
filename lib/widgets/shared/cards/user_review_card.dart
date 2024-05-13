@@ -36,7 +36,7 @@ class UserReviewCard extends StatelessWidget {
               rating: 3.5,
               itemSize: 15,
               itemBuilder: (context, index) {
-                return Icon(Icons.star, color: ThemeColors.secondary);
+                return const Icon(Icons.star, color: ThemeColors.secondary);
               },
             ),
             const SizedBox(width: CustomSizes.spaceBtwItems),

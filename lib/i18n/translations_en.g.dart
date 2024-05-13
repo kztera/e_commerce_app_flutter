@@ -132,6 +132,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensSettingsEn settings = _TranslationsScreensSettingsEn._(_root);
 	late final _TranslationsScreensProductDetailsEn productDetails = _TranslationsScreensProductDetailsEn._(_root);
 	late final _TranslationsScreensProductReviewEn productReview = _TranslationsScreensProductReviewEn._(_root);
+	late final _TranslationsScreensCartEn cart = _TranslationsScreensCartEn._(_root);
 }
 
 // Path: setting
@@ -311,6 +312,20 @@ class _TranslationsScreensProductReviewEn {
 	// Translations
 	late final _TranslationsScreensProductReviewAppbarEn appbar = _TranslationsScreensProductReviewAppbarEn._(_root);
 	String get subtitle => 'Rating and reviews are posting by any customer who has purchased this product.';
+}
+
+// Path: screens.cart
+class _TranslationsScreensCartEn {
+	_TranslationsScreensCartEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensCartAppbarEn appbar = _TranslationsScreensCartAppbarEn._(_root);
+	late final _TranslationsScreensCartEmptyEn empty = _TranslationsScreensCartEmptyEn._(_root);
+	String get total => 'Total';
+	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
+	String get remove => 'Remove';
 }
 
 // Path: setting.account
@@ -638,6 +653,27 @@ class _TranslationsScreensProductReviewAppbarEn {
 
 	// Translations
 	String get title => 'Reviews';
+}
+
+// Path: screens.cart.appbar
+class _TranslationsScreensCartAppbarEn {
+	_TranslationsScreensCartAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Cart';
+}
+
+// Path: screens.cart.empty
+class _TranslationsScreensCartEmptyEn {
+	_TranslationsScreensCartEmptyEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Your cart is empty';
+	String get subtitle => 'Add books to your cart and proceed to checkout';
 }
 
 // Path: screens.settings.purchase.purchaseHistory
