@@ -9,7 +9,7 @@ import 'package:zzz_book_store/screens/auth/success.dart';
 import 'package:zzz_book_store/screens/auth/verify_email.dart';
 import 'package:zzz_book_store/screens/auth/verify_otp.dart';
 import 'package:get/route_manager.dart';
-import 'package:zzz_book_store/screens/main/product_review.dart';
+import 'package:zzz_book_store/screens/products/product_review.dart';
 import 'package:zzz_book_store/screens/main/profile.dart';
 import 'package:zzz_book_store/screens/products/product_detail.dart';
 

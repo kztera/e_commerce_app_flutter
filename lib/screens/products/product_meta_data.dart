@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/screens/main/product_review.dart';
+import 'package:zzz_book_store/screens/products/product_review.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
