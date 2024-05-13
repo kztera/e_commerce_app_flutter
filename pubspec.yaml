@@ -35,12 +35,16 @@ dependencies:
   # UI
   awesome_bottom_bar: ^1.2.4
   carousel_slider: ^4.2.1
+  rating_summary: ^1.0.2+1
+  flutter_rating_bar: ^4.0.1
+  badges: ^3.1.2
 
   # Animations
   zoom_tap_animation: ^1.1.0
 
   # Utils
   cached_network_image: ^3.2.0
+  readmore: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +63,7 @@ flutter:
     - assets/images/banner/
     - assets/images/product/
     - assets/images/author/
+    - assets/images/product-detail/
 
   fonts:
     - family: LexendDeca

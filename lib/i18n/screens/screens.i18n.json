@@ -161,5 +161,36 @@
       "birth": "Date of birth",
       "closeAccount": "Close Account"
     }
+  },
+
+  "productDetails": {
+    "author": "Author",
+    "genre": "Genre",
+    "ratings": "ratings",
+    "rating": "Rating",
+    "price": "Price",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "readNow": "Read now",
+    "addToWishlist": "Add to wishlist",
+    "removeFromWishlist": "Remove from wishlist",
+    "description": "Description",
+    "reviews": "Reviews",
+    "relatedBooks": "Related books",
+    "customerReviews": "Customer Reviews",
+    "writeReview": "Write a review",
+    "reviewTitle": "Title",
+    "reviewContent": "Content",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "success": "Review submitted successfully!",
+    "successSubtitle": "Thank you for your review. Your review will be published after moderation."
+  },
+
+  "productReview": {
+    "appbar": {
+      "title": "Reviews"
+    },
+    "subtitle": "Rating and reviews are posting by any customer who has purchased this product."
   }
 }

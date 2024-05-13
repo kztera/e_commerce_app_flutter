@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
+import 'package:zzz_book_store/screens/products/product_detail.dart';
 import 'package:zzz_book_store/styles/shadows.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
@@ -22,7 +23,7 @@ class ProductCardVertical extends StatelessWidget {
     final controller = Get.put(MainController());
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 200,
         padding: const EdgeInsets.all(1),

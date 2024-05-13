@@ -1,4 +1,6 @@
 {
   "copyright": "© Copyright {year} - Nguyen Khoa. All Rights Reserved. Version {version}",
-  "filter": "Filter"
+  "filter": "Filter",
+  "readMore": "Read More",
+  "showLess": "Show Less"
 }

@@ -77,6 +77,8 @@ class _TranslationsCommonEn {
 	// Translations
 	String get copyright => '© Copyright {year} - Nguyen Khoa. All Rights Reserved. Version {version}';
 	String get filter => 'Filter';
+	String get readMore => 'Read More';
+	String get showLess => 'Show Less';
 }
 
 // Path: errors
@@ -128,6 +130,8 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensExploreEn explore = _TranslationsScreensExploreEn._(_root);
 	late final _TranslationsScreensWishlistEn wishlist = _TranslationsScreensWishlistEn._(_root);
 	late final _TranslationsScreensSettingsEn settings = _TranslationsScreensSettingsEn._(_root);
+	late final _TranslationsScreensProductDetailsEn productDetails = _TranslationsScreensProductDetailsEn._(_root);
+	late final _TranslationsScreensProductReviewEn productReview = _TranslationsScreensProductReviewEn._(_root);
 }
 
 // Path: setting
@@ -266,6 +270,47 @@ class _TranslationsScreensSettingsEn {
 	late final _TranslationsScreensSettingsPurchaseEn purchase = _TranslationsScreensSettingsPurchaseEn._(_root);
 	late final _TranslationsScreensSettingsAppEn app = _TranslationsScreensSettingsAppEn._(_root);
 	late final _TranslationsScreensSettingsProfileEn profile = _TranslationsScreensSettingsProfileEn._(_root);
+}
+
+// Path: screens.productDetails
+class _TranslationsScreensProductDetailsEn {
+	_TranslationsScreensProductDetailsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get author => 'Author';
+	String get genre => 'Genre';
+	String get ratings => 'ratings';
+	String get rating => 'Rating';
+	String get price => 'Price';
+	String get addToCart => 'Add to cart';
+	String get buyNow => 'Buy now';
+	String get readNow => 'Read now';
+	String get addToWishlist => 'Add to wishlist';
+	String get removeFromWishlist => 'Remove from wishlist';
+	String get description => 'Description';
+	String get reviews => 'Reviews';
+	String get relatedBooks => 'Related books';
+	String get customerReviews => 'Customer Reviews';
+	String get writeReview => 'Write a review';
+	String get reviewTitle => 'Title';
+	String get reviewContent => 'Content';
+	String get submit => 'Submit';
+	String get cancel => 'Cancel';
+	String get success => 'Review submitted successfully!';
+	String get successSubtitle => 'Thank you for your review. Your review will be published after moderation.';
+}
+
+// Path: screens.productReview
+class _TranslationsScreensProductReviewEn {
+	_TranslationsScreensProductReviewEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensProductReviewAppbarEn appbar = _TranslationsScreensProductReviewAppbarEn._(_root);
+	String get subtitle => 'Rating and reviews are posting by any customer who has purchased this product.';
 }
 
 // Path: setting.account
@@ -583,6 +628,16 @@ class _TranslationsScreensSettingsProfileEn {
 	String get gender => 'Gender';
 	String get birth => 'Date of birth';
 	String get closeAccount => 'Close Account';
+}
+
+// Path: screens.productReview.appbar
+class _TranslationsScreensProductReviewAppbarEn {
+	_TranslationsScreensProductReviewAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Reviews';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

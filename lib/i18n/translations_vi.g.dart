@@ -73,6 +73,8 @@ class _TranslationsCommonVi extends _TranslationsCommonEn {
 	// Translations
 	@override String get copyright => '© {year} - Bản quyển thuộc về Khoa Nguyễn. Mọi quyền được bảo lưu. Phiên bản {version}';
 	@override String get filter => 'Filter';
+	@override String get readMore => 'Xem Thêm';
+	@override String get showLess => 'Ẩn Bớt';
 }
 
 // Path: errors
@@ -124,6 +126,8 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensExploreVi explore = _TranslationsScreensExploreVi._(_root);
 	@override late final _TranslationsScreensWishlistVi wishlist = _TranslationsScreensWishlistVi._(_root);
 	@override late final _TranslationsScreensSettingsVi settings = _TranslationsScreensSettingsVi._(_root);
+	@override late final _TranslationsScreensProductDetailsVi productDetails = _TranslationsScreensProductDetailsVi._(_root);
+	@override late final _TranslationsScreensProductReviewVi productReview = _TranslationsScreensProductReviewVi._(_root);
 }
 
 // Path: setting
@@ -262,6 +266,47 @@ class _TranslationsScreensSettingsVi extends _TranslationsScreensSettingsEn {
 	@override late final _TranslationsScreensSettingsPurchaseVi purchase = _TranslationsScreensSettingsPurchaseVi._(_root);
 	@override late final _TranslationsScreensSettingsAppVi app = _TranslationsScreensSettingsAppVi._(_root);
 	@override late final _TranslationsScreensSettingsProfileVi profile = _TranslationsScreensSettingsProfileVi._(_root);
+}
+
+// Path: screens.productDetails
+class _TranslationsScreensProductDetailsVi extends _TranslationsScreensProductDetailsEn {
+	_TranslationsScreensProductDetailsVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get author => 'Tác giả';
+	@override String get genre => 'Thể loại';
+	@override String get ratings => 'lượt đánh giá';
+	@override String get rating => 'Đánh giá';
+	@override String get price => 'Giá';
+	@override String get addToCart => 'Thêm vào giỏ hàng';
+	@override String get buyNow => 'Mua ngay';
+	@override String get readNow => 'Đọc ngay';
+	@override String get addToWishlist => 'Thêm vào yêu thích';
+	@override String get removeFromWishlist => 'Xóa khỏi yêu thích';
+	@override String get description => 'Mô tả';
+	@override String get reviews => 'Đánh giá';
+	@override String get relatedBooks => 'Sách liên quan';
+	@override String get customerReviews => 'Đánh giá của khách hàng';
+	@override String get writeReview => 'Viết đánh giá của bạn';
+	@override String get reviewTitle => 'Tiêu đề đánh giá';
+	@override String get reviewContent => 'Content đánh giá';
+	@override String get submit => 'Xác nhận';
+	@override String get cancel => 'Hủy';
+	@override String get success => 'Đánh giá thành công';
+	@override String get successSubtitle => 'Cảm ơn bạn đã chia sẻ cảm nhận của mình với cộng đồng 3Z!';
+}
+
+// Path: screens.productReview
+class _TranslationsScreensProductReviewVi extends _TranslationsScreensProductReviewEn {
+	_TranslationsScreensProductReviewVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensProductReviewAppbarVi appbar = _TranslationsScreensProductReviewAppbarVi._(_root);
+	@override String get subtitle => 'Đánh giá được đăng bởi tất cả mọi người dùng đã mua sản phẩm này';
 }
 
 // Path: setting.account
@@ -579,6 +624,16 @@ class _TranslationsScreensSettingsProfileVi extends _TranslationsScreensSettings
 	@override String get gender => 'Giới tính';
 	@override String get birth => 'Ngày sinh';
 	@override String get closeAccount => 'Đóng tài khoản';
+}
+
+// Path: screens.productReview.appbar
+class _TranslationsScreensProductReviewAppbarVi extends _TranslationsScreensProductReviewAppbarEn {
+	_TranslationsScreensProductReviewAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Đánh giá';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

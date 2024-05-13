@@ -161,5 +161,36 @@
       "birth": "Ngày sinh",
       "closeAccount": "Đóng tài khoản"
     }
+  },
+
+  "productDetails": {
+    "author": "Tác giả",
+    "genre": "Thể loại",
+    "ratings": "lượt đánh giá",
+    "rating": "Đánh giá",
+    "price": "Giá",
+    "addToCart": "Thêm vào giỏ hàng",
+    "buyNow": "Mua ngay",
+    "readNow": "Đọc ngay",
+    "addToWishlist": "Thêm vào yêu thích",
+    "removeFromWishlist": "Xóa khỏi yêu thích",
+    "description": "Mô tả",
+    "reviews": "Đánh giá",
+    "relatedBooks": "Sách liên quan",
+    "customerReviews": "Đánh giá của khách hàng",
+    "writeReview": "Viết đánh giá của bạn",
+    "reviewTitle": "Tiêu đề đánh giá",
+    "reviewContent": "Content đánh giá",
+    "submit": "Xác nhận",
+    "cancel": "Hủy",
+    "success": "Đánh giá thành công",
+    "successSubtitle": "Cảm ơn bạn đã chia sẻ cảm nhận của mình với cộng đồng 3Z!"
+  },
+
+  "productReview": {
+    "appbar": {
+      "title": "Đánh giá"
+    },
+    "subtitle": "Đánh giá được đăng bởi tất cả mọi người dùng đã mua sản phẩm này"
   }
 }
