@@ -1,3 +1,4 @@
+import 'package:zzz_book_store/controllers/register_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/register/register_form.dart';
@@ -12,6 +13,8 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RegisterController _controller = RegisterController.instance;
+
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -27,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.toNamed('/register/verify-email'),
+                  onPressed: _controller.onSubmit,
                   child: Text(t.screens.register.button.createAccount),
                 ),
               ),

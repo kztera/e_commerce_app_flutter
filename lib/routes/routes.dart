@@ -1,3 +1,5 @@
+import 'package:zzz_book_store/bindings/forgot_binding.dart';
+import 'package:zzz_book_store/bindings/login_binding.dart';
 import 'package:zzz_book_store/bindings/main_binding.dart';
 import 'package:zzz_book_store/bindings/register_binding.dart';
 import 'package:zzz_book_store/bottom_navigation.dart';
@@ -14,19 +16,33 @@ import 'package:zzz_book_store/screens/main/profile.dart';
 import 'package:zzz_book_store/screens/products/product_detail.dart';
 
 class Routes {
-  static const initial = '/main';
+  static const initial = '/login';
+  static const main = '/main';
 
   static final pages = [
     GetPage(name: '/onboarding', page: () => const OnboardingScreen()),
-    GetPage(name: '/login', page: () => const LoginScreen()),
-    GetPage(name: '/register', page: () => const RegisterScreen(), binding: RegisterBinding()),
+    GetPage(
+        name: '/login',
+        page: () => const LoginScreen(),
+        binding: LoginBinding()),
+    GetPage(
+        name: '/register',
+        page: () => const RegisterScreen(),
+        binding: RegisterBinding()),
     GetPage(name: '/register/verify-email', page: () => const VerifyScreen()),
     GetPage(name: '/register/success', page: () => const SuccessScreen()),
-    GetPage(name: '/forgot-password', page: () => const ForgotPasswordScreen()),
+    GetPage(
+        name: '/forgot-password',
+        page: () => const ForgotPasswordScreen(),
+        binding: ForgotBinding()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
-    GetPage(name: '/main', page: () => const BottomNavigation(), binding: MainBinding()),
+    GetPage(
+        name: '/main',
+        page: () => const BottomNavigation(),
+        binding: MainBinding()),
     GetPage(name: '/profile', page: () => const ProfileScreen()),
-    GetPage(name: '/product-detail/:id', page: () => const ProductDetailScreen()),
+    GetPage(
+        name: '/product-detail/:id', page: () => const ProductDetailScreen()),
     GetPage(name: '/product-review', page: () => const ProductReviewScreen()),
   ];
 }

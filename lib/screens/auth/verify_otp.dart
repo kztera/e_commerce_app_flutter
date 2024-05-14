@@ -1,17 +1,21 @@
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:zzz_book_store/controllers/forgot_controller.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class VerifyOTPScreen extends StatelessWidget {
+class VerifyOTPScreen extends GetView<ForgotController> {
   const VerifyOTPScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
+          title: Text('Nhập mã xác thực',
+              style: Theme.of(context).textTheme.headlineMedium),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -32,50 +36,9 @@ class VerifyOTPScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: CustomSizes.iconLg * 2,
-                      width: CustomSizes.iconLg * 2,
-                      child: TextFormField(
-                        onChanged: (value) {},
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: CustomSizes.iconLg * 2,
-                      width: CustomSizes.iconLg * 2,
-                      child: TextFormField(
-                        onChanged: (value) {},
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: CustomSizes.iconLg * 2,
-                      width: CustomSizes.iconLg * 2,
-                      child: TextFormField(
-                        onChanged: (value) {},
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: CustomSizes.iconLg * 2,
-                      width: CustomSizes.iconLg * 2,
-                      child: TextFormField(
-                        onChanged: (value) {},
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        keyboardType: TextInputType.number,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: List.generate(
+                        4, (index) => _buildOTPBox(context, index))),
               ),
               const SizedBox(
                 height: CustomSizes.spaceBtwSections * 4,
@@ -104,6 +67,24 @@ class VerifyOTPScreen extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  SizedBox _buildOTPBox(BuildContext context, int index) {
+    return SizedBox(
+      height: CustomSizes.iconLg * 2,
+      width: CustomSizes.iconLg * 2,
+      child: TextFormField(
+        controller: controller.textControllers[index],
+        focusNode: controller.focusNodes[index],
+        onChanged: (value) => controller.onChanged(index, value),
+        style: Theme.of(context).textTheme.headlineSmall,
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        inputFormatters: [
+            LengthLimitingTextInputFormatter(1),
+          ]
+      ),
+    );
   }
 
   TweenAnimationBuilder<num> _countDownTimer() {

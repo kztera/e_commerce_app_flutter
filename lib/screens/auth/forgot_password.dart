@@ -1,9 +1,11 @@
+import 'package:flutter/widgets.dart';
+import 'package:zzz_book_store/controllers/forgot_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+class ForgotPasswordScreen extends GetView<ForgotController> {
   const ForgotPasswordScreen({super.key});
 
   @override
@@ -33,22 +35,25 @@ class ForgotPasswordScreen extends StatelessWidget {
               height: CustomSizes.spaceBtwSections * 1.5,
             ),
             // email input
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: t.screens.forgotPassword.form.email,
-                prefixIcon: const Icon(Icons.email),
+            Form(
+              key: controller.formKeyForgot,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                onChanged: controller.setEmail,
+                validator: (value) => controller.validateEmail(value),
+                decoration: InputDecoration(
+                  labelText: t.screens.forgotPassword.form.email,
+                  prefixIcon: const Icon(Icons.email),
+                ),
               ),
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwSections,
-            ),
+            const SizedBox(height: CustomSizes.spaceBtwSections),
             // Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => {
-                  Get.toNamed('/verify-otp'),
-                },
+                onPressed: controller.onSubmit,
                 child: Text(t.screens.forgotPassword.button.resetPassword),
               ),
             ),

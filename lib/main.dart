@@ -1,3 +1,4 @@
+import 'package:get_storage/get_storage.dart';
 import 'package:zzz_book_store/app.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
@@ -9,5 +10,6 @@ void main() async {
   await Future.delayed(const Duration(seconds: 1));
   FlutterNativeSplash.remove();
   LocaleSettings.useDeviceLocale();
+  await GetStorage.init();
   runApp(TranslationProvider(child: const App()));
 }

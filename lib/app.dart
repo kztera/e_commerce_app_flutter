@@ -1,6 +1,7 @@
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/routes/routes.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       getPages: Routes.pages,
-      initialRoute: Routes.initial,
+      initialRoute: HelperFunc.checkToken() ? Routes.main : Routes.initial,
       debugShowCheckedModeBanner: false,
       fallbackLocale: const Locale('en', 'US'),
     );
