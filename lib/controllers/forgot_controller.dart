@@ -52,14 +52,14 @@ class ForgotController extends GetxController {
   void updateOTP() {
     otp.value =
         textControllers.map((textController) => textController.text).join();
-
   }
 
   Future<void> verifyOTP() async {
     if (otp == '') {
       return;
     }
-    var response = await HttpClient.post('verify-otp', {"otp": otp.value});
+    var response =
+        await HttpClient.post('verify-otp', {"email": email, "otp": otp.value});
     print(response);
   }
 
