@@ -33,7 +33,7 @@ class CategoryTab extends StatelessWidget {
                 textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
               ),
               const SizedBox(height: CustomSizes.spaceBtwItems),
-              GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical()),
+              //GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical()),
               const SizedBox(height: CustomSizes.spaceBtwSections),
             ],
           ),

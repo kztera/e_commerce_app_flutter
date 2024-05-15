@@ -6,7 +6,7 @@ class Formatter {
     return DateFormat('DD/MM/YYYY').format(date);
   }
 
-  static String formatCurrency(double amount) {
+  static String formatCurrency(int amount) {
     return NumberFormat.currency(locale: 'vi_VN', symbol: 'đ').format(amount);
   }
 

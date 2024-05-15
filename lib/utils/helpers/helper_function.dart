@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
 class HelperFunc {
   static Color? getColor(String value) {
@@ -92,7 +94,8 @@ class HelperFunc {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
+  static String getFormattedDate(DateTime date,
+      {String format = 'dd MMM yyyy'}) {
     return DateFormat(format).format(date);
   }
 
@@ -103,9 +106,20 @@ class HelperFunc {
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];
     for (var i = 0; i < widgets.length; i += rowSize) {
-      final rowChildren = widgets.sublist(i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
+      final rowChildren = widgets.sublist(
+          i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
       wrappedList.add(Row(children: rowChildren));
     }
     return wrappedList;
+  }
+
+  static bool checkToken() {
+    LocalStorage localStorage = LocalStorage();
+    Map<String, dynamic>? user = localStorage.readData('user');
+    if (user != null) {
+      bool isTokenExpired = JwtDecoder.isExpired(user['accessToken']);
+      return !isTokenExpired;
+    }
+    return false;
   }
 }

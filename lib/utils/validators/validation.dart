@@ -1,54 +1,68 @@
-class Validator {
-  static String? validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Email is required.';
+import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/utils/constants/regex.dart';
+
+class TValidator {
+  static String? validateName(String? name) {
+    if (name == null || name.isEmpty) {
+      return 'Name is required';
     }
 
-    final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-
-    if (!emailRegExp.hasMatch(value)) {
-      return 'Invalid email address.';
-    }
-
-    return null;
-  }
-
-  static String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Password is required.';
-    }
-
-    if (value.length < 6) {
-      return 'Password must be at least 6 characters long.';
-    }
-
-    if (!value.contains(RegExp(r'[A-Z]'))) {
-      return 'Password must contain at least one uppercase letter.';
-    }
-
-    if (!value.contains(RegExp(r'[0-9]'))) {
-      return 'Password must contain at least one number.';
-    }
-
-    if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-      return 'Password must contain at least one special character.';
+    if (!Regex.nameRegExp.hasMatch(name)) {
+      return 'The name must be at least 8 characters and no more than 50 characters.';
     }
 
     return null;
   }
 
-  static String? validatePhoneNumber(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Phone number is required.';
+  static String? validateEmail(String? email) {
+    if (email == null || email.isEmpty) {
+      return 'Email is required';
     }
 
-    // Regular expression for Vietnamese phone number validation
-    final phoneRegExp = RegExp(r'/(0[35789])+([0-9]{8})\b/g$');
-
-    if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number format.';
+    if (!Regex.emailRegExp.hasMatch(email)) {
+      return 'Email is invalid';
     }
 
+    return null;
+  }
+
+  static String? validatePassword(String? password) {
+    if (password == null || password.isEmpty) {
+      return 'Password is required';
+    }
+    if (password.length < 8) {
+      return t.screens.register.text.minChar;
+    }
+
+    /* if (!password.contains(Regex.uppercaseRegExp)) {
+      return "Password must contain at least 1 uppercase character";
+    } */
+
+    if (!password.contains(Regex.specialRegExp)) {
+      return t.screens.register.text.atLeastOne;
+    }
+
+    return null;
+  }
+
+  static String checkPasswordStrength(String password) {
+    if (Regex.passwordStrongRegExp.hasMatch(password)) {
+      return "Strong";
+    }
+    if (Regex.passwordMediumRegExp.hasMatch(password)) {
+      return "Medium";
+    }
+    return "Weak";
+  }
+
+  static String? validatePhoneNumber(String? phone) {
+    if (phone == null || phone.isEmpty) {
+      return 'Phone number is required';
+    }
+
+    if (!Regex.phoneRegExp.hasMatch(phone)) {
+      return 'Invalid phone number format (10 digits required)';
+    }
     return null;
   }
 }

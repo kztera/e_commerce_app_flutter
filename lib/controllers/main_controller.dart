@@ -1,3 +1,6 @@
+import 'package:zzz_book_store/model/category.dart';
+import 'package:zzz_book_store/model/product.dart';
+import 'package:zzz_book_store/model/user.dart';
 import 'package:zzz_book_store/screens/main/cart.dart';
 import 'package:zzz_book_store/screens/main/explore.dart';
 import 'package:zzz_book_store/screens/main/home.dart';
@@ -5,6 +8,8 @@ import 'package:zzz_book_store/screens/main/setting.dart';
 import 'package:zzz_book_store/screens/main/wishlist.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
+import 'package:zzz_book_store/utils/http/http_client.dart';
+import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
 class MainController extends GetxController {
   static MainController get instance => Get.find();
@@ -30,6 +35,11 @@ class MainController extends GetxController {
     Screen.setting: 4,
   };
 
+  late User user;
+  //products
+  var products = <Product>[].obs;
+  var categories = <Category>[].obs;
+
   void goToScreen(Screen screen) {
     selectedIndex.value = screenIndexMap[screen]!;
   }
@@ -46,50 +56,35 @@ class MainController extends GetxController {
     cartCount.value--;
   }
 
-  final categories = [
-    {
-      'id': 1,
-      'name': 'Fantasy',
-    },
-    {
-      'id': 2,
-      'name': 'Science',
-    },
-    {
-      'id': 3,
-      'name': 'Fiction',
-    },
-    {
-      'id': 4,
-      'name': 'Adventure',
-    },
-    {
-      'id': 5,
-      'name': 'Mystery',
-    },
-    {
-      'id': 6,
-      'name': 'Horror',
-    },
-    {
-      'id': 7,
-      'name': 'Thriller',
-    },
-    {
-      'id': 8,
-      'name': 'Self-help',
-    },
-    {
-      'id': 9,
-      'name': 'Romance',
-    },
-    {
-      'id': 10,
-      'name': 'Light Novel',
-    },
-    {
-      'id': 11,
-      'name': 'Biography',
-    },
-  ];
+  Future<void> getCategories() async {
+    var response =
+        await HttpClient.get(endpoint: "categories", token: user.accessToken);
+    List<Category> list = [];
+
+    if (response is List) {
+      list = response.map((jsonItem) => Category.fromJson(jsonItem)).toList();
+    }
+    categories.assignAll(list);
+  }
+
+  Future<void> getProducts() async {
+    var response =
+        await HttpClient.get(endpoint: "products", token: user.accessToken);
+    List<Product> list = [];
+
+    if (response is List) {
+      list = response.map((jsonItem) => Product.fromJson(jsonItem)).toList();
+    }
+    products.assignAll(list);
+  }
+
+  @override
+  void onInit() {
+    LocalStorage localStorage = LocalStorage();
+    Map<String, dynamic> userData = localStorage.readData('user');
+    user = User.fromJson(userData);
+    getCategories();
+    getProducts();
+    super.onInit();
+  }
 }

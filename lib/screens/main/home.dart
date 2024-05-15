@@ -32,7 +32,8 @@ class HomeScreen extends GetView<MainController> {
                 ),
                 const SizedBox(height: CustomSizes.defaultSpace),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: CustomSizes.defaultSpace),
                   child: SectionHeading(
                     title: t.screens.home.category,
                     showButtonAction: false,
@@ -46,7 +47,8 @@ class HomeScreen extends GetView<MainController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
+            padding: const EdgeInsets.symmetric(
+                horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
             child: Column(
               children: [
                 const ImageSlider(),
@@ -54,10 +56,13 @@ class HomeScreen extends GetView<MainController> {
                   title: t.screens.home.popularProduct,
                   onPressed: () {},
                 ),
-                GridLayout(
-                  itemCount: 2,
-                  itemBuilder: (_, index) => const ProductCardVertical(),
-                ),
+                Obx(
+                  () => GridLayout(
+                    itemCount: controller.products.length,
+                    itemBuilder: (_, index) => ProductCardVertical(index: index,
+                        product: controller.products[index]),
+                  ),
+                )
               ],
             ),
           ),

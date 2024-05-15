@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
+import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/screens/products/product_detail.dart';
 import 'package:zzz_book_store/styles/shadows.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/formatter/formatter.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
@@ -14,16 +15,18 @@ import 'package:zzz_book_store/widgets/shared/texts/author_title_with_verify_ico
 import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 
-class ProductCardVertical extends StatelessWidget {
-  const ProductCardVertical({super.key});
+class ProductCardVertical extends GetView<MainController> {
+  final Product product;
+  final int index;
+  const ProductCardVertical(
+      {super.key, required this.index, required this.product});
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunc.isDarkMode(context);
-    final controller = Get.put(MainController());
-
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetailScreen()),
+      onTap: () => Get.to(() => const ProductDetailScreen(),
+          arguments: {"index": index, "image": product.image}),
       child: Container(
         width: 200,
         padding: const EdgeInsets.all(1),
@@ -43,9 +46,9 @@ class ProductCardVertical extends StatelessWidget {
               bgColor: isDarkMode ? ThemeColors.dark : ThemeColors.light,
               child: Stack(
                 children: [
-                  const RoundedImage(
-                    imageUrl: Images.book1,
-                    isNetworkImage: false,
+                  RoundedImage(
+                    imageUrl: product.image,
+                    isNetworkImage: true,
                     applyImageRadius: true,
                   ),
                   Positioned(
@@ -53,9 +56,10 @@ class ProductCardVertical extends StatelessWidget {
                     child: RoundedContainer(
                       radius: CustomSizes.sm,
                       bgColor: ThemeColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.sm, vertical: CustomSizes.xs),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: CustomSizes.sm, vertical: CustomSizes.xs),
                       child: Text(
-                        "15%",
+                        "${product.saleOff}%",
                         style: Theme.of(context).textTheme.labelLarge!.apply(
                               color: ThemeColors.black,
                             ),
@@ -66,12 +70,12 @@ class ProductCardVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: CustomSizes.spaceBtwItems / 2),
-            const Padding(
-              padding: EdgeInsets.only(left: CustomSizes.sm),
+            Padding(
+              padding: const EdgeInsets.only(left: CustomSizes.sm),
               child: Column(
                 children: [
-                  ProductTitleText(title: "Tam thể 1 2"),
-                  SizedBox(height: CustomSizes.spaceBtwItems / 2),
+                  ProductTitleText(title: product.name),
+                  const SizedBox(height: CustomSizes.spaceBtwItems / 2),
                   AuthorTitleWithVerifyIcon(title: "Lưu Từ Hân")
                 ],
               ),
@@ -81,10 +85,11 @@ class ProductCardVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: CustomSizes.sm),
+                Padding(
+                  padding: const EdgeInsets.only(left: CustomSizes.sm),
                   child: ProductPriceText(
-                    price: '112.000',
+                    saleOff: product.saleOff,
+                    price: product.price,
                     isLarge: true,
                     lineThrough: true,
                   ),
@@ -101,7 +106,8 @@ class ProductCardVertical extends StatelessWidget {
                       color: ThemeColors.dark,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(CustomSizes.cardRadiusMd),
-                        bottomRight: Radius.circular(CustomSizes.productImageRadius),
+                        bottomRight:
+                            Radius.circular(CustomSizes.productImageRadius),
                       ),
                     ),
                     child: const SizedBox(
