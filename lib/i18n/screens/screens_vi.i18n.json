@@ -205,5 +205,33 @@
     "total": "Tổng cộng",
     "checkout": "Thanh toán $totalPrice đ",
     "remove": "Xóa"
+  },
+
+  "checkOut": {
+    "appbar": {
+      "title": "Thanh toán"
+    },
+    "promoCode": "Mã giảm giá",
+    "hintPromoCode": "Nhập mã giảm giá của bạn",
+    "payment": {
+      "title": "Phương thức thanh toán",
+      "creditCard": "Thẻ tín dụng",
+      "subTotal": "Tạm tính",
+      "taxFee": "Thuế",
+      "orderTotal": "Tổng cộng",
+      "email": "Email",
+      "hintEmail": "Nhập email nhận sách",
+      "cash": "Tiền mặt",
+      "paypal": "Paypal",
+      "applePay": "Apple Pay",
+      "googlePay": "Google Pay",
+      "addCard": "Thêm thẻ mới",
+      "cardNumber": "Số thẻ",
+      "cardHolder": "Chủ thẻ",
+      "expiryDate": "Ngày hết hạn",
+      "cvv": "CVV",
+      "saveCard": "Lưu thẻ",
+      "pay": "Thanh toán"
+    }
   }
 }

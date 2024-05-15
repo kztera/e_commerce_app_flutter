@@ -62,6 +62,8 @@ class _TranslationsButtonsVi extends _TranslationsButtonsEn {
 	@override String get delete => 'Xóa';
 	@override String get detail => 'Chi tiết';
 	@override String get viewAll => 'Xem thêm';
+	@override String get apply => 'Áp dụng';
+	@override String get change => 'Thay đổi';
 }
 
 // Path: common
@@ -95,6 +97,7 @@ class _TranslationsMessagesVi extends _TranslationsMessagesEn {
 
 	// Translations
 	@override late final _TranslationsMessagesSnackbarVi snackbar = _TranslationsMessagesSnackbarVi._(_root);
+	@override late final _TranslationsMessagesCheckOutSuccessVi checkOutSuccess = _TranslationsMessagesCheckOutSuccessVi._(_root);
 }
 
 // Path: navigation
@@ -129,6 +132,7 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensProductDetailsVi productDetails = _TranslationsScreensProductDetailsVi._(_root);
 	@override late final _TranslationsScreensProductReviewVi productReview = _TranslationsScreensProductReviewVi._(_root);
 	@override late final _TranslationsScreensCartVi cart = _TranslationsScreensCartVi._(_root);
+	@override late final _TranslationsScreensCheckOutVi checkOut = _TranslationsScreensCheckOutVi._(_root);
 }
 
 // Path: setting
@@ -161,6 +165,17 @@ class _TranslationsMessagesSnackbarVi extends _TranslationsMessagesSnackbarEn {
 
 	// Translations
 	@override String get loginSuccess => 'Đăng nhập thành công';
+}
+
+// Path: messages.checkOutSuccess
+class _TranslationsMessagesCheckOutSuccessVi extends _TranslationsMessagesCheckOutSuccessEn {
+	_TranslationsMessagesCheckOutSuccessVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Thanh toán thành công';
+	@override String get subTitle => 'Sách sẽ được gửi tới email của bạn. Vui lòng kiểm tra email của bạn để tải sách về máy. Cảm ơn bạn đã mua sách tại 3zStore!';
 }
 
 // Path: screens.onboarding
@@ -322,6 +337,19 @@ class _TranslationsScreensCartVi extends _TranslationsScreensCartEn {
 	@override String get total => 'Tổng cộng';
 	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
 	@override String get remove => 'Xóa';
+}
+
+// Path: screens.checkOut
+class _TranslationsScreensCheckOutVi extends _TranslationsScreensCheckOutEn {
+	_TranslationsScreensCheckOutVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensCheckOutAppbarVi appbar = _TranslationsScreensCheckOutAppbarVi._(_root);
+	@override String get promoCode => 'Mã giảm giá';
+	@override String get hintPromoCode => 'Nhập mã giảm giá của bạn';
+	@override late final _TranslationsScreensCheckOutPaymentVi payment = _TranslationsScreensCheckOutPaymentVi._(_root);
 }
 
 // Path: setting.account
@@ -670,6 +698,43 @@ class _TranslationsScreensCartEmptyVi extends _TranslationsScreensCartEmptyEn {
 	// Translations
 	@override String get title => 'Giỏ hàng trống';
 	@override String get subtitle => 'Hãy thêm sách vào giỏ hàng của bạn ngay bây giờ!';
+}
+
+// Path: screens.checkOut.appbar
+class _TranslationsScreensCheckOutAppbarVi extends _TranslationsScreensCheckOutAppbarEn {
+	_TranslationsScreensCheckOutAppbarVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Thanh toán';
+}
+
+// Path: screens.checkOut.payment
+class _TranslationsScreensCheckOutPaymentVi extends _TranslationsScreensCheckOutPaymentEn {
+	_TranslationsScreensCheckOutPaymentVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Phương thức thanh toán';
+	@override String get creditCard => 'Thẻ tín dụng';
+	@override String get subTotal => 'Tạm tính';
+	@override String get taxFee => 'Thuế';
+	@override String get orderTotal => 'Tổng cộng';
+	@override String get email => 'Email';
+	@override String get hintEmail => 'Nhập email nhận sách';
+	@override String get cash => 'Tiền mặt';
+	@override String get paypal => 'Paypal';
+	@override String get applePay => 'Apple Pay';
+	@override String get googlePay => 'Google Pay';
+	@override String get addCard => 'Thêm thẻ mới';
+	@override String get cardNumber => 'Số thẻ';
+	@override String get cardHolder => 'Chủ thẻ';
+	@override String get expiryDate => 'Ngày hết hạn';
+	@override String get cvv => 'CVV';
+	@override String get saveCard => 'Lưu thẻ';
+	@override String get pay => 'Thanh toán';
 }
 
 // Path: screens.settings.purchase.purchaseHistory

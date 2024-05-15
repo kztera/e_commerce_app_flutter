@@ -12,5 +12,7 @@
   "edit": "Edit",
   "delete": "Delete",
   "detail": "Detail",
-  "viewAll": "View all"
+  "viewAll": "View all",
+  "apply": "Apply",
+  "change": "Change"
 }

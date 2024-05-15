@@ -205,5 +205,33 @@
     "total": "Total",
     "checkout": "Checkout $totalPrice đ",
     "remove": "Remove"
+  },
+
+  "checkOut": {
+    "appbar": {
+      "title": "Checkout"
+    },
+    "promoCode": "Promo Code",
+    "hintPromoCode": "Have a promo code? Enter it here",
+    "payment": {
+      "title": "Payment Method",
+      "creditCard": "Credit Card",
+      "subTotal": "Subtotal",
+      "taxFee": "Tax Fee",
+      "orderTotal": "Order Total",
+      "email": "Email",
+      "hintEmail": "Enter your email",
+      "cash": "Cash",
+      "paypal": "Paypal",
+      "applePay": "Apple Pay",
+      "googlePay": "Google Pay",
+      "addCard": "Add new card",
+      "cardNumber": "Card number",
+      "cardHolder": "Card holder",
+      "expiryDate": "Expiry date",
+      "cvv": "CVV",
+      "saveCard": "Save card",
+      "pay": "Pay"
+    }
   }
 }

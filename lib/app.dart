@@ -29,7 +29,7 @@ class App extends StatelessWidget {
       getPages: Routes.pages,
       initialRoute: HelperFunc.checkToken() ? Routes.main : Routes.initial,
       debugShowCheckedModeBanner: false,
-      fallbackLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('vi', 'VN'),
     );
   }
 
