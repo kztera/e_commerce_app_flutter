@@ -18,15 +18,13 @@ import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 class ProductCardVertical extends GetView<MainController> {
   final Product product;
   final int index;
-  const ProductCardVertical(
-      {super.key, required this.index, required this.product});
+  const ProductCardVertical({super.key, required this.index, required this.product});
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunc.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetailScreen(),
-          arguments: {"index": index, "image": product.image}),
+      onTap: () => Get.to(() => const ProductDetailScreen(), arguments: {"index": index, "image": product.image}),
       child: Container(
         width: 200,
         padding: const EdgeInsets.all(1),
@@ -56,8 +54,7 @@ class ProductCardVertical extends GetView<MainController> {
                     child: RoundedContainer(
                       radius: CustomSizes.sm,
                       bgColor: ThemeColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: CustomSizes.sm, vertical: CustomSizes.xs),
+                      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.sm, vertical: CustomSizes.xs),
                       child: Text(
                         "${product.saleOff}%",
                         style: Theme.of(context).textTheme.labelLarge!.apply(
@@ -73,6 +70,7 @@ class ProductCardVertical extends GetView<MainController> {
             Padding(
               padding: const EdgeInsets.only(left: CustomSizes.sm),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductTitleText(title: product.name),
                   const SizedBox(height: CustomSizes.spaceBtwItems / 2),
@@ -106,8 +104,7 @@ class ProductCardVertical extends GetView<MainController> {
                       color: ThemeColors.dark,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(CustomSizes.cardRadiusMd),
-                        bottomRight:
-                            Radius.circular(CustomSizes.productImageRadius),
+                        bottomRight: Radius.circular(CustomSizes.productImageRadius),
                       ),
                     ),
                     child: const SizedBox(
