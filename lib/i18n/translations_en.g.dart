@@ -66,6 +66,8 @@ class _TranslationsButtonsEn {
 	String get delete => 'Delete';
 	String get detail => 'Detail';
 	String get viewAll => 'View all';
+	String get apply => 'Apply';
+	String get change => 'Change';
 }
 
 // Path: common
@@ -99,6 +101,7 @@ class _TranslationsMessagesEn {
 
 	// Translations
 	late final _TranslationsMessagesSnackbarEn snackbar = _TranslationsMessagesSnackbarEn._(_root);
+	late final _TranslationsMessagesCheckOutSuccessEn checkOutSuccess = _TranslationsMessagesCheckOutSuccessEn._(_root);
 }
 
 // Path: navigation
@@ -133,6 +136,7 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensProductDetailsEn productDetails = _TranslationsScreensProductDetailsEn._(_root);
 	late final _TranslationsScreensProductReviewEn productReview = _TranslationsScreensProductReviewEn._(_root);
 	late final _TranslationsScreensCartEn cart = _TranslationsScreensCartEn._(_root);
+	late final _TranslationsScreensCheckOutEn checkOut = _TranslationsScreensCheckOutEn._(_root);
 }
 
 // Path: setting
@@ -165,6 +169,17 @@ class _TranslationsMessagesSnackbarEn {
 
 	// Translations
 	String get loginSuccess => 'Login successful';
+}
+
+// Path: messages.checkOutSuccess
+class _TranslationsMessagesCheckOutSuccessEn {
+	_TranslationsMessagesCheckOutSuccessEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Check out successful';
+	String get subTitle => 'Thank you for shopping with us. Your ebook will be delivered to your email address shortly.';
 }
 
 // Path: screens.onboarding
@@ -326,6 +341,19 @@ class _TranslationsScreensCartEn {
 	String get total => 'Total';
 	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
 	String get remove => 'Remove';
+}
+
+// Path: screens.checkOut
+class _TranslationsScreensCheckOutEn {
+	_TranslationsScreensCheckOutEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensCheckOutAppbarEn appbar = _TranslationsScreensCheckOutAppbarEn._(_root);
+	String get promoCode => 'Promo Code';
+	String get hintPromoCode => 'Have a promo code? Enter it here';
+	late final _TranslationsScreensCheckOutPaymentEn payment = _TranslationsScreensCheckOutPaymentEn._(_root);
 }
 
 // Path: setting.account
@@ -674,6 +702,43 @@ class _TranslationsScreensCartEmptyEn {
 	// Translations
 	String get title => 'Your cart is empty';
 	String get subtitle => 'Add books to your cart and proceed to checkout';
+}
+
+// Path: screens.checkOut.appbar
+class _TranslationsScreensCheckOutAppbarEn {
+	_TranslationsScreensCheckOutAppbarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Checkout';
+}
+
+// Path: screens.checkOut.payment
+class _TranslationsScreensCheckOutPaymentEn {
+	_TranslationsScreensCheckOutPaymentEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Payment Method';
+	String get creditCard => 'Credit Card';
+	String get subTotal => 'Subtotal';
+	String get taxFee => 'Tax Fee';
+	String get orderTotal => 'Order Total';
+	String get email => 'Email';
+	String get hintEmail => 'Enter your email';
+	String get cash => 'Cash';
+	String get paypal => 'Paypal';
+	String get applePay => 'Apple Pay';
+	String get googlePay => 'Google Pay';
+	String get addCard => 'Add new card';
+	String get cardNumber => 'Card number';
+	String get cardHolder => 'Card holder';
+	String get expiryDate => 'Expiry date';
+	String get cvv => 'CVV';
+	String get saveCard => 'Save card';
+	String get pay => 'Pay';
 }
 
 // Path: screens.settings.purchase.purchaseHistory
