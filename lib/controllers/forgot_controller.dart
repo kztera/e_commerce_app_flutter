@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/validators/validation.dart';
@@ -55,12 +54,17 @@ class ForgotController extends GetxController {
   }
 
   Future<void> verifyOTP() async {
-    if (otp == '') {
+    if (otp.value.length < 4) {
       return;
     }
-    var response =
-        await HttpClient.post('verify-otp', {"email": email, "otp": otp.value});
-    print(response);
+    var response = await HttpClient.post('verify-otp', {
+      "email": email,
+      "otp": otp.value,
+    });
+
+    String message = response["message"];
+
+    HelperFunc.showSnackBar(message);
   }
 
   @override

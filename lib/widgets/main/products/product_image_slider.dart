@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
@@ -7,9 +8,9 @@ import 'package:zzz_book_store/widgets/main/home/curved_edge_widget.dart';
 import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
 
 class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({
-    super.key,
-  });
+  final String image;
+
+  const ProductImageSlider({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +22,20 @@ class ProductImageSlider extends StatelessWidget {
         child: Column(
           children: [
             // main image
-            const SizedBox(
+            SizedBox(
               height: 350,
               child: Padding(
-                padding: EdgeInsets.only(top: CustomSizes.productImageRadius * 2, bottom: CustomSizes.spaceBtwItems),
+                padding: const EdgeInsets.only(
+                    top: CustomSizes.productImageRadius * 2,
+                    bottom: CustomSizes.spaceBtwItems),
                 child: Center(
-                  child: Image(
-                    image: AssetImage(Images.tt1),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                    child: CachedNetworkImage(
+                  imageUrl: image,
+                  fit: BoxFit.contain,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                )),
               ),
             ),
             SizedBox(
@@ -40,7 +45,8 @@ class ProductImageSlider extends StatelessWidget {
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 physics: const AlwaysScrollableScrollPhysics(),
-                separatorBuilder: (_, __) => const SizedBox(width: CustomSizes.spaceBtwItems),
+                separatorBuilder: (_, __) =>
+                    const SizedBox(width: CustomSizes.spaceBtwItems),
                 itemBuilder: (_, index) => RoundedImage(
                   imageUrl: Images.tt1,
                   width: 80,

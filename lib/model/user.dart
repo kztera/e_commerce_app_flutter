@@ -17,18 +17,20 @@ class User {
       required this.email,
       required this.phone,
       required this.isAdmin,
-     /*  required this.cart,
+      /*  required this.cart,
       required this.wishlist, */
       this.accessToken});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-        id: json["_id"],
-        name: json["name"],
-        email: json["email"],
-        phone: json["phone"],
-        isAdmin: json["isAdmin"],
-        /* cart: json["cart"],
-        wishlist: json["wishlist"] */);
+      id: json["_id"],
+      name: json["name"],
+      email: json["email"],
+      phone: json["phone"],
+      isAdmin: json["isAdmin"],
+      accessToken: json.containsKey("accessToken") ? json["accessToken"] : null,
+      /* cart: json["cart"],
+        wishlist: json["wishlist"] */
+    );
   }
 }

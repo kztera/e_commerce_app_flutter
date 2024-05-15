@@ -126,7 +126,8 @@ class ProductCardHorizontal extends StatelessWidget {
               Row(
                 children: [
                   ProductPriceText(
-                    price: '124.000',
+                    saleOff: 0,
+                    price: 124000,
                     lineThrough: true,
                   ),
                 ],

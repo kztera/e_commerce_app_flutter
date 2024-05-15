@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/model/user.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
@@ -15,7 +13,6 @@ class LoginController extends GetxController {
 
   String email = '';
   String password = '';
-
   var hidePassword = true.obs;
 
   void setEmail(String value) => email = value;
@@ -47,8 +44,7 @@ class LoginController extends GetxController {
   }
 
   void saveInfo(Map<String, dynamic> user) {
-      LocalStorage storage = LocalStorage();
-      storage.saveData('user', user);
-    
+    LocalStorage storage = LocalStorage();
+    storage.saveData('user', user);
   }
 }

@@ -1,12 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.category});
 
-  final dynamic category;
+  final Category category;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,15 @@ class CategoryCard extends StatelessWidget {
         margin: const EdgeInsets.only(right: 8),
         child: Stack(
           children: [
-            const SizedBox(
+            SizedBox(
               width: 120,
               height: 60,
-              child: Image(
-                image: AssetImage(Images.bn1),
-                fit: BoxFit.cover,
+              child: CachedNetworkImage(
+                imageUrl: category.image,
+                fit: BoxFit.contain,
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
             Positioned(
@@ -41,7 +45,7 @@ class CategoryCard extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Thể loại",
+                    category.name,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleLarge!.apply(
                           color: ThemeColors.white,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:zzz_book_store/screens/products/product_meta_data.dart';
 import 'package:zzz_book_store/screens/products/rating_share_button.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
@@ -11,17 +12,19 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final isDarkMode = HelperFunc.isDarkMode(context);
+    int index = Get.arguments["index"];
+    String image = Get.arguments["image"];
 
-    return const Scaffold(
-        bottomNavigationBar: BottomProductDetail(),
+    return Scaffold(
+        bottomNavigationBar: const BottomProductDetail(),
         body: SingleChildScrollView(
           child: Column(
             children: [
               // 1. Image slider
-              ProductImageSlider(),
+              ProductImageSlider(image: image),
               // 2. Product Details
               Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   right: CustomSizes.defaultSpace,
                   left: CustomSizes.defaultSpace,
                   bottom: CustomSizes.defaultSpace,
@@ -29,9 +32,9 @@ class ProductDetailScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     // Rating
-                    RatingShareButton(),
+                    const RatingShareButton(),
 
-                    ProductMetaData()
+                    ProductMetaData(index: index)
                   ],
                 ),
               )

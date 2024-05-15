@@ -32,4 +32,8 @@ class PricingCalculator {
     // tạm fix cứng 30.000 VND cho mọi location
     return 30000;
   }
+
+  static int getSaleOffPrice(int price, int saleOff) {
+    return (price * (100 - saleOff) / 100).round();
+  }
 }

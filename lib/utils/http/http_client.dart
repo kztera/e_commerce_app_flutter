@@ -2,10 +2,16 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class HttpClient {
-  static const String _apiUrl = 'https://threez-store.onrender.com/api/v1';
+  static const String _apiUrl = 'http://bookstore.test.mqsolutions.vn/api/v1';
 
-  static Future<dynamic> get(String endpoint) async {
-    final response = await http.get(Uri.parse('$_apiUrl/$endpoint'));
+  static Future<dynamic> get({required endpoint, String? token}) async {
+    final response = await http.get(
+      Uri.parse('$_apiUrl/$endpoint'),
+      headers: {
+        'Content-Type': 'application/json',
+        if (token != null) 'Authorization': 'Bearer $token',
+      },
+    );
     return _handleResponse(response);
   }
 
@@ -32,7 +38,7 @@ class HttpClient {
     return _handleResponse(response);
   }
 
-  static Map<String, dynamic> _handleResponse(http.Response response) {
+  static dynamic _handleResponse(http.Response response) {
     dynamic decodedResponse = json.decode(response.body);
     return decodedResponse;
   }
