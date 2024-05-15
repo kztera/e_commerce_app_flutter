@@ -21,7 +21,7 @@ class Routes {
     GetPage(name: '/login', page: () => const LoginScreen()),
     GetPage(name: '/register', page: () => const RegisterScreen(), binding: RegisterBinding()),
     GetPage(name: '/register/verify-email', page: () => const VerifyScreen()),
-    GetPage(name: '/register/success', page: () => const SuccessScreen()),
+    GetPage(name: '/register/success', page: () => const VerifySuccessScreen()),
     GetPage(name: '/forgot-password', page: () => const ForgotPasswordScreen()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
     GetPage(name: '/main', page: () => const BottomNavigation(), binding: MainBinding()),
