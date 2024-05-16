@@ -17,7 +17,9 @@ class BottomProductDetail extends StatelessWidget {
     final MainController controller = Get.find();
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.defaultSpace / 2),
+      padding: const EdgeInsets.symmetric(
+          horizontal: CustomSizes.defaultSpace,
+          vertical: CustomSizes.defaultSpace / 2),
       decoration: BoxDecoration(
           color: isDarkMode ? ThemeColors.darkerGrey : ThemeColors.light,
           borderRadius: const BorderRadius.only(
@@ -34,7 +36,9 @@ class BottomProductDetail extends StatelessWidget {
               ignorePointer: false,
               onTap: () {},
               badgeContent: Text(
-                controller.cartCount > 99 ? "99+" : controller.cartCount.toString(),
+                controller.carts.length > 99
+                    ? "99+"
+                    : controller.carts.length.toString(),
               ),
               badgeAnimation: const badges.BadgeAnimation.slide(),
               badgeStyle: badges.BadgeStyle(
@@ -47,7 +51,7 @@ class BottomProductDetail extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () => controller.onAddToCart(),
+              onPressed: () {}, //controller.onAddToCart(),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(CustomSizes.md),
                 backgroundColor: ThemeColors.primary,

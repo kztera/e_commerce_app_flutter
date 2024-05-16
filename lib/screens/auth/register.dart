@@ -6,7 +6,6 @@ import 'package:zzz_book_store/widgets/register/register_header.dart';
 import 'package:zzz_book_store/widgets/shared/forms/form_divider.dart';
 import 'package:zzz_book_store/widgets/shared/buttons/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

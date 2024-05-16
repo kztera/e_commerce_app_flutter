@@ -28,7 +28,8 @@ class ForgotController extends GetxController {
   }
 
   Future<void> requestForgot() async {
-    var response = await HttpClient.post('forgot-password', {"email": email});
+    var response = await HttpClient.post(
+        endpoint: 'forgot-password', data: {"email": email});
     if (response["message"] != 'Password reset OTP sent to your email') {
       HelperFunc.showSnackBar(response["message"]);
     } else {
@@ -57,7 +58,7 @@ class ForgotController extends GetxController {
     if (otp.value.length < 4) {
       return;
     }
-    var response = await HttpClient.post('verify-otp', {
+    var response = await HttpClient.post(endpoint: 'verify-otp', data: {
       "email": email,
       "otp": otp.value,
     });

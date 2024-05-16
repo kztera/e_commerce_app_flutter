@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/images/rounded_image.dart';
@@ -9,9 +9,9 @@ import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
-  const ProductCardHorizontal({
-    super.key,
-  });
+  final Cart cart;
+
+  const ProductCardHorizontal({super.key, required this.cart});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class ProductCardHorizontal extends StatelessWidget {
     return Row(
       children: [
         RoundedImage(
-          imageUrl: Images.book2,
-          isNetworkImage: false,
+          imageUrl: cart.productImage,
+          isNetworkImage: true,
           width: 100,
           height: 100,
           padding: const EdgeInsets.symmetric(horizontal: CustomSizes.xs),
@@ -29,7 +29,7 @@ class ProductCardHorizontal extends StatelessWidget {
         const SizedBox(width: CustomSizes.spaceBtwItems),
 
         // Title and author
-        const Expanded(
+        Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -39,18 +39,18 @@ class ProductCardHorizontal extends StatelessWidget {
                 children: [
                   AuthorTitleWithVerifyIcon(title: "Lưu Từ Hân"),
                   ProductTitleText(
-                    title: "Tam Thể 2",
+                    title: cart.productName,
                     maxLines: 1,
                   ),
                 ],
               ),
-              SizedBox(height: CustomSizes.spaceBtwItems),
+              const SizedBox(height: CustomSizes.spaceBtwItems),
               Row(
                 children: [
                   ProductPriceText(
-                    price: 124000,
+                    price:cart.productPrice,
                     lineThrough: true,
-                    saleOff: 12,
+                    saleOff: cart.productSaleOff,
                   ),
                 ],
               )

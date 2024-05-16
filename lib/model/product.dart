@@ -1,3 +1,5 @@
+import 'package:zzz_book_store/model/author.dart';
+
 class Product {
   final String id;
   final String name;
@@ -17,6 +19,8 @@ class Product {
   final int numOfLikes;
   final DateTime dateAdded;
 
+  final List<Author> author;
+
   Product(
       {required this.id,
       required this.name,
@@ -28,7 +32,8 @@ class Product {
       required this.numberOfReviews,
       required this.numOfDownloads,
       required this.numOfLikes,
-      required this.dateAdded});
+      required this.dateAdded,
+      required this.author});
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
@@ -42,6 +47,9 @@ class Product {
         numberOfReviews: json['numberOfReviews'],
         numOfDownloads: json['numOfDownloads'],
         numOfLikes: json['numOfLikes'],
-        dateAdded: DateTime.parse(json['dateAdded']));
+        dateAdded: DateTime.parse(json['dateAdded']),
+        author: (json['author'] as List<dynamic>)
+            .map((author) => Author.fromJson(author))
+            .toList());
   }
 }

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
@@ -38,15 +39,19 @@ class CircularImage extends StatelessWidget {
       ),
       child: Center(
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: Image(
-            width: width,
-            height: height,
-            fit: fit,
-            image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-            color: overlayColor,
-          ),
-        ),
+            borderRadius: BorderRadius.circular(100),
+            child: isNetworkImage
+                ? CachedNetworkImage(
+                    imageUrl: image,
+                    fit: fit,
+                    width: width,
+                    height: height,
+                    placeholder: (context, url) =>
+                        const Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  )
+                : Image.asset(image, fit: fit, width: width, height: height)),
       ),
     );
   }

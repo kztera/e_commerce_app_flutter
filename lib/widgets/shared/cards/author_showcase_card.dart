@@ -24,7 +24,7 @@ class AuthorShowcase extends StatelessWidget {
       child: Column(
         children: [
           // Showcases author
-          AuthorCard(showBorder: false, onTap: () {}),
+          //AuthorCard(showBorder: false, onTap: () {}),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           // Books
           Row(children: images.map((image) => authorTopProductImageWidget(image, context)).toList()),

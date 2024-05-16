@@ -1,6 +1,10 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
@@ -40,9 +44,9 @@ class HelperFunc {
   }
 
   static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    final scaffoldMessenger = ScaffoldMessenger.of(Get.context!);
+    scaffoldMessenger.removeCurrentSnackBar();
+    scaffoldMessenger.showSnackBar(SnackBar(content: Text(message)));
   }
 
   static void showAlert(String title, String message) {
@@ -121,5 +125,28 @@ class HelperFunc {
       return !isTokenExpired;
     }
     return false;
+  }
+
+  static String generateSignature(
+      {required int amount,
+      required String extraData,
+      required String ipnUrl,
+      required String orderId,
+      required String orderInfo,
+      required String redirectUrl,
+      required String requestId,
+      required String requestType}) {
+    var secretKey = utf8.encode(dotenv.env['SECRET_KEY'].toString());
+    var accessKey = dotenv.env['ACCESS_KEY'].toString();
+    var partnerCode = dotenv.env['PARTNER_CODE'].toString();
+
+    var signature = utf8.encode("accessKey=$accessKey&amount=$amount"
+        "&extraData=$extraData&ipnUrl=$ipnUrl"
+        "&orderId=$orderId&orderInfo=$orderInfo"
+        "&partnerCode=$partnerCode&redirectUrl=$redirectUrl"
+        "&requestId=$requestId&requestType=$requestType");
+    var hMacSha256 = Hmac(sha256, secretKey);
+    var digest = hMacSha256.convert(signature);
+    return digest.toString();
   }
 }

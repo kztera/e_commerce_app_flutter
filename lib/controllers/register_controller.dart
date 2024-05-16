@@ -74,7 +74,7 @@ class RegisterController extends GetxController {
   }
 
   Future<void> requestSignUp() async {
-    var response = await HttpClient.post("register", {
+    var response = await HttpClient.post(endpoint: "register", data: {
       "name": fullName,
       "email": email,
       "phone": phone,

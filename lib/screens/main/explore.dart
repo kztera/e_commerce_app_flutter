@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
@@ -11,7 +13,7 @@ import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
-class ExploreScreen extends StatelessWidget {
+class ExploreScreen extends GetView<MainController> {
   const ExploreScreen({super.key});
 
   @override
@@ -19,7 +21,7 @@ class ExploreScreen extends StatelessWidget {
     final bool isDarkMode = HelperFunc.isDarkMode(context);
 
     return DefaultTabController(
-      length: 2,
+      length: controller.categories.length,
       child: Scaffold(
           appBar: CustomAppbar(
             title: Text(
@@ -33,7 +35,8 @@ class ExploreScreen extends StatelessWidget {
                 SliverAppBar(
                   pinned: true,
                   floating: true,
-                  backgroundColor: isDarkMode ? ThemeColors.black : ThemeColors.white,
+                  backgroundColor:
+                      isDarkMode ? ThemeColors.black : ThemeColors.white,
                   expandedHeight: 400,
                   automaticallyImplyLeading: false,
                   flexibleSpace: Padding(
@@ -55,7 +58,9 @@ class ExploreScreen extends StatelessWidget {
                           height: CustomSizes.spaceBtwItems,
                         ),
                         SectionHeading(
-                          textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
+                          textColor: isDarkMode
+                              ? ThemeColors.white
+                              : ThemeColors.black,
                           title: t.screens.explore.authors.title,
                           onPressed: () {},
                         ),
@@ -64,9 +69,10 @@ class ExploreScreen extends StatelessWidget {
                         ),
                         GridLayout(
                           mainAxisExtent: 80,
-                          itemCount: 4,
+                          itemCount: controller.products.length,
                           itemBuilder: (_, index) {
                             return AuthorCard(
+                              author: controller.products[index].author[0],
                               showBorder: true,
                               onTap: () {},
                             );
@@ -77,27 +83,17 @@ class ExploreScreen extends StatelessWidget {
                   ),
 
                   // Tab Categories
-                  bottom: const CustomTabBar(
-                    tabs: [
-                      Tab(child: Text('Fantasy')),
-                      Tab(child: Text('Romance')),
-                      // Tab(child: Text('Horror')),
-                      // Tab(child: Text('Mystery')),
-                      // Tab(child: Text('Sci-Fi')),
-                      // Tab(child: Text('Thriller')),
-                      // Tab(child: Text('Historical')),
-                      // Tab(child: Text('Non-Fiction')),
-                      // Tab(child: Text('Biography')),
-                    ],
-                  ),
+                  bottom: CustomTabBar(
+                      tabs: controller.categories
+                          .map((category) => Tab(child: Text(category.name)))
+                          .toList()),
                 ),
               ];
             },
-            body: const TabBarView(
-              children: [
-                CategoryTab(),
-                CategoryTab(),
-              ],
+            body: TabBarView(
+              children: controller.categories
+                  .map((category) => const CategoryTab())
+                  .toList(),
             ),
           )),
     );

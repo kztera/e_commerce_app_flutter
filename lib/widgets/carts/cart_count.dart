@@ -14,7 +14,7 @@ class CartCount extends StatelessWidget {
     final controller = Get.put(MainController());
 
     return Obx(
-      () => controller.cartCount.value == 0
+      () => controller.carts.isEmpty
           ? const SizedBox()
           : Container(
               padding: const EdgeInsets.all(2),
@@ -27,7 +27,7 @@ class CartCount extends StatelessWidget {
                 minHeight: CustomSizes.md,
               ),
               child: Text(
-                controller.cartCount.value.toString(),
+                "${controller.carts.length}",
                 style: const TextStyle(
                   color: ThemeColors.white,
                   fontSize: 10,

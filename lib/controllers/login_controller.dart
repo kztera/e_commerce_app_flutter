@@ -32,8 +32,8 @@ class LoginController extends GetxController {
   }
 
   Future<void> requestSignIn() async {
-    var response =
-        await HttpClient.post('login', {"email": email, "password": password});
+    var response = await HttpClient.post(
+        endpoint: 'login', data: {"email": email, "password": password});
 
     if (response['_id'] != null) {
       saveInfo(response);

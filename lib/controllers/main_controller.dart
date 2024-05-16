@@ -1,6 +1,10 @@
+import 'dart:async';
+
+import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/model/user.dart';
+import 'package:zzz_book_store/provider/data_provider.dart';
 import 'package:zzz_book_store/screens/main/cart.dart';
 import 'package:zzz_book_store/screens/main/explore.dart';
 import 'package:zzz_book_store/screens/main/home.dart';
@@ -8,7 +12,7 @@ import 'package:zzz_book_store/screens/main/setting.dart';
 import 'package:zzz_book_store/screens/main/wishlist.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
-import 'package:zzz_book_store/utils/http/http_client.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
 class MainController extends GetxController {
@@ -23,8 +27,6 @@ class MainController extends GetxController {
     SettingScreen()
   ];
 
-  final RxInt cartCount = 0.obs;
-
   final RxInt carouselCurrentIndex = 0.obs;
 
   final Map<Screen, int> screenIndexMap = {
@@ -34,49 +36,76 @@ class MainController extends GetxController {
     Screen.cart: 3,
     Screen.setting: 4,
   };
-
-  //home
   late User user;
-  var products = <Product>[].obs;
-  var categories = <Category>[].obs;
 
   void goToScreen(Screen screen) {
     selectedIndex.value = screenIndexMap[screen]!;
   }
 
-  //home
   void changeCarouselIndex(index) {
     carouselCurrentIndex.value = index;
   }
 
-  void onAddToCart() {
-    cartCount.value++;
+  //carts
+  var carts = <Cart>[].obs;
+  int countDelete = 0;
+
+  Future<void> getCarts() async {
+    List<Cart> data = await DataProvider.getData(
+      dataType: DataType.cart,
+      endpoint: "users/${user.id}/cart",
+      token: user.accessToken,
+    ) as List<Cart>;
+    carts.assignAll(data);
   }
 
-  void onRemoveFromCart() {
-    cartCount.value--;
-  }
-
-  Future<void> getCategories() async {
-    var response =
-        await HttpClient.get(endpoint: "categories", token: user.accessToken);
-    List<Category> list = [];
-
-    if (response is List) {
-      list = response.map((jsonItem) => Category.fromJson(jsonItem)).toList();
+  Future<void> onAddToCart(String id) async {
+    bool isExistItem = carts.any((cart) => cart.productId == id);
+    if (isExistItem) {
+      HelperFunc.showSnackBar("Đã có trong giỏ hàng");
+      return;
     }
-    categories.assignAll(list);
+    var response = await DataProvider.postData(
+        endpoint: "users/${user.id}/cart",
+        data: {"productId": id},
+        token: user.accessToken);
+    Cart cart = Cart.fromJson(response);
+    carts.add(cart);
   }
+
+  Future<void> onRemoveToCart(int index) async {
+    String productId =
+        carts[index].productId;
+    var response = await DataProvider.deleteData(
+        endpoint: "users/${user.id}/cart/$productId", token: user.accessToken);
+    if (response == null) {
+      carts.removeWhere((cart) => cart.productId == productId);
+    }
+  }
+
+  //product
+  var products = <Product>[].obs;
 
   Future<void> getProducts() async {
-    var response =
-        await HttpClient.get(endpoint: "products", token: user.accessToken);
-    List<Product> list = [];
+    List<Product> data = await DataProvider.getData(
+      dataType: DataType.product,
+      endpoint: "products",
+      token: user.accessToken,
+    ) as List<Product>;
 
-    if (response is List) {
-      list = response.map((jsonItem) => Product.fromJson(jsonItem)).toList();
-    }
-    products.assignAll(list);
+    products.assignAll(data);
+  }
+
+  //category
+  var categories = <Category>[].obs;
+  Future<void> getCategories() async {
+    List<Category> data = await DataProvider.getData(
+      dataType: DataType.category,
+      endpoint: "categories",
+      token: user.accessToken,
+    ) as List<Category>;
+
+    categories.assignAll(data);
   }
 
   //profile
@@ -93,6 +122,7 @@ class MainController extends GetxController {
     user = User.fromJson(userData);
     getCategories();
     getProducts();
+    getCarts();
     super.onInit();
   }
 }
