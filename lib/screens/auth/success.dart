@@ -5,8 +5,8 @@ import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+class VerifySuccessScreen extends StatelessWidget {
+  const VerifySuccessScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

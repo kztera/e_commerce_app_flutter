@@ -1,5 +1,9 @@
 {
   "snackbar": {
     "loginSuccess": "Login successful"
+  },
+  "checkOutSuccess": {
+    "title": "Check out successful",
+    "subTitle": "Thank you for shopping with us. Your ebook will be delivered to your email address shortly."
   }
 }
