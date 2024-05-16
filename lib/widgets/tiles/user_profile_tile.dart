@@ -1,10 +1,12 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
 import "package:iconsax/iconsax.dart";
+import "package:zzz_book_store/controllers/main_controller.dart";
 import "package:zzz_book_store/utils/constants/colors.dart";
 import "package:zzz_book_store/utils/constants/image_strings.dart";
 import "package:zzz_book_store/widgets/shared/images/circular_image.dart";
 
-class UserProjectTile extends StatelessWidget {
+class UserProjectTile extends GetView<MainController> {
   const UserProjectTile({
     super.key,
     required this.onPressed,
@@ -22,7 +24,7 @@ class UserProjectTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        "Lưu Từ Hân",
+        controller.user.name,
         style: Theme.of(context).textTheme.headlineSmall!.apply(color: ThemeColors.white),
       ),
       subtitle: Text(

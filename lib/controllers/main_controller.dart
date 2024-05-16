@@ -35,8 +35,8 @@ class MainController extends GetxController {
     Screen.setting: 4,
   };
 
+  //home
   late User user;
-  //products
   var products = <Product>[].obs;
   var categories = <Category>[].obs;
 
@@ -44,6 +44,7 @@ class MainController extends GetxController {
     selectedIndex.value = screenIndexMap[screen]!;
   }
 
+  //home
   void changeCarouselIndex(index) {
     carouselCurrentIndex.value = index;
   }
@@ -76,6 +77,13 @@ class MainController extends GetxController {
       list = response.map((jsonItem) => Product.fromJson(jsonItem)).toList();
     }
     products.assignAll(list);
+  }
+
+  //profile
+  void signOut() {
+    LocalStorage localStorage = LocalStorage();
+    localStorage.clearAll();
+    Get.offAllNamed('/login');
   }
 
   @override

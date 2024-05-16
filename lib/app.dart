@@ -1,3 +1,4 @@
+import 'package:zzz_book_store/controllers/language_controller.dart';
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/routes/routes.dart';
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemesController themeController = Get.put(ThemesController());
-
+    final LanguageController languageController = Get.put(LanguageController());
     return GetMaterialApp(
       defaultTransition: Transition.fadeIn,
       locale: TranslationProvider.of(context).flutterLocale, // use provider
