@@ -20,15 +20,12 @@ import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
 class ProductMetaData extends StatelessWidget {
-  final int index;
-  const ProductMetaData({super.key, required this.index});
+  final Product product;
+  const ProductMetaData({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunc.isDarkMode(context);
-
-    MainController controller = Get.find();
-    Product product = controller.products[index];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,10 +114,7 @@ class ProductMetaData extends StatelessWidget {
                 showButtonAction: false,
                 textColor: isDarkMode ? ThemeColors.light : ThemeColors.dark,
               ),
-              const Icon(
-                Iconsax.arrow_right_34,
-                size: 18,
-              )
+              const Icon(Iconsax.arrow_right_34, size: 18)
             ],
           ),
         )
