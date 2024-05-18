@@ -25,14 +25,11 @@ class AuthorCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Tooltip(
-        message: "Lưu Từ Hân",
+        message: author.name,
         preferBelow: false,
         child: RoundedContainer(
           showBorder: showBorder,
-          padding: const EdgeInsets.only(
-              left: CustomSizes.xs,
-              right: CustomSizes.xs,
-              bottom: CustomSizes.xs),
+          padding: const EdgeInsets.only(left: CustomSizes.xs, right: CustomSizes.xs, bottom: CustomSizes.xs),
           bgColor: Colors.transparent,
           child: Row(
             children: [
@@ -55,8 +52,7 @@ class AuthorCard extends StatelessWidget {
                       authorTextSize: TextSizes.medium,
                     ),
                     Text(
-                      t.screens.explore.authors
-                          .numberOfBooks(number: author.productCount),
+                      t.screens.explore.authors.numberOfBooks(number: author.productCount),
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.labelMedium,
                     )

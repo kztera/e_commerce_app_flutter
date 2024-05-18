@@ -27,17 +27,16 @@ class ProductDetailController extends GetxController {
 
     if (isExistWishList.isTrue) {
       Wishlist wishlist = Wishlist(
-          productId: product.value!.id,
-          productName: product.value!.name,
-          productImage: product.value!.image,
-          productPrice: product.value!.price,
-          productSaleOff: product.value!.saleOff,
-          productExists: true);
+        productId: product.value!.id,
+        productName: product.value!.name,
+        productImage: product.value!.image,
+        productPrice: product.value!.price,
+        productSaleOff: product.value!.saleOff,
+      );
       _mainController.wishlist.add(wishlist);
       addToWishlist();
     } else {
-      _mainController.wishlist
-          .removeWhere((item) => item.id == product.value!.id);
+      _mainController.wishlist.removeWhere((item) => item.id == product.value!.id);
       removeFromWishlist();
     }
   }
@@ -45,8 +44,7 @@ class ProductDetailController extends GetxController {
   void isExistProductInWishlist() {
     if (product.value == null) return;
 
-    isExistWishList.value = _mainController.wishlist
-        .any((wishlistProduct) => product.value!.id == wishlistProduct.id);
+    isExistWishList.value = _mainController.wishlist.any((wishlistProduct) => product.value!.id == wishlistProduct.id);
   }
 
   Future<void> addToWishlist() async {
@@ -62,16 +60,13 @@ class ProductDetailController extends GetxController {
     if (product.value == null) return;
 
     await HttpClient.delete(
-        endpoint:
-            'users/${_mainController.user.id}/wishlist/${product.value!.id}',
+        endpoint: 'users/${_mainController.user.id}/wishlist/${product.value!.id}',
         token: _mainController.user.accessToken);
   }
 
   Future<void> getProductDetail() async {
     isLoading.value = true;
-    var response = await HttpClient.get(
-        endpoint: "products/$productId",
-        token: _mainController.user.accessToken);
+    var response = await HttpClient.get(endpoint: "products/$productId", token: _mainController.user.accessToken);
 
     product.value = Product.fromJson(response);
     mainImageUrl.value = product.value!.images[0];
