@@ -69,10 +69,10 @@ class ExploreScreen extends GetView<MainController> {
                         ),
                         GridLayout(
                           mainAxisExtent: 80,
-                          itemCount: controller.products.length,
+                          itemCount: controller.authors.length,
                           itemBuilder: (_, index) {
                             return AuthorCard(
-                              author: controller.products[index].author[0],
+                              author: controller.authors[index],
                               showBorder: true,
                               onTap: () {},
                             );
@@ -84,17 +84,23 @@ class ExploreScreen extends GetView<MainController> {
 
                   // Tab Categories
                   bottom: CustomTabBar(
+                      onTap: (index) =>
+                          controller.updateCategorySelected(index),
                       tabs: controller.categories
                           .map((category) => Tab(child: Text(category.name)))
                           .toList()),
                 ),
               ];
             },
-            body: TabBarView(
-              children: controller.categories
-                  .map((category) => const CategoryTab())
-                  .toList(),
-            ),
+            body: Obx(() => TabBarView(
+                  children: controller.categories
+                      .map((category) => CategoryTab(
+                          selected: controller.categorySelected.value,
+                          products: controller
+                              .categories[controller.categorySelected.value]
+                              .products))
+                      .toList(),
+                )),
           )),
     );
   }

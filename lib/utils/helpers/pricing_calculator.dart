@@ -42,7 +42,7 @@ class PricingCalculator {
   static int totalAmount(List<Cart> carts) {
     int totalAmount = 0;
     for (Cart cart in carts) {
-      totalAmount += getSaleOffPrice(cart.productPrice, cart.productSaleOff);
+      totalAmount += getSaleOffPrice(cart.price, cart.saleOff);
     }
     return totalAmount;
   }

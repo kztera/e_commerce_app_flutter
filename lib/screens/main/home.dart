@@ -18,56 +18,62 @@ class HomeScreen extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          HeaderHome(
-            child: Column(
-              children: [
-                const HomeAppbar(),
-                const SizedBox(height: CustomSizes.spaceBtwItems),
-                SearchBox(
-                  text: t.screens.home.search,
-                ),
-                const SizedBox(height: CustomSizes.defaultSpace),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: CustomSizes.defaultSpace),
-                  child: SectionHeading(
-                    title: t.screens.home.category,
-                    showButtonAction: false,
-                    textColor: ThemeColors.white,
+    return RefreshIndicator(
+      onRefresh: controller.refresh,
+      child: Scaffold(
+          body: SingleChildScrollView(
+        child: Column(
+          children: [
+            HeaderHome(
+              child: Column(
+                children: [
+                  const HomeAppbar(),
+                  const SizedBox(height: CustomSizes.spaceBtwItems),
+                  SearchBox(
+                    text: t.screens.home.search,
                   ),
-                ),
-                const SizedBox(height: CustomSizes.spaceBtwItems),
-                const CategoryListView(),
-                const SizedBox(height: CustomSizes.defaultSpace * 2),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
-            child: Column(
-              children: [
-                const ImageSlider(),
-                SectionHeading(
-                  title: t.screens.home.popularProduct,
-                  onPressed: () {},
-                ),
-                Obx(
-                  () => GridLayout(
-                    itemCount: controller.products.length,
-                    itemBuilder: (_, index) => ProductCardVertical(index: index,
-                        product: controller.products[index]),
+                  const SizedBox(height: CustomSizes.defaultSpace),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: CustomSizes.defaultSpace),
+                    child: SectionHeading(
+                      title: t.screens.home.category,
+                      showButtonAction: false,
+                      textColor: ThemeColors.white,
+                    ),
                   ),
-                )
-              ],
+                  const SizedBox(height: CustomSizes.spaceBtwItems),
+                  const CategoryListView(),
+                  const SizedBox(height: CustomSizes.defaultSpace * 2),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    ));
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: CustomSizes.defaultSpace,
+                  vertical: CustomSizes.xs),
+              child: Column(
+                children: [
+                  const ImageSlider(),
+                  SectionHeading(
+                    title: t.screens.home.popularProduct,
+                    onPressed: () {},
+                  ),
+                  Obx(
+                    () => GridLayout(
+                      itemCount: controller.products.length,
+                      itemBuilder: (_, index) => ProductCardVertical(
+                        item: controller.products[index],
+                        author: controller.products[index].author[0].name,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      )),
+    );
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/product.dart';

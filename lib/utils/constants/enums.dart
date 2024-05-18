@@ -9,6 +9,3 @@ enum Screen {
   cart,
   setting,
 }
-
-
-enum DataType { product, cart, category }

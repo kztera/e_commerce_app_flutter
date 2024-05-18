@@ -19,7 +19,7 @@ class ProductCardHorizontal extends StatelessWidget {
     return Row(
       children: [
         RoundedImage(
-          imageUrl: cart.productImage,
+          imageUrl: cart.image,
           isNetworkImage: true,
           width: 100,
           height: 100,
@@ -39,7 +39,7 @@ class ProductCardHorizontal extends StatelessWidget {
                 children: [
                   AuthorTitleWithVerifyIcon(title: "Lưu Từ Hân"),
                   ProductTitleText(
-                    title: cart.productName,
+                    title: cart.name,
                     maxLines: 1,
                   ),
                 ],
@@ -48,9 +48,9 @@ class ProductCardHorizontal extends StatelessWidget {
               Row(
                 children: [
                   ProductPriceText(
-                    price:cart.productPrice,
+                    price:cart.price,
                     lineThrough: true,
-                    saleOff: cart.productSaleOff,
+                    saleOff: cart.saleOff,
                   ),
                 ],
               )

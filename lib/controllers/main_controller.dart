@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:zzz_book_store/model/author.dart';
 import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/model/product.dart';
@@ -112,6 +113,23 @@ class MainController extends GetxController {
         .assignAll(response.map((json) => Category.fromJson(json)).toList());
   }
 
+  //explore
+  RxInt categorySelected = 0.obs;
+  var authors = <Author>[].obs;
+
+  void updateCategorySelected(int index) {
+    categorySelected.value = index;
+  }
+
+  Future<void> getAuthors() async {
+    var response = await HttpClient.get(
+      endpoint: "authors",
+      token: user.accessToken,
+    ) as List;
+
+    authors.assignAll(response.map((json) => Author.fromJson(json)));
+  }
+
   //wishlist
   var wishlist = <Wishlist>[].obs;
   Future<void> getWishlist() async {
@@ -147,6 +165,7 @@ class MainController extends GetxController {
     getProducts();
     getWishlist();
     getCarts();
+    getAuthors();
     super.onInit();
   }
 }

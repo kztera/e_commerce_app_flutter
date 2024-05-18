@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
-import 'package:zzz_book_store/provider/data_provider.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/helpers/pricing_calculator.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
