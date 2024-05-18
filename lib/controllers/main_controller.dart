@@ -1,10 +1,11 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/model/user.dart';
-import 'package:zzz_book_store/provider/data_provider.dart';
+import 'package:zzz_book_store/model/wishlist.dart';
 import 'package:zzz_book_store/screens/main/cart.dart';
 import 'package:zzz_book_store/screens/main/explore.dart';
 import 'package:zzz_book_store/screens/main/home.dart';
@@ -13,6 +14,7 @@ import 'package:zzz_book_store/screens/main/wishlist.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
+import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
 class MainController extends GetxController {
@@ -51,21 +53,20 @@ class MainController extends GetxController {
   int countDelete = 0;
 
   Future<void> getCarts() async {
-    List<Cart> data = await DataProvider.getData(
-      dataType: DataType.cart,
+    var response = await HttpClient.get(
       endpoint: "users/${user.id}/cart",
       token: user.accessToken,
-    ) as List<Cart>;
-    carts.assignAll(data);
+    ) as List;
+    carts.assignAll(response.map((json) => Cart.fromJson(json)).toList());
   }
 
   Future<void> onAddToCart(String id) async {
-    bool isExistItem = carts.any((cart) => cart.productId == id);
+    bool isExistItem = carts.any((cart) => cart.id == id);
     if (isExistItem) {
       HelperFunc.showSnackBar("Đã có trong giỏ hàng");
       return;
     }
-    var response = await DataProvider.postData(
+    var response = await HttpClient.post(
         endpoint: "users/${user.id}/cart",
         data: {"productId": id},
         token: user.accessToken);
@@ -74,12 +75,17 @@ class MainController extends GetxController {
   }
 
   Future<void> onRemoveToCart(int index) async {
-    String productId =
-        carts[index].productId;
-    var response = await DataProvider.deleteData(
-        endpoint: "users/${user.id}/cart/$productId", token: user.accessToken);
-    if (response == null) {
-      carts.removeWhere((cart) => cart.productId == productId);
+    String productId = carts[index].id;
+
+    try {
+      await HttpClient.delete(
+          endpoint: "users/${user.id}/cart/$productId",
+          token: user.accessToken);
+    } catch (e) {
+      log('Error: $e');
+      return;
+    } finally {
+      carts.removeWhere((cart) => cart.id == productId);
     }
   }
 
@@ -87,25 +93,34 @@ class MainController extends GetxController {
   var products = <Product>[].obs;
 
   Future<void> getProducts() async {
-    List<Product> data = await DataProvider.getData(
-      dataType: DataType.product,
+    var response = await HttpClient.get(
       endpoint: "products",
       token: user.accessToken,
-    ) as List<Product>;
+    ) as List;
 
-    products.assignAll(data);
+    products.assignAll(response.map((json) => Product.fromJson(json)).toList());
   }
 
   //category
   var categories = <Category>[].obs;
   Future<void> getCategories() async {
-    List<Category> data = await DataProvider.getData(
-      dataType: DataType.category,
+    var response = await HttpClient.get(
       endpoint: "categories",
       token: user.accessToken,
-    ) as List<Category>;
+    ) as List;
+    categories
+        .assignAll(response.map((json) => Category.fromJson(json)).toList());
+  }
 
-    categories.assignAll(data);
+  //wishlist
+  var wishlist = <Wishlist>[].obs;
+  Future<void> getWishlist() async {
+    var response = await HttpClient.get(
+      endpoint: "users/${user.id}/wishlist",
+      token: user.accessToken,
+    ) as List;
+
+    wishlist.assignAll(response.map((json) => Wishlist.fromJson(json)));
   }
 
   //profile
@@ -116,12 +131,21 @@ class MainController extends GetxController {
   }
 
   @override
+  Future<void> refresh() async {
+    getCategories();
+    getProducts();
+    getCarts();
+    super.refresh();
+  }
+
+  @override
   void onInit() {
     LocalStorage localStorage = LocalStorage();
     Map<String, dynamic> userData = localStorage.readData('user');
     user = User.fromJson(userData);
     getCategories();
     getProducts();
+    getWishlist();
     getCarts();
     super.onInit();
   }
