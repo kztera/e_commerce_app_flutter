@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:zzz_book_store/controllers/explore_controller.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
@@ -13,15 +15,16 @@ import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
-class ExploreScreen extends GetView<MainController> {
+class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ExploreController controller = Get.put(ExploreController());
     final bool isDarkMode = HelperFunc.isDarkMode(context);
 
     return DefaultTabController(
-      length: controller.categories.length,
+      length: controller.mainController.categories.length,
       child: Scaffold(
           appBar: CustomAppbar(
             title: Text(
@@ -67,7 +70,7 @@ class ExploreScreen extends GetView<MainController> {
                         const SizedBox(
                           height: CustomSizes.spaceBtwItems / 1.5,
                         ),
-                        GridLayout(
+                        /*GridLayout(
                           mainAxisExtent: 80,
                           itemCount: controller.authors.length,
                           itemBuilder: (_, index) {
@@ -77,30 +80,26 @@ class ExploreScreen extends GetView<MainController> {
                               onTap: () {},
                             );
                           },
-                        ),
+                        ),*/
                       ],
                     ),
                   ),
 
                   // Tab Categories
                   bottom: CustomTabBar(
-                      onTap: (index) =>
-                          controller.updateCategorySelected(index),
-                      tabs: controller.categories
+                      onTap: (index) => controller.onChangeCategory(index),
+                      tabs: controller.mainController.categories
                           .map((category) => Tab(child: Text(category.name)))
                           .toList()),
                 ),
               ];
             },
             body: Obx(() => TabBarView(
-                  children: controller.categories
-                      .map((category) => CategoryTab(
-                          selected: controller.categorySelected.value,
-                          products: controller
-                              .categories[controller.categorySelected.value]
-                              .products))
-                      .toList(),
-                )),
+              children: controller.mainController.categories.map((_) {
+                return CategoryTab(products: controller.products);
+              }).toList(),
+            )
+            ),
           )),
     );
   }

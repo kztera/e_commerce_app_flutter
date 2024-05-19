@@ -6,10 +6,10 @@ import 'package:zzz_book_store/widgets/shared/cards/product_card_vertical.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 
 class CategoryTab extends StatelessWidget {
-  final int selected;
   final List<Product> products;
   const CategoryTab(
-      {super.key, required this.selected, required this.products});
+      {super.key,
+      required this.products});
 
   @override
   Widget build(BuildContext context) {
