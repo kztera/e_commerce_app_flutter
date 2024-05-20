@@ -6,9 +6,9 @@ import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 
 class RatingShareButton extends GetView<ProductDetailController> {
-  const RatingShareButton({
-    super.key,
-  });
+  final double rating;
+
+  const RatingShareButton({super.key, required this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class RatingShareButton extends GetView<ProductDetailController> {
               TextSpan(
                 children: [
                   TextSpan(
-                      text: '4.5',
+                      text: "$rating",
                       style: Theme.of(context).textTheme.bodyLarge),
                   const TextSpan(text: ' ('),
                   TextSpan(

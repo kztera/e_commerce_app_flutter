@@ -1,20 +1,23 @@
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/product.dart';
+import 'package:zzz_book_store/model/review_summary.dart';
 import 'package:zzz_book_store/model/wishlist.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 
 class ProductDetailController extends GetxController {
   static ProductDetailController get instance => Get.find();
   final MainController _mainController = MainController.instance;
+  String token = '';
 
   RxBool isLoading = true.obs;
   RxBool isExistWishList = false.obs;
 
   String productId = Get.arguments["productId"];
   Rxn<Product> product = Rxn<Product>();
-
   RxString mainImageUrl = ''.obs;
+
+  Rxn<ReviewSummary> reviews = Rxn<ReviewSummary>();
 
   void updateMainImageUrl(String url) {
     mainImageUrl.value = url;
@@ -36,7 +39,8 @@ class ProductDetailController extends GetxController {
       _mainController.wishlist.add(wishlist);
       addToWishlist();
     } else {
-      _mainController.wishlist.removeWhere((item) => item.id == product.value!.id);
+      _mainController.wishlist
+          .removeWhere((item) => item.id == product.value!.id);
       removeFromWishlist();
     }
   }
@@ -44,7 +48,8 @@ class ProductDetailController extends GetxController {
   void isExistProductInWishlist() {
     if (product.value == null) return;
 
-    isExistWishList.value = _mainController.wishlist.any((wishlistProduct) => product.value!.id == wishlistProduct.id);
+    isExistWishList.value = _mainController.wishlist
+        .any((wishlistProduct) => product.value!.id == wishlistProduct.id);
   }
 
   Future<void> addToWishlist() async {
@@ -53,28 +58,42 @@ class ProductDetailController extends GetxController {
     await HttpClient.post(
         endpoint: 'users/${_mainController.user.id}/wishlist',
         data: {"productId": product.value!.id},
-        token: _mainController.user.accessToken);
+        token: token);
   }
 
   Future<void> removeFromWishlist() async {
     if (product.value == null) return;
 
     await HttpClient.delete(
-        endpoint: 'users/${_mainController.user.id}/wishlist/${product.value!.id}',
-        token: _mainController.user.accessToken);
+        endpoint:
+            'users/${_mainController.user.id}/wishlist/${product.value!.id}',
+        token: token);
   }
 
   Future<void> getProductDetail() async {
     isLoading.value = true;
-    var response = await HttpClient.get(endpoint: "products/$productId", token: _mainController.user.accessToken);
+    var response = await HttpClient.get(
+        endpoint: "products/$productId",
+        token: _mainController.user.accessToken);
 
     product.value = Product.fromJson(response);
     mainImageUrl.value = product.value!.images[0];
   }
 
+  Future<void> getReviews() async {
+    isLoading.value = true;
+    var response = await HttpClient.get(
+      endpoint: "products/$productId/reviews",
+      token: token,
+    );
+    reviews.value = ReviewSummary.fromJson(response);
+    isLoading.value = false;
+  }
+
   @override
   void onInit() {
     super.onInit();
+    token = _mainController.user.accessToken!;
     getProductDetail().then((_) {
       isLoading.value = false;
       isExistProductInWishlist();

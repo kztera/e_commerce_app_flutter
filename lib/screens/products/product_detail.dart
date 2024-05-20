@@ -42,9 +42,8 @@ class ProductDetailScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       // Rating
-                      const RatingShareButton(),
-
-                      ProductMetaData(product: controller.product.value!)
+                      RatingShareButton(rating: controller.product.value!.rating),
+                      const ProductMetaData()
                     ],
                   ),
                 )
