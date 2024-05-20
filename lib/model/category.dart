@@ -22,9 +22,11 @@ class Category {
       name: json['name'],
       colour: json['colour'],
       image: json['image'],
-      products: (json['product'] as List)
-          .map((product) => Product.fromJson(product))
-          .toList(),
+      products: (json['product'] != null && json['product'] is List)
+          ? (json['product'] as List)
+              .map((product) => Product.fromJson(product))
+              .toList()
+          : [],
       isDisable: json['isDisable'],
     );
   }

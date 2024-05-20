@@ -3,7 +3,7 @@ import 'package:zzz_book_store/model/item.dart';
 
 class Product extends Item {
   final String description;
-  final dynamic rating;
+  final double rating;
   final List<String> images;
   final int numberOfReviews;
 
@@ -42,7 +42,9 @@ class Product extends Item {
         productName: json['name'],
         description: json['description'],
         productPrice: json['price'],
-        rating: json['rating'],
+        rating: (json['rating'] is int)
+            ? (json['rating'] as int).toDouble()
+            : json['rating'],
         productSaleOff: json['saleOff'],
         productImage: json['image'],
         images: (json['images'] != null)
