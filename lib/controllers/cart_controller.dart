@@ -47,8 +47,7 @@ class CartController extends GetxController {
           "userId": user.id,
           "email": email,
           "totalPrice": totalPayment.value,
-          "cartItems":
-              mainController.carts.map((cart) => {"product": cart.id}).toList()
+          "cartItems": mainController.carts.map((cart) => {"product": cart.id}).toList()
         },
         token: user.accessToken);
     Order order = Order.fromJson(response['order']);
@@ -59,7 +58,7 @@ class CartController extends GetxController {
   void sendDataToMoMo(String id) async {
     String requestId = const Uuid().v4();
     String orderId = id;
-    String ipnUrl = "https://project-server-android.onrender.com/api/user/momo";
+    String ipnUrl = dotenv.env['CHECKOUT_URL'].toString();
     String redirectUrl = "";
     String orderInfo = 'Thanh toán đơn hàng';
     int amount = totalPayment.value;
@@ -92,8 +91,7 @@ class CartController extends GetxController {
       "signature": signature,
     };
 
-    var response = await HttpClient.postMoMo(
-        endpoint: '/v2/gateway/api/create', data: data);
+    var response = await HttpClient.postMoMo(endpoint: '/v2/gateway/api/create', data: data);
     openMoMo(response['deeplink']);
   }
 
