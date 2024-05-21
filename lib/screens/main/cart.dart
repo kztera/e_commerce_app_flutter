@@ -14,11 +14,10 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainController mainController = Get.find();
     final CartController cartController = CartController.instance;
 
     return Obx(() => Scaffold(
-          bottomNavigationBar: mainController.carts.isNotEmpty
+          bottomNavigationBar: cartController.mainController.carts.isNotEmpty
               ? ElevatedButton(
                   onPressed: () => Get.to(() => const CheckOutScreen()),
                   style: ElevatedButton.styleFrom(
@@ -37,7 +36,7 @@ class CartScreen extends StatelessWidget {
             title: Text(t.screens.cart.appbar.title,
                 style: Theme.of(context).textTheme.headlineMedium),
           ),
-          body: mainController.carts.isEmpty
+          body: cartController.mainController.carts.isEmpty
               ? _buildEmptyCart(context)
               : _buildCartList(context),
         ));

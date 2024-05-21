@@ -38,7 +38,11 @@ class CartItems extends GetView<CartController> {
             ],
           ),
           child: ProductCardHorizontal(
-              cart: controller.mainController.carts[index]),
+              productName: controller.mainController.carts[index].name,
+              image: controller.mainController.carts[index].image,
+              author: '',
+              price: controller.mainController.carts[index].price,
+              saleOff: controller.mainController.carts[index].saleOff),
         ),
       );
     });

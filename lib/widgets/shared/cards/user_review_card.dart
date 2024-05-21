@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:readmore/readmore.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/model/review.dart';
-import 'package:zzz_book_store/model/review_summary.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/formatter/formatter.dart';
 
@@ -25,8 +22,9 @@ class UserReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage(Images.author1),
+                CircleAvatar(
+                  backgroundColor: ThemeColors.secondary,
+                  child: Text(review.userName[0].toUpperCase()),
                 ),
                 const SizedBox(width: CustomSizes.spaceBtwItems),
                 Text(review.userName,

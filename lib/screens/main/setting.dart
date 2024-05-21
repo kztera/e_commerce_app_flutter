@@ -5,6 +5,7 @@ import 'package:zzz_book_store/controllers/language_controller.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/screens/main/orders/order.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
@@ -66,6 +67,7 @@ class SettingScreen extends GetView<MainController> {
                   title: t.screens.settings.purchase.purchaseHistory.title,
                   subtitle:
                       t.screens.settings.purchase.purchaseHistory.subtitle,
+                  onTap: () => Get.to(() => const OrderScreen()),
                 ),
                 SettingMenuTile(
                   icon: Iconsax.activity,

@@ -98,7 +98,6 @@ class MainController extends GetxController {
       endpoint: "products",
       token: user.accessToken,
     ) as List;
-
     products.assignAll(response.map((json) => Product.fromJson(json)).toList());
   }
 
@@ -113,22 +112,7 @@ class MainController extends GetxController {
         .assignAll(response.map((json) => Category.fromJson(json)).toList());
   }
 
-  //explore
-  RxInt categorySelected = 0.obs;
-  var authors = <Author>[].obs;
 
-  void updateCategorySelected(int index) {
-    categorySelected.value = index;
-  }
-
-  Future<void> getAuthors() async {
-    var response = await HttpClient.get(
-      endpoint: "authors",
-      token: user.accessToken,
-    ) as List;
-
-    authors.assignAll(response.map((json) => Author.fromJson(json)));
-  }
 
   //wishlist
   var wishlist = <Wishlist>[].obs;
@@ -165,7 +149,6 @@ class MainController extends GetxController {
     getProducts();
     getWishlist();
     getCarts();
-    getAuthors();
     super.onInit();
   }
 }

@@ -7,8 +7,10 @@ import 'package:zzz_book_store/utils/constants/sizes.dart';
 
 class RatingShareButton extends GetView<ProductDetailController> {
   final double rating;
+  final int numOfReviews;
 
-  const RatingShareButton({super.key, required this.rating});
+  const RatingShareButton(
+      {super.key, required this.rating, required this.numOfReviews});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class RatingShareButton extends GetView<ProductDetailController> {
                       style: Theme.of(context).textTheme.bodyLarge),
                   const TextSpan(text: ' ('),
                   TextSpan(
-                      text: '200 ',
+                      text: '$numOfReviews ',
                       style: Theme.of(context).textTheme.bodyLarge),
                   TextSpan(text: t.screens.productDetails.ratings),
                   const TextSpan(text: ')'),

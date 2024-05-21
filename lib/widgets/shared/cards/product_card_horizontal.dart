@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
@@ -9,9 +8,16 @@ import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
-  final Cart cart;
+  final String image, author, productName;
+  final int price, saleOff;
 
-  const ProductCardHorizontal({super.key, required this.cart});
+  const ProductCardHorizontal(
+      {super.key,
+      required this.image,
+      required this.author,
+      required this.productName,
+      required this.price,
+      required this.saleOff});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,7 @@ class ProductCardHorizontal extends StatelessWidget {
     return Row(
       children: [
         RoundedImage(
-          imageUrl: cart.image,
+          imageUrl: image,
           isNetworkImage: true,
           width: 100,
           height: 100,
@@ -37,9 +43,9 @@ class ProductCardHorizontal extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AuthorTitleWithVerifyIcon(title: "Lưu Từ Hân"),
+                  AuthorTitleWithVerifyIcon(title: author),
                   ProductTitleText(
-                    title: cart.name,
+                    title: productName,
                     maxLines: 1,
                   ),
                 ],
@@ -48,9 +54,9 @@ class ProductCardHorizontal extends StatelessWidget {
               Row(
                 children: [
                   ProductPriceText(
-                    price:cart.price,
+                    price: price,
                     lineThrough: true,
-                    saleOff: cart.saleOff,
+                    saleOff: saleOff,
                   ),
                 ],
               )

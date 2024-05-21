@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/explore_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/screens/products/product_conditional.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/main/explore/category_tab.dart';
+import 'package:zzz_book_store/widgets/shared/cards/author_card.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_tabbar.dart';
 import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
+import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -66,17 +69,29 @@ class ExploreScreen extends StatelessWidget {
                         const SizedBox(
                           height: CustomSizes.spaceBtwItems / 1.5,
                         ),
-                        /*GridLayout(
-                          mainAxisExtent: 80,
-                          itemCount: controller.authors.length,
-                          itemBuilder: (_, index) {
-                            return AuthorCard(
-                              author: controller.authors[index],
-                              showBorder: true,
-                              onTap: () {},
-                            );
-                          },
-                        ),*/
+                        Obx(
+                          () => GridLayout(
+                              mainAxisExtent: 80,
+                              itemCount: controller.authors.length >= 4
+                                  ? 4
+                                  : controller.authors.length,
+                              itemBuilder: (_, index) {
+                                return AuthorCard(
+                                  author: controller.authors[index],
+                                  showBorder: true,
+                                  onTap: () {
+                                    Get.to(() => const ProductConditional(),
+                                        arguments: {
+                                          "conditionalId":
+                                              controller.authors[index].id,
+                                          "title":
+                                              controller.authors[index].name,
+                                          "type": "author"
+                                        });
+                                  },
+                                );
+                              }),
+                        )
                       ],
                     ),
                   ),
@@ -91,12 +106,11 @@ class ExploreScreen extends StatelessWidget {
               ];
             },
             body: Obx(() => TabBarView(
-              children: controller.mainController.categories.map((_) {
-                print(controller.products);
-                return CategoryTab(products: controller.products);
-              }).toList(),
-            )
-            ),
+                  children: controller.mainController.categories.map((_) {
+                    print(controller.products);
+                    return CategoryTab(products: controller.products);
+                  }).toList(),
+                )),
           )),
     );
   }
