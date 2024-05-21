@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:zzz_book_store/model/author.dart';
 import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/model/product.dart';
@@ -51,13 +50,12 @@ class MainController extends GetxController {
 
   //carts
   var carts = <Cart>[].obs;
-  int countDelete = 0;
 
   Future<void> getCarts() async {
     var response = await HttpClient.get(
       endpoint: "users/${user.id}/cart",
       token: user.accessToken,
-    ) as List;
+    ) ;
     carts.assignAll(response.map((json) => Cart.fromJson(json)).toList());
   }
 
@@ -71,6 +69,7 @@ class MainController extends GetxController {
         endpoint: "users/${user.id}/cart",
         data: {"productId": id},
         token: user.accessToken);
+    print(response);
     Cart cart = Cart.fromJson(response);
     carts.add(cart);
   }

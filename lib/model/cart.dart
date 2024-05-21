@@ -1,7 +1,14 @@
 import 'package:zzz_book_store/model/item.dart';
 
 class Cart extends Item {
-  Cart({productId, productName, productImage, productPrice, productSaleOff})
+  final String productAuthorName;
+  Cart(
+      {productId,
+      productName,
+      productImage,
+      productPrice,
+      productSaleOff,
+      required this.productAuthorName})
       : super(
             id: productId,
             name: productName,
@@ -11,10 +18,12 @@ class Cart extends Item {
 
   factory Cart.fromJson(Map<String, dynamic> json) {
     return Cart(
-        productId: json['product'],
-        productName: json['productName'],
-        productImage: json['productImage'],
-        productPrice: json['productPrice'],
-        productSaleOff: json['productSaleOff']);
+      productId: json['product'] ?? '',
+      productName: json['productName'] ?? '',
+      productImage: json['productImage'] ?? '',
+      productPrice: (json['productPrice'] ?? 0),
+      productSaleOff: (json['productSaleOff'] ?? 0),
+      productAuthorName: json['productAuthorName'] ?? '',
+    );
   }
 }

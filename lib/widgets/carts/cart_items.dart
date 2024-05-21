@@ -40,7 +40,7 @@ class CartItems extends GetView<CartController> {
           child: ProductCardHorizontal(
               productName: controller.mainController.carts[index].name,
               image: controller.mainController.carts[index].image,
-              author: '',
+              author: controller.mainController.carts[index].productAuthorName,
               price: controller.mainController.carts[index].price,
               saleOff: controller.mainController.carts[index].saleOff),
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/cart_controller.dart';
-import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/screens/main/checkout.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
