@@ -103,8 +103,8 @@ class CartController extends GetxController {
     Uri uri = Uri.parse(deepLink);
     if (await canLaunchUrl(uri)) {
       bool launched = await launchUrl(uri);
-
       if (launched) {
+        mainController.carts.clear();
         await Get.to(() => SuccessScreen(
               title: "Thành công",
               subTitle: "Thanh toán thành công",
