@@ -46,5 +46,6 @@ class LoginController extends GetxController {
   void saveInfo(Map<String, dynamic> user) {
     LocalStorage storage = LocalStorage();
     storage.saveData('user', user);
+    storage.saveData('isExpired', true);
   }
 }

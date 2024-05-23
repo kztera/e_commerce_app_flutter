@@ -25,6 +25,8 @@ class RegisterController extends GetxController {
   RxBool isMinCharValid = false.obs;
   RxBool isAtLeastOneValid = false.obs;
 
+  RxBool isCheckBox = false.obs;
+
   void setFullName(String value) => fullName = value;
 
   void setUsername(String value) => username = value;
@@ -65,6 +67,10 @@ class RegisterController extends GetxController {
     return "Passwords do not match";
   }
 
+  void onChangeCheckBox(bool value){
+    isCheckBox.value = value;
+  }
+
   void onSubmit() {
     final isValid = formKeySignUp.currentState!.validate();
     if (!isValid) {
@@ -82,7 +88,7 @@ class RegisterController extends GetxController {
     });
 
     if (response['_id'] != null) {
-      Get.toNamed("/register/verify-email");
+      Get.toNamed("/login");
     } else {
       HelperFunc.showSnackBar(response["message"]);
     }
