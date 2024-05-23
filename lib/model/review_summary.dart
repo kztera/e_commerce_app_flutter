@@ -15,8 +15,9 @@ class ReviewSummary {
     var reviewsFromJson = json['reviews'] as List;
     List<Review> reviewsList =
         reviewsFromJson.map((json) => Review.fromJson(json)).toList();
+
     return ReviewSummary(
-        averageRating: json['averageRating'],
+        averageRating: json['averageRating'] ?? 0,
         count: Map<String, int>.from(json['count']),
         reviews: reviewsList);
   }
