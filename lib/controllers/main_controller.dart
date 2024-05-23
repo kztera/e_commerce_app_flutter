@@ -55,7 +55,7 @@ class MainController extends GetxController {
     var response = await HttpClient.get(
       endpoint: "users/${user.id}/cart",
       token: user.accessToken,
-    ) ;
+    ) as List;
     carts.assignAll(response.map((json) => Cart.fromJson(json)).toList());
   }
 
@@ -69,7 +69,6 @@ class MainController extends GetxController {
         endpoint: "users/${user.id}/cart",
         data: {"productId": id},
         token: user.accessToken);
-    print(response);
     Cart cart = Cart.fromJson(response);
     carts.add(cart);
   }
