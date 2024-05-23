@@ -6,10 +6,12 @@ import 'package:uuid/uuid.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/order.dart';
 import 'package:zzz_book_store/model/user.dart';
+import 'package:zzz_book_store/screens/main/orders/order.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/helpers/pricing_calculator.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/validators/validation.dart';
+import 'package:zzz_book_store/widgets/shared/general/success_screen.dart';
 
 class CartController extends GetxController {
   static CartController get instance => Get.find();
@@ -47,7 +49,8 @@ class CartController extends GetxController {
           "userId": user.id,
           "email": email,
           "totalPrice": totalPayment.value,
-          "cartItems": mainController.carts.map((cart) => {"product": cart.id}).toList()
+          "cartItems":
+              mainController.carts.map((cart) => {"product": cart.id}).toList()
         },
         token: user.accessToken);
     Order order = Order.fromJson(response['order']);
@@ -59,7 +62,7 @@ class CartController extends GetxController {
     String requestId = const Uuid().v4();
     String orderId = id;
     String ipnUrl = dotenv.env['CHECKOUT_URL'].toString();
-    String redirectUrl = "";
+    String redirectUrl = "zzz_book_store://";
     String orderInfo = 'Thanh toán đơn hàng';
     int amount = totalPayment.value;
     String extraData = '';
@@ -91,16 +94,25 @@ class CartController extends GetxController {
       "signature": signature,
     };
 
-    var response = await HttpClient.postMoMo(endpoint: '/v2/gateway/api/create', data: data);
+    var response = await HttpClient.postMoMo(
+        endpoint: '/v2/gateway/api/create', data: data);
     openMoMo(response['deeplink']);
   }
 
   Future<void> openMoMo(String deepLink) async {
     Uri uri = Uri.parse(deepLink);
     if (await canLaunchUrl(uri)) {
-      launchUrl(uri);
-    } else {
-      throw 'Can not open app';
+      bool launched = await launchUrl(uri);
+
+      if (launched) {
+        await Get.to(() => SuccessScreen(
+              title: "Thành công",
+              subTitle: "Thanh toán thành công",
+              onContinue: () => Get.to(() => const OrderScreen()),
+            ));
+      } else {
+        throw 'Can not open app';
+      }
     }
   }
 
