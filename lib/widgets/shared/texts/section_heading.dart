@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
+import 'package:zzz_book_store/utils/constants/sizes.dart';
 
 class SectionHeading extends StatelessWidget {
   const SectionHeading({

@@ -6,6 +6,7 @@ import 'package:zzz_book_store/screens/products/rating_share_button.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/main/products/bottom_product_detail.dart';
 import 'package:zzz_book_store/widgets/main/products/product_image_slider.dart';
+import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
@@ -15,6 +16,14 @@ class ProductDetailScreen extends StatelessWidget {
 
     // final isDarkMode = HelperFunc.isDarkMode(context);
     return Scaffold(
+        appBar: CustomAppbar(
+          bgColor: Colors.transparent,
+          title: Text(
+            'Chi tiết',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          showBackButton: true,
+        ),
         bottomNavigationBar: const BottomProductDetail(),
         body: Obx(() {
           if (controller.isLoading.isTrue) {

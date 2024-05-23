@@ -21,9 +21,17 @@ class ProductReviewScreen extends GetView<ProductDetailController> {
         showBackButton: true,
       ),
       body: Obx(() {
-        return controller.isLoading.isTrue
-            ? const Center(child: CircularProgressIndicator())
-            : SingleChildScrollView(
+        if (controller.isLoading.isTrue) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final reviewsModel = controller.reviews.value;
+        if (reviewsModel!.reviews.isEmpty) {
+          return Center(
+              child: Text("No data",
+                  style: Theme.of(context).textTheme.headlineMedium));
+        }
+
+        return SingleChildScrollView(
                 child: Padding(
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
                 child: Column(
@@ -31,17 +39,16 @@ class ProductReviewScreen extends GetView<ProductDetailController> {
                   children: [
                     Text(t.screens.productReview.subtitle),
                     const SizedBox(height: CustomSizes.spaceBtwItems),
-
                     // Rating Summary
                     RatingSummary(
-                      counter: controller.reviews.value!.reviews.length,
-                      average: controller.reviews.value!.averageRating,
+                      counter: reviewsModel.reviews.length,
+                      average: reviewsModel.averageRating,
                       showAverage: true,
-                      counterFiveStars: controller.reviews.value!.count["5"]!,
-                      counterFourStars: controller.reviews.value!.count["4"]!,
-                      counterThreeStars: controller.reviews.value!.count["3"]!,
-                      counterTwoStars: controller.reviews.value!.count["2"]!,
-                      counterOneStars: controller.reviews.value!.count["1"]!,
+                      counterFiveStars: reviewsModel.count["5"]!,
+                      counterFourStars: reviewsModel.count["4"]!,
+                      counterThreeStars: reviewsModel.count["3"]!,
+                      counterTwoStars: reviewsModel.count["2"]!,
+                      counterOneStars: reviewsModel.count["1"]!,
                       label: t.screens.productDetails.rating,
                     ),
                     const SizedBox(height: CustomSizes.spaceBtwSections),
@@ -49,11 +56,11 @@ class ProductReviewScreen extends GetView<ProductDetailController> {
                     ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: controller.reviews.value!.reviews.length,
+                        itemCount: reviewsModel.reviews.length,
                         itemBuilder: (_, index) => UserReviewCard(
-                              review: controller.reviews.value!.reviews[index],
+                              review: reviewsModel.reviews[index],
                               averageRating:
-                                  controller.reviews.value!.averageRating,
+                                  reviewsModel.averageRating,
                             ))
                   ],
                 ),

@@ -2,7 +2,7 @@ import 'package:zzz_book_store/controllers/language_controller.dart';
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/routes/routes.dart';
-import 'package:zzz_book_store/utils/helpers/helper_function.dart';
+import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 import 'package:zzz_book_store/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,7 +18,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemesController themeController = Get.put(ThemesController());
-    final LanguageController languageController = Get.put(LanguageController());
+    Get.put(LanguageController());
+    LocalStorage localStorage = LocalStorage();
     return GetMaterialApp(
       defaultTransition: Transition.fadeIn,
       locale: TranslationProvider.of(context).flutterLocale, // use provider
@@ -28,7 +29,8 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       getPages: Routes.pages,
-      initialRoute: HelperFunc.checkToken() ? Routes.main : Routes.initial,
+      initialRoute:
+          localStorage.readData("isExpired") ? Routes.main : Routes.initial,
       debugShowCheckedModeBanner: false,
       fallbackLocale: const Locale('vi', 'VN'),
     );

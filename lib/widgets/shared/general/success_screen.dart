@@ -22,7 +22,7 @@ class SuccessScreen extends StatelessWidget {
         child: Column(
           children: [
             // success icon
-            Icon(Icons.check_circle, size: 100, color: Colors.green),
+            const Icon(Icons.check_circle, size: 100, color: Colors.green),
             const SizedBox(height: CustomSizes.spaceBtwSections),
 
             // title and subtitle

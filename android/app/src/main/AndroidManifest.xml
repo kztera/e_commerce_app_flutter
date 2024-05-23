@@ -19,7 +19,13 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-
+            <!-- Intent filter cho URI scheme "zzz_book_store" -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="zzz_book_store"/>
+            </intent-filter>
             <!-- Intent filter cho URI scheme "momo" -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

@@ -32,14 +32,14 @@ class RegisterForm extends GetView<RegisterController> {
             onChanged: controller.setFullName,
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
-          TextFormField(
+          /*TextFormField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
               labelText: t.screens.register.form.username,
               prefixIcon: const Icon(Iconsax.user_edit),
             ),
             onChanged: controller.setUsername,
-          ),
+          ),*/
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           TextFormField(
             keyboardType: TextInputType.emailAddress,
@@ -62,36 +62,38 @@ class RegisterForm extends GetView<RegisterController> {
           ),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           Obx(() => TextFormField(
-            keyboardType: TextInputType.text,
-            obscureText: controller.hidePassword.value,
-            decoration: InputDecoration(
-              labelText: t.screens.register.form.password,
-              prefixIcon: const Icon(Icons.password_outlined),
-              suffixIcon: InkWell(
-                onTap: controller.visibilityPassword,
-                child: Icon(controller.hidePassword.isTrue ?
-                 Iconsax.eye_slash : Iconsax.eye),
-              ),
-            ),
-            validator: (value) => controller.validatePassword(value),
-            onChanged: controller.setPassword,
-          )),
+                keyboardType: TextInputType.text,
+                obscureText: controller.hidePassword.value,
+                decoration: InputDecoration(
+                  labelText: t.screens.register.form.password,
+                  prefixIcon: const Icon(Icons.password_outlined),
+                  suffixIcon: InkWell(
+                    onTap: controller.visibilityPassword,
+                    child: Icon(controller.hidePassword.isTrue
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye),
+                  ),
+                ),
+                validator: (value) => controller.validatePassword(value),
+                onChanged: controller.setPassword,
+              )),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           Obx(() => TextFormField(
-            keyboardType: TextInputType.text,
-            obscureText: controller.hideConfirmPassword.value,
-            decoration: InputDecoration(
-              labelText: t.screens.register.form.confirmPassword,
-              prefixIcon: const Icon(Icons.password_outlined),
-              suffixIcon: InkWell(
-                onTap: controller.visibilityConfirmPassword,
-                child: Icon(controller.hideConfirmPassword.isTrue ?
-                 Iconsax.eye_slash : Iconsax.eye),
-              ),
-            ),
-            validator: (value) => controller.comparePassword(value),
-            onChanged: controller.setConfirmPassword,
-          )),
+                keyboardType: TextInputType.text,
+                obscureText: controller.hideConfirmPassword.value,
+                decoration: InputDecoration(
+                  labelText: t.screens.register.form.confirmPassword,
+                  prefixIcon: const Icon(Icons.password_outlined),
+                  suffixIcon: InkWell(
+                    onTap: controller.visibilityConfirmPassword,
+                    child: Icon(controller.hideConfirmPassword.isTrue
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye),
+                  ),
+                ),
+                validator: (value) => controller.comparePassword(value),
+                onChanged: controller.setConfirmPassword,
+              )),
           const SizedBox(height: CustomSizes.spaceBtwInputFields),
           const CheckPassword(),
           const SizedBox(height: CustomSizes.spaceBtwItems),
@@ -101,7 +103,13 @@ class RegisterForm extends GetView<RegisterController> {
               SizedBox(
                 width: CustomSizes.lg,
                 height: CustomSizes.lg,
-                child: Checkbox(value: false, onChanged: (value) {}),
+                child: Obx(()
+                  => Checkbox(
+                      value: controller.isCheckBox.value,
+                      onChanged: (value) {
+                        controller.onChangeCheckBox(value!);
+                      }),
+                ),
               ),
               const SizedBox(width: CustomSizes.sm),
               Flexible(

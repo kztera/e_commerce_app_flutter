@@ -4,6 +4,7 @@ import 'package:zzz_book_store/app.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -13,5 +14,6 @@ void main() async {
   FlutterNativeSplash.remove();
   LocaleSettings.useDeviceLocale();
   await GetStorage.init();
+  HelperFunc.checkToken();
   runApp(TranslationProvider(child: const App()));
 }

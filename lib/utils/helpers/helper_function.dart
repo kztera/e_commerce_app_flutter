@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/local_storage/local_storage.dart';
 
 class HelperFunc {
@@ -117,14 +117,15 @@ class HelperFunc {
     return wrappedList;
   }
 
-  static bool checkToken() {
+  static void checkToken() async {
     LocalStorage localStorage = LocalStorage();
     Map<String, dynamic>? user = localStorage.readData('user');
+    bool isExpired = false;
     if (user != null) {
-      bool isTokenExpired = JwtDecoder.isExpired(user['accessToken']);
-      return !isTokenExpired;
+      isExpired = await HttpClient.get(
+          endpoint: "verify-token?token=${user['accessToken']}");
     }
-    return false;
+    localStorage.saveData('isExpired', isExpired);
   }
 
   static String generateSignature(

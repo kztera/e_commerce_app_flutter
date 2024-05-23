@@ -48,6 +48,9 @@ class ProductCardVertical<T extends Item> extends GetView<MainController> {
                     imageUrl: item.image,
                     isNetworkImage: true,
                     applyImageRadius: true,
+                    width: double.infinity,
+                    height: 120,
+                    fit: BoxFit.contain
                   ),
                   Positioned(
                     top: 0,
