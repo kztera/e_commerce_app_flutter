@@ -9,7 +9,6 @@ import 'package:zzz_book_store/widgets/main/home/header_home.dart';
 import 'package:zzz_book_store/widgets/main/home/home_appbar.dart';
 import 'package:zzz_book_store/widgets/main/home/image_slider.dart';
 import 'package:zzz_book_store/widgets/shared/cards/product_card_vertical.dart';
-import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
@@ -29,9 +28,9 @@ class HomeScreen extends GetView<MainController> {
                 children: [
                   const HomeAppbar(),
                   const SizedBox(height: CustomSizes.spaceBtwItems),
-                  SearchBox(
+                  /*SearchBox(
                     text: t.screens.home.search,
-                  ),
+                  ),*/
                   const SizedBox(height: CustomSizes.defaultSpace),
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -55,9 +54,13 @@ class HomeScreen extends GetView<MainController> {
               child: Column(
                 children: [
                   const ImageSlider(),
-                  SectionHeading(
-                    title: t.screens.home.popularProduct,
-                    onPressed: () {},
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: CustomSizes.defaultSpace / 2),
+                    child: SectionHeading(
+                      title: t.screens.home.popularProduct,
+                      onPressed: () {},
+                      showButtonAction: false,
+                    ),
                   ),
                   Obx(
                     () => GridLayout(
