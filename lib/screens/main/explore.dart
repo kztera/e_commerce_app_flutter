@@ -10,7 +10,6 @@ import 'package:zzz_book_store/widgets/main/explore/category_tab.dart';
 import 'package:zzz_book_store/widgets/shared/cards/author_card.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_tabbar.dart';
-import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
@@ -47,7 +46,7 @@ class ExploreScreen extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       children: [
-                        const SizedBox(
+                        /*const SizedBox(
                           height: CustomSizes.spaceBtwItems,
                         ),
                         SearchBox(
@@ -58,7 +57,7 @@ class ExploreScreen extends StatelessWidget {
                         ),
                         const SizedBox(
                           height: CustomSizes.spaceBtwItems,
-                        ),
+                        ),*/
                         SectionHeading(
                           textColor: isDarkMode
                               ? ThemeColors.white
@@ -98,6 +97,7 @@ class ExploreScreen extends StatelessWidget {
 
                   // Tab Categories
                   bottom: CustomTabBar(
+                      tabController: controller.tabController,
                       onTap: (index) => controller.onChangeCategory(index),
                       tabs: controller.mainController.categories
                           .map((category) => Tab(child: Text(category.name)))
@@ -105,12 +105,14 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ];
             },
-            body: Obx(() => TabBarView(
-                  children: controller.mainController.categories.map((_) {
-                    print(controller.products);
-                    return CategoryTab(products: controller.products);
-                  }).toList(),
-                )),
+            body: Obx(() => controller.isLoading.isTrue
+                ? const Center(child: CircularProgressIndicator())
+                : TabBarView(
+                    controller: controller.tabController,
+                    children: controller.mainController.categories.map((_) {
+                      return CategoryTab(products: controller.products);
+                    }).toList(),
+                  )),
           )),
     );
   }

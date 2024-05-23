@@ -4,10 +4,15 @@ import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 
 class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomTabBar({super.key, required this.tabs, required this.onTap});
+  const CustomTabBar(
+      {super.key,
+      required this.tabs,
+      required this.onTap,
+      required this.tabController});
 
   final List<Widget> tabs;
   final Function(int index) onTap;
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +22,7 @@ class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
       child: TabBar(
         tabs: tabs,
         onTap: onTap,
+        controller: tabController,
         isScrollable: true,
         indicatorColor: ThemeColors.primary,
         labelColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
