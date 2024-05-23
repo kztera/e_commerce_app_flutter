@@ -17,18 +17,26 @@ class UserProjectTile extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const CircularImage(
-        image: Images.author1,
-        width: 50,
-        height: 50,
-        padding: 0,
+      leading: CircleAvatar(
+        backgroundColor: Colors.blue,
+        radius: 24,
+        child: Text(
+          controller.user.name[0].toUpperCase(),
+          style: Theme.of(context)
+              .textTheme
+              .headlineSmall!
+              .apply(color: ThemeColors.white),
+        ),
       ),
       title: Text(
         controller.user.name,
-        style: Theme.of(context).textTheme.headlineSmall!.apply(color: ThemeColors.white),
+        style: Theme.of(context)
+            .textTheme
+            .headlineSmall!
+            .apply(color: ThemeColors.white),
       ),
       subtitle: Text(
-        "Tác giả Tam thể",
+        "Người dùng",
         style: Theme.of(context).textTheme.bodyMedium!.apply(
               color: ThemeColors.white.withOpacity(0.8),
             ),

@@ -69,11 +69,11 @@ class SettingScreen extends GetView<MainController> {
                       t.screens.settings.purchase.purchaseHistory.subtitle,
                   onTap: () => Get.to(() => const OrderScreen()),
                 ),
-                SettingMenuTile(
+                /*SettingMenuTile(
                   icon: Iconsax.activity,
                   title: t.screens.settings.purchase.pending.title,
                   subtitle: t.screens.settings.purchase.pending.subtitle,
-                ),
+                ),*/
                 const SizedBox(height: CustomSizes.spaceBtwSections),
                 SectionHeading(
                   title: t.screens.settings.app.title,
@@ -98,14 +98,14 @@ class SettingScreen extends GetView<MainController> {
                     onTap: () => _showLanguageSelection(Theme.of(context)),
                   );
                 }),
-                SettingMenuTile(
+                /*SettingMenuTile(
                   icon: Iconsax.notification,
                   title: t.screens.settings.app.noti,
                 ),
                 SettingMenuTile(
                   icon: Iconsax.message_question,
                   title: t.screens.settings.app.help,
-                ),
+                ),*/
                 SettingMenuTile(
                   icon: Iconsax.logout,
                   title: t.screens.settings.app.logout,

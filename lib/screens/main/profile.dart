@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
+import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/main/profile/profile_menu.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
-import 'package:zzz_book_store/widgets/shared/images/circular_image.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
 class ProfileScreen extends GetView<MainController> {
@@ -29,10 +28,21 @@ class ProfileScreen extends GetView<MainController> {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const CircularImage(
+                    /*const CircularImage(
                       image: Images.author1,
                       width: 80,
                       height: 80,
+                    ),*/
+                    CircleAvatar(
+                      backgroundColor: Colors.blue,
+                      radius: 30,
+                      child: Text(
+                        controller.user.name[0].toUpperCase(),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .apply(color: ThemeColors.white),
+                      ),
                     ),
                     TextButton(
                       child: Text(t.screens.settings.profile.changePicture),
@@ -54,7 +64,7 @@ class ProfileScreen extends GetView<MainController> {
                   title: t.screens.settings.profile.name,
                   value: controller.user.name),
               const SizedBox(height: CustomSizes.spaceBtwItems),
-              ProfileMenu(
+              /*ProfileMenu(
                   onPressed: () {},
                   title: t.screens.settings.profile.gender,
                   value: 'Male'),
@@ -63,7 +73,7 @@ class ProfileScreen extends GetView<MainController> {
                   onPressed: () {},
                   title: t.screens.settings.profile.birth,
                   value: "22/01/1998"),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              const SizedBox(height: CustomSizes.spaceBtwSections),*/
               SectionHeading(
                 title: t.screens.settings.profile.accountInfo,
                 showButtonAction: false,
@@ -71,8 +81,8 @@ class ProfileScreen extends GetView<MainController> {
               const SizedBox(height: CustomSizes.spaceBtwItems),
               ProfileMenu(
                   onPressed: () {},
-                  title: t.screens.settings.profile.username,
-                  value: "luutuhan"),
+                  title: "Số điện thoại",
+                  value: controller.user.phone),
               const SizedBox(height: CustomSizes.spaceBtwItems),
               ProfileMenu(
                   onPressed: () {},
