@@ -54,8 +54,7 @@ class MainController extends GetxController {
   final ScrollController scrollController = ScrollController();
 
   void _onScroll() {
-    if (scrollController.position.pixels ==
-        scrollController.position.maxScrollExtent) {
+    if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
       getProducts();
     }
   }
@@ -77,10 +76,8 @@ class MainController extends GetxController {
       HelperFunc.showSnackBar("Đã có trong giỏ hàng");
       return;
     }
-    var response = await HttpClient.post(
-        endpoint: "users/${user.id}/cart",
-        data: {"productId": id},
-        token: user.accessToken);
+    var response =
+        await HttpClient.post(endpoint: "users/${user.id}/cart", data: {"productId": id}, token: user.accessToken);
     Cart cart = Cart.fromJson(response);
     carts.add(cart);
   }
@@ -89,9 +86,7 @@ class MainController extends GetxController {
     String productId = carts[index].id;
 
     try {
-      await HttpClient.delete(
-          endpoint: "users/${user.id}/cart/$productId",
-          token: user.accessToken);
+      await HttpClient.delete(endpoint: "users/${user.id}/cart/$productId", token: user.accessToken);
     } catch (e) {
       log('Error: $e');
       return;
@@ -122,8 +117,7 @@ class MainController extends GetxController {
       endpoint: "categories",
       token: user.accessToken,
     ) as List;
-    categories
-        .assignAll(response.map((json) => Category.fromJson(json)).toList());
+    categories.assignAll(response.map((json) => Category.fromJson(json)).toList());
   }
 
   //wishlist
@@ -148,6 +142,7 @@ class MainController extends GetxController {
   Future<void> refresh() async {
     pageIndex.value = 1;
     getCategories();
+    products.clear();
     getProducts();
     getCarts();
     super.refresh();
