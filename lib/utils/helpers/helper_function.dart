@@ -117,7 +117,7 @@ class HelperFunc {
     return wrappedList;
   }
 
-  static void checkToken() async {
+  static Future<void> checkToken() async {
     LocalStorage localStorage = LocalStorage();
     Map<String, dynamic>? user = localStorage.readData('user');
     bool isExpired = false;

@@ -14,6 +14,6 @@ void main() async {
   FlutterNativeSplash.remove();
   LocaleSettings.useDeviceLocale();
   await GetStorage.init();
-  HelperFunc.checkToken();
+  await HelperFunc.checkToken();
   runApp(TranslationProvider(child: const App()));
 }
