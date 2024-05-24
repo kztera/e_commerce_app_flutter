@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import "package:zzz_book_store/i18n/translations.g.dart";
@@ -36,21 +35,19 @@ class ResetPasswordScreen extends GetView<ForgotController> {
                   key: controller.formKeyReset,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Obx(() => TextFormField(
-                    keyboardType: TextInputType.text,
-                    obscureText: controller.hidePassword.value,
-                    decoration: InputDecoration(
-                      labelText: t.screens.register.form.password,
-                      prefixIcon: const Icon(Icons.password_outlined),
-                      suffixIcon: InkWell(
-                        onTap: controller.visibilityPassword,
-                        child: Icon(controller.hidePassword.isTrue
-                            ? Iconsax.eye_slash
-                            : Iconsax.eye),
-                      ),
-                    ),
-                    validator: (value) => controller.validatePassword(value),
-                    onChanged: controller.setPassword,
-                  )),
+                        keyboardType: TextInputType.text,
+                        obscureText: controller.hidePassword.value,
+                        decoration: InputDecoration(
+                          labelText: t.screens.register.form.password,
+                          prefixIcon: const Icon(Icons.password_outlined),
+                          suffixIcon: InkWell(
+                            onTap: controller.visibilityPassword,
+                            child: Icon(controller.hidePassword.isTrue ? Iconsax.eye_slash : Iconsax.eye),
+                          ),
+                        ),
+                        validator: (value) => controller.validatePassword(value),
+                        onChanged: controller.setPassword,
+                      )),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwInputFields),
                 SizedBox(

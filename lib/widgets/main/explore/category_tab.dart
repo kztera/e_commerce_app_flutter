@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
-import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/product_card_vertical.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 
 class CategoryTab extends StatelessWidget {
   final List<Product> products;
-  const CategoryTab(
-      {super.key,
-      required this.products});
+  const CategoryTab({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = HelperFunc.isDarkMode(context);
-
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -36,9 +31,8 @@ class CategoryTab extends StatelessWidget {
               const SizedBox(height: CustomSizes.spaceBtwItems), */
               GridLayout(
                   itemCount: products.length,
-                  itemBuilder: (_, index) => ProductCardVertical(
-                      item: products[index],
-                      author: products[index].author[0].name)),
+                  itemBuilder: (_, index) =>
+                      ProductCardVertical(item: products[index], author: products[index].author[0].name)),
               //const SizedBox(height: CustomSizes.spaceBtwSections),
             ],
           ),

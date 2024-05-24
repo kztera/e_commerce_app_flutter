@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/forgot_controller.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
-import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +13,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Nhập mã xác thực',
-              style: Theme.of(context).textTheme.headlineMedium),
+          title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -37,8 +35,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                        4, (index) => _buildOTPBox(context, index))),
+                    children: List.generate(4, (index) => _buildOTPBox(context, index))),
               ),
               const SizedBox(
                 height: CustomSizes.spaceBtwSections * 4,
@@ -58,13 +55,9 @@ class VerifyOTPScreen extends GetView<ForgotController> {
                           TextSpan(
                             text: ' Gửi lại',
                             style: controller.countdown.value == 0
-                                ? Theme.of(context)
-                                    .textTheme
-                                    .labelMedium!
-                                    .apply(color: ThemeColors.primary)
+                                ? Theme.of(context).textTheme.labelMedium!.apply(color: ThemeColors.primary)
                                 : Theme.of(context).textTheme.labelMedium,
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = controller.onResendOTP,
+                            recognizer: TapGestureRecognizer()..onTap = controller.onResendOTP,
                           ),
                         ],
                       ),
@@ -100,7 +93,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
         return Container(
           width: MediaQuery.of(context).size.width * 0.3,
           padding: const EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.grey,
             borderRadius: BorderRadius.horizontal(
               left: Radius.circular(100),
@@ -111,8 +104,8 @@ class VerifyOTPScreen extends GetView<ForgotController> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.alarm_sharp),
-              SizedBox(
+              const Icon(Icons.alarm_sharp),
+              const SizedBox(
                 width: 8.0,
               ),
               Text(

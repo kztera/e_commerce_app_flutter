@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
@@ -22,11 +21,8 @@ class ConditionalController extends GetxController {
 
   Future<void> getProductConditional() async {
     isLoading.value = true;
-    String endpoint = type == 'author'
-        ? 'products/authors/$conditionalId'
-        : 'products?category=$conditionalId';
-    var response = await HttpClient.get(
-        endpoint: endpoint, token: _mainController.user.accessToken) as List;
+    String endpoint = type == 'author' ? 'products/authors/$conditionalId' : 'products?category=$conditionalId';
+    var response = await HttpClient.get(endpoint: endpoint, token: _mainController.user.accessToken) as List;
 
     products.assignAll(response.map((json) => Product.fromJson(json)));
     filteredProducts.assignAll(products);
@@ -42,8 +38,8 @@ class ConditionalController extends GetxController {
 
   void onSearch() {
     final lowercaseQuery = query.value.toLowerCase();
-    filteredProducts.assignAll(products.where((product) =>
-        product.name.toString().toLowerCase().contains(lowercaseQuery)));
+    filteredProducts
+        .assignAll(products.where((product) => product.name.toString().toLowerCase().contains(lowercaseQuery)));
   }
 
   @override
