@@ -15,30 +15,24 @@ class BillingPaymentPricing extends GetView<CartController> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(t.screens.checkOut.payment.subTotal,
-                style: Theme.of(context).textTheme.bodyMedium),
-            Text(Formatter.formatCurrency(controller.totalAmount.value),
-                style: Theme.of(context).textTheme.bodyMedium),
+            Text(t.screens.checkOut.payment.subTotal, style: Theme.of(context).textTheme.bodyMedium),
+            Text(Formatter.formatCurrency(controller.totalAmount.value), style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems / 2),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(t.screens.checkOut.payment.taxFee,
-                style: Theme.of(context).textTheme.bodyMedium),
-            Text(Formatter.formatCurrency(controller.tax),
-                style: Theme.of(context).textTheme.bodyMedium),
+            Text(t.screens.checkOut.payment.taxFee, style: Theme.of(context).textTheme.bodyMedium),
+            Text(Formatter.formatCurrency(controller.tax.value), style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems / 2),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(t.screens.checkOut.payment.orderTotal,
-                style: Theme.of(context).textTheme.bodyMedium),
-            Obx(() => Text(
-                Formatter.formatCurrency(controller.totalPayment.value),
+            Text(t.screens.checkOut.payment.orderTotal, style: Theme.of(context).textTheme.bodyMedium),
+            Obx(() => Text(Formatter.formatCurrency(controller.totalPayment.value),
                 style: Theme.of(context).textTheme.bodyMedium)),
           ],
         ),

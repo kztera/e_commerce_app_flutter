@@ -16,10 +16,9 @@ class PricingCalculator {
     return shippingCost.toStringAsFixed(2);
   }
 
-  static String calculateTax(double productPrice, String location) {
-    double taxRate = getTaxRateForLocation(location);
-    double taxAmount = productPrice * taxRate;
-    return taxAmount.toStringAsFixed(2);
+  static int calculateTax(int productPrice) {
+    double taxAmount = productPrice * 0.05;
+    return taxAmount.round();
   }
 
   static double getTaxRateForLocation(String location) {

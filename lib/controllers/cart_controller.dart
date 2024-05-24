@@ -6,7 +6,6 @@ import 'package:uuid/uuid.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/order.dart';
 import 'package:zzz_book_store/model/user.dart';
-import 'package:zzz_book_store/screens/main/orders/order.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/helpers/pricing_calculator.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
@@ -17,7 +16,7 @@ class CartController extends GetxController {
   static CartController get instance => Get.find();
   final MainController mainController = Get.find();
   RxInt totalAmount = 0.obs;
-  int tax = 20000;
+  RxInt tax = 0.obs;
   RxInt totalPayment = 0.obs;
   late User user;
   final formKey = GlobalKey<FormState>();
@@ -35,7 +34,8 @@ class CartController extends GetxController {
 
   void calcTotalPayment() {
     totalAmount.value = PricingCalculator.totalAmount(mainController.carts);
-    totalPayment.value = totalAmount.value + tax;
+    tax.value = PricingCalculator.calculateTax(totalAmount.value);
+    totalPayment.value = totalAmount.value + tax.value;
   }
 
   void onPayment() async {
@@ -49,8 +49,7 @@ class CartController extends GetxController {
           "userId": user.id,
           "email": email,
           "totalPrice": totalPayment.value,
-          "cartItems":
-              mainController.carts.map((cart) => {"product": cart.id}).toList()
+          "cartItems": mainController.carts.map((cart) => {"product": cart.id}).toList()
         },
         token: user.accessToken);
     Order order = Order.fromJson(response['order']);
@@ -94,8 +93,7 @@ class CartController extends GetxController {
       "signature": signature,
     };
 
-    var response = await HttpClient.postMoMo(
-        endpoint: '/v2/gateway/api/create', data: data);
+    var response = await HttpClient.postMoMo(endpoint: '/v2/gateway/api/create', data: data);
     openMoMo(response['deeplink']);
   }
 
@@ -103,13 +101,11 @@ class CartController extends GetxController {
     Uri uri = Uri.parse(deepLink);
     if (await canLaunchUrl(uri)) {
       bool launched = await launchUrl(uri);
+      await Future.delayed(const Duration(seconds: 5));
       if (launched) {
         mainController.carts.clear();
-        await Get.offAll(() => SuccessScreen(
-              title: "Thành công",
-              subTitle: "Thanh toán thành công",
-              onContinue: () => Get.to(() => const OrderScreen()),
-            ));
+        await Get.off(() => SuccessScreen(
+            title: "Thành công", subTitle: "Thanh toán thành công", onContinue: () => Get.offAndToNamed('/main')));
       } else {
         throw 'Can not open app';
       }
