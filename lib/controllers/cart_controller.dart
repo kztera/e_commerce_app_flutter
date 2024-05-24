@@ -105,10 +105,10 @@ class CartController extends GetxController {
       bool launched = await launchUrl(uri);
       if (launched) {
         mainController.carts.clear();
-        await Get.to(() => SuccessScreen(
+        await Get.offAll(() => SuccessScreen(
               title: "Thành công",
               subTitle: "Thanh toán thành công",
-              onContinue: () => Get.to(() => const OrderScreen()),
+              onContinue: () => Get.offAll(() => const OrderScreen()),
             ));
       } else {
         throw 'Can not open app';
