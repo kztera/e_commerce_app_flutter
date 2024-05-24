@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/model/author.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/circular_image.dart';

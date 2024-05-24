@@ -36,9 +36,8 @@ class ExploreScreen extends StatelessWidget {
                 SliverAppBar(
                   pinned: true,
                   floating: true,
-                  backgroundColor:
-                      isDarkMode ? ThemeColors.black : ThemeColors.white,
-                  expandedHeight: 400,
+                  backgroundColor: isDarkMode ? ThemeColors.black : ThemeColors.white,
+                  expandedHeight: 320,
                   automaticallyImplyLeading: false,
                   flexibleSpace: Padding(
                     padding: const EdgeInsets.all(CustomSizes.defaultSpace),
@@ -59,9 +58,7 @@ class ExploreScreen extends StatelessWidget {
                           height: CustomSizes.spaceBtwItems,
                         ),*/
                         SectionHeading(
-                          textColor: isDarkMode
-                              ? ThemeColors.white
-                              : ThemeColors.black,
+                          textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
                           title: t.screens.explore.authors.title,
                           onPressed: () {},
                         ),
@@ -71,22 +68,17 @@ class ExploreScreen extends StatelessWidget {
                         Obx(
                           () => GridLayout(
                               mainAxisExtent: 80,
-                              itemCount: controller.authors.length >= 4
-                                  ? 4
-                                  : controller.authors.length,
+                              itemCount: controller.authors.length >= 4 ? 4 : controller.authors.length,
                               itemBuilder: (_, index) {
                                 return AuthorCard(
                                   author: controller.authors[index],
                                   showBorder: true,
                                   onTap: () {
-                                    Get.to(() => const ProductConditional(),
-                                        arguments: {
-                                          "conditionalId":
-                                              controller.authors[index].id,
-                                          "title":
-                                              controller.authors[index].name,
-                                          "type": "author"
-                                        });
+                                    Get.to(() => const ProductConditional(), arguments: {
+                                      "conditionalId": controller.authors[index].id,
+                                      "title": controller.authors[index].name,
+                                      "type": "author"
+                                    });
                                   },
                                 );
                               }),

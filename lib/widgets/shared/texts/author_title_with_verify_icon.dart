@@ -11,7 +11,7 @@ class AuthorTitleWithVerifyIcon extends StatelessWidget {
   const AuthorTitleWithVerifyIcon({
     super.key,
     this.textColor,
-    this.maxLines = 1,
+    this.maxLines = 2,
     required this.title,
     this.iconColor = ThemeColors.primary,
     this.textAlign = TextAlign.start,
