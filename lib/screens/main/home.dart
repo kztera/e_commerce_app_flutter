@@ -21,6 +21,7 @@ class HomeScreen extends GetView<MainController> {
       onRefresh: controller.refresh,
       child: Scaffold(
           body: SingleChildScrollView(
+            controller: controller.scrollController,
         child: Column(
           children: [
             HeaderHome(

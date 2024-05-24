@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:zzz_book_store/model/cart.dart';
 import 'package:zzz_book_store/model/category.dart';
 import 'package:zzz_book_store/model/product.dart';
@@ -48,6 +49,17 @@ class MainController extends GetxController {
     carouselCurrentIndex.value = index;
   }
 
+  //load more data when scroll
+  RxInt pageIndex = 1.obs;
+  final ScrollController scrollController = ScrollController();
+
+  void _onScroll() {
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent) {
+      getProducts();
+    }
+  }
+
   //carts
   var carts = <Cart>[].obs;
 
@@ -93,10 +105,14 @@ class MainController extends GetxController {
 
   Future<void> getProducts() async {
     var response = await HttpClient.get(
-      endpoint: "products",
+      endpoint: "products?page=$pageIndex",
       token: user.accessToken,
     ) as List;
-    products.assignAll(response.map((json) => Product.fromJson(json)).toList());
+
+    if (response.isNotEmpty) {
+      products.addAll(response.map((json) => Product.fromJson(json)).toList());
+      pageIndex.value++;
+    }
   }
 
   //category
@@ -109,8 +125,6 @@ class MainController extends GetxController {
     categories
         .assignAll(response.map((json) => Category.fromJson(json)).toList());
   }
-
-
 
   //wishlist
   var wishlist = <Wishlist>[].obs;
@@ -132,6 +146,7 @@ class MainController extends GetxController {
 
   @override
   Future<void> refresh() async {
+    pageIndex.value = 1;
     getCategories();
     getProducts();
     getCarts();
@@ -147,6 +162,13 @@ class MainController extends GetxController {
     getProducts();
     getWishlist();
     getCarts();
+    scrollController.addListener(_onScroll);
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    scrollController.dispose();
+    super.onClose();
   }
 }
