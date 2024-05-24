@@ -1,7 +1,7 @@
 import 'package:zzz_book_store/model/review.dart';
 
 class ReviewSummary {
-  final double averageRating;
+  final dynamic averageRating;
   final Map<String, int> count;
   final List<Review> reviews;
 
@@ -13,11 +13,10 @@ class ReviewSummary {
 
   factory ReviewSummary.fromJson(Map<String, dynamic> json) {
     var reviewsFromJson = json['reviews'] as List;
-    List<Review> reviewsList =
-        reviewsFromJson.map((json) => Review.fromJson(json)).toList();
+    List<Review> reviewsList = reviewsFromJson.map((json) => Review.fromJson(json)).toList();
 
     return ReviewSummary(
-        averageRating: json['averageRating'] ?? 0,
+        averageRating: json['averageRating'] ?? 0.toDouble(),
         count: Map<String, int>.from(json['count']),
         reviews: reviewsList);
   }

@@ -10,12 +10,12 @@ import 'package:zzz_book_store/utils/formatter/formatter.dart';
 class UserReviewCard extends StatelessWidget {
   final Review review;
   final double averageRating;
-  const UserReviewCard(
-      {super.key, required this.review, required this.averageRating});
+  const UserReviewCard({super.key, required this.review, required this.averageRating});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,8 +27,7 @@ class UserReviewCard extends StatelessWidget {
                   child: Text(review.userName[0].toUpperCase()),
                 ),
                 const SizedBox(width: CustomSizes.spaceBtwItems),
-                Text(review.userName,
-                    style: Theme.of(context).textTheme.titleLarge),
+                Text(review.userName, style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
@@ -46,8 +45,7 @@ class UserReviewCard extends StatelessWidget {
             ),
             const SizedBox(width: CustomSizes.spaceBtwItems),
             // date of review use intl package
-            Text(Formatter.formatDate(review.date),
-                style: Theme.of(context).textTheme.bodyMedium),
+            Text(Formatter.formatDate(review.date), style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems),

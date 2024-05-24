@@ -12,7 +12,7 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RegisterController _controller = RegisterController.instance;
+    RegisterController controller = RegisterController.instance;
 
     return Scaffold(
       appBar: AppBar(),
@@ -29,7 +29,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: _controller.onSubmit,
+                  onPressed: controller.onSubmit,
                   child: Text(t.screens.register.button.createAccount),
                 ),
               ),
