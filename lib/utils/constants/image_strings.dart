@@ -33,4 +33,7 @@ class Images {
   static const String tt1 = "assets/images/product-detail/tamthe1-1.png";
   static const String tt2 = "assets/images/product-detail/tamthe1-2.png";
   static const String tt3 = "assets/images/product-detail/tamthe1-3.png";
+
+  // -- Payment
+  static const String momo = 'assets/logos/momo.png';
 }

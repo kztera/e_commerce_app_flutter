@@ -13,7 +13,6 @@ import 'package:zzz_book_store/widgets/checkout/coupon_code.dart';
 import 'package:zzz_book_store/widgets/checkout/email_field.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
-import 'package:zzz_book_store/widgets/shared/general/success_screen.dart';
 
 class CheckOutScreen extends GetView<CartController> {
   const CheckOutScreen({super.key});
