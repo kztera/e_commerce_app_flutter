@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
-import 'package:zzz_book_store/widgets/shared/cards/author_card.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 
 class AuthorShowcase extends StatelessWidget {
@@ -24,7 +23,7 @@ class AuthorShowcase extends StatelessWidget {
       child: Column(
         children: [
           // Showcases author
-          AuthorCard(showBorder: false, onTap: () {}),
+          //AuthorCard(showBorder: false, onTap: () {}),
           const SizedBox(height: CustomSizes.spaceBtwItems),
           // Books
           Row(children: images.map((image) => authorTopProductImageWidget(image, context)).toList()),

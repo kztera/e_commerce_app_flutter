@@ -34,7 +34,10 @@ class WishlistScreen extends GetView<MainController> {
           padding: const EdgeInsets.all(CustomSizes.defaultSpace),
           child: Column(
             children: [
-              //GridLayout(itemCount: 8, itemBuilder: (_, index) => const ProductCardVertical()),
+              GridLayout(
+                  itemCount: controller.wishlist.length,
+                  itemBuilder: (_, index) =>
+                      ProductCardVertical(item: controller.wishlist[index])),
               const SizedBox(height: CustomSizes.defaultSpace),
             ],
           ),

@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
-import 'package:zzz_book_store/controllers/main_controller.dart';
+import 'package:zzz_book_store/controllers/product_detail_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/screens/products/product_review.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
 import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
-import 'package:zzz_book_store/utils/formatter/formatter.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/circular_image.dart';
@@ -19,16 +17,12 @@ import 'package:zzz_book_store/widgets/shared/texts/product_price_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/product_title_text.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
-class ProductMetaData extends StatelessWidget {
-  final int index;
-  const ProductMetaData({super.key, required this.index});
+class ProductMetaData extends GetView<ProductDetailController> {
+  const ProductMetaData({super.key});
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunc.isDarkMode(context);
-
-    MainController controller = Get.find();
-    Product product = controller.products[index];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,13 +37,13 @@ class ProductMetaData extends StatelessWidget {
                 horizontal: CustomSizes.sm,
                 vertical: CustomSizes.xs,
               ),
-              child: Text('${product.saleOff}%',
+              child: Text('${controller.product.value!.saleOff}%',
                   style: Theme.of(context).textTheme.labelLarge),
             ),
             const SizedBox(width: CustomSizes.spaceBtwItems),
             ProductPriceText(
-              saleOff: product.saleOff,
-              price: product.price,
+              saleOff: controller.product.value!.saleOff,
+              price: controller.product.value!.price,
               lineThrough: true,
               isLarge: true,
             ),
@@ -87,9 +81,9 @@ class ProductMetaData extends StatelessWidget {
           textColor: isDarkMode ? ThemeColors.light : ThemeColors.dark,
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems),
-        // Readmore Text with collapse and expand
+        // Read more Text with collapse and expand
         ReadMoreText(
-          product.description,
+          controller.product.value!.description,
           trimLines: 3,
           trimMode: TrimMode.Line,
           trimCollapsedText: t.common.readMore,
@@ -107,8 +101,11 @@ class ProductMetaData extends StatelessWidget {
         // Review
         const Divider(color: ThemeColors.grey),
         const SizedBox(height: CustomSizes.spaceBtwItems),
-        GestureDetector(
-          onTap: () => Get.to(() => const ProductReviewScreen()),
+        InkWell(
+          onTap: (){
+           Get.to(() => const ProductReviewScreen());
+           controller.getReviews();
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -117,10 +114,7 @@ class ProductMetaData extends StatelessWidget {
                 showButtonAction: false,
                 textColor: isDarkMode ? ThemeColors.light : ThemeColors.dark,
               ),
-              const Icon(
-                Iconsax.arrow_right_34,
-                size: 18,
-              )
+              const Icon(Iconsax.arrow_right_34, size: 18)
             ],
           ),
         )

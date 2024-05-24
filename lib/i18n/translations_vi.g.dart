@@ -335,7 +335,7 @@ class _TranslationsScreensCartVi extends _TranslationsScreensCartEn {
 	@override late final _TranslationsScreensCartAppbarVi appbar = _TranslationsScreensCartAppbarVi._(_root);
 	@override late final _TranslationsScreensCartEmptyVi empty = _TranslationsScreensCartEmptyVi._(_root);
 	@override String get total => 'Tổng cộng';
-	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
+	@override String checkout({required Object totalPrice}) => 'Thanh toán $totalPrice';
 	@override String get remove => 'Xóa';
 }
 

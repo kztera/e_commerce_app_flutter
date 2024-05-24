@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 
 class SectionHeading extends StatelessWidget {
@@ -25,7 +24,7 @@ class SectionHeading extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
+          style: Theme.of(context).textTheme.titleLarge!.apply(color: textColor),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -36,7 +35,7 @@ class SectionHeading extends StatelessWidget {
                   overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),
                 ),
                 child: Text(
-                  buttonTitle != '' ? buttonTitle : t.buttons.viewAll,
+                  buttonTitle != '' ? buttonTitle : '',
                 ),
               )
             : const SizedBox(),

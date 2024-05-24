@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/forgot_controller.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
-import 'package:zzz_book_store/utils/devices/device_utility.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +13,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Nhập mã xác thực',
-              style: Theme.of(context).textTheme.headlineMedium),
+          title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -37,29 +35,32 @@ class VerifyOTPScreen extends GetView<ForgotController> {
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                        4, (index) => _buildOTPBox(context, index))),
+                    children: List.generate(4, (index) => _buildOTPBox(context, index))),
               ),
               const SizedBox(
                 height: CustomSizes.spaceBtwSections * 4,
               ),
               Column(
                 children: [
-                  _countDownTimer(),
+                  _countDownTimer(context),
                   const SizedBox(height: CustomSizes.defaultSpace * 2),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Không nhận được mã OTP?',
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        TextSpan(
-                          text: ' Gửi lại',
-                          style: Theme.of(context).textTheme.labelMedium,
-                          recognizer: TapGestureRecognizer()..onTap = () {},
-                        ),
-                      ],
+                  Obx(
+                    () => RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Không nhận được mã OTP?',
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
+                          TextSpan(
+                            text: ' Gửi lại',
+                            style: controller.countdown.value == 0
+                                ? Theme.of(context).textTheme.labelMedium!.apply(color: ThemeColors.primary)
+                                : Theme.of(context).textTheme.labelMedium,
+                            recognizer: TapGestureRecognizer()..onTap = controller.onResendOTP,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -74,47 +75,46 @@ class VerifyOTPScreen extends GetView<ForgotController> {
       height: CustomSizes.iconLg * 2,
       width: CustomSizes.iconLg * 2,
       child: TextFormField(
-        controller: controller.textControllers[index],
-        focusNode: controller.focusNodes[index],
-        onChanged: (value) => controller.onChanged(index, value),
-        style: Theme.of(context).textTheme.headlineSmall,
-        keyboardType: TextInputType.number,
-        textAlign: TextAlign.center,
-        inputFormatters: [
+          controller: controller.textControllers[index],
+          focusNode: controller.focusNodes[index],
+          onChanged: (value) => controller.onChanged(index, value),
+          style: Theme.of(context).textTheme.headlineSmall,
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          inputFormatters: [
             LengthLimitingTextInputFormatter(1),
-          ]
-      ),
+          ]),
     );
   }
 
-  TweenAnimationBuilder<num> _countDownTimer() {
-    return TweenAnimationBuilder(
-      tween: Tween(begin: 30.0, end: 0),
-      duration: const Duration(seconds: 30),
-      builder: (context, value, child) => Container(
-        width: DeviceUtils.getScreenWidth(context) * 0.2,
-        padding: const EdgeInsets.all(CustomSizes.xs),
-        decoration: const BoxDecoration(
-          color: ThemeColors.grey,
-          borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(100),
-            right: Radius.circular(100),
+  Widget _countDownTimer(BuildContext context) {
+    return Center(
+      child: Obx(() {
+        return Container(
+          width: MediaQuery.of(context).size.width * 0.3,
+          padding: const EdgeInsets.all(8.0),
+          decoration: const BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.horizontal(
+              left: Radius.circular(100),
+              right: Radius.circular(100),
+            ),
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(Icons.alarm_sharp),
-            const SizedBox(
-              width: CustomSizes.xs,
-            ),
-            Text(
-              '00:${value.toInt().toString().padLeft(2, '0')}',
-            ),
-          ],
-        ),
-      ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(Icons.alarm_sharp),
+              const SizedBox(
+                width: 8.0,
+              ),
+              Text(
+                '00:${controller.countdown.value.toString().padLeft(2, '0')}',
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }

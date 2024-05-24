@@ -9,7 +9,6 @@ import 'package:zzz_book_store/widgets/main/home/header_home.dart';
 import 'package:zzz_book_store/widgets/main/home/home_appbar.dart';
 import 'package:zzz_book_store/widgets/main/home/image_slider.dart';
 import 'package:zzz_book_store/widgets/shared/cards/product_card_vertical.dart';
-import 'package:zzz_book_store/widgets/shared/inputs/search_box.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 import 'package:zzz_book_store/widgets/shared/texts/section_heading.dart';
 
@@ -18,56 +17,67 @@ class HomeScreen extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          HeaderHome(
-            child: Column(
-              children: [
-                const HomeAppbar(),
-                const SizedBox(height: CustomSizes.spaceBtwItems),
-                SearchBox(
-                  text: t.screens.home.search,
-                ),
-                const SizedBox(height: CustomSizes.defaultSpace),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: CustomSizes.defaultSpace),
-                  child: SectionHeading(
-                    title: t.screens.home.category,
-                    showButtonAction: false,
-                    textColor: ThemeColors.white,
+    final bool isDarkMode = Get.isDarkMode;
+
+    return RefreshIndicator(
+      onRefresh: controller.refresh,
+      child: Scaffold(
+          body: SingleChildScrollView(
+        controller: controller.scrollController,
+        child: Column(
+          children: [
+            HeaderHome(
+              child: Column(
+                children: [
+                  const HomeAppbar(),
+                  const SizedBox(height: CustomSizes.spaceBtwItems),
+                  /*SearchBox(
+                    text: t.screens.home.search,
+                  ),*/
+                  const SizedBox(height: CustomSizes.defaultSpace),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
+                    child: SectionHeading(
+                      title: t.screens.home.category,
+                      showButtonAction: false,
+                      textColor: ThemeColors.white,
+                    ),
                   ),
-                ),
-                const SizedBox(height: CustomSizes.spaceBtwItems),
-                const CategoryListView(),
-                const SizedBox(height: CustomSizes.defaultSpace * 2),
-              ],
+                  const SizedBox(height: CustomSizes.spaceBtwItems),
+                  const CategoryListView(),
+                  const SizedBox(height: CustomSizes.defaultSpace * 2),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
-            child: Column(
-              children: [
-                const ImageSlider(),
-                SectionHeading(
-                  title: t.screens.home.popularProduct,
-                  onPressed: () {},
-                ),
-                Obx(
-                  () => GridLayout(
-                    itemCount: controller.products.length,
-                    itemBuilder: (_, index) => ProductCardVertical(index: index,
-                        product: controller.products[index]),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
+              child: Column(
+                children: [
+                  const ImageSlider(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: CustomSizes.defaultSpace / 2),
+                    child: SectionHeading(
+                      title: t.screens.home.popularProduct,
+                      onPressed: () {},
+                      showButtonAction: false,
+                      textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
+                    ),
                   ),
-                )
-              ],
+                  Obx(
+                    () => GridLayout(
+                      itemCount: controller.products.length,
+                      itemBuilder: (_, index) => ProductCardVertical(
+                        item: controller.products[index],
+                        author: controller.products[index].author[0].name,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    ));
+          ],
+        ),
+      )),
+    );
   }
 }

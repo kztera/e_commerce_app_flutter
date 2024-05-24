@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 class Formatter {
   static String formatDate(DateTime? date) {
     date ??= DateTime.now();
-    return DateFormat('DD/MM/YYYY').format(date);
+    return DateFormat('dd/MM/yyyy').format(date);
   }
 
   static String formatCurrency(int amount) {

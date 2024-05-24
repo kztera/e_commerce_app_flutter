@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
+import 'package:zzz_book_store/model/author.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
 import 'package:zzz_book_store/widgets/shared/images/circular_image.dart';
@@ -10,10 +10,12 @@ import 'package:zzz_book_store/widgets/shared/texts/author_title_with_verify_ico
 class AuthorCard extends StatelessWidget {
   const AuthorCard({
     super.key,
+    required this.author,
     this.onTap,
     required this.showBorder,
   });
 
+  final Author author;
   final bool showBorder;
   final void Function()? onTap;
 
@@ -22,7 +24,7 @@ class AuthorCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Tooltip(
-        message: "Lưu Từ Hân",
+        message: author.name,
         preferBelow: false,
         child: RoundedContainer(
           showBorder: showBorder,
@@ -31,11 +33,11 @@ class AuthorCard extends StatelessWidget {
           child: Row(
             children: [
               // Image
-              const Flexible(
+              Flexible(
                 child: CircularImage(
-                  isNetworkImage: false,
-                  image: Images.author1,
-                  bgColor: Colors.transparent,
+                  isNetworkImage: true,
+                  image: author.image,
+                  fit: BoxFit.cover,
                 ),
               ),
               // Text
@@ -44,12 +46,12 @@ class AuthorCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const AuthorTitleWithVerifyIcon(
-                      title: "Lưu Từ Hân",
+                    AuthorTitleWithVerifyIcon(
+                      title: author.name,
                       authorTextSize: TextSizes.medium,
                     ),
                     Text(
-                      t.screens.explore.authors.numberOfBooks(number: 10),
+                      t.screens.explore.authors.numberOfBooks(number: author.productCount),
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.labelMedium,
                     )

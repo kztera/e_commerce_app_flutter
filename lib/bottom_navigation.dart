@@ -29,7 +29,8 @@ class BottomNavigation extends StatelessWidget {
             onTap: (index) => controller.selectedIndex.value = index,
             animated: true,
             bottom: CustomSizes.md,
-            duration: const Duration(milliseconds: AnimationTimes.durationVeryShort),
+            duration:
+                const Duration(milliseconds: AnimationTimes.durationVeryShort),
           ),
         ),
         body: Obx(

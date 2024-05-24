@@ -27,7 +27,7 @@ class CategoryCard extends StatelessWidget {
               height: 60,
               child: CachedNetworkImage(
                 imageUrl: category.image,
-                fit: BoxFit.contain,
+                fit: BoxFit.cover,
                 placeholder: (context, url) =>
                     const Center(child: CircularProgressIndicator()),
                 errorWidget: (context, url, error) => const Icon(Icons.error),

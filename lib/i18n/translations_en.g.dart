@@ -339,7 +339,7 @@ class _TranslationsScreensCartEn {
 	late final _TranslationsScreensCartAppbarEn appbar = _TranslationsScreensCartAppbarEn._(_root);
 	late final _TranslationsScreensCartEmptyEn empty = _TranslationsScreensCartEmptyEn._(_root);
 	String get total => 'Total';
-	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
+	String checkout({required Object totalPrice}) => 'Checkout $totalPrice';
 	String get remove => 'Remove';
 }
 

@@ -1,3 +1,5 @@
+import 'package:zzz_book_store/model/cart.dart';
+
 class PricingCalculator {
   static double calculateTotalPrice(double productPrice, String location) {
     double taxRate = getTaxRateForLocation(location);
@@ -14,10 +16,9 @@ class PricingCalculator {
     return shippingCost.toStringAsFixed(2);
   }
 
-  static String calculateTax(double productPrice, String location) {
-    double taxRate = getTaxRateForLocation(location);
-    double taxAmount = productPrice * taxRate;
-    return taxAmount.toStringAsFixed(2);
+  static int calculateTax(int productPrice) {
+    double taxAmount = productPrice * 0.05;
+    return taxAmount.round();
   }
 
   static double getTaxRateForLocation(String location) {
@@ -35,5 +36,13 @@ class PricingCalculator {
 
   static int getSaleOffPrice(int price, int saleOff) {
     return (price * (100 - saleOff) / 100).round();
+  }
+
+  static int totalAmount(List<Cart> carts) {
+    int totalAmount = 0;
+    for (Cart cart in carts) {
+      totalAmount += getSaleOffPrice(cart.price, cart.saleOff);
+    }
+    return totalAmount;
   }
 }
