@@ -10,6 +10,7 @@ class ForgotController extends GetxController {
   final formKeyForgot = GlobalKey<FormState>();
   String email = '';
   RxString otp = ''.obs;
+  RxInt countdown = 0.obs;
 
   final List<TextEditingController> textControllers =
       List.generate(4, (_) => TextEditingController());
@@ -33,6 +34,7 @@ class ForgotController extends GetxController {
     if (response["message"] != 'Password reset OTP sent to your email') {
       HelperFunc.showSnackBar(response["message"]);
     } else {
+      startCountdown();
       Get.toNamed("/verify-otp");
     }
   }
@@ -64,8 +66,29 @@ class ForgotController extends GetxController {
     });
 
     String message = response["message"];
+    if (message == "OTP confirmed successfully.") {
+      HelperFunc.showSnackBar(message);
+      Get.offAndToNamed('/');
+    }
+  }
 
-    HelperFunc.showSnackBar(message);
+  void onResendOTP() {
+    if (countdown.value == 0) {
+      requestForgot();
+      startCountdown();
+    }
+  }
+
+  void startCountdown() {
+    countdown.value = 30;
+    countdownTimer();
+  }
+
+  void countdownTimer() async {
+    for (var i = countdown.value; i >= 0; i--) {
+      await Future.delayed(const Duration(seconds: 1));
+      countdown.value = i;
+    }
   }
 
   @override

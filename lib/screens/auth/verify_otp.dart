@@ -45,21 +45,29 @@ class VerifyOTPScreen extends GetView<ForgotController> {
               ),
               Column(
                 children: [
-                  _countDownTimer(),
+                  _countDownTimer(context),
                   const SizedBox(height: CustomSizes.defaultSpace * 2),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Không nhận được mã OTP?',
-                          style: Theme.of(context).textTheme.labelMedium,
-                        ),
-                        TextSpan(
-                          text: ' Gửi lại',
-                          style: Theme.of(context).textTheme.labelMedium,
-                          recognizer: TapGestureRecognizer()..onTap = () {},
-                        ),
-                      ],
+                  Obx(
+                    () => RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Không nhận được mã OTP?',
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
+                          TextSpan(
+                            text: ' Gửi lại',
+                            style: controller.countdown.value == 0
+                                ? Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .apply(color: ThemeColors.primary)
+                                : Theme.of(context).textTheme.labelMedium,
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = controller.onResendOTP,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -74,47 +82,46 @@ class VerifyOTPScreen extends GetView<ForgotController> {
       height: CustomSizes.iconLg * 2,
       width: CustomSizes.iconLg * 2,
       child: TextFormField(
-        controller: controller.textControllers[index],
-        focusNode: controller.focusNodes[index],
-        onChanged: (value) => controller.onChanged(index, value),
-        style: Theme.of(context).textTheme.headlineSmall,
-        keyboardType: TextInputType.number,
-        textAlign: TextAlign.center,
-        inputFormatters: [
+          controller: controller.textControllers[index],
+          focusNode: controller.focusNodes[index],
+          onChanged: (value) => controller.onChanged(index, value),
+          style: Theme.of(context).textTheme.headlineSmall,
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          inputFormatters: [
             LengthLimitingTextInputFormatter(1),
-          ]
-      ),
+          ]),
     );
   }
 
-  TweenAnimationBuilder<num> _countDownTimer() {
-    return TweenAnimationBuilder(
-      tween: Tween(begin: 30.0, end: 0),
-      duration: const Duration(seconds: 30),
-      builder: (context, value, child) => Container(
-        width: DeviceUtils.getScreenWidth(context) * 0.2,
-        padding: const EdgeInsets.all(CustomSizes.xs),
-        decoration: const BoxDecoration(
-          color: ThemeColors.grey,
-          borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(100),
-            right: Radius.circular(100),
+  Widget _countDownTimer(BuildContext context) {
+    return Center(
+      child: Obx(() {
+        return Container(
+          width: MediaQuery.of(context).size.width * 0.3,
+          padding: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.horizontal(
+              left: Radius.circular(100),
+              right: Radius.circular(100),
+            ),
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(Icons.alarm_sharp),
-            const SizedBox(
-              width: CustomSizes.xs,
-            ),
-            Text(
-              '00:${value.toInt().toString().padLeft(2, '0')}',
-            ),
-          ],
-        ),
-      ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.alarm_sharp),
+              SizedBox(
+                width: 8.0,
+              ),
+              Text(
+                '00:${controller.countdown.value.toString().padLeft(2, '0')}',
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
