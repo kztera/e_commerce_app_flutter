@@ -55,7 +55,8 @@ class HomeScreen extends GetView<MainController> {
                 children: [
                   const ImageSlider(),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: CustomSizes.defaultSpace / 2),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: CustomSizes.defaultSpace / 2),
                     child: SectionHeading(
                       title: t.screens.home.popularProduct,
                       onPressed: () {},
