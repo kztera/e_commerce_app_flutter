@@ -17,11 +17,13 @@ class HomeScreen extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = Get.isDarkMode;
+
     return RefreshIndicator(
       onRefresh: controller.refresh,
       child: Scaffold(
           body: SingleChildScrollView(
-            controller: controller.scrollController,
+        controller: controller.scrollController,
         child: Column(
           children: [
             HeaderHome(
@@ -34,8 +36,7 @@ class HomeScreen extends GetView<MainController> {
                   ),*/
                   const SizedBox(height: CustomSizes.defaultSpace),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: CustomSizes.defaultSpace),
+                    padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
                     child: SectionHeading(
                       title: t.screens.home.category,
                       showButtonAction: false,
@@ -49,19 +50,17 @@ class HomeScreen extends GetView<MainController> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: CustomSizes.defaultSpace,
-                  vertical: CustomSizes.xs),
+              padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace, vertical: CustomSizes.xs),
               child: Column(
                 children: [
                   const ImageSlider(),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: CustomSizes.defaultSpace / 2),
+                    padding: const EdgeInsets.symmetric(vertical: CustomSizes.defaultSpace / 2),
                     child: SectionHeading(
                       title: t.screens.home.popularProduct,
                       onPressed: () {},
                       showButtonAction: false,
+                      textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
                     ),
                   ),
                   Obx(
