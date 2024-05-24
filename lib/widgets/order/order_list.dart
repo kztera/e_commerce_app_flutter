@@ -51,7 +51,7 @@ class OrderListItems extends GetView<OrderController> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(controller.orders[index].statusHistory[0],
+                      Text(controller.orders[index].status,
                           style: Theme.of(context).textTheme.bodyLarge!.apply(
                               color: ThemeColors.primary, fontWeightDelta: 1)),
                       Text(
