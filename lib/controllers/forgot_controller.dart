@@ -8,9 +8,19 @@ class ForgotController extends GetxController {
   static ForgotController get instance => Get.find();
 
   final formKeyForgot = GlobalKey<FormState>();
+  final formKeyReset = GlobalKey<FormState>();
   String email = '';
+  String password = '';
   RxString otp = ''.obs;
   RxInt countdown = 0.obs;
+
+  var hidePassword = true.obs;
+
+  void setPassword(String value) => password = value;
+
+  void visibilityPassword() => hidePassword.value = !hidePassword.value;
+
+  String? validatePassword(String? value) => TValidator.validatePassword(value);
 
   final List<TextEditingController> textControllers =
       List.generate(4, (_) => TextEditingController());
@@ -68,7 +78,7 @@ class ForgotController extends GetxController {
     String message = response["message"];
     if (message == "OTP confirmed successfully.") {
       HelperFunc.showSnackBar(message);
-      Get.offAndToNamed('/');
+      Get.offAndToNamed('/reset-password');
     }
   }
 
@@ -91,6 +101,22 @@ class ForgotController extends GetxController {
     }
   }
 
+  Future<void> onResetPassword() async {
+    final isValid = formKeyReset.currentState!.validate();
+    if(!isValid){
+      return;
+    }
+    var response = await HttpClient.post(
+        endpoint: 'reset-password',
+        data: {"email": email, "newPassword": password});
+
+    if (response['message'] == 'Password reset successfully') {
+      Get.offAllNamed('/login');
+    } else {
+      HelperFunc.showSnackBar(response['message']);
+    }
+  }
+
   @override
   void onClose() {
     for (var controller in textControllers) {
@@ -101,4 +127,6 @@ class ForgotController extends GetxController {
     }
     super.onClose();
   }
+
+
 }

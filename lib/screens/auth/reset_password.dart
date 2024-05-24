@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+import "package:zzz_book_store/i18n/translations.g.dart";
 import 'package:zzz_book_store/controllers/forgot_controller.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
-import 'package:zzz_book_store/utils/devices/device_utility.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
 
@@ -31,21 +32,33 @@ class ResetPasswordScreen extends GetView<ForgotController> {
             child: Column(
               children: [
                 // email input
-                TextFormField(
-                  // onChanged: controller.setEmail,
-                  // validator: (value) {},
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.password_outlined),
-                    labelText: "New Password",
-                  ),
+                Form(
+                  key: controller.formKeyReset,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: Obx(() => TextFormField(
+                    keyboardType: TextInputType.text,
+                    obscureText: controller.hidePassword.value,
+                    decoration: InputDecoration(
+                      labelText: t.screens.register.form.password,
+                      prefixIcon: const Icon(Icons.password_outlined),
+                      suffixIcon: InkWell(
+                        onTap: controller.visibilityPassword,
+                        child: Icon(controller.hidePassword.isTrue
+                            ? Iconsax.eye_slash
+                            : Iconsax.eye),
+                      ),
+                    ),
+                    validator: (value) => controller.validatePassword(value),
+                    onChanged: controller.setPassword,
+                  )),
                 ),
                 const SizedBox(height: CustomSizes.spaceBtwInputFields),
                 SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       // onPressed: controller.onSubmit,
-                      onPressed: () {},
-                      child: Text("Đặt lại mật khẩu"),
+                      onPressed: controller.onResetPassword,
+                      child: const Text("Đặt lại mật khẩu"),
                     )),
               ],
             ),

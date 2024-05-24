@@ -7,6 +7,7 @@ import 'package:zzz_book_store/screens/auth/forgot_password.dart';
 import 'package:zzz_book_store/screens/auth/login.dart';
 import 'package:zzz_book_store/screens/auth/onboarding.dart';
 import 'package:zzz_book_store/screens/auth/register.dart';
+import 'package:zzz_book_store/screens/auth/reset_password.dart';
 import 'package:zzz_book_store/screens/auth/success.dart';
 import 'package:zzz_book_store/screens/auth/verify_email.dart';
 import 'package:zzz_book_store/screens/auth/verify_otp.dart';
@@ -36,6 +37,8 @@ class Routes {
         page: () => const ForgotPasswordScreen(),
         binding: ForgotBinding()),
     GetPage(name: '/verify-otp', page: () => const VerifyOTPScreen()),
+    GetPage(name: '/reset-password', page: () => const ResetPasswordScreen()),
+
     GetPage(
         name: '/main',
         page: () => const BottomNavigation(),
