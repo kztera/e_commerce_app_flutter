@@ -5,7 +5,7 @@ import 'package:zzz_book_store/controllers/language_controller.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/screens/main/orders/order.dart';
+import 'package:zzz_book_store/screens/orders/order.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';

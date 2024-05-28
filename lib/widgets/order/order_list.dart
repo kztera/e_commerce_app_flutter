@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:zzz_book_store/controllers/order_controller.dart';
-import 'package:zzz_book_store/screens/main/orders/order_detail.dart';
+import 'package:zzz_book_store/screens/orders/order_detail.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/formatter/formatter.dart';
