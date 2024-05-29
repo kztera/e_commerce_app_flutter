@@ -6,6 +6,7 @@ class OrderItem {
   final String productImage;
   final int productPrice;
   final int productSaleOff;
+  final bool hasReview;
 
   OrderItem({
     required this.id,
@@ -15,6 +16,7 @@ class OrderItem {
     required this.productImage,
     required this.productPrice,
     required this.productSaleOff,
+    required this.hasReview
   });
 
   factory OrderItem.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class OrderItem {
       productImage: json['productImage'],
       productPrice: json['productPrice'],
       productSaleOff: json['productSaleOff'],
+      hasReview: json['hasReview']
     );
   }
 }
