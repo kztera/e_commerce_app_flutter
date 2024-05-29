@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/order_controller.dart';
 import 'package:zzz_book_store/model/order_item.dart';
+import 'package:zzz_book_store/screens/review/review.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/widgets/shared/cards/product_card_horizontal.dart';
 import 'package:zzz_book_store/widgets/shared/general/custom_appbar.dart';
@@ -35,12 +36,31 @@ class OrderDetail extends GetView<OrderController> {
                   itemBuilder: (_, index) {
                     OrderItem orderItem = controller
                         .orders[controller.selected].orderItems[index];
-                    return ProductCardHorizontal(
-                      productName: orderItem.productName,
-                      image: orderItem.productImage,
-                      author: orderItem.productAuthorName,
-                      price: orderItem.productPrice,
-                      saleOff: orderItem.productSaleOff,
+                    return InkWell(
+                      onTap: orderItem.hasReview
+                          ? null
+                          : () => Get.to(() => const ReviewScreen(),
+                              arguments: {"orderItem": orderItem}),
+                      child: ClipRect(
+                        child: orderItem.hasReview
+                            ? Banner(
+                                message: "Đã đánh giá",
+                                color: Colors.red,
+                                location: BannerLocation.topStart,
+                                child: ProductCardHorizontal(
+                                    productName: orderItem.productName,
+                                    image: orderItem.productImage,
+                                    author: orderItem.productAuthorName,
+                                    price: orderItem.productPrice,
+                                    saleOff: orderItem.productSaleOff))
+                            : ProductCardHorizontal(
+                                productName: orderItem.productName,
+                                image: orderItem.productImage,
+                                author: orderItem.productAuthorName,
+                                price: orderItem.productPrice,
+                                saleOff: orderItem.productSaleOff,
+                              ),
+                      ),
                     );
                   }),
             ],

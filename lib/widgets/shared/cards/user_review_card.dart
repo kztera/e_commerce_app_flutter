@@ -37,7 +37,7 @@ class UserReviewCard extends StatelessWidget {
         Row(
           children: [
             RatingBarIndicator(
-              rating: averageRating,
+              rating: review.rating.toDouble(),
               itemSize: 15,
               itemBuilder: (context, index) {
                 return const Icon(Icons.star, color: ThemeColors.secondary);
