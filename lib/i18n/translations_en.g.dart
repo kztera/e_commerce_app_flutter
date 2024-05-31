@@ -81,6 +81,13 @@ class _TranslationsCommonEn {
 	String get filter => 'Filter';
 	String get readMore => 'Read More';
 	String get showLess => 'Show Less';
+	String get selectTheme => 'Select a Theme';
+	String get selectLanguage => 'Select a Language';
+	String get vietnamese => 'Vietnamese';
+	String get english => 'English';
+	String get light => 'Light';
+	String get dark => 'Dark';
+	String get system => 'System';
 }
 
 // Path: errors
@@ -339,7 +346,7 @@ class _TranslationsScreensCartEn {
 	late final _TranslationsScreensCartAppbarEn appbar = _TranslationsScreensCartAppbarEn._(_root);
 	late final _TranslationsScreensCartEmptyEn empty = _TranslationsScreensCartEmptyEn._(_root);
 	String get total => 'Total';
-	String checkout({required Object totalPrice}) => 'Checkout $totalPrice';
+	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
 	String get remove => 'Remove';
 }
 

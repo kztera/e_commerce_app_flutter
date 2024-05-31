@@ -32,6 +32,13 @@ extension on Translations {
 			case 'common.filter': return 'Filter';
 			case 'common.readMore': return 'Read More';
 			case 'common.showLess': return 'Show Less';
+			case 'common.selectTheme': return 'Select a Theme';
+			case 'common.selectLanguage': return 'Select a Language';
+			case 'common.vietnamese': return 'Vietnamese';
+			case 'common.english': return 'English';
+			case 'common.light': return 'Light';
+			case 'common.dark': return 'Dark';
+			case 'common.system': return 'System';
 			case 'errors.products.e1000': return 'No product found';
 			case 'messages.snackbar.loginSuccess': return 'Login successful';
 			case 'messages.checkOutSuccess.title': return 'Check out successful';
@@ -215,6 +222,13 @@ extension on _TranslationsVi {
 			case 'common.filter': return 'Filter';
 			case 'common.readMore': return 'Xem Thêm';
 			case 'common.showLess': return 'Ẩn Bớt';
+			case 'common.selectTheme': return 'Chọn giao diện';
+			case 'common.selectLanguage': return 'Chọn ngôn ngữ';
+			case 'common.vietnamese': return 'Tiếng Việt';
+			case 'common.english': return 'Tiếng Anh';
+			case 'common.light': return 'Sáng';
+			case 'common.dark': return 'Tối';
+			case 'common.system': return 'Hệ Thống';
 			case 'errors.products.e1000': return 'Không tìm thấy sản phẩm nào';
 			case 'messages.snackbar.loginSuccess': return 'Đăng nhập thành công';
 			case 'messages.checkOutSuccess.title': return 'Thanh toán thành công';

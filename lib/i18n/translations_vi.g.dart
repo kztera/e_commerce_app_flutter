@@ -77,6 +77,13 @@ class _TranslationsCommonVi extends _TranslationsCommonEn {
 	@override String get filter => 'Filter';
 	@override String get readMore => 'Xem Thêm';
 	@override String get showLess => 'Ẩn Bớt';
+	@override String get selectTheme => 'Chọn giao diện';
+	@override String get selectLanguage => 'Chọn ngôn ngữ';
+	@override String get vietnamese => 'Tiếng Việt';
+	@override String get english => 'Tiếng Anh';
+	@override String get light => 'Sáng';
+	@override String get dark => 'Tối';
+	@override String get system => 'Hệ Thống';
 }
 
 // Path: errors
@@ -335,7 +342,7 @@ class _TranslationsScreensCartVi extends _TranslationsScreensCartEn {
 	@override late final _TranslationsScreensCartAppbarVi appbar = _TranslationsScreensCartAppbarVi._(_root);
 	@override late final _TranslationsScreensCartEmptyVi empty = _TranslationsScreensCartEmptyVi._(_root);
 	@override String get total => 'Tổng cộng';
-	@override String checkout({required Object totalPrice}) => 'Thanh toán $totalPrice';
+	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
 	@override String get remove => 'Xóa';
 }
 

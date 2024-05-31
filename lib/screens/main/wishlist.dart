@@ -15,33 +15,36 @@ class WishlistScreen extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppbar(
-        title: Text(
-          t.screens.wishlist.appbar.title,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        actions: [
-          CircleIcon(
-            icon: Iconsax.add,
-            onPressed: () => {controller.goToScreen(Screen.explore)},
-            size: CustomSizes.iconMd,
+    return RefreshIndicator(
+      onRefresh: controller.refresh,
+      child: Scaffold(
+        appBar: CustomAppbar(
+          title: Text(
+            t.screens.wishlist.appbar.title,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-          child: Column(
-            children: [
-              GridLayout(
-                  itemCount: controller.wishlist.length,
-                  itemBuilder: (_, index) => ProductCardVertical(
-                        item: controller.wishlist[index],
-                        author: controller.wishlist[index].productAuthorName,
-                      )),
-              const SizedBox(height: CustomSizes.defaultSpace),
-            ],
+          actions: [
+            CircleIcon(
+              icon: Iconsax.add,
+              onPressed: () => {controller.goToScreen(Screen.explore)},
+              size: CustomSizes.iconMd,
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+            child: Column(
+              children: [
+                GridLayout(
+                    itemCount: controller.wishlist.length,
+                    itemBuilder: (_, index) => ProductCardVertical(
+                          item: controller.wishlist[index],
+                          author: controller.wishlist[index].productAuthorName,
+                        )),
+                const SizedBox(height: CustomSizes.defaultSpace),
+              ],
+            ),
           ),
         ),
       ),

@@ -62,7 +62,7 @@ class ExploreScreen extends StatelessWidget {
                           title: t.screens.explore.authors.title,
                           onPressed: () => Get.toNamed('/author-list'),
                           showButtonAction: true,
-                          buttonTitle: 'Xem thêm',
+                          buttonTitle: t.buttons.viewAll,
                         ),
                         const SizedBox(
                           height: CustomSizes.spaceBtwItems / 1.5,
