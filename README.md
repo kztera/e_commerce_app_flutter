@@ -4,17 +4,17 @@
 
 ## Danh sách chức năng:
 
-- [ ] Splash Screen
-- [ ] Đăng nhập, đăng ký
-- [ ] Quên mật khẩu
-- [ ] Xem danh sách sản phẩm
-- [ ] Xem chi tiết sản phẩm
-- [ ] Yêu thích sản phẩm
-- [ ] Quản lý giỏ hàng
-- [ ] Đánh giá sản phẩm
-- [ ] Lọc sản phẩm
-- [ ] Tính năng thanh toán
-- [ ] Quản lý đơn hàng
-- [ ] Thông tin cá nhân
-- [ ] Light, Dark Mode
-- [ ] Đa ngôn ngữ
+- [x] Splash Screen
+- [x] Đăng nhập, đăng ký
+- [x] Quên mật khẩu
+- [x] Xem danh sách sản phẩm
+- [x] Xem chi tiết sản phẩm
+- [x] Yêu thích sản phẩm
+- [x] Quản lý giỏ hàng
+- [x] Đánh giá sản phẩm
+- [x] Lọc sản phẩm
+- [x] Tính năng thanh toán
+- [x] Quản lý đơn hàng
+- [x] Thông tin cá nhân
+- [x] Light, Dark Mode
+- [x] Đa ngôn ngữ
