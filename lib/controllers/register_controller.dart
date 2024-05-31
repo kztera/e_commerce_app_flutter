@@ -69,10 +69,6 @@ class RegisterController extends GetxController {
     isCheckBox.value = value;
   }
 
-  void onChangeCheckBox(bool value) {
-    isCheckBox.value = value;
-  }
-
   void onSubmit() {
     final isValid = formKeySignUp.currentState!.validate();
     if (!isValid) {
