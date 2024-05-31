@@ -7,7 +7,6 @@ import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/screens/products/product_review.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/enums.dart';
-import 'package:zzz_book_store/utils/constants/image_strings.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/rounded_container.dart';
@@ -37,8 +36,7 @@ class ProductMetaData extends GetView<ProductDetailController> {
                 horizontal: CustomSizes.sm,
                 vertical: CustomSizes.xs,
               ),
-              child: Text('${controller.product.value!.saleOff}%',
-                  style: Theme.of(context).textTheme.labelLarge),
+              child: Text('${controller.product.value!.saleOff}%', style: Theme.of(context).textTheme.labelLarge),
             ),
             const SizedBox(width: CustomSizes.spaceBtwItems),
             ProductPriceText(
@@ -50,29 +48,32 @@ class ProductMetaData extends GetView<ProductDetailController> {
           ],
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems),
-        const ProductTitleText(
-          title: 'Tam Thể 1',
+        ProductTitleText(
+          title: controller.product.value!.name,
           maxLines: 2,
           smallSize: false,
         ),
         const SizedBox(height: CustomSizes.spaceBtwItems),
-        const Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircularImage(
-              image: Images.author1,
-              width: 32,
-              height: 32,
-              padding: 0,
-            ),
-            SizedBox(width: CustomSizes.spaceBtwItems / 2),
-            AuthorTitleWithVerifyIcon(
-              title: 'Lưu Từ Hân',
-              authorTextSize: TextSizes.medium,
-            ),
-          ],
+        Obx(
+          () => Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularImage(
+                isNetworkImage: true,
+                image: controller.product.value!.author.first.image,
+                width: 32,
+                height: 32,
+                padding: 0,
+              ),
+              const SizedBox(width: CustomSizes.spaceBtwItems / 2),
+              AuthorTitleWithVerifyIcon(
+                title: controller.product.value!.author.first.name,
+                authorTextSize: TextSizes.medium,
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: CustomSizes.spaceBtwSections),
         SectionHeading(
@@ -102,9 +103,9 @@ class ProductMetaData extends GetView<ProductDetailController> {
         const Divider(color: ThemeColors.grey),
         const SizedBox(height: CustomSizes.spaceBtwItems),
         InkWell(
-          onTap: (){
-           Get.to(() => const ProductReviewScreen());
-           controller.getReviews();
+          onTap: () {
+            Get.to(() => const ProductReviewScreen());
+            controller.getReviews();
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -27,20 +27,16 @@ class OrderDetail extends GetView<OrderController> {
           child: Column(
             children: [
               ListView.separated(
-                  itemCount:
-                      controller.orders[controller.selected].orderItems.length,
+                  itemCount: controller.orders[controller.selected].orderItems.length,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  separatorBuilder: (_, __) =>
-                      const SizedBox(height: CustomSizes.spaceBtwItems),
+                  separatorBuilder: (_, __) => const SizedBox(height: CustomSizes.spaceBtwItems),
                   itemBuilder: (_, index) {
-                    OrderItem orderItem = controller
-                        .orders[controller.selected].orderItems[index];
+                    OrderItem orderItem = controller.orders[controller.selected].orderItems[index];
                     return InkWell(
                       onTap: orderItem.hasReview
                           ? null
-                          : () => Get.to(() => const ReviewScreen(),
-                              arguments: {"orderItem": orderItem}),
+                          : () => Get.to(() => const ReviewScreen(), arguments: {"orderItem": orderItem}),
                       child: ClipRect(
                         child: orderItem.hasReview
                             ? Banner(

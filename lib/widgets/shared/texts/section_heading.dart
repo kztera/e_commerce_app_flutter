@@ -32,7 +32,7 @@ class SectionHeading extends StatelessWidget {
             ? TextButton(
                 onPressed: onPressed,
                 style: ButtonStyle(
-                  overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),
+                  overlayColor: WidgetStateColor.resolveWith((states) => Colors.transparent),
                 ),
                 child: Text(
                   buttonTitle != '' ? buttonTitle : '',

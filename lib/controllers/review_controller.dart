@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/model/order_item.dart';
 import 'package:zzz_book_store/model/user.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 
 class ReviewController extends GetxController {
@@ -22,15 +23,17 @@ class ReviewController extends GetxController {
   }
 
   Future<void> onSubmitReview() async {
-    var response = await HttpClient.post(
-        endpoint: 'products/${orderItem.product}/reviews',
-        data: {
-          "user": user.id,
-          "comment": comment,
-          "rating": rating.value,
-        },
-        token: user.accessToken);
-    print(response);
+    await HttpClient.post(
+      endpoint: 'products/${orderItem.product}/reviews',
+      data: {
+        "user": user.id,
+        "comment": comment,
+        "rating": rating.value,
+      },
+      token: user.accessToken,
+    );
+    HelperFunc.showSnackBar('Đánh giá sản phẩm thành công');
+    Get.off(Get.previousRoute);
   }
 
   @override
