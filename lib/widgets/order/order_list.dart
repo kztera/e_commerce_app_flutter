@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:zzz_book_store/controllers/order_controller.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/screens/orders/order_detail.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
@@ -21,20 +22,17 @@ class OrderListItems extends GetView<OrderController> {
           : ListView.separated(
               shrinkWrap: true,
               itemCount: controller.orders.length,
-              separatorBuilder: (_, __) =>
-                  const SizedBox(height: CustomSizes.spaceBtwItems),
-              itemBuilder: (_, index) =>
-                  _buildOrderItem(isDarkMode, index, context),
+              separatorBuilder: (_, __) => const SizedBox(height: CustomSizes.spaceBtwItems),
+              itemBuilder: (_, index) => _buildOrderItem(isDarkMode, index, context),
             ),
     );
   }
 
-  GestureDetector _buildOrderItem(
-      bool isDarkMode, int index, BuildContext context) {
+  GestureDetector _buildOrderItem(bool isDarkMode, int index, BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         controller.setSelected(index);
-        Get.to(()=> const OrderDetail());
+        Get.to(() => const OrderDetail());
       },
       child: RoundedContainer(
         showBorder: true,
@@ -51,20 +49,20 @@ class OrderListItems extends GetView<OrderController> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(controller.orders[index].status,
-                          style: Theme.of(context).textTheme.bodyLarge!.apply(
-                              color: ThemeColors.primary, fontWeightDelta: 1)),
                       Text(
-                          Formatter.formatDate(
-                              controller.orders[index].dateOrdered),
+                          controller.orders[index].status == 'pending'
+                              ? t.screens.order.list.status.pending
+                              : t.screens.order.list.status.delivered,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .apply(color: ThemeColors.primary, fontWeightDelta: 1)),
+                      Text(Formatter.formatDate(controller.orders[index].dateOrdered),
                           style: Theme.of(context).textTheme.headlineSmall),
                     ],
                   ),
                 ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Iconsax.arrow_right_34,
-                        size: CustomSizes.iconSm))
+                IconButton(onPressed: () {}, icon: const Icon(Iconsax.arrow_right_34, size: CustomSizes.iconSm))
               ],
             ),
             const SizedBox(height: CustomSizes.spaceBtwItems),
@@ -77,11 +75,8 @@ class OrderListItems extends GetView<OrderController> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Thanh toán',
-                          style: Theme.of(context).textTheme.labelMedium),
-                      Text(
-                          Formatter.formatCurrency(
-                              controller.orders[index].totalPrice),
+                      Text('Thanh toán', style: Theme.of(context).textTheme.labelMedium),
+                      Text(Formatter.formatCurrency(controller.orders[index].totalPrice),
                           style: Theme.of(context).textTheme.titleMedium),
                     ],
                   ),
@@ -98,10 +93,8 @@ class OrderListItems extends GetView<OrderController> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Đơn hàng',
-                          style: Theme.of(context).textTheme.labelMedium),
-                      Text(controller.orders[index].id,
-                          style: Theme.of(context).textTheme.titleMedium),
+                      Text('Đơn hàng', style: Theme.of(context).textTheme.labelMedium),
+                      Text(controller.orders[index].id, style: Theme.of(context).textTheme.titleMedium),
                     ],
                   ),
                 ),

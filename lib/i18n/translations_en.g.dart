@@ -109,6 +109,8 @@ class _TranslationsMessagesEn {
 	// Translations
 	late final _TranslationsMessagesSnackbarEn snackbar = _TranslationsMessagesSnackbarEn._(_root);
 	late final _TranslationsMessagesCheckOutSuccessEn checkOutSuccess = _TranslationsMessagesCheckOutSuccessEn._(_root);
+	String get otpSent => 'OTP sent to your email address';
+	String get otpConfirm => 'OTP confirmed successfully';
 }
 
 // Path: navigation
@@ -144,6 +146,8 @@ class _TranslationsScreensEn {
 	late final _TranslationsScreensProductReviewEn productReview = _TranslationsScreensProductReviewEn._(_root);
 	late final _TranslationsScreensCartEn cart = _TranslationsScreensCartEn._(_root);
 	late final _TranslationsScreensCheckOutEn checkOut = _TranslationsScreensCheckOutEn._(_root);
+	late final _TranslationsScreensOrderEn order = _TranslationsScreensOrderEn._(_root);
+	late final _TranslationsScreensReviewEn review = _TranslationsScreensReviewEn._(_root);
 }
 
 // Path: setting
@@ -346,7 +350,7 @@ class _TranslationsScreensCartEn {
 	late final _TranslationsScreensCartAppbarEn appbar = _TranslationsScreensCartAppbarEn._(_root);
 	late final _TranslationsScreensCartEmptyEn empty = _TranslationsScreensCartEmptyEn._(_root);
 	String get total => 'Total';
-	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice} đ';
+	String checkout({required Object totalPrice}) => 'Checkout ${totalPrice}';
 	String get remove => 'Remove';
 }
 
@@ -361,6 +365,26 @@ class _TranslationsScreensCheckOutEn {
 	String get promoCode => 'Promo Code';
 	String get hintPromoCode => 'Have a promo code? Enter it here';
 	late final _TranslationsScreensCheckOutPaymentEn payment = _TranslationsScreensCheckOutPaymentEn._(_root);
+}
+
+// Path: screens.order
+class _TranslationsScreensOrderEn {
+	_TranslationsScreensOrderEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _TranslationsScreensOrderListEn list = _TranslationsScreensOrderListEn._(_root);
+}
+
+// Path: screens.review
+class _TranslationsScreensReviewEn {
+	_TranslationsScreensReviewEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get success => 'Review submitted successfully!';
 }
 
 // Path: setting.account
@@ -472,6 +496,7 @@ class _TranslationsScreensRegisterFormEn {
 	String get password => 'Password';
 	String get confirmPassword => 'Confirm Password';
 	String get phoneNo => 'Phone Number';
+	String get passwordNotMatch => 'Password does not match';
 }
 
 // Path: screens.register.placeholder
@@ -560,6 +585,10 @@ class _TranslationsScreensForgotPasswordTextEn {
 	String get backToLogin => 'Back to login';
 	String get success => 'Reset Password Success';
 	String get successSubtile => 'We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.';
+	String get otpInput => 'Enter the OTP code';
+	String get notReceived => 'Didn\'t receive the email?';
+	String get resend => 'Resend';
+	String get notFound => 'Not found any account with this email';
 }
 
 // Path: screens.home.appbar
@@ -748,6 +777,18 @@ class _TranslationsScreensCheckOutPaymentEn {
 	String get pay => 'Pay';
 }
 
+// Path: screens.order.list
+class _TranslationsScreensOrderListEn {
+	_TranslationsScreensOrderListEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get total => 'Total price';
+	String get id => 'Order ID';
+	late final _TranslationsScreensOrderListStatusEn status = _TranslationsScreensOrderListStatusEn._(_root);
+}
+
 // Path: screens.settings.purchase.purchaseHistory
 class _TranslationsScreensSettingsPurchasePurchaseHistoryEn {
 	_TranslationsScreensSettingsPurchasePurchaseHistoryEn._(this._root);
@@ -768,4 +809,15 @@ class _TranslationsScreensSettingsPurchasePendingEn {
 	// Translations
 	String get title => 'Pending';
 	String get subtitle => 'List of orders being proccessed';
+}
+
+// Path: screens.order.list.status
+class _TranslationsScreensOrderListStatusEn {
+	_TranslationsScreensOrderListStatusEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get delivered => 'Delivered';
+	String get pending => 'Pending';
 }

@@ -5,5 +5,7 @@
   "checkOutSuccess": {
     "title": "Thanh toán thành công",
     "subTitle": "Sách sẽ được gửi tới email của bạn. Vui lòng kiểm tra email của bạn để tải sách về máy. Cảm ơn bạn đã mua sách tại 3zStore!"
-  }
+  },
+  "otpSent": "Một mã gồm 4 chữ số đã được gửi về email của bạn",
+  "otpConfirm": "Xác nhận mã OTP thành công! Vui lòng đặt lại mật khẩu mới"
 }

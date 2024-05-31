@@ -45,7 +45,8 @@
       "email": "Email",
       "password": "Mật khẩu",
       "confirmPassword": "Xác nhận mật khẩu",
-      "phoneNo": "Số điện thoại"
+      "phoneNo": "Số điện thoại",
+      "passwordNotMatch": "Mật khẩu không khớp"
     },
     "placeholder": {
       "fullName": "Nhập họ và tên của bạn",
@@ -89,7 +90,11 @@
     "text": {
       "backToLogin": "Quay lại đăng nhập",
       "success": "Đặt lại mật khẩu thành công",
-      "successSubtile": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn."
+      "successSubtile": "Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.",
+      "otpInput": "Nhập mã xác nhận",
+      "notReceived": "Không nhận được mã?",
+      "resend": "Gửi lại",
+      "notFound": "Không có tài khoản nào sử dụng email này"
     }
   },
 
@@ -203,7 +208,7 @@
       "subtitle": "Hãy thêm sách vào giỏ hàng của bạn ngay bây giờ!"
     },
     "total": "Tổng cộng",
-    "checkout": "Thanh toán $totalPrice đ",
+    "checkout": "Thanh toán $totalPrice",
     "remove": "Xóa"
   },
 
@@ -233,5 +238,20 @@
       "saveCard": "Lưu thẻ",
       "pay": "Thanh toán"
     }
+  },
+
+  "order": {
+    "list": {
+      "total": "Tổng thanh toán",
+      "id": "Mã đơn hàng",
+      "status": {
+        "delivered": "Đã thanh toán",
+        "pending": "Đang chờ thanh toán"
+      }
+    }
+  },
+
+  "review": {
+    "success": "Đánh giá thành công"
   }
 }

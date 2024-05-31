@@ -45,7 +45,8 @@
       "username": "Username",
       "password": "Password",
       "confirmPassword": "Confirm Password",
-      "phoneNo": "Phone Number"
+      "phoneNo": "Phone Number",
+      "passwordNotMatch": "Password does not match"
     },
     "placeholder": {
       "fullName": "Enter your full name",
@@ -89,7 +90,11 @@
     "text": {
       "backToLogin": "Back to login",
       "success": "Reset Password Success",
-      "successSubtile": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password."
+      "successSubtile": "We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.",
+      "otpInput": "Enter the OTP code",
+      "notReceived": "Didn't receive the email?",
+      "resend": "Resend",
+      "notFound": "Not found any account with this email"
     }
   },
 
@@ -203,7 +208,7 @@
       "subtitle": "Add books to your cart and proceed to checkout"
     },
     "total": "Total",
-    "checkout": "Checkout $totalPrice đ",
+    "checkout": "Checkout $totalPrice",
     "remove": "Remove"
   },
 
@@ -233,5 +238,20 @@
       "saveCard": "Save card",
       "pay": "Pay"
     }
+  },
+
+  "order": {
+    "list": {
+      "total": "Total price",
+      "id": "Order ID",
+      "status": {
+        "delivered": "Delivered",
+        "pending": "Pending"
+      }
+    }
+  },
+
+  "review": {
+    "success": "Review submitted successfully!"
   }
 }

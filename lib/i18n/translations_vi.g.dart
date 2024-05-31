@@ -105,6 +105,8 @@ class _TranslationsMessagesVi extends _TranslationsMessagesEn {
 	// Translations
 	@override late final _TranslationsMessagesSnackbarVi snackbar = _TranslationsMessagesSnackbarVi._(_root);
 	@override late final _TranslationsMessagesCheckOutSuccessVi checkOutSuccess = _TranslationsMessagesCheckOutSuccessVi._(_root);
+	@override String get otpSent => 'Một mã gồm 4 chữ số đã được gửi về email của bạn';
+	@override String get otpConfirm => 'Xác nhận mã OTP thành công! Vui lòng đặt lại mật khẩu mới';
 }
 
 // Path: navigation
@@ -140,6 +142,8 @@ class _TranslationsScreensVi extends _TranslationsScreensEn {
 	@override late final _TranslationsScreensProductReviewVi productReview = _TranslationsScreensProductReviewVi._(_root);
 	@override late final _TranslationsScreensCartVi cart = _TranslationsScreensCartVi._(_root);
 	@override late final _TranslationsScreensCheckOutVi checkOut = _TranslationsScreensCheckOutVi._(_root);
+	@override late final _TranslationsScreensOrderVi order = _TranslationsScreensOrderVi._(_root);
+	@override late final _TranslationsScreensReviewVi review = _TranslationsScreensReviewVi._(_root);
 }
 
 // Path: setting
@@ -342,7 +346,7 @@ class _TranslationsScreensCartVi extends _TranslationsScreensCartEn {
 	@override late final _TranslationsScreensCartAppbarVi appbar = _TranslationsScreensCartAppbarVi._(_root);
 	@override late final _TranslationsScreensCartEmptyVi empty = _TranslationsScreensCartEmptyVi._(_root);
 	@override String get total => 'Tổng cộng';
-	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice} đ';
+	@override String checkout({required Object totalPrice}) => 'Thanh toán ${totalPrice}';
 	@override String get remove => 'Xóa';
 }
 
@@ -357,6 +361,26 @@ class _TranslationsScreensCheckOutVi extends _TranslationsScreensCheckOutEn {
 	@override String get promoCode => 'Mã giảm giá';
 	@override String get hintPromoCode => 'Nhập mã giảm giá của bạn';
 	@override late final _TranslationsScreensCheckOutPaymentVi payment = _TranslationsScreensCheckOutPaymentVi._(_root);
+}
+
+// Path: screens.order
+class _TranslationsScreensOrderVi extends _TranslationsScreensOrderEn {
+	_TranslationsScreensOrderVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsScreensOrderListVi list = _TranslationsScreensOrderListVi._(_root);
+}
+
+// Path: screens.review
+class _TranslationsScreensReviewVi extends _TranslationsScreensReviewEn {
+	_TranslationsScreensReviewVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get success => 'Đánh giá thành công';
 }
 
 // Path: setting.account
@@ -468,6 +492,7 @@ class _TranslationsScreensRegisterFormVi extends _TranslationsScreensRegisterFor
 	@override String get password => 'Mật khẩu';
 	@override String get confirmPassword => 'Xác nhận mật khẩu';
 	@override String get phoneNo => 'Số điện thoại';
+	@override String get passwordNotMatch => 'Mật khẩu không khớp';
 }
 
 // Path: screens.register.placeholder
@@ -556,6 +581,10 @@ class _TranslationsScreensForgotPasswordTextVi extends _TranslationsScreensForgo
 	@override String get backToLogin => 'Quay lại đăng nhập';
 	@override String get success => 'Đặt lại mật khẩu thành công';
 	@override String get successSubtile => 'Một email đã được gửi đến email của bạn. Vui lòng kiểm tra và làm theo hướng dẫn để đặt lại mật khẩu của bạn.';
+	@override String get otpInput => 'Nhập mã xác nhận';
+	@override String get notReceived => 'Không nhận được mã?';
+	@override String get resend => 'Gửi lại';
+	@override String get notFound => 'Không có tài khoản nào sử dụng email này';
 }
 
 // Path: screens.home.appbar
@@ -744,6 +773,18 @@ class _TranslationsScreensCheckOutPaymentVi extends _TranslationsScreensCheckOut
 	@override String get pay => 'Thanh toán';
 }
 
+// Path: screens.order.list
+class _TranslationsScreensOrderListVi extends _TranslationsScreensOrderListEn {
+	_TranslationsScreensOrderListVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get total => 'Tổng thanh toán';
+	@override String get id => 'Mã đơn hàng';
+	@override late final _TranslationsScreensOrderListStatusVi status = _TranslationsScreensOrderListStatusVi._(_root);
+}
+
 // Path: screens.settings.purchase.purchaseHistory
 class _TranslationsScreensSettingsPurchasePurchaseHistoryVi extends _TranslationsScreensSettingsPurchasePurchaseHistoryEn {
 	_TranslationsScreensSettingsPurchasePurchaseHistoryVi._(_TranslationsVi root) : this._root = root, super._(root);
@@ -764,4 +805,15 @@ class _TranslationsScreensSettingsPurchasePendingVi extends _TranslationsScreens
 	// Translations
 	@override String get title => 'Đang xử lý';
 	@override String get subtitle => 'Danh sách đơn hàng đang xử lý';
+}
+
+// Path: screens.order.list.status
+class _TranslationsScreensOrderListStatusVi extends _TranslationsScreensOrderListStatusEn {
+	_TranslationsScreensOrderListStatusVi._(_TranslationsVi root) : this._root = root, super._(root);
+
+	@override final _TranslationsVi _root; // ignore: unused_field
+
+	// Translations
+	@override String get delivered => 'Đã thanh toán';
+	@override String get pending => 'Đang chờ thanh toán';
 }

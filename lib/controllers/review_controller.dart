@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/model/order_item.dart';
 import 'package:zzz_book_store/model/user.dart';
+import 'package:zzz_book_store/screens/products/product_detail.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 
@@ -11,6 +13,7 @@ class ReviewController extends GetxController {
 
   RxInt rating = 1.obs;
   late OrderItem orderItem;
+  late String productId;
   String comment = '';
   late User user;
 
@@ -32,14 +35,16 @@ class ReviewController extends GetxController {
       },
       token: user.accessToken,
     );
-    HelperFunc.showSnackBar('Đánh giá sản phẩm thành công');
-    Get.off(Get.previousRoute);
+    HelperFunc.showSnackBar(t.screens.review.success);
+    _mainController.pageIndex.value = 0;
+    Get.off(() => const ProductDetailScreen(), arguments: {"productId": productId});
   }
 
   @override
   void onInit() {
     orderItem = Get.arguments["orderItem"];
     user = _mainController.user;
+    productId = orderItem.product;
     super.onInit();
   }
 }
