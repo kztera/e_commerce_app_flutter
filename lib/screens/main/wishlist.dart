@@ -36,8 +36,10 @@ class WishlistScreen extends GetView<MainController> {
             children: [
               GridLayout(
                   itemCount: controller.wishlist.length,
-                  itemBuilder: (_, index) =>
-                      ProductCardVertical(item: controller.wishlist[index])),
+                  itemBuilder: (_, index) => ProductCardVertical(
+                        item: controller.wishlist[index],
+                        author: controller.wishlist[index].productAuthorName,
+                      )),
               const SizedBox(height: CustomSizes.defaultSpace),
             ],
           ),

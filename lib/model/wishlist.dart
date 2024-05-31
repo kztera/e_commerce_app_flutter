@@ -1,12 +1,14 @@
 import 'package:zzz_book_store/model/item.dart';
 
 class Wishlist extends Item {
+  final String productAuthorName;
   Wishlist({
     productId,
     productName,
     productImage,
     productPrice,
     productSaleOff,
+    required this.productAuthorName
   }) : super(
           id: productId,
           name: productName,
@@ -22,6 +24,7 @@ class Wishlist extends Item {
       productPrice: json['productPrice'],
       productName: json['productName'],
       productSaleOff: json['productSaleOff'],
+      productAuthorName: json['productAuthorName']
     );
   }
 }

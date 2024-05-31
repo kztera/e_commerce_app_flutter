@@ -35,6 +35,7 @@ class ProductDetailController extends GetxController {
         productImage: product.value!.image,
         productPrice: product.value!.price,
         productSaleOff: product.value!.saleOff,
+        productAuthorName: product.value!.author[0].name
       );
       mainController.wishlist.add(wishlist);
       addToWishlist();
