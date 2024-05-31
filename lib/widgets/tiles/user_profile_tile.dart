@@ -27,12 +27,12 @@ class UserProjectTile extends GetView<MainController> {
         controller.user.name,
         style: Theme.of(context).textTheme.headlineSmall!.apply(color: ThemeColors.white),
       ),
-      subtitle: Text(
-        "Người dùng",
-        style: Theme.of(context).textTheme.bodyMedium!.apply(
-              color: ThemeColors.white.withOpacity(0.8),
-            ),
-      ),
+      // subtitle: Text(
+      //   "Người dùng",
+      //   style: Theme.of(context).textTheme.bodyMedium!.apply(
+      //         color: ThemeColors.white.withOpacity(0.8),
+      //       ),
+      // ),
       trailing: IconButton(
         icon: const Icon(Iconsax.edit),
         color: ThemeColors.white,

@@ -41,8 +41,7 @@ class RegisterController extends GetxController {
 
   void visibilityPassword() => hidePassword.value = !hidePassword.value;
 
-  void visibilityConfirmPassword() =>
-      hideConfirmPassword.value = !hideConfirmPassword.value;
+  void visibilityConfirmPassword() => hideConfirmPassword.value = !hideConfirmPassword.value;
 
   String? validateName(String? value) => TValidator.validateName(value);
 
@@ -54,8 +53,7 @@ class RegisterController extends GetxController {
     String? error = TValidator.validatePassword(value);
     if (value != '') {
       isMinCharValid.value = !(error == t.screens.register.text.minChar);
-      isAtLeastOneValid.value = isMinCharValid.value &&
-          !(error == t.screens.register.text.atLeastOne);
+      isAtLeastOneValid.value = isMinCharValid.value && !(error == t.screens.register.text.atLeastOne);
     }
     return error;
   }
@@ -64,10 +62,14 @@ class RegisterController extends GetxController {
     if (password == confirmPassword) {
       return null;
     }
-    return "Passwords do not match";
+    return t.screens.register.form.passwordNotMatch;
   }
 
-  void onChangeCheckBox(bool value){
+  void onChangeCheckBox(bool value) {
+    isCheckBox.value = value;
+  }
+
+  void onChangeCheckBox(bool value) {
     isCheckBox.value = value;
   }
 
@@ -80,12 +82,8 @@ class RegisterController extends GetxController {
   }
 
   Future<void> requestSignUp() async {
-    var response = await HttpClient.post(endpoint: "register", data: {
-      "name": fullName,
-      "email": email,
-      "phone": phone,
-      "password": password
-    });
+    var response = await HttpClient.post(
+        endpoint: "register", data: {"name": fullName, "email": email, "phone": phone, "password": password});
 
     if (response['_id'] != null) {
       Get.toNamed("/login");

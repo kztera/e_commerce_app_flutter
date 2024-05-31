@@ -2,5 +2,12 @@
   "copyright": "© {year} - Bản quyển thuộc về Khoa Nguyễn. Mọi quyền được bảo lưu. Phiên bản {version}",
   "filter": "Filter",
   "readMore": "Xem Thêm",
-  "showLess": "Ẩn Bớt"
+  "showLess": "Ẩn Bớt",
+  "selectTheme": "Chọn giao diện",
+  "selectLanguage": "Chọn ngôn ngữ",
+  "vietnamese": "Tiếng Việt",
+  "english": "Tiếng Anh",
+  "light": "Sáng",
+  "dark": "Tối",
+  "system": "Hệ Thống"
 }

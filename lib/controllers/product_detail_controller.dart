@@ -30,12 +30,12 @@ class ProductDetailController extends GetxController {
 
     if (isExistWishList.isTrue) {
       Wishlist wishlist = Wishlist(
-        productId: product.value!.id,
-        productName: product.value!.name,
-        productImage: product.value!.image,
-        productPrice: product.value!.price,
-        productSaleOff: product.value!.saleOff,
-      );
+          productId: product.value!.id,
+          productName: product.value!.name,
+          productImage: product.value!.image,
+          productPrice: product.value!.price,
+          productSaleOff: product.value!.saleOff,
+          productAuthorName: product.value!.author[0].name);
       mainController.wishlist.add(wishlist);
       addToWishlist();
     } else {

@@ -4,11 +4,11 @@ import 'package:zzz_book_store/utils/constants/regex.dart';
 class TValidator {
   static String? validateName(String? name) {
     if (name == null || name.isEmpty) {
-      return 'Name is required';
+      return 'Tên không được để trống';
     }
 
     if (!Regex.nameRegExp.hasMatch(name)) {
-      return 'The name must be at least 8 characters and no more than 50 characters.';
+      return 'Tên không hợp lệ';
     }
 
     return null;
@@ -16,11 +16,11 @@ class TValidator {
 
   static String? validateEmail(String? email) {
     if (email == null || email.isEmpty) {
-      return 'Email is required';
+      return 'Email là bắt buộc';
     }
 
     if (!Regex.emailRegExp.hasMatch(email)) {
-      return 'Email is invalid';
+      return 'Email không hợp lệ';
     }
 
     return null;
@@ -28,7 +28,7 @@ class TValidator {
 
   static String? validatePassword(String? password) {
     if (password == null || password.isEmpty) {
-      return 'Password is required';
+      return 'Mật khẩu là bắt buộc';
     }
     if (password.length < 8) {
       return t.screens.register.text.minChar;
@@ -57,11 +57,11 @@ class TValidator {
 
   static String? validatePhoneNumber(String? phone) {
     if (phone == null || phone.isEmpty) {
-      return 'Phone number is required';
+      return 'Số điện thoại là bắt buộc';
     }
 
     if (!Regex.phoneRegExp.hasMatch(phone)) {
-      return 'Invalid phone number format (10 digits required)';
+      return 'Số điện thoại không hợp lệ';
     }
     return null;
   }

@@ -1,13 +1,9 @@
 import 'package:zzz_book_store/model/item.dart';
 
 class Wishlist extends Item {
-  Wishlist({
-    productId,
-    productName,
-    productImage,
-    productPrice,
-    productSaleOff,
-  }) : super(
+  final String productAuthorName;
+  Wishlist({productId, productName, productImage, productPrice, productSaleOff, required this.productAuthorName})
+      : super(
           id: productId,
           name: productName,
           image: productImage,
@@ -17,11 +13,11 @@ class Wishlist extends Item {
 
   factory Wishlist.fromJson(Map<String, dynamic> json) {
     return Wishlist(
-      productId: json['productId'],
-      productImage: json['productImage'],
-      productPrice: json['productPrice'],
-      productName: json['productName'],
-      productSaleOff: json['productSaleOff'],
-    );
+        productId: json['productId'],
+        productImage: json['productImage'],
+        productPrice: json['productPrice'],
+        productName: json['productName'],
+        productSaleOff: json['productSaleOff'],
+        productAuthorName: json['productAuthorName']);
   }
 }

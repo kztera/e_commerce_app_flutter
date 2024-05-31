@@ -60,7 +60,9 @@ class ExploreScreen extends StatelessWidget {
                         SectionHeading(
                           textColor: isDarkMode ? ThemeColors.white : ThemeColors.black,
                           title: t.screens.explore.authors.title,
-                          onPressed: () {},
+                          onPressed: () => Get.toNamed('/author-list'),
+                          showButtonAction: true,
+                          buttonTitle: t.buttons.viewAll,
                         ),
                         const SizedBox(
                           height: CustomSizes.spaceBtwItems / 1.5,

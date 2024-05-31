@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:zzz_book_store/controllers/forgot_controller.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:flutter/gestures.dart';
@@ -13,7 +14,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Nhập mã xác thực', style: Theme.of(context).textTheme.headlineMedium),
+          title: Text(t.screens.forgotPassword.text.otpInput, style: Theme.of(context).textTheme.headlineMedium),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -23,7 +24,7 @@ class VerifyOTPScreen extends GetView<ForgotController> {
               Padding(
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace * 2),
                 child: Text(
-                  'Một mã gồm 4 chữ số đã được gửi về email example@gmail.com của bạn',
+                  t.messages.otpSent,
                   style: Theme.of(context).textTheme.labelLarge,
                   textAlign: TextAlign.center,
                 ),
@@ -49,11 +50,11 @@ class VerifyOTPScreen extends GetView<ForgotController> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: 'Không nhận được mã OTP?',
+                            text: t.screens.forgotPassword.text.notReceived,
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                           TextSpan(
-                            text: ' Gửi lại',
+                            text: ' ${t.screens.forgotPassword.text.resend}',
                             style: controller.countdown.value == 0
                                 ? Theme.of(context).textTheme.labelMedium!.apply(color: ThemeColors.primary)
                                 : Theme.of(context).textTheme.labelMedium,

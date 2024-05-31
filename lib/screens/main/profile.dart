@@ -15,8 +15,7 @@ class ProfileScreen extends GetView<MainController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        title: Text(t.screens.settings.appbar.title,
-            style: Theme.of(context).textTheme.headlineMedium),
+        title: Text(t.screens.settings.appbar.title, style: Theme.of(context).textTheme.headlineMedium),
         showBackButton: true,
       ),
       body: SingleChildScrollView(
@@ -38,10 +37,7 @@ class ProfileScreen extends GetView<MainController> {
                       radius: 30,
                       child: Text(
                         controller.user.name[0].toUpperCase(),
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .apply(color: ThemeColors.white),
+                        style: Theme.of(context).textTheme.headlineSmall!.apply(color: ThemeColors.white),
                       ),
                     ),
                     TextButton(
@@ -59,10 +55,7 @@ class ProfileScreen extends GetView<MainController> {
                 showButtonAction: false,
               ),
               const SizedBox(height: CustomSizes.spaceBtwItems),
-              ProfileMenu(
-                  onPressed: () {},
-                  title: t.screens.settings.profile.name,
-                  value: controller.user.name),
+              ProfileMenu(onPressed: () {}, title: t.screens.settings.profile.name, value: controller.user.name),
               const SizedBox(height: CustomSizes.spaceBtwItems),
               /*ProfileMenu(
                   onPressed: () {},
@@ -79,15 +72,9 @@ class ProfileScreen extends GetView<MainController> {
                 showButtonAction: false,
               ),
               const SizedBox(height: CustomSizes.spaceBtwItems),
-              ProfileMenu(
-                  onPressed: () {},
-                  title: "Số điện thoại",
-                  value: controller.user.phone),
+              ProfileMenu(onPressed: () {}, title: t.screens.register.form.phoneNo, value: controller.user.phone),
               const SizedBox(height: CustomSizes.spaceBtwItems),
-              ProfileMenu(
-                  onPressed: () {},
-                  title: t.screens.settings.profile.email,
-                  value: controller.user.email),
+              ProfileMenu(onPressed: () {}, title: t.screens.settings.profile.email, value: controller.user.email),
               const SizedBox(height: CustomSizes.spaceBtwItems / 2),
               const Divider(),
               const SizedBox(height: CustomSizes.defaultSpace),
@@ -96,10 +83,7 @@ class ProfileScreen extends GetView<MainController> {
                   onPressed: () {},
                   child: Text(
                     t.screens.settings.profile.closeAccount,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .apply(color: Colors.red),
+                    style: Theme.of(context).textTheme.bodyLarge!.apply(color: Colors.red),
                   ),
                 ),
               )

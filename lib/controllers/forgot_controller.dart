@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zzz_book_store/i18n/translations.g.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/utils/http/http_client.dart';
 import 'package:zzz_book_store/utils/validators/validation.dart';
@@ -22,8 +23,7 @@ class ForgotController extends GetxController {
 
   String? validatePassword(String? value) => TValidator.validatePassword(value);
 
-  final List<TextEditingController> textControllers =
-      List.generate(4, (_) => TextEditingController());
+  final List<TextEditingController> textControllers = List.generate(4, (_) => TextEditingController());
   final List<FocusNode> focusNodes = List.generate(4, (_) => FocusNode());
 
   void setEmail(String value) => email = value;
@@ -39,10 +39,9 @@ class ForgotController extends GetxController {
   }
 
   Future<void> requestForgot() async {
-    var response = await HttpClient.post(
-        endpoint: 'forgot-password', data: {"email": email});
+    var response = await HttpClient.post(endpoint: 'forgot-password', data: {"email": email});
     if (response["message"] != 'Password reset OTP sent to your email') {
-      HelperFunc.showSnackBar(response["message"]);
+      HelperFunc.showSnackBar(t.screens.forgotPassword.text.notFound);
     } else {
       startCountdown();
       Get.toNamed("/verify-otp");
@@ -62,8 +61,7 @@ class ForgotController extends GetxController {
   }
 
   void updateOTP() {
-    otp.value =
-        textControllers.map((textController) => textController.text).join();
+    otp.value = textControllers.map((textController) => textController.text).join();
   }
 
   Future<void> verifyOTP() async {
@@ -103,12 +101,10 @@ class ForgotController extends GetxController {
 
   Future<void> onResetPassword() async {
     final isValid = formKeyReset.currentState!.validate();
-    if(!isValid){
+    if (!isValid) {
       return;
     }
-    var response = await HttpClient.post(
-        endpoint: 'reset-password',
-        data: {"email": email, "newPassword": password});
+    var response = await HttpClient.post(endpoint: 'reset-password', data: {"email": email, "newPassword": password});
 
     if (response['message'] == 'Password reset successfully') {
       Get.offAllNamed('/login');
@@ -127,6 +123,4 @@ class ForgotController extends GetxController {
     }
     super.onClose();
   }
-
-
 }

@@ -5,7 +5,7 @@ import 'package:zzz_book_store/controllers/language_controller.dart';
 import 'package:zzz_book_store/controllers/main_controller.dart';
 import 'package:zzz_book_store/controllers/theme_controller.dart';
 import 'package:zzz_book_store/i18n/translations.g.dart';
-import 'package:zzz_book_store/screens/main/orders/order.dart';
+import 'package:zzz_book_store/screens/orders/order.dart';
 import 'package:zzz_book_store/utils/constants/colors.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
 import 'package:zzz_book_store/utils/helpers/helper_function.dart';
@@ -34,15 +34,11 @@ class SettingScreen extends GetView<MainController> {
                   bgColor: Colors.transparent,
                   title: Text(
                     t.screens.settings.appbar.title,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineMedium!
-                        .apply(color: ThemeColors.white),
+                    style: Theme.of(context).textTheme.headlineMedium!.apply(color: ThemeColors.white),
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: CustomSizes.sm),
+                  padding: const EdgeInsets.symmetric(horizontal: CustomSizes.sm),
                   child: UserProjectTile(
                     onPressed: () => Get.toNamed('/profile'),
                   ),
@@ -52,8 +48,7 @@ class SettingScreen extends GetView<MainController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: CustomSizes.defaultSpace),
+            padding: const EdgeInsets.symmetric(horizontal: CustomSizes.defaultSpace),
             child: Column(
               children: [
                 SectionHeading(
@@ -65,8 +60,7 @@ class SettingScreen extends GetView<MainController> {
                 SettingMenuTile(
                   icon: Iconsax.box_tick,
                   title: t.screens.settings.purchase.purchaseHistory.title,
-                  subtitle:
-                      t.screens.settings.purchase.purchaseHistory.subtitle,
+                  subtitle: t.screens.settings.purchase.purchaseHistory.subtitle,
                   onTap: () => Get.to(() => const OrderScreen()),
                 ),
                 /*SettingMenuTile(
@@ -85,16 +79,19 @@ class SettingScreen extends GetView<MainController> {
                   return SettingMenuTile(
                     icon: Iconsax.moon,
                     title: t.screens.settings.app.appearance,
-                    trailing: themesController.theme,
-                    onTap: () =>
-                        _showAppearanceModal(Theme.of(context), _.theme),
+                    trailing: themesController.theme == 'light'
+                        ? t.common.light
+                        : themesController.theme == 'dark'
+                            ? t.common.dark
+                            : t.common.system,
+                    onTap: () => _showAppearanceModal(Theme.of(context), _.theme),
                   );
                 }),
                 GetBuilder<LanguageController>(builder: (_) {
                   return SettingMenuTile(
                     icon: Iconsax.language_circle,
                     title: t.screens.settings.app.language,
-                    trailing: languageController.language,
+                    trailing: languageController.language == 'vi' ? 'Tiếng Việt' : 'English',
                     onTap: () => _showLanguageSelection(Theme.of(context)),
                   );
                 }),
@@ -134,7 +131,7 @@ class SettingScreen extends GetView<MainController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Select a Theme",
+            t.common.selectTheme,
             style: theme.textTheme.headlineSmall,
           ),
           const SizedBox(height: 32),
@@ -143,7 +140,10 @@ class SettingScreen extends GetView<MainController> {
               Icons.brightness_5,
               color: Colors.blue,
             ),
-            title: Text("Light", style: theme.textTheme.bodyMedium),
+            title: Text(
+              t.common.light,
+              style: theme.textTheme.bodyMedium,
+            ),
             onTap: () {
               themesController.setTheme('light');
               Get.back();
@@ -159,7 +159,7 @@ class SettingScreen extends GetView<MainController> {
               Icons.brightness_2,
               color: Colors.orange,
             ),
-            title: Text("Dark", style: theme.textTheme.bodyMedium),
+            title: Text(t.common.dark, style: theme.textTheme.bodyMedium),
             onTap: () {
               themesController.setTheme('dark');
               Get.back();
@@ -175,7 +175,7 @@ class SettingScreen extends GetView<MainController> {
               Icons.brightness_6,
               color: Colors.blueGrey,
             ),
-            title: Text("System", style: theme.textTheme.bodyMedium),
+            title: Text(t.common.system, style: theme.textTheme.bodyMedium),
             onTap: () {
               themesController.setTheme('system');
               Get.back();
@@ -205,7 +205,7 @@ class SettingScreen extends GetView<MainController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Select a Language",
+            t.common.selectLanguage,
             style: theme.textTheme.headlineSmall,
           ),
           const SizedBox(height: 32),
@@ -214,16 +214,14 @@ class SettingScreen extends GetView<MainController> {
               Icons.brightness_5,
               color: Colors.blue,
             ),
-            title: Text("Tiếng Việt", style: theme.textTheme.bodyMedium),
+            title: Text(t.common.vietnamese, style: theme.textTheme.bodyMedium),
             onTap: () {
               languageController.setLanguage('vi');
               Get.back();
             },
             trailing: Icon(
               Icons.check,
-              color: languageController.language == 'vi'
-                  ? Colors.blue
-                  : Colors.transparent,
+              color: languageController.language == 'vi' ? Colors.blue : Colors.transparent,
             ),
           ),
           const SizedBox(height: 16),
@@ -232,16 +230,14 @@ class SettingScreen extends GetView<MainController> {
               Icons.brightness_2,
               color: Colors.orange,
             ),
-            title: Text("English", style: theme.textTheme.bodyMedium),
+            title: Text(t.common.english, style: theme.textTheme.bodyMedium),
             onTap: () {
               languageController.setLanguage('en');
               Get.back();
             },
             trailing: Icon(
               Icons.check,
-              color: languageController.language == 'en'
-                  ? Colors.orange
-                  : Colors.transparent,
+              color: languageController.language == 'en' ? Colors.orange : Colors.transparent,
             ),
           ),
         ],

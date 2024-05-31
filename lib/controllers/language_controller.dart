@@ -5,7 +5,6 @@ import 'package:zzz_book_store/i18n/translations.g.dart';
 
 class LanguageController extends GetxController {
   final storage = GetStorage();
-
   String language = LocaleSettings.currentLocale.languageCode;
 
   @override
@@ -27,8 +26,14 @@ class LanguageController extends GetxController {
     language = languageCode;
     storage.write('language', language);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (language == 'vi') LocaleSettings.setLocale(AppLocale.vi);
-      if (language == 'en') LocaleSettings.setLocale(AppLocale.en);
+      if (language == 'vi') {
+        LocaleSettings.setLocale(AppLocale.vi);
+        Get.updateLocale(const Locale('vi', 'VN'));
+      }
+      if (language == 'en') {
+        LocaleSettings.setLocale(AppLocale.en);
+        Get.updateLocale(const Locale('en', 'US'));
+      }
     });
     update();
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zzz_book_store/model/product.dart';
 import 'package:zzz_book_store/utils/constants/sizes.dart';
+import 'package:zzz_book_store/utils/helpers/helper_function.dart';
 import 'package:zzz_book_store/widgets/shared/cards/product_card_vertical.dart';
 import 'package:zzz_book_store/widgets/shared/layouts/grid_layout.dart';
 
@@ -10,6 +11,8 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HelperFunc.isDarkMode(context);
+
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

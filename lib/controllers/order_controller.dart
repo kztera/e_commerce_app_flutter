@@ -16,9 +16,7 @@ class OrderController extends GetxController {
   Future<void> getOrders() async {
     isLoading.value = true;
     var response = await HttpClient.get(
-        endpoint: "orders/users/${_mainController.user.id}",
-        token: _mainController.user.accessToken) as List;
-
+        endpoint: "orders/users/${_mainController.user.id}", token: _mainController.user.accessToken) as List;
     orders.assignAll(response.map((json) => Order.fromJson(json)));
     isLoading.value = false;
   }
